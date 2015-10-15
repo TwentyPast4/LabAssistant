@@ -333,7 +333,7 @@
                             </Grid>
                         </TabItem>
                         <TabItem x:Name="inorganicsPage" Header="TabItem">
-                            <DataGrid x:Name="inorganicGrid" AutoGenerateColumns="False" Background="Gray" Foreground="#FFE4E4E4" BorderThickness="1,0,0,0" ColumnHeaderHeight="30" HeadersVisibility="Column" CanUserResizeRows="False" CanUserDeleteRows="False" CanUserAddRows="False" RowHeight="25" RowBackground="#FF383838" AlternatingRowBackground="#FF474747" RowDetailsVisibilityMode="Collapsed" SelectionMode="Single">
+                            <DataGrid x:Name="inorganicGrid" RowStyle="{DynamicResource chemicalRow}" AutoGenerateColumns="False" Background="Gray" Foreground="#FFE4E4E4" BorderThickness="1,0,0,0" ColumnHeaderHeight="30" HeadersVisibility="Column" CanUserResizeRows="False" CanUserDeleteRows="False" CanUserAddRows="False" RowHeight="25" RowBackground="#FF383838" AlternatingRowBackground="#FF474747" RowDetailsVisibilityMode="Collapsed" SelectionMode="Single">
                                 <DataGrid.Resources>
                                     <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#FF005A7C"/>
                                 </DataGrid.Resources>

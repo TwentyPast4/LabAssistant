@@ -12,8 +12,6 @@ Public Partial Class TableButton
         DependencyProperty.Register("BackgroundHoverOpacity", GetType(Double), GetType(TableButton), New UIPropertyMetadata(0.5))
     Public Shared ReadOnly ElementProperty As DependencyProperty = _
         DependencyProperty.Register("Element", GetType(Matter.Element), GetType(TableButton), New UIPropertyMetadata(Nothing))
-    Public Shared ReadOnly AvailabilityProperty As DependencyProperty = _
-        DependencyProperty.Register("Availability", GetType(Matter.StateInLab), GetType(TableButton), New UIPropertyMetadata(Matter.StateInLab.Unavailable))
 
 	Public Property BackgroundHover As Color
 		Get
@@ -34,17 +32,6 @@ Public Partial Class TableButton
         End Set
     End Property
     Private hovO As Double
-
-    Public Property Availability As Matter.StateInLab
-        Get
-            Return available
-        End Get
-        Set(value As Matter.StateInLab)
-            available = value
-        End Set
-    End Property
-    Private available As Matter.StateInLab
-
 
     Public Property Element As Matter.Element
         Get
