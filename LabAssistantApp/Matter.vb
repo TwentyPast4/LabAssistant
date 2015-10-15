@@ -149,7 +149,8 @@ Namespace Matter
         End Sub
 
         Public Sub TryUpdateLabState()
-            If Info.LoadedLab.IsAvailable(formula_.ToString) Then
+            If Me.labstate_ = StateInLab.Available Or Me.labstate_ = StateInLab.In_Stock Then Exit Sub
+            If (Not IsNothing(Info.LoadedLab)) AndAlso Info.LoadedLab.IsAvailable(formula_.ToString) Then
                 If Info.LoadedLab.GetInfoOf(formula_.ToString).IsUnlimited Then
                     SetLabState(StateInLab.Available)
                 Else
@@ -976,7 +977,7 @@ res:
 
         Public Shared Sub UpdateRecreatable()
             For Each r In ReactionList
-                Dim b As Boolean = True
+                Dim b As Boolean = Not IsNothing(Info.LoadedLab)
                 Dim i As Integer = 0
                 While b
                     b = Info.LoadedLab.IsAvailable(r.Reactants.ElementAt(i))

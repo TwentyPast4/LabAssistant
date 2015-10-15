@@ -1,0 +1,37 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="AlkaliMetals" Color="#FFFF4600"/>
+    <SolidColorBrush x:Key="AlkalineEarthMetals" Color="#FFFFA200"/>
+    <SolidColorBrush x:Key="Halogens" Color="#FF005DFF"/>
+    <SolidColorBrush x:Key="Lanthanides" Color="#FF00FF8B"/>
+    <SolidColorBrush x:Key="Metalloids" Color="Cyan"/>
+    <SolidColorBrush x:Key="NobleGases" Color="#FFC500FF"/>
+    <SolidColorBrush x:Key="NonMetals" Color="#FF00B9FF"/>
+    <SolidColorBrush x:Key="Post_transitionMetals" Color="Lime"/>
+    <SolidColorBrush x:Key="TransitionMetals" Color="Yellow"/>
+
+    <DrawingBrush x:Key="LogoBrush_edited">
+        <DrawingBrush.RelativeTransform>
+            <TransformGroup>
+                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.8" ScaleY="0.8"/>
+                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </DrawingBrush.RelativeTransform>
+        <DrawingBrush.Drawing>
+            <GeometryDrawing>
+                <GeometryDrawing.Pen>
+                    <Pen Brush="White" Thickness="0.07"/>
+                </GeometryDrawing.Pen>
+                <GeometryDrawing.Geometry>
+                    <PathGeometry>
+                        <PathFigure IsClosed="True" StartPoint="0.35,0" IsFilled="False" Segments="{DynamicResource logoPath}"/>
+                    </PathGeometry>
+                </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+</ResourceDictionary>

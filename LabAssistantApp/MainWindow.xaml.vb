@@ -169,6 +169,9 @@ Class MainWindow
     Private Sub handleMenuClick(sender As Object, e As RoutedEventArgs)
         Select Case sender.Tag
             Case Is = "start"
+                For Each el In Matter.Element.ElementList
+                    el.SetLabState(CType(Math.Floor(Rnd() * 4), Matter.StateInLab))
+                Next
             Case Is = "table"
                 DeselectMenuItems(menuStackPanel, sender.Tag)
                 sender.IsSelected = True

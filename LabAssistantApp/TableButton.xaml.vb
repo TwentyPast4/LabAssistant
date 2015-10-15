@@ -12,6 +12,8 @@ Public Partial Class TableButton
         DependencyProperty.Register("BackgroundHoverOpacity", GetType(Double), GetType(TableButton), New UIPropertyMetadata(0.5))
     Public Shared ReadOnly ElementProperty As DependencyProperty = _
         DependencyProperty.Register("Element", GetType(Matter.Element), GetType(TableButton), New UIPropertyMetadata(Nothing))
+    Public Shared ReadOnly AvailabilityProperty As DependencyProperty = _
+        DependencyProperty.Register("Availability", GetType(Matter.StateInLab), GetType(TableButton), New UIPropertyMetadata(Matter.StateInLab.Unavailable))
 
 	Public Property BackgroundHover As Color
 		Get
@@ -32,6 +34,17 @@ Public Partial Class TableButton
         End Set
     End Property
     Private hovO As Double
+
+    Public Property Availability As Matter.StateInLab
+        Get
+            Return available
+        End Get
+        Set(value As Matter.StateInLab)
+            available = value
+        End Set
+    End Property
+    Private available As Matter.StateInLab
+
 
     Public Property Element As Matter.Element
         Get
@@ -73,6 +86,25 @@ Public Partial Class TableButton
         oxyBox.Text = s
         configBox.Text = el.GetElectronConfigurationString()
         PaintGroup(el.Group)
+        paintLabState()
+        AddHandler el.LabStateChanged, AddressOf handleLabStateChanged
+    End Sub
+
+    Private Sub handleLabStateChanged(sender As Object, e As EventArgs)
+        paintLabState()
+    End Sub
+
+    Private Sub paintLabState()
+        Select Case el.LabState
+            Case Is = Matter.StateInLab.Unavailable
+                iconCanvas.Background = Nothing
+            Case Is = Matter.StateInLab.Available
+                iconCanvas.Background = My.Application.FindResource("infinity")
+            Case Is = Matter.StateInLab.In_Stock
+                iconCanvas.Background = My.Application.FindResource("tick")
+            Case Is = Matter.StateInLab.Synthesizable
+                iconCanvas.Background = Me.FindResource("LogoBrush_edited")
+        End Select
     End Sub
 
     Public Sub PaintGroup(g As Matter.Element.Groups)

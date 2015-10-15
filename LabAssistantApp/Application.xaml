@@ -4,5 +4,70 @@
     StartupUri="LoadWindow.xaml">
     <Application.Resources>
         
+        <PathSegmentCollection x:Key="logoPath">
+            <LineSegment Point="0.65,0"/>
+            <LineSegment Point="0.65,0.5"/>
+            <LineSegment Point="1,1"/>
+            <LineSegment Point="0,1"/>
+            <LineSegment Point="0.35,0.5"/>
+        </PathSegmentCollection>
+        
+        <Color x:Key="labBlueColor" A="255" G="162" B="255"/>
+        <SolidColorBrush x:Key="labBlueBrush" Color="{DynamicResource labBlueColor}"/>
+
+        <DrawingBrush x:Key="LogoBrush_Hollow">
+            <DrawingBrush.Drawing>
+                <GeometryDrawing>
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="White" Thickness="0.04"/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                        <PathGeometry>
+                            <PathFigure IsClosed="True" StartPoint="0.35,0" IsFilled="False" Segments="{DynamicResource logoPath}"/>
+                        </PathGeometry>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+
+        <DrawingBrush x:Key="LogoBrush_Full" Stretch="Fill">
+            <DrawingBrush.Drawing>
+                <GeometryDrawing Brush="White">
+                    <GeometryDrawing.Geometry>
+                        <PathGeometry>
+                            <PathFigure IsClosed="True" StartPoint="0.35,0" Segments="{DynamicResource logoPath}"/>
+                        </PathGeometry>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+
+        <DrawingBrush x:Key="tick" Stretch="Uniform">
+            <DrawingBrush.Drawing>
+                <DrawingGroup>
+                    <GeometryDrawing>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="White" Thickness="0.2" EndLineCap="Round" StartLineCap="Round"/>
+                        </GeometryDrawing.Pen>
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry>
+                                <PathFigure IsClosed="False" IsFilled="False" StartPoint="0,0.6">
+                                    <PathFigure.Segments>
+                                        <LineSegment Point="0.3,1"/>
+                                        <LineSegment Point="1,0"/>
+                                    </PathFigure.Segments>
+                                </PathFigure>
+                            </PathGeometry>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+        
+        <VisualBrush x:Key="infinity" Stretch="Uniform">
+            <VisualBrush.Visual>
+                <TextBlock Text="&#x221E;" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </VisualBrush.Visual>
+        </VisualBrush>
     </Application.Resources>
 </Application>
