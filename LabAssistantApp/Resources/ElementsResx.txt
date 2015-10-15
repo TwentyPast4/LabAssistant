@@ -1,0 +1,698 @@
+﻿Structure:
+	[Name]
+		[Symbol]
+		[Appearance]
+		[Atomic weight]
+		[Density]
+		[Oxidation states]
+		[Melting point]
+		[Boiling point]
+Elements:
+Hydrogen
+	H
+	Colourless gas
+	1.008
+	8988e-9
+	101
+	13.99
+	20.271
+Helium
+	He
+	Colourless gas, exhibiting a red-orange glow when placed in a high-voltage electric field
+	4.003
+	1786e-7
+	0
+	0.95
+	4.222
+Lithium
+	Li
+	Silvery-white (shown floating in oil)
+	6.94
+	0.534
+	1
+	453.65
+	1603
+Beryllium
+	Be
+	White-grey metallic
+	9.012
+	1.848
+	2
+	1560
+	3243
+Boron
+	B
+	Black-brown
+	10.81
+	2.46
+	3
+	2359
+	4200
+Carbon
+	C
+	Diamond: clear[n]Graphite: black
+	12.011
+	2.26
+	432101234
+	3915
+	3915
+Nitrogen
+	N
+	Colourless gas, liquid or solid
+	14.007
+	1251e-6
+	3035
+	63.15
+	77.355
+Oxygen
+	O
+	Colorless gas, pale blue liquid
+	15.999
+	1429e-6
+	20
+	54.36
+	90.188
+Fluorine
+	F
+	Gas: very pale yellow[n]Liquid: bright yellow[n]Solid: transparent (beta), opaque (alpha)
+	18.998
+	1696e-6
+	10
+	53.48
+	85.04
+Neon
+	Ne
+	Colorless gas exhibiting an orange-red glow when placed in a high voltage electric field
+	20.18
+	9e-4
+	0
+	24.56
+	27.104
+Sodium
+	Na
+	Silvery white metallic
+	22.99
+	0.968
+	1
+	370.994
+	1156.09
+Magnesium
+	Mg
+	Shiny grey solid
+	24.305
+	1.738
+	2
+	923
+	1363
+Aluminium
+	Al
+	Silvery grey metallic
+	26.982
+	2.7
+	3
+	933.47
+	2743
+Silicon
+	Si
+	Crystalline, reflective with bluish-tinged faces
+	28.085
+	2.33
+	404
+	1687
+	3538
+Phosphorus
+	P
+	Colourless, waxy white, yellow, scarlet, red, violet, black
+	30.974
+	1.823
+	3035
+	317.3
+	550
+Sulfur
+	S
+	Lemon yellow sintered microcrystals
+	32.066
+	1.96
+	20246
+	388.36
+	717.8
+Chlorine
+	Cl
+	Pale yellow-green gas
+	35.45
+	3214e-6
+	101357
+	171.6
+	239.11
+Argon
+	Ar
+	Colorless gas exhibiting a lilac/violet glow when placed in a high voltage electric field
+	39.948
+	1784e-6
+	0
+	83.81
+	87.302
+Potassium
+	K
+	Silvery grey
+	39.098
+	0.856
+	1
+	336.1
+	1032
+Calcium
+	Ca
+	Dull grey, silver
+	40.078
+	1.55
+	2
+	1115
+	1757
+Scandium
+	Sc
+	Silvery white
+	44.956
+	2.985
+	3
+	1814
+	3109
+Titanium
+	Ti
+	Silvery grey-white metallic
+	47.867
+	4.507
+	4
+	1941
+	3560
+Vanadium
+	V
+	Blue-silver-grey metal
+	50.942
+	6.11
+	5
+	2183
+	3680
+Chromium
+	Cr
+	Silvery metallic
+	51.996
+	7.14
+	36
+	2180
+	2755
+Manganese
+	Mn
+	Silvery metallic
+	54.938
+	7.47
+	247
+	1519
+	2334
+Iron
+	Fe
+	Lustrous metallic with a greyish tinge
+	55.845
+	7.874
+	236
+	1811
+	3134
+Cobalt
+	Co
+	Hard lustrous grey metal
+	58.933
+	8.9
+	23
+	1768
+	3200
+Nickel
+	Ni
+	Lustrous, metallic, and silver with a gold tinge
+	58.693
+	8.908
+	2
+	1728
+	3003
+Copper
+	Cu
+	Red-orange metallic luster
+	63.546
+	8.92
+	2
+	1357.77
+	2835
+Zinc
+	Zn
+	Silver-grey
+	65.38
+	7.14
+	2
+	692.68
+	1180
+Gallium
+	Ga
+	Silver-white
+	69.723
+	5.904
+	3
+	302.915
+	2673
+Germanium
+	Ge
+	Grayish-white
+	72.63
+	5.323
+	4024
+	1211.4
+	3106
+Arsenic
+	As
+	Metallic grey
+	74.923
+	5.727
+	3035
+	887
+	887
+Selenium
+	Se
+	Black and red allotropes
+	78.971
+	4.819
+	20246
+	494
+	958
+Bromine
+	Br
+	Gas/liquid: red-brown[n]Solid: metallic luster
+	79.904
+	3.12
+	101357
+	265.8
+	332
+Krypton
+	Kr
+	Colorless gas, exhibiting a whitish glow in a high electric field
+	83.798
+	375e-5
+	2
+	115.78
+	119.735
+Rubidium
+	Rb
+	Grey white
+	85.468
+	1.532
+	1
+	312.45
+	961
+Strontium
+	Sr
+	Silvery white metallic
+	87.62
+	2.63
+	2
+	1050
+	1650
+Yttrium
+	Y
+	Silvery white
+	88.906
+	4.472
+	3
+	1799
+	3203
+Zirconium
+	Zr
+	Silvery white
+	91.224
+	6.511
+	4
+	2128
+	4650
+Niobium
+	Nb
+	Grey metallic, bluish when oxidized
+	92.906
+	8.57
+	5
+	2750
+	5017
+Molybdenum
+	Mo
+	Grey metallic
+	95.95
+	10.28
+	46
+	2896
+	4912
+Technetium
+	Tc
+	Shiny grey metal
+	98
+	11.5
+	47
+	2430
+	4538
+Ruthenium
+	Ru
+	Silvery white metallic
+	101.07
+	12.37
+	34
+	2607
+	4423
+Rhodium
+	Rh
+	Silvery white metallic
+	102.906
+	12.45
+	3
+	2237
+	3968
+Palladium
+	Pd
+	Silvery white
+	106.42
+	12.023
+	24
+	1828.05
+	3236
+Silver
+	Ag
+	Lustrous white metal
+	107.868
+	10.49
+	1
+	1234.93
+	2483
+Cadmium
+	Cd
+	Silvery bluish-grey metallic
+	112.414
+	8.65
+	2
+	594.22
+	1040
+Indium
+	In
+	Silvery lustrous grey
+	114.818
+	7.31
+	3
+	429.75
+	2345
+Tin
+	Sn
+	Silvery (β) or grey (α)
+	118.71
+	7.31
+	4024
+	505.08
+	2875
+Antimony
+	Sb
+	Silvery lustrous grey
+	121.76
+	6.697
+	3035
+	903.78
+	1908
+Tellurium
+	Te
+	Silvery lustrous grey
+	127.6
+	6.24
+	20246
+	722.66
+	1261
+Iodine
+	I
+	Lustrous metallic grey, violet as a gas
+	126.904
+	4.94
+	101357
+	386.85
+	457.4
+Xenon
+	Xe
+	Colorless gas, exhibiting a blue glow when placed in a high voltage electric field
+	131.293
+	59e-4
+	246
+	161.4
+	165.051
+Caesium
+	Cs
+	Silvery gold
+	132.905
+	1.879
+	1
+	301.7
+	944
+Barium
+	Ba
+	Silvery grey
+	137.327
+	3.51
+	2
+	1000
+	1910
+Lanthanum
+	La
+	Silvery white
+	138.905
+	6.149
+	3
+	1193
+	3737
+Cerium
+	Ce
+	Silvery white
+	140.116
+	6.689
+	34
+	1068
+	3716
+Praseodymium
+	Pr
+	Greyish white
+	140.907
+	6.64
+	3
+	1208
+	3403
+Neodymium
+	Nd
+	Silvery white
+	144.242
+	7.01
+	3
+	1297
+	3347
+Promethium
+	Pm
+	Metallic
+	145
+	7.264
+	3
+	1315
+	3273
+Samarium
+	Sm
+	Silvery white
+	150.36
+	7.353
+	3
+	1345
+	2173
+Europium
+	Eu
+	Silvery white, but rarely seen without oxide discoloration
+	151.964
+	5.244
+	23
+	1099
+	1802
+Gadolinium
+	Gd
+	Silvery white
+	157.25
+	7.901
+	3
+	1585
+	3273
+Terbium
+	Tb
+	Silvery white
+	158.925
+	8.219
+	3
+	1629
+	3396
+Dysprosium
+	Dy
+	Silvery white
+	162.5
+	8.551
+	3
+	1680
+	2840
+Holmium
+	Ho
+	Silvery white
+	164.93
+	8.795
+	3
+	1734
+	2873
+Erbium
+	Er
+	Silvery white
+	167.259
+	9.066
+	3
+	1802
+	3141
+Thulium
+	Tm
+	Silvery grey
+	168.934
+	9.321
+	3
+	1818
+	2003
+Ytterbium
+	Yb
+	Silvery white
+	173.054
+	6.57
+	3
+	1097
+	1469
+Lutetium
+	Lu
+	Silvery white
+	174.967
+	9.841
+	3
+	1925
+	3675
+Hafnium
+	Hf
+	Steel grey
+	178.49
+	13.31
+	4
+	2506
+	4876
+Tantalum
+	Ta
+	Grey blue
+	180.947
+	16.65
+	5
+	3290
+	5731
+Tungsten
+	W
+	Greyish white, lustrous
+	183.84
+	19.25
+	46
+	3695
+	6203
+Rhenium
+	Re
+	Silvery white
+	186.207
+	21.02
+	4
+	3459
+	5869
+Osmium
+	Os
+	Silvery, blue cast
+	190.23
+	22.61
+	4
+	3306
+	5285
+Iridium
+	Ir
+	Silvery white
+	192.217
+	22.65
+	34
+	2719
+	4403
+Platinum
+	Pt
+	Greyish white
+	195.084
+	21.09
+	234
+	2041.4
+	4098
+Gold
+	Au
+	Metallic yellow
+	196.966
+	19.3
+	3
+	1337.33
+	3243
+Mercury
+	Hg
+	Silvery
+	200.592
+	13.534
+	12
+	234.32
+	629.88
+Thallium
+	Tl
+	Silvery white
+	204.382
+	11.85
+	13
+	577
+	1746
+Lead
+	Pb
+	Metallic grey
+	207.2
+	11.34
+	24
+	600.61
+	2022
+Bismuth
+	Bi
+	Lustrous silver
+	208.98
+	9.78
+	3
+	544.7
+	1837
+Polonium
+	Po
+	Silvery
+	209
+	9.196
+	2024
+	527
+	1235
+Astatine
+	At
+	Unknown, but probably metallic
+	210
+	6.35
+	101
+	575
+	610
+Radon
+	Rn
+	Colorless gas
+	222
+	973e-5
+	2
+	202
+	211.5

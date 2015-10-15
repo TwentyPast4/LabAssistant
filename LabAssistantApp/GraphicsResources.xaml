@@ -1,0 +1,439 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <PathSegmentCollection x:Key="logoPath">
+        <LineSegment Point="0.65,0"/>
+        <LineSegment Point="0.65,0.5"/>
+        <LineSegment Point="1,1"/>
+        <LineSegment Point="0,1"/>
+        <LineSegment Point="0.35,0.5"/>
+    </PathSegmentCollection>
+
+    <PathSegmentCollection x:Key="crossPath">
+        <LineSegment Point="0.5,0.35"/>
+        <LineSegment Point="0.85,0"/>
+        <LineSegment Point="1,0.15"/>
+        <LineSegment Point="0.65,0.5"/>
+        <LineSegment Point="1,0.85"/>
+        <LineSegment Point="0.85,1"/>
+        <LineSegment Point="0.5,0.65"/>
+        <LineSegment Point="0.15,1"/>
+        <LineSegment Point="0,0.85"/>
+        <LineSegment Point="0.35,0.5"/>
+        <LineSegment Point="0,0.15"/>
+    </PathSegmentCollection>
+
+    <PathSegmentCollection x:Key="disk_model">
+        <LineSegment Point="0,1"/>
+        <LineSegment Point="1,1"/>
+        <LineSegment Point="1,0.8"/>
+    </PathSegmentCollection>
+
+    <PathGeometry x:Key="maxPath">
+        <PathFigureCollection>
+            <PathFigure IsClosed="True" IsFilled="True" StartPoint="0,0">
+                <PathFigure.Segments>
+                    <LineSegment Point="1,0"/>
+                    <LineSegment Point="1,0.15"/>
+                    <LineSegment Point="0,0.15"/>
+                </PathFigure.Segments>
+            </PathFigure>
+            <PathFigure IsClosed="True" IsFilled="False" StartPoint="0,0">
+                <PathFigure.Segments>
+                    <LineSegment Point="1,0"/>
+                    <LineSegment Point="1,1"/>
+                    <LineSegment Point="0,1"/>
+                </PathFigure.Segments>
+            </PathFigure>
+        </PathFigureCollection>
+    </PathGeometry>
+
+    <Color x:Key="labBlueColor" A="255" G="162" B="255"/>
+    <SolidColorBrush x:Key="labBlueBrush" Color="{DynamicResource labBlueColor}"/>
+
+    <DrawingBrush x:Key="LogoBrush_Hollow">
+        <DrawingBrush.Drawing>
+            <GeometryDrawing>
+                <GeometryDrawing.Pen>
+                    <Pen Brush="White" Thickness="0.04"/>
+                </GeometryDrawing.Pen>
+                <GeometryDrawing.Geometry>
+                    <PathGeometry>
+                        <PathFigure IsClosed="True" StartPoint="0.35,0" IsFilled="False" Segments="{DynamicResource logoPath}"/>
+                    </PathGeometry>
+                </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <DrawingBrush x:Key="LogoBrush_Full" Stretch="Fill">
+        <DrawingBrush.Drawing>
+            <GeometryDrawing Brush="White">
+                <GeometryDrawing.Geometry>
+                    <PathGeometry>
+                        <PathFigure IsClosed="True" StartPoint="0.35,0" Segments="{DynamicResource logoPath}"/>
+                    </PathGeometry>
+                </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <DrawingBrush x:Key="cross_Full" Stretch="Fill">
+        <DrawingBrush.Drawing>
+            <GeometryDrawing Brush="White">
+                <GeometryDrawing.Geometry>
+                    <PathGeometry>
+                        <PathFigure IsClosed="True" StartPoint="0.15,0" Segments="{DynamicResource crossPath}"/>
+                    </PathGeometry>
+                </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <DrawingBrush x:Key="max_Full" Stretch="Fill">
+        <DrawingBrush.Drawing>
+            <GeometryDrawing Brush="White" Geometry="{DynamicResource maxPath}">
+                <GeometryDrawing.Pen>
+                    <Pen Brush="White" Thickness="0.1"/>
+                </GeometryDrawing.Pen>
+            </GeometryDrawing>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <DrawingBrush x:Key="min_Full" Stretch="Uniform" AlignmentY="Bottom">
+        <DrawingBrush.Drawing>
+            <GeometryDrawing Brush="White">
+                <GeometryDrawing.Geometry>
+                    <PathGeometry>
+                        <PathFigure IsClosed="True" IsFilled="True" StartPoint="0,0.85">
+                            <PathFigure.Segments>
+                                <LineSegment Point="1,0.85"/>
+                                <LineSegment Point="1,1"/>
+                                <LineSegment Point="0,1"/>
+                            </PathFigure.Segments>
+                        </PathFigure>
+                    </PathGeometry>
+                </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <DrawingBrush x:Key="save_Full" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <GeometryDrawing Brush="White">
+                <GeometryDrawing.Pen>
+                    <Pen Brush="White" Thickness="0.1"/>
+                </GeometryDrawing.Pen>
+                <GeometryDrawing.Geometry>
+                    <PathGeometry>
+                        <PathFigureCollection>
+                            <PathFigure IsClosed="False" IsFilled="False" StartPoint="0,0.8" Segments="{DynamicResource disk_model}"/>
+                            <PathFigure IsClosed="False" IsFilled="False" StartPoint="0.15,0.85">
+                                <PathFigure.Segments>
+                                    <LineSegment Point="0.85,0.85"/>
+                                </PathFigure.Segments>
+                            </PathFigure>
+                            <PathFigure IsClosed="True" IsFilled="True" StartPoint="0.42,0">
+                                <PathFigure.Segments>
+                                    <LineSegment Point="0.58,0"/>
+                                    <LineSegment Point="0.58,0.3"/>
+                                    <LineSegment Point="0.7,0.3"/>
+                                    <LineSegment Point="0.5,0.55"/>
+                                    <LineSegment Point="0.3,0.3"/>
+                                    <LineSegment Point="0.42,0.3"/>
+                                </PathFigure.Segments>
+                            </PathFigure>
+                        </PathFigureCollection>
+                    </PathGeometry>
+                </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <DrawingBrush x:Key="load_Full" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <GeometryDrawing Brush="White">
+                <GeometryDrawing.Pen>
+                    <Pen Brush="White" Thickness="0.1"/>
+                </GeometryDrawing.Pen>
+                <GeometryDrawing.Geometry>
+                    <PathGeometry>
+                        <PathFigureCollection>
+                            <PathFigure IsClosed="False" IsFilled="False" StartPoint="0,0.8" Segments="{DynamicResource disk_model}"/>
+                            <PathFigure IsClosed="False" IsFilled="False" StartPoint="0.15,0">
+                                <PathFigure.Segments>
+                                    <LineSegment Point="0.85,0"/>
+                                </PathFigure.Segments>
+                            </PathFigure>
+                            <PathFigure IsClosed="True" IsFilled="True" StartPoint="0.5,0.25">
+                                <PathFigure.Segments>
+                                    <LineSegment Point="0.7,0.5"/>
+                                    <LineSegment Point="0.58,0.5"/>
+                                    <LineSegment Point="0.58,0.8"/>
+                                    <LineSegment Point="0.42,0.8"/>
+                                    <LineSegment Point="0.42,0.5"/>
+                                    <LineSegment Point="0.3,0.5"/>
+                                </PathFigure.Segments>
+                            </PathFigure>
+                        </PathFigureCollection>
+                    </PathGeometry>
+                </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <DrawingBrush x:Key="new_Full" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing Brush="White">
+                    <GeometryDrawing.Geometry>
+                        <PathGeometry>
+                            <PathFigure IsClosed="True" IsFilled="True" StartPoint="0.35,0" Segments="{DynamicResource logoPath}"/>
+                        </PathGeometry>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="LimeGreen">
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="Black" Thickness="0.02"/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                        <PathGeometry>
+                            <PathFigureCollection>
+                                <PathFigure IsClosed="True" IsFilled="True" StartPoint="0.7,0.5">
+                                    <PathFigure.Segments>
+                                        <LineSegment Point="0.8,0.5"/>
+                                        <LineSegment Point="0.8,0.7"/>
+                                        <LineSegment Point="1,0.7"/>
+                                        <LineSegment Point="1,0.8"/>
+                                        <LineSegment Point="0.8,0.8"/>
+                                        <LineSegment Point="0.8,1"/>
+                                        <LineSegment Point="0.7,1"/>
+                                        <LineSegment Point="0.7,0.8"/>
+                                        <LineSegment Point="0.5,0.8"/>
+                                        <LineSegment Point="0.5,0.7"/>
+                                        <LineSegment Point="0.7,0.7"/>
+                                    </PathFigure.Segments>
+                                </PathFigure>
+                            </PathFigureCollection>
+                        </PathGeometry>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <DrawingBrush x:Key="elementBrush" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <GeometryDrawing>
+                <GeometryDrawing.Pen>
+                    <Pen Brush="White" Thickness="0.05"/>
+                </GeometryDrawing.Pen>
+                <GeometryDrawing.Geometry>
+                    <PathGeometry>
+                        <PathFigureCollection>
+                            <PathFigure IsClosed="True" IsFilled="False" StartPoint="0,0">
+                                <PathFigure.Segments>
+                                    <LineSegment Point="1,0"/>
+                                    <LineSegment Point="1,1"/>
+                                    <LineSegment Point="0,1"/>
+                                </PathFigure.Segments>
+                            </PathFigure>
+                            <PathFigure IsClosed="False" IsFilled="False" StartPoint="0.4,0.75">
+                                <PathFigure.Segments>
+                                    <LineSegment Point="0.4,0.25"/>
+                                    <LineSegment Point="0.6,0.25"/>
+                                </PathFigure.Segments>
+                            </PathFigure>
+                            <PathFigure IsClosed="False" IsFilled="False" StartPoint="0.4,0.5">
+                                <PathFigure.Segments>
+                                    <LineSegment Point="0.6,0.5"/>
+                                </PathFigure.Segments>
+                            </PathFigure>
+                        </PathFigureCollection>
+                    </PathGeometry>
+                </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <DrawingBrush x:Key="compoundBrush" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing Brush="White">
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="White" Thickness="0.07"/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                        <GeometryGroup>
+                            <PathGeometry>
+                                <PathFigure IsClosed="False" IsFilled="False" StartPoint="0.15,0.15">
+                                    <PathFigure.Segments>
+                                        <LineSegment Point="0.5,0.73"/>
+                                        <LineSegment Point="0.85,0.15"/>
+                                    </PathFigure.Segments>
+                                </PathFigure>
+                            </PathGeometry>
+                            <EllipseGeometry RadiusX="0.15" RadiusY="0.15" Center="0.15,0.15"/>
+                            <EllipseGeometry RadiusX="0.15" RadiusY="0.15" Center="0.85,0.15"/>
+                        </GeometryGroup>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="Red">
+                    <GeometryDrawing.Geometry>
+                        <GeometryGroup>
+                            <EllipseGeometry RadiusX="0.27" RadiusY="0.27" Center="0.5,0.73"/>
+                        </GeometryGroup>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <DrawingBrush x:Key="organicBrush" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing>
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="White" Thickness="0.07"/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                        <PathGeometry>
+                            <PathFigure IsClosed="False" IsFilled="False" StartPoint="0.15,0.15">
+                                <PathFigure.Segments>
+                                    <LineSegment Point="0.5,0.73"/>
+                                    <LineSegment Point="0.85,0.15"/>
+                                </PathFigure.Segments>
+                            </PathFigure>
+                        </PathGeometry>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="Red">
+                    <GeometryDrawing.Geometry>
+                        <GeometryGroup>
+                            <EllipseGeometry RadiusX="0.15" RadiusY="0.15" Center="0.15,0.15"/>
+                            <EllipseGeometry RadiusX="0.15" RadiusY="0.15" Center="0.85,0.15"/>
+                        </GeometryGroup>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="Black">
+                    <GeometryDrawing.Geometry>
+                        <GeometryGroup>
+                            <EllipseGeometry RadiusX="0.27" RadiusY="0.27" Center="0.5,0.73"/>
+                        </GeometryGroup>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <DrawingBrush x:Key="onOffBrush" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing>
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="White" Thickness="0.12" EndLineCap="Round" StartLineCap="Round"/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                        <PathGeometry>
+                            <PathFigureCollection>
+                                <PathFigure IsClosed="False" IsFilled="False" StartPoint="0.15,0.15">
+                                    <PathFigure.Segments>
+                                        <ArcSegment Point="0,0.5" Size="0.5,0.5"/>
+                                        <ArcSegment Point="0.5,1" Size="0.5,0.5"/>
+                                        <ArcSegment Point="1,0.5" Size="0.5,0.5"/>
+                                        <ArcSegment Point="0.85,0.15" Size="0.5,0.5"/>
+                                    </PathFigure.Segments>
+                                </PathFigure>
+                                <PathFigure IsClosed="False" IsFilled="False" StartPoint="0.5,0">
+                                    <PathFigure.Segments>
+                                        <LineSegment Point="0.5,0.5"/>
+                                    </PathFigure.Segments>
+                                </PathFigure>
+                            </PathFigureCollection>
+                        </PathGeometry>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    
+
+    <SolidColorBrush x:Key="AlkaliMetals" Color="#FFFF4600"/>
+    <SolidColorBrush x:Key="AlkalineEarthMetals" Color="#FFFFA200"/>
+    <SolidColorBrush x:Key="Halogens" Color="#FF005DFF"/>
+    <SolidColorBrush x:Key="Lanthanides" Color="#FF00FF8B"/>
+    <SolidColorBrush x:Key="Metalloids" Color="Cyan"/>
+    <SolidColorBrush x:Key="NobleGases" Color="#FFC500FF"/>
+    <SolidColorBrush x:Key="NonMetals" Color="#FF00B9FF"/>
+    <SolidColorBrush x:Key="Post_transitionMetals" Color="Lime"/>
+    <SolidColorBrush x:Key="TransitionMetals" Color="Yellow"/>
+
+    <Style x:Key="labWindow" TargetType="Window">
+        <Setter Property="WindowStyle" Value="None"/>
+        <Setter Property="ResizeMode" Value="NoResize"/>
+        <Setter Property="FontFamily" Value="Gadugi"/>
+        <Setter Property="MaxHeight" Value="{Binding Source={x:Static SystemParameters.WorkArea}, Path=Height}"/>
+        <Setter Property="MaxWidth" Value="{Binding Source={x:Static SystemParameters.WorkArea}, Path=Width}"/>
+    </Style>
+
+    <DrawingBrush x:Key="leftArrow" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing>
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="White" Thickness="0.12"/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                        <PathGeometry>
+                            <PathFigureCollection>
+                                <PathFigure IsClosed="False" IsFilled="False" StartPoint="0.5,0">
+                                    <PathFigure.Segments>
+                                        <LineSegment Point="0,0.5"/>
+                                        <LineSegment Point="0.5,1"/>
+                                    </PathFigure.Segments>
+                                </PathFigure>
+                                <PathFigure IsClosed="False" IsFilled="False" StartPoint="1,0">
+                                    <PathFigure.Segments>
+                                        <LineSegment Point="0.5,0.5"/>
+                                        <LineSegment Point="1,1"/>
+                                    </PathFigure.Segments>
+                                </PathFigure>
+                            </PathFigureCollection>
+                        </PathGeometry>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <DrawingBrush x:Key="rightArrow" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing>
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="White" Thickness="0.12"/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                        <PathGeometry>
+                            <PathFigureCollection>
+                                <PathFigure IsClosed="False" IsFilled="False" StartPoint="0.5,0">
+                                    <PathFigure.Segments>
+                                        <LineSegment Point="1,0.5"/>
+                                        <LineSegment Point="0.5,1"/>
+                                    </PathFigure.Segments>
+                                </PathFigure>
+                                <PathFigure IsClosed="False" IsFilled="False" StartPoint="0,0">
+                                    <PathFigure.Segments>
+                                        <LineSegment Point="0.5,0.5"/>
+                                        <LineSegment Point="0,1"/>
+                                    </PathFigure.Segments>
+                                </PathFigure>
+                            </PathFigureCollection>
+                        </PathGeometry>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+</ResourceDictionary>

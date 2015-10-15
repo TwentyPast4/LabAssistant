@@ -1,0 +1,380 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:local="clr-namespace:LabAssistantApp" x:Class="MainWindow"
+    Title="Lab Assistant" Height="618" Width="1078" WindowStartupLocation="CenterScreen" Background="#FF383838" FontSize="15" Style="{DynamicResource labWindow}">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="GraphicsResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <SolidColorBrush x:Key="labBorder" Color="#FF2E2E2E"/>
+            <Style x:Key="toolbarButton" TargetType="{x:Type Button}">
+                <Setter Property="OverridesDefaultStyle" Value="True"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Width" Value="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}}"/>
+                <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                <Setter Property="Opacity" Value="0.4"/>
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect BlurRadius="5" ShadowDepth="0"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Grid x:Name="buttonBase" Background="Transparent">
+                                <Rectangle Fill="{TemplateBinding Background}" OpacityMask="{TemplateBinding OpacityMask}"/>
+                            </Grid>
+                        </ControlTemplate>
+
+                    </Setter.Value>
+                </Setter>
+                <EventSetter Event="UIElement.MouseEnter" Handler="handleToolbarEnter"/>
+                <EventSetter Event="UIElement.MouseLeave" Handler="handleToolbarLeave"/>
+                <EventSetter Event="ButtonBase.Click" Handler="handleToolbarClick"/>
+                <EventSetter Event="UIElement.MouseLeftButtonDown" Handler="handleToolbarDown"/>
+                <EventSetter Event="UIElement.MouseLeftButtonUp" Handler="handleToolbarUp"/>
+            </Style>
+            <sys:Double x:Key="itemHeight">35</sys:Double>
+            <sys:Double x:Key="labelHeight">25</sys:Double>
+            <Style x:Key="menuLabel" TargetType="{x:Type Label}">
+                <Setter Property="Background" Value="{x:Null}"/>
+                <Setter Property="Foreground" Value="Gray"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="BorderThickness" Value="0,0,0,1"/>
+                <Setter Property="BorderBrush" Value="#FF636363"/>
+                <Setter Property="Height" Value="{StaticResource labelHeight}"/>
+                <Setter Property="Padding" Value="5,0,0,0"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+                <Setter Property="VerticalContentAlignment" Value="Bottom"/>
+                <Setter Property="Width" Value="Auto"/>
+            </Style>
+
+            <Style x:Key="menuBtnStyle" TargetType="{x:Type local:ImageButton}">
+                <Setter Property="VerticalAlignment" Value="Top"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="Width" Value="Auto"/>
+                <Setter Property="Height" Value="{StaticResource itemHeight}"/>
+                <Setter Property="ImageTransform">
+                    <Setter.Value>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.6" ScaleY="0.6"/>
+                        </TransformGroup>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="TextPadding" Value="7,0"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="SelectedBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,0" StartPoint="1,0" MappingMode="RelativeToBoundingBox" Opacity="1">
+                            <GradientStop Color="{DynamicResource labBlueColor}" Offset="0"/>
+                            <GradientStop Color="#0000A2FF" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <EventSetter Event="Click" Handler="handleMenuClick"/>
+            </Style>
+
+            <Style x:Key="borderWidgetStyle" TargetType="{x:Type Border}">
+                <Setter Property="BorderBrush" Value="{StaticResource labBlueBrush}"/>
+                <EventSetter Event="UIElement.MouseLeftButtonDown" Handler="handleBorderMouseDown"/>
+            </Style>
+            <Style x:Key="TabControl_plain" TargetType="{x:Type TabControl}">
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="BorderBrush" Value="#FFACACAC"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type TabControl}">
+                            <Grid x:Name="templateRoot" ClipToBounds="True" SnapsToDevicePixels="True" KeyboardNavigation.TabNavigation="Local">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition x:Name="ColumnDefinition0"/>
+                                    <ColumnDefinition x:Name="ColumnDefinition1" Width="0"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition x:Name="RowDefinition0" Height="Auto"/>
+                                    <RowDefinition x:Name="RowDefinition1" Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Border x:Name="ContentPanel" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Grid.Column="0" KeyboardNavigation.DirectionalNavigation="Contained" Grid.Row="1" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local">
+                                    <ContentPresenter x:Name="PART_SelectedContentHost" ContentTemplate="{TemplateBinding SelectedContentTemplate}" Content="{TemplateBinding SelectedContent}" ContentStringFormat="{TemplateBinding SelectedContentStringFormat}" ContentSource="SelectedContent" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                </Border>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter Property="TextElement.Foreground" TargetName="templateRoot" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+        
+    </Window.Resources>
+
+    <Border x:Name="windowBorder" BorderBrush="{DynamicResource labBlueBrush}" BorderThickness="1">
+
+        <Grid x:Name="contentGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition MaxHeight="31" MinHeight="31"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid x:Name="topBorder" Margin="0" Background="{DynamicResource labBorder}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="3"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="6*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" Orientation="Horizontal">
+                    <Canvas HorizontalAlignment="Left" Width="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}}" Background="{DynamicResource LogoBrush_Hollow}"/>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Title, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:MainWindow}}}" Foreground="#FFE2E2E2" Padding="7,0,0,0" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Fixed" VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right" Grid.Row="1" Orientation="Horizontal" FlowDirection="RightToLeft">
+                    <Button x:Name="exitBtn" Background="White" OpacityMask="{DynamicResource cross_Full}" Style="{DynamicResource toolbarButton}"/>
+                    <Button x:Name="maxBtn" Background="White" Style="{DynamicResource toolbarButton}" OpacityMask="{DynamicResource max_Full}" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Margin="10,0,0,0">
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
+                    </Button>
+                    <Button x:Name="minBtn" Background="White" Style="{DynamicResource toolbarButton}" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Margin="10,0,0,0" OpacityMask="{DynamicResource min_Full}">
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <Border x:Name="contentBorder" BorderBrush="{DynamicResource labBorder}" BorderThickness="3,0,3,3" Grid.Row="1">
+                <Grid x:Name="displayGrid">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="leftPanel">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel x:Name="menuStackPanel" HorizontalAlignment="Left">
+                            <Label Content="Actions" Style="{DynamicResource menuLabel}" Background="{x:Null}"/>
+                            <local:ImageButton Tag="save" Text="Save" ImageBrush="{DynamicResource save_Full}" Style="{DynamicResource menuBtnStyle}" Width="Auto" IsEnabled="False"/>
+                            <local:ImageButton Tag="load" Text="Load" ImageBrush="{DynamicResource load_Full}" Style="{DynamicResource menuBtnStyle}" Width="Auto"/>
+                            <local:ImageButton Tag="new" Text="New" ImageBrush="{DynamicResource new_Full}" Style="{DynamicResource menuBtnStyle}" VerticalAlignment="Top" Width="Auto"/>
+                            <Label Content="Library" Style="{DynamicResource menuLabel}" Background="{x:Null}"/>
+                            <local:ImageButton x:Name="tableMenuBtn" Tag="table" Text="Table of elements" ImageBrush="{DynamicResource elementBrush}" Style="{DynamicResource menuBtnStyle}" Width="Auto" IsSelected="True"/>
+                            <local:ImageButton Tag="inorganic" Text="Inorganics" ImageBrush="{DynamicResource compoundBrush}" Style="{DynamicResource menuBtnStyle}" Width="Auto"/>
+                            <local:ImageButton Tag="organic" Text="Organics" ImageBrush="{DynamicResource organicBrush}" Style="{DynamicResource menuBtnStyle}" Width="Auto"/>
+                            <Label Content="Laboratory" Style="{DynamicResource menuLabel}" Background="{x:Null}"/>
+                            <Label Content="Settings" Style="{DynamicResource menuLabel}" Background="{x:Null}"/>
+                            <local:ImageButton Tag="start" Text="Startup" ImageBrush="{DynamicResource onOffBrush}" Style="{DynamicResource menuBtnStyle}" Width="Auto"/>
+                        </StackPanel>
+                        <local:ImageButton x:Name="panelHider" Tag="hide" Text="Hide panel" ImageBrush="{DynamicResource leftArrow}" Style="{DynamicResource menuBtnStyle}" Grid.Row="1" Width="Auto"/>
+                    </Grid>
+                    <TabControl x:Name="tabDisplay" Grid.Column="1" BorderBrush="{DynamicResource labBlueBrush}" Background="#FF404040" Style="{DynamicResource TabControl_plain}" SelectedIndex="0" BorderThickness="2,0,0,0">
+                        <TabItem x:Name="tableTabPage" Header="TabItem" BorderThickness="2,0,0,0">
+                            <Grid Background="#FF464646">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="20"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="20"/>
+                                </Grid.RowDefinitions>
+                                <Viewbox x:Name="tableViewbox" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top">
+                                    <Viewbox.Resources>
+                                        <Style TargetType="{x:Type local:TableButton}">
+                                            <Setter Property="HorizontalAlignment" Value="Left"/>
+                                            <Setter Property="VerticalAlignment" Value="Top"/>
+                                            <Setter Property="BorderThickness" Value="2"/>
+                                        </Style>
+                                    </Viewbox.Resources>
+                                    <Grid HorizontalAlignment="Right">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <local:TableButton x:Name="hydrogenButton" Tag="1"/>
+                                        <local:TableButton HorizontalAlignment="Right" Tag="2"/>
+                                        <StackPanel Grid.Row="1" Orientation="Horizontal">
+                                            <local:TableButton Tag="3"/>
+                                            <local:TableButton Tag="4"/>
+                                        </StackPanel>
+                                        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                                            <local:TableButton Tag="5"/>
+                                            <local:TableButton Tag="6"/>
+                                            <local:TableButton Tag="7"/>
+                                            <local:TableButton Tag="8"/>
+                                            <local:TableButton Tag="9"/>
+                                            <local:TableButton Tag="10"/>
+                                        </StackPanel>
+                                        <StackPanel Grid.Row="2" Orientation="Horizontal">
+                                            <local:TableButton Tag="11"/>
+                                            <local:TableButton Tag="12"/>
+                                        </StackPanel>
+                                        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                                            <local:TableButton Tag="13"/>
+                                            <local:TableButton Tag="14"/>
+                                            <local:TableButton Tag="15"/>
+                                            <local:TableButton Tag="16"/>
+                                            <local:TableButton Tag="17"/>
+                                            <local:TableButton Tag="18"/>
+                                        </StackPanel>
+                                        <StackPanel Grid.Row="3" Orientation="Horizontal">
+                                            <local:TableButton Tag="19"/>
+                                            <local:TableButton Tag="20"/>
+                                            <local:TableButton Tag="21"/>
+                                            <local:TableButton Tag="22"/>
+                                            <local:TableButton Tag="23"/>
+                                            <local:TableButton Tag="24"/>
+                                            <local:TableButton Tag="25"/>
+                                            <local:TableButton Tag="26"/>
+                                            <local:TableButton Tag="27"/>
+                                            <local:TableButton Tag="28"/>
+                                            <local:TableButton Tag="29"/>
+                                            <local:TableButton Tag="30"/>
+                                            <local:TableButton Tag="31"/>
+                                            <local:TableButton Tag="32"/>
+                                            <local:TableButton Tag="33"/>
+                                            <local:TableButton Tag="34"/>
+                                            <local:TableButton Tag="35"/>
+                                            <local:TableButton Tag="36"/>
+                                        </StackPanel>
+                                        <StackPanel Grid.Row="4" Orientation="Horizontal">
+                                            <local:TableButton Tag="37"/>
+                                            <local:TableButton Tag="38"/>
+                                            <local:TableButton Tag="39"/>
+                                            <local:TableButton Tag="40"/>
+                                            <local:TableButton Tag="41"/>
+                                            <local:TableButton Tag="42"/>
+                                            <local:TableButton Tag="43"/>
+                                            <local:TableButton Tag="44"/>
+                                            <local:TableButton Tag="45"/>
+                                            <local:TableButton Tag="46"/>
+                                            <local:TableButton Tag="47"/>
+                                            <local:TableButton Tag="48"/>
+                                            <local:TableButton Tag="49"/>
+                                            <local:TableButton Tag="50"/>
+                                            <local:TableButton Tag="51"/>
+                                            <local:TableButton Tag="52"/>
+                                            <local:TableButton Tag="53"/>
+                                            <local:TableButton Tag="54"/>
+                                        </StackPanel>
+                                        <StackPanel Grid.Row="5" Orientation="Horizontal">
+                                            <local:TableButton Tag="55"/>
+                                            <local:TableButton Tag="56"/>
+                                            <local:TableButton Tag="Lanthanides"/>
+                                            <local:TableButton Tag="72"/>
+                                            <local:TableButton Tag="73"/>
+                                            <local:TableButton Tag="74"/>
+                                            <local:TableButton Tag="75"/>
+                                            <local:TableButton Tag="76"/>
+                                            <local:TableButton Tag="77"/>
+                                            <local:TableButton Tag="78"/>
+                                            <local:TableButton Tag="79"/>
+                                            <local:TableButton Tag="80"/>
+                                            <local:TableButton Tag="81"/>
+                                            <local:TableButton Tag="82"/>
+                                            <local:TableButton Tag="83"/>
+                                            <local:TableButton Tag="84"/>
+                                            <local:TableButton Tag="85"/>
+                                            <local:TableButton Tag="86"/>
+                                        </StackPanel>
+                                        <Rectangle Grid.Row="6" Height="{Binding ActualHeight, ElementName=hydrogenButton, Mode=OneWay}"/>
+                                        <StackPanel x:Name="LanthanidesStackPanel" Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <local:TableButton Tag="57"/>
+                                            <local:TableButton Tag="58"/>
+                                            <local:TableButton Tag="59"/>
+                                            <local:TableButton Tag="60"/>
+                                            <local:TableButton Tag="61"/>
+                                            <local:TableButton Tag="62"/>
+                                            <local:TableButton Tag="63"/>
+                                            <local:TableButton Tag="64"/>
+                                            <local:TableButton Tag="65"/>
+                                            <local:TableButton Tag="66"/>
+                                            <local:TableButton Tag="67"/>
+                                            <local:TableButton Tag="68"/>
+                                            <local:TableButton Tag="69"/>
+                                            <local:TableButton Tag="70"/>
+                                            <local:TableButton Tag="71"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Viewbox>
+                            </Grid>
+                        </TabItem>
+                        <TabItem x:Name="inorganicsPage" Header="TabItem">
+                            <DataGrid x:Name="inorganicGrid" AutoGenerateColumns="False" Background="Gray" Foreground="#FFE4E4E4" BorderThickness="1,0,0,0" ColumnHeaderHeight="30" HeadersVisibility="Column" CanUserResizeRows="False" CanUserDeleteRows="False" CanUserAddRows="False" RowHeight="25" RowBackground="#FF383838" AlternatingRowBackground="#FF474747" RowDetailsVisibilityMode="Collapsed" SelectionMode="Single">
+                                <DataGrid.Resources>
+                                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#FF005A7C"/>
+                                </DataGrid.Resources>
+                                <DataGrid.ColumnHeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="Background">
+                                            <Setter.Value>
+                                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                    <GradientStop Color="#FFB0B0B0" Offset="1"/>
+                                                    <GradientStop Color="#FFCBCBCB" Offset="0"/>
+                                                </LinearGradientBrush>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Setter Property="BorderBrush" Value="Black"/>
+                                        <Setter Property="BorderThickness" Value="0,0,1,0"/>
+                                        <Setter Property="Foreground" Value="#FF1D1D1D"/>
+                                        <Setter Property="Padding" Value="5,0"/>
+                                    </Style>
+                                </DataGrid.ColumnHeaderStyle>
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Name" SortDirection="Descending" SortMemberPath="Name" IsReadOnly="True" Binding="{Binding Name}"/>
+                                    <DataGridTextColumn Header="Formula" SortMemberPath="FormulaString" IsReadOnly="True" Binding="{Binding Formula}"/>
+                                    <DataGridTextColumn Header="State" SortMemberPath="State" IsReadOnly="True" Binding="{Binding State}"/>
+                                    <DataGridTextColumn Header="Appearance" SortMemberPath="Appearance" IsReadOnly="True" Binding="{Binding Appearance}"/>
+                                    <DataGridTextColumn Header="Molar Mass" SortMemberPath="MolarMass" IsReadOnly="True" Binding="{Binding MolarMass}"/>
+                                    <DataGridTextColumn Header="Density" SortMemberPath="Density" IsReadOnly="True" Binding="{Binding Density}"/>
+                                    <DataGridTextColumn Header="Melting Point" SortMemberPath="MeltingPoint" IsReadOnly="True" Binding="{Binding MeltingPoint}"/>
+                                    <DataGridTextColumn Header="Boiling Point" SortMemberPath="BoilingPoint" IsReadOnly="True" Binding="{Binding BoilingPoint}"/>
+                                    <DataGridTextColumn Header="Solubility" SortMemberPath="Solubility" IsReadOnly="True" Binding="{Binding Solubility}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </Border>
+            <Border x:Name="lowLeftBorder" BorderThickness="3,0,0,3" HorizontalAlignment="Left" Height="30" VerticalAlignment="Bottom" Width="30" Grid.Row="1" Cursor="SizeNESW" Style="{DynamicResource borderWidgetStyle}"/>
+            <Border x:Name="midLeftBorder" BorderThickness="3,0,0,0" HorizontalAlignment="Left" Height="30" VerticalAlignment="Center" Grid.Row="1" Cursor="SizeWE" Style="{DynamicResource borderWidgetStyle}"/>
+            <Border x:Name="lowRightBorder" BorderThickness="0,0,3,3" HorizontalAlignment="Right" Height="30" VerticalAlignment="Bottom" Width="30" Grid.Row="1" Cursor="SizeNWSE" Style="{DynamicResource borderWidgetStyle}"/>
+            <Border x:Name="midRightBorder" BorderThickness="3,0,0,0" HorizontalAlignment="Right" Height="30" VerticalAlignment="Center" Grid.Row="1" Cursor="SizeWE" Style="{DynamicResource borderWidgetStyle}"/>
+            <Border x:Name="midBottomBorder" BorderThickness="0,0,0,3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="1" Cursor="SizeNS" Width="30" Style="{DynamicResource borderWidgetStyle}"/>
+
+        </Grid>
+    </Border>
+</Window>

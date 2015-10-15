@@ -1,0 +1,33 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:LabAssistantApp" x:Class="LoadWindow"
+    Title="LoadWindow" Height="300" Width="396" ResizeMode="NoResize" WindowStyle="None" BorderBrush="{DynamicResource labBlueBrush}" BorderThickness="1" Background="{DynamicResource GrayBrush}" ContentRendered="HandleContentRender" FontFamily="Gadugi" FontSize="36" WindowStartupLocation="CenterScreen" Topmost="True">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="GraphicsResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <SolidColorBrush x:Key="GrayBrush" Color="#FF232323"/>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Border x:Name="iconGrid" HorizontalAlignment="Center" Width="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}}" Background="{DynamicResource LogoBrush_Hollow}" Grid.Row="4">
+            <Border x:Name="fillGrid" OpacityMask="{DynamicResource LogoBrush_Full}" Background="{DynamicResource GrayBrush}" Margin="3,2">
+                <Rectangle x:Name="fillRectangle" VerticalAlignment="Bottom" Height="0"/>
+            </Border>
+        </Border>
+        <TextBlock HorizontalAlignment="Center" Margin="93,2,93,0" TextWrapping="Wrap" Text="Lab Assistant" VerticalAlignment="Top" Foreground="{DynamicResource labBlueBrush}" Grid.Row="1"/>
+        <TextBlock x:Name="versionText" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Text="v 1.0" VerticalAlignment="Top" Foreground="{DynamicResource labBlueBrush}" Grid.Row="2" FontSize="12"/>
+        <TextBlock x:Name="statusText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="status" VerticalAlignment="Center" Foreground="{DynamicResource labBlueBrush}" FontSize="12" Grid.Row="5"/>
+    </Grid>
+</Window>

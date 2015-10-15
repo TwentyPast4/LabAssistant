@@ -1,0 +1,3866 @@
+Structure:
+	[IUPAC name]
+		[Formula]
+		[Appearance]
+		[Density]
+		[Melting]
+		[Boiling]
+		[Solubility]
+Compounds:
+Aluminium antimonide
+	AlSb
+	Black crystals
+	4.36
+	1330
+	2740
+	Insoluble
+Aluminium arsenide
+	AlAs
+	Orange crystals
+	3.72
+	2013
+	[]
+	Reacts
+Aluminium nitride
+	AlN
+	White to pale-yellow solid
+	3.26
+	2470
+	[]
+	Reacts
+Aluminium oxide
+	Al2O3
+	White solid
+	4
+	2345
+	3250
+	Insoluble
+Aluminium phosphide
+	AlP
+	Yellow or gray crystals
+	2.85
+	2800
+	[]
+	Reacts
+Aluminium chloride
+	AlCl3
+	White or pale-yellow solid
+	1.3
+	373
+	393
+	43.9 g/100 ml (0 [Deg]C)[n]44.9 g/100 ml (10 [Deg]C)[n]45.8 g/100 ml (20 [Deg]C)[n]46.6 g/100 ml (30 [Deg]C)[n]47.3 g/100 ml (40 [Deg]C)[n]48.1 g/100 ml (60 [Deg]C)[n]48.6 g/100 ml (80 [Deg]C)[n]49 g/100 ml (100 [Deg]C)
+Aluminium fluoride
+	AlF3
+	White. crystaline solid
+	2.1
+	1564
+	[]
+	0.56 g/100 mL (0 [Deg]C)[n]0.67 g/100 mL (20 [Deg]C)[n]1.72 g/100 mL (100 [Deg]C)
+Aluminium hydroxide
+	Al(OH)3
+	White amorphous powder
+	2.42
+	573
+	[]
+	Insoluble
+Aluminium nitrate
+	Al(NO3)3
+	White solid. hygroscopic
+	1.72
+	347
+	423
+	anhydrous:[n]60.0 g/100ml (0[Deg]C)[n]73.9 g/100ml (20 [Deg]C)[n]160 g/100ml (100 [Deg]C)[n]nonahydrate:[n]67.3 g/100 mL[n]In methanol: 14.45 g/100ml[n]In ethanol: 8.63 g/100ml[n]In ethylene glycol: 18.32 g/100ml
+Aluminium sulfate
+	Al2(SO4)3
+	White crystalline solid. hygroscopic
+	2.672
+	1043
+	[]
+	31.2 g/100 mL (0 [Deg]C)[n]36.4 g/100 mL (20 [Deg]C)[n]89.0 g/100 mL (100 [Deg]C)
+Azane
+	NH3
+	Colourless gas
+	0.00086
+	195.42
+	239.81
+	47% solution (0 [Deg]C)[n]31% solution (25 [Deg]C)[n]28% solution (50 [Deg]C)
+Ammonium azide
+	NH4N3
+	White crystalline solid
+	1.3459
+	433
+	[]
+	[]
+Aluminium bromide
+	Al2Br6
+	White to pale yellow crystalline solid
+	3.205
+	370.9
+	538
+	Reacts
+Ammonium carbonate
+	(NH4)2CO3
+	White powder
+	1.5
+	331
+	[]
+	Soluble. decomposes in hot water
+Ammonium bicarbonate
+	NH4HCO3
+	White crystalline solid
+	1.586
+	315
+	[]
+	11.9 g/100 mL (0 [Deg]C)[n]21.6 g/100 mL (20 [Deg]C)[n]36.6 g/100 mL (40 [Deg]C)
+Ammonium chromate
+	(NH4)2CrO4
+	Yellow crystals
+	1.9
+	458
+	[]
+	24.8 g/100ml (0 [Deg]C)[n]37.36 g/100ml (25 [Deg]C)[n]45.3 g/100ml (40 [Deg]C)[n]70.06 g/100ml (75 [Deg]C)
+Diammonium cerium(IV) nitrate
+	(NH4)2Ce(NO3)6
+	Orange-red crystals
+	1.1
+	381
+	[]
+	141 g/100 mL (25 [Deg]C)[n]227 g/100 mL (80 [Deg]C)
+Ammonium chlorate
+	NH4ClO3
+	Colourless crystals
+	2.42
+	653
+	[]
+	[]
+Ammonium chloride
+	NH4Cl
+	White solid. hygroscopic
+	1.5274
+	611
+	793
+	244 g/L (>15 [Deg]C)[n]294 g/L (0 [Deg]C)[n]391.8 g/L (25 [Deg]C)[n]454.4 g/L (40 [Deg]C)[n]740.8 g/L (100 [Deg]C)
+Ammonium cyanide
+	NH4CN
+	Colourless crystalline solid
+	1.02
+	[]
+	309
+	Very soluble
+Ammonium dichromate
+	(NH4)2Cr2O7
+	Orange-red crystals
+	2.115
+	453
+	[]
+	18.2 g/100ml (0 [Deg]C)[n]35.6 g/100ml (20 [Deg]C)[n]40 g/100ml (25 [Deg]C)[n]156 g/100ml (100 [Deg]C)
+Ammonium hydroxide
+	NH4OH
+	Colourless liquid
+	0.88
+	181.5
+	297.7
+	Miscible
+Ammonium hexachloroplatinate(IV)
+	(NH4)2PtCl6
+	Yellow crystals
+	3.065
+	653
+	[]
+	0.289 g/100ml (0 [Deg]C)[n]0.7 g/100ml (15 [Deg]C)[n]0.499 g/100ml (20 [Deg]C)[n]3.36 g/100ml (100 [Deg]C)
+Ammonium fluoride
+	NH4F
+	White crystalline solid. hygroscopic
+	1.009
+	[]
+	[]
+	45.3 g/100 mL
+Aluminium iodide
+	AlI3
+	Colourless powder. but impure samples are often brown
+	3.98
+	633.15
+	633.15
+	Anhydrous: Reacts violently[n]Hexahydrate: Soluble
+Ammonium nitrate
+	NH4NO3
+	White-gray solid
+	1.725
+	442.75
+	483
+	118 g/100 ml (0 [Deg]C)[n]150 g/100 ml (20 [Deg]C)[n]297 g/100 ml (40 [Deg]C)[n]410 g/100 ml (60 [Deg]C)[n]576 g/100 ml (80 [Deg]C)[n]1024 g/100 ml (100 [Deg]C)
+Ammonium sulfide
+	(NH4)2S
+	Yellow crystals. hygroscopic
+	0.997
+	290
+	[]
+	128.1 g/100 mL
+Ammonium sulfite
+	(NH4)2SO3
+	Colourless crystals. hygroscopic
+	1.41
+	338
+	[]
+	35 g/100 mL[n]32.4g/100mL (0[Deg]C)[n]60.4g/100mL (100[Deg]C)
+Ammonium sulfate
+	(NH4)2SO4
+	White granules or crystals. hygroscopic
+	1.769
+	553
+	[]
+	70.6 g/100 mL (0 [Deg]C)[n]74.4 g/100 mL (20 [Deg]C)[n]103.8 g/100 mL (100 [Deg]C)
+Ammonium persulfate
+	(NH4)2S2O8
+	White to yellowish crystals
+	1.98
+	393
+	[]
+	80 g/100 mL (25 [Deg]C)
+Ammonium perchlorate
+	NH4ClO4
+	White crystalline solid
+	1.95
+	475
+	[]
+	11.56 g/100 mL (0 [Deg]C)[n]20.85 g/100 mL (20 [Deg]C)[n]57.01 g/100 mL (100 [Deg]C)
+Stibine
+	SbH3
+	Colourless gas
+	0.00548
+	185
+	256
+	Slightly soluble
+Antimony pentachloride
+	SbCl5
+	Colorless or yellow (fuming) liquid. oily
+	2.336
+	275.9
+	413
+	Reacts
+Antimony trichloride
+	SbCl3
+	Colourless solid. very hygroscopic
+	3.14
+	346.5
+	496.6
+	601.1 g/100 mL (0 [Deg]C)
+Arsenic pentafluoride
+	AsF5
+	Colourless gas
+	2.138
+	193.35
+	220.35
+	Insoluble. soluble in ethanol. dimethylether. benzene
+Arsenic trifluoride
+	AsF3
+	Colourless liquid
+	2.666
+	264.65
+	333.55
+	Decomposes
+Arsenic trioxide
+	As2O3
+	White solid
+	3.74
+	585.3
+	738
+	2 g/100 mL
+Water
+	H2O
+	Colourless liquid
+	1
+	273.15
+	373.15
+	Miscible
+Barium azide
+	Ba(N3)2
+	White crystalline solid
+	2.936
+	399.15
+	433.15
+	11.5 g/100 mL (0 [Deg]C)[n]14.98 g/100mL (15.7 [Deg]C)[n]15.36 g/100mL (20 [Deg]C)[n]22.73 g/100mL (52.1 [Deg]C)[n]24.75 g/100mL (70 [Deg]C)
+Barium carbonate
+	BaCO3
+	White crystals
+	4.286
+	1084
+	1720
+	16 mg/L (8.8 [Deg]C)[n]22 mg/L (18 [Deg]C)[n]24 mg/L (20 [Deg]C)[n]24 mg/L (24.2 [Deg]C)
+Barium chlorate
+	Ba(ClO3)2
+	White solid
+	3.18
+	687.05
+	[]
+	27.5 g/100 ml (20 [Deg]C)
+Barium chloride
+	BaCl2
+	White solid
+	3.856
+	1235.15
+	1833.15
+	31.2 g/100 mL (0 [Deg]C)[n]35.8 g/100 mL (20 [Deg]C)[n]59.4 g/100 mL (100 [Deg]C)
+Barium chromate
+	BaCrO4
+	Yellow powder
+	4.498
+	483
+	[]
+	0.2775 mg/100 mL (20 [Deg]C)
+Barium ferrite
+	BaFe2O4
+	Dark brown powder
+	5.28
+	[]
+	[]
+	Insoluble
+Barium fluoride
+	BaF2
+	White cubic crystals
+	4.893
+	1641.15
+	2533.15
+	0.16 g/100 mL (20 [Deg]C)
+Barium hydroxide
+	Ba(OH)2
+	White solid
+	3.743
+	573.15
+	1053.15
+	1.67 g/100 mL (0 [Deg]C)[n]3.89 g/100 mL (20 [Deg]C)[n]11.7 g/100 mL (50 [Deg]C)[n]20.94 g/100 mL (60 [Deg]C)[n]101.4 g/100 mL (100 [Deg]C)
+Ammonium thiocyanate
+	NH4SCN
+	Colourless hygroscopic crystalline solid
+	1.305
+	422.6
+	443.15
+	128 g/100 mL (0 [Deg]C)
+Barium iodide
+	BaI2
+	White orthorhombic crystals (anhydrous)[n]Colourless crystals (dihydrate)
+	5.15
+	984.15
+	[]
+	166.7 g/100 mL (0 [Deg]C)[n]221 g/100 mL (20 [Deg]C)[n]246.6 g/100 mL (70 [Deg]C)
+Barium nitrate
+	Ba(NO3)2
+	White. lustrous crystals
+	3.24
+	865.15
+	[]
+	4.95 g/100 mL (0 [Deg]C)[n]10.5 g/100 mL (25 [Deg]C)[n]34.4 g/100 mL (100 [Deg]C)
+Barium oxide
+	BaO
+	White solid
+	5.72
+	2196.15
+	2273
+	3.48 g/100 mL (20 [Deg]C)[n]90.8 g/100 mL (100 [Deg]C)
+Barium peroxide
+	BaO2
+	Gray-white crystalline (anhydrous)[n]Colourless solid (octahydrate)
+	5.68
+	723
+	1070
+	0.091 g/100 mL (20 [Deg]C)
+Barium sulfate
+	BaSO4
+	White crystalline solid
+	4.5
+	1618.15
+	1873.15
+	0.2448 mg/100 mL (20 [Deg]C)[n]0.285 mg/100 mL (30 [Deg]C)
+Barium titanate
+	BaTiO3
+	White crystals
+	6.02
+	1898.15
+	[]
+	Insoluble
+Beryllium borohydride
+	Be(BH4)2
+	White crystals
+	0.604
+	364.4
+	396
+	Reacts
+Beryllium bromide
+	BeBr2
+	Colourless white crystals
+	3.465
+	746
+	746
+	Highly soluble
+Beryllium carbonate
+	BeCO3
+	White crystals
+	2.93
+	327
+	373
+	0.36 g/100 mL
+Beryllium chloride
+	BeCl2
+	White or yellow crystals
+	1.899
+	672
+	755
+	15.1 g/100 mL (20 [Deg]C)
+Beryllium fluoride
+	BeF2
+	Colourless lumps
+	1.986
+	827
+	1442
+	Very soluble
+Beryllium hydride
+	BeH2
+	Amorphous white solid
+	0.65
+	523
+	[]
+	Decomposes
+Beryllium hydroxide
+	Be(OH)2
+	Vivid white. opaque crystals
+	1.92
+	1270
+	[]
+	Slightly soluble
+Beryllium iodide
+	BeI2
+	Colourless needle-like crystals
+	4.325
+	753
+	863
+	Reacts explosively
+Beryllium nitrate
+	Be(NO3)2
+	White to yellow solid
+	1.56
+	333.6
+	415
+	166 g/100 mL (20 [Deg]C)
+Beryllium nitride
+	Be3N2
+	Yellow to white powder
+	2.71
+	2473.15
+	2513
+	Hydrolyzes
+Beryllium oxide
+	BeO
+	Colourless. vitreous crystals
+	3.01
+	2780
+	4170
+	0.02 mg/100 mL (20 [Deg]C)
+Beryllium sulfate
+	BeSO4
+	White solid
+	2.44
+	673
+	2773
+	36.2 g/100 mL (0 [Deg]C)[n]40.0 g/100 mL (20 [Deg]C)[n]54.3 g/100 mL (60 [Deg]C)
+Beryllium telluride
+	BeTe
+	Crystalline solid with face centred cubic symmetry
+	5.1
+	[]
+	[]
+	[]
+Bismuth(III) oxide
+	Bi2O3
+	Yellow crystals or powder
+	8.9
+	1090
+	2160
+	Insoluble
+Bismuth telluride
+	Bi2Te3
+	Gray powder
+	7.642
+	858
+	[]
+	Insoluble
+Sodium tetraborate
+	Na2B4O7
+	White solid
+	1.73
+	1016
+	1848
+	[]
+Boric acid
+	H3BO3
+	White crystalline solid
+	1.435
+	444
+	573
+	2.52 g/100 mL (0 [Deg]C)[n]4.72 g/100 mL (20 [Deg]C)[n]5.7 g/100 mL (25 [Deg]C)[n]19.10 g/100 mL (80 [Deg]C)[n]27.53 g/100 mL (100 [Deg]C)
+Boron carbide
+	B4C
+	Dark gray or black powder. odorless
+	2.52
+	3036
+	3770
+	Insoluble
+Boron nitride
+	BN
+	Colourless crystals
+	3.45
+	3246
+	3246
+	Insoluble
+Boron suboxide
+	B6O
+	Reddish icosahedral twinned crystals
+	2.56
+	[]
+	2273
+	[]
+Diboron tetrachloride
+	B2Cl4
+	Colourless liquid
+	1.5
+	180.6
+	338.6
+	[]
+Boron tribromide
+	BBr3
+	Colourless to amber liquid
+	2.643
+	226.8
+	364.4
+	Reacts violently
+Boron trichloride
+	BCl3
+	Colourless gas. fumes in air
+	1.326
+	165.8
+	285.8
+	Decomposes
+Boron trifluoride
+	BF3
+	Colourless gas (anhydrous)[n]Colourless liquid (dihydrate)
+	0.00276
+	146.3
+	172.8
+	Exothermic decomposition (anhydrous)[n]Very soluble (dihydrate)
+Boron trioxide
+	B2O3
+	White. glassy solid
+	2.55
+	723.15
+	2133.15
+	1.1 g/100mL (10 [Deg]C)[n]3.3 g/100mL (20 [Deg]C)[n]15.7 100 g/100mL (100 [Deg]C)
+Bromine monochloride
+	BrCl
+	Brownish yellow gas
+	2.172
+	219.15
+	278.15
+	Reacts
+Bromine pentafluoride
+	BrF5
+	Pale yellow liquid
+	2.466
+	211.85
+	313.4
+	Reacts
+Bromine trifluoride
+	BrF3
+	Straw-coloured liquid. hygroscopic
+	2.803
+	281.92
+	398.87
+	Decomposes violently
+Cadmium arsenide
+	Cd3As2
+	Dark gray solid
+	3.031
+	[]
+	[]
+	Decomposes
+Cadmium bromide
+	CdBr2
+	White to pale yellow crystalline solid
+	5.192
+	841.15
+	1117.15
+	56.3 g/100 mL (0 [Deg]C)[n]98.8 g/100 mL (20 [Deg]C)[n]160 g/100 mL (100 [Deg]C)
+Cadmium dichloride
+	CdCl2
+	White solid. hygroscopic
+	4.047
+	841
+	1237
+	119.6 g/100 mL (25 [Deg]C)[n]134.3 g/100 mL (40 [Deg]C)[n]134.2 g/100 mL (60 [Deg]C)[n]147 g/100 mL (100 [Deg]C)
+Cadmium fluoride
+	CdF2
+	Gray or white-gray crystals
+	6.33
+	1383.15
+	2021.15
+	4.35 g/100 mL (20 [Deg]C)
+Cadmium iodide
+	CdI2
+	White to pale yellow crystals
+	5.64
+	660
+	1015
+	787 g/L (0 [Deg]C)[n]847 g/L (20 [Deg]C)[n]1250 g/L (100 [Deg]C)
+Cadmium nitrate
+	Cd(NO3)2
+	White crystals. hygroscopic
+	3.6
+	633
+	[]
+	109.7 g/100 mL (0 [Deg]C)[n]126.6 g/100 mL (18 [Deg]C)[n]139.8 g/100 mL (30 [Deg]C)[n]320.9 g/100 mL (59.5 [Deg]C)
+Selanylidenecadmium
+	CdSe
+	Black. translucent. adamantine crystals
+	5.816
+	1541
+	[]
+	Insoluble
+Cadmium sulfate
+	CdSO4
+	White hygroscopic solid
+	4.691
+	1273.15
+	[]
+	75 g/100 mL (0 [Deg]C)[n]76.4 g/100 mL (25 [Deg]C)[n]58.4 g/100 mL (99 [Deg]C)
+Cadmium sulfide
+	CdS
+	Yellow-orange to brown solid
+	4.826
+	1250
+	1250
+	Insoluble
+Cadmium telluride
+	CdTe
+	Black crystalline solid
+	5.85
+	1314.15
+	1323.15
+	Insoluble
+Caesium carbonate
+	Cs2CO3
+	White powder
+	4.072
+	883
+	[]
+	260.5 g/100 mL (15 [Deg]C)
+Caesium chloride
+	CsCl
+	White solid. hygroscopic
+	3.99
+	918.15
+	1570.15
+	186.5 g/100 mL (20 [Deg]C)
+Caesium chromate
+	Cs2CrO4
+	Yellow crystalline solid
+	4.237
+	[]
+	[]
+	71.4 g/100 ml (13 [Deg]C)
+Caesium fluoride
+	CsF
+	White crystalline solid
+	4.115
+	955
+	1524
+	367 g/100 ml (18 [Deg]C)
+Caesium hydride
+	CsH
+	White or colourless crystals or powder
+	3.42
+	407
+	[]
+	[]
+Caesium hydroxide
+	CsOH
+	Whitish-yellow deliquescent crystals
+	3.675
+	545.15
+	[]
+	300 g/100 mL (30 [Deg]C)
+Caesium sulfate
+	Cs2SO4
+	White solid
+	4.243
+	1280
+	[]
+	167 g/100 ml (0 [Deg]C)
+Calcium carbide
+	CaC2
+	White powder to gray/black crystals
+	2.22
+	2430
+	2570
+	Reacts
+Calcium carbonate
+	CaCO3
+	Fine white powder. chalky taste
+	2.711
+	1612.15
+	[]
+	0.0013 g/100 mL (25 [Deg]C)
+Calcium chlorate
+	Ca(ClO3)2
+	White solid. deliquescent
+	2.71
+	598.15
+	[]
+	209 g/100mL (20 [Deg]C)[n]197 g/100mL (25 [Deg]C)
+Calcium chloride
+	CaCl2
+	White powder. hygroscopic
+	2.15
+	1046.5
+	2208
+	134.5 g/100 mL (60 [Deg]C)[n]152.4 g/100 mL (100 [Deg]C)
+Calcium chromate
+	CaCrO4
+	Bright yellow powder
+	3.12
+	2983.15
+	[]
+	4.5 g/100 mL (0 [Deg]C)[n]2.25 g/100 mL (20 [Deg]C)
+Calcium cyanamide
+	CaCN2
+	White solid (Often gray or black from impurities)
+	2.29
+	1613.15
+	1613.15
+	Reacts
+Calcium fluoride
+	CaF2
+	White crystalline solid (single crystals are transparent)
+	3.18
+	1691
+	2806
+	1.5 mg/100 mL (18 [Deg]C)[n]1.6 mg/100 mL (20 [Deg]C)
+Calcium hydride
+	CaH2
+	Gray powder (white when pure)
+	1.7
+	1089.15
+	[]
+	Reacts violently
+Calcium hydroxide
+	Ca(OH)2
+	White powder
+	2.211
+	785.15
+	[]
+	189 mg/100 mL (0 [Deg]C)[n]173 mg/100 mL (20 [Deg]C)[n]66 mg/100 mL (100 [Deg]C)
+Calcium hypochlorite
+	Ca(ClO)2
+	White/gray powder
+	2.35
+	373.15
+	448.15
+	21 g/100 mL (20 [Deg]C)
+Calcium nitrate
+	Ca(NO3)2
+	Colourless solid. hygroscopic
+	2.504
+	834.15
+	[]
+	Anhydrous: 121.2 g/100 mL (20 [Deg]C)[n]271.0 g/100 mL (40 [Deg]C)[n]Tetrahydrate: 195 g/100 mL (0 [Deg]C)[n]129 g/100 mL (20 [Deg]C)[n]363 g/100 mL (100 [Deg]C)
+Calcium oxide
+	CaO
+	White to pale yellow/brown powder
+	3.34
+	2886
+	3123
+	0.119 g/100 mL[n]0.57 g/L (100 [Deg]C)[n]Exothermic reaction
+Dicalcium phosphate
+	CaHPO4
+	White powder
+	2.929
+	[]
+	[]
+	0.02 g/100 mL
+Monocalcium phosphate
+	Ca(H2PO4)2
+	White powder
+	2.220
+	382.15
+	[]
+	2 g/100 mL
+Tricalcium phosphate
+	Ca3(PO4)2
+	White amorphous powder
+	3.14
+	[]
+	[]
+	0.002 g/100 mL
+Calcium sulfate
+	CaSO4
+	White solid
+	2.96
+	1733.15
+	[]
+	0.21 g/100 mL (20 [Deg]C)
+Carbon dioxide
+	CO2
+	Colourless gas
+	0.001977
+	194.7
+	194.7
+	0.145 g/100 mL (25 [Deg]C)
+Carbon monoxide
+	CO
+	Colourless gas
+	0.001145
+	68.13
+	81.6
+	2.76 mg/100 mL (25 [Deg]C)
+Carbonyl fluoride
+	COF2
+	Colourless gas
+	0.002698
+	161.89
+	188.58
+	[]
+Carbonyl sulfide
+	COS
+	Colourless gas
+	0.00251
+	134.3
+	223
+	376 mg/100 mL (0 [Deg]C)[n]125 mg/100 mL (25 [Deg]C)
+Silicon carbide
+	SiC
+	Colorless crystals
+	3.21
+	3000
+	[]
+	Insoluble
+Cerium tribromide
+	CeBr3
+	Gray to white solid. hygroscopic
+	5.1
+	995.15
+	1730.15
+	Not published yet
+Cerium trichloride
+	CeCl3
+	Fine white powder
+	3.97
+	1090
+	2000
+	100 g/100 mL (20 [Deg]C)
+Cerium(IV) sulfate
+	Ce(SO4)2
+	Yellow solid (anhydrous)[n]Yellow-orange crystals (tetrahydrate)
+	3.91
+	623.15
+	[]
+	21.4 g/100 mL (0 [Deg]C)[n]9.84 g/100 mL (20 [Deg]C)[n]3.87 g/100 mL (60 [Deg]C)[n]Soluble in small amounts. hydrolyzes in large amounts of water
+Chloric acid
+	HClO3
+	Colourless solution
+	1
+	[]
+	[]
+	>40 g/100 mL (20 [Deg]C)
+Chlorine dioxide
+	ClO2
+	Yellow to reddish gas
+	2.757
+	214
+	284
+	0.8 g/100 mL (20 [Deg]C)
+Dichlorine hexoxide
+	Cl2O6
+	Red liquid
+	1.65
+	280.65
+	473.15
+	Reacts
+Chlorine perchlorate
+	ClOClO3
+	Pale green liquid
+	1.81
+	156
+	[]
+	Reacts
+Chromic acid
+	H2CrO4
+	Red crystals
+	1.201
+	470
+	523
+	166.66 g/100 mL
+Chromium trioxide
+	CrO3
+	Dark red granular solid. deliquescent
+	2.7
+	470
+	523
+	164.8 g/100 mL (0 [Deg]C)[n]169 g/100 mL (25 [Deg]C)[n]172.6 g/100 mL (40 [Deg]C)[n]198.1 g/100 mL (100 [Deg]C)
+Chromium(III) bromide
+	CrBr3
+	Black lustrous crystals. green in transmitted light. reddish in reflected light
+	4.25
+	1403.15
+	[]
+	Insoluble in cold water. soluble with addition of Chromium(II) ion salts. soluble in hot water
+Chromium(II) chloride
+	CrCl2
+	White to gray/green powder (anhydrous). very hygroscopic
+	2.88
+	1097
+	1575
+	Soluble (no more information)
+Chromium(III) chloride
+	CrCl3
+	Purple when anhydrous. dark green when hexahydrate
+	2.87
+	1425.15
+	1573
+	Slightly soluble (anhydrous)[n]58.5 g/100 mL (hexahydrate)
+Chromium(III) fluoride
+	CrF3
+	Green crystalline solid
+	3.8
+	1373.15
+	1373.15
+	Anhydrous: Negligible[n]Tryhydrate: Sparingly soluble
+Chromium(III) hydroxide
+	Cr(OH)3
+	Green. gelatinous precipitate
+	3.11
+	[]
+	[]
+	Insoluble
+Chromium(III) oxide
+	Cr2O3
+	Light to dark green. fine crystals
+	5.22
+	2708
+	4270
+	Insoluble
+Chromium(III) sulfate
+	Cr2(SO4)3
+	Reddish-brown crystals (anhydrous)[n]Purple crystals (hydrated)
+	3.1
+	363.15
+	[]
+	Insoluble (anhydrous)[n]Soluble (hydrated)
+Chromium(IV) oxide
+	CrO2
+	Black tetrahedral ferromagnetic crystals
+	4.89
+	648
+	[]
+	Insoluble
+Chromium(VI) dichloride dioxide
+	CrO2Cl2
+	Deep red fuming liquid
+	1.911
+	176.65
+	390
+	Decomposes
+Chromium(IV) difluoride dioxide
+	CrO2F2
+	Violet crystals
+	2
+	304.8
+	304.8
+	Decomposes
+Cobalt(II) bromide
+	CoBr2
+	Bright green crystals (anhydrous)[n]Red-purple crystals (hexahydrate)
+	4.909
+	951.15
+	[]
+	Anhydrous: 66.7 g/100 mL (59 [Deg]C)[n]68.1 g/100 mL (97 [Deg]C)[n]Hexahydrate: 113.2 g/100 mL (20 [Deg]C)
+Cobalt(II) carbonate
+	CoCO3
+	Red-pink crystals (anhydrous)[n]Pink. violet. red crystalline powder (hexahydrate)
+	4.13
+	700
+	[]
+	Negligible
+Cobalt(II) chloride
+	CoCl2
+	Blue crystals (anhydrous)[n]Violet-blue (dihydrate)[n]Rose red crystals (hexahydrate)
+	3.356
+	1008.15
+	1322.15
+	43.6 g/100 mL (0 [Deg]C)[n]45 g/100 mL (7 [Deg]C)[n]52.9 g/100 mL (20 [Deg]C)[n]105 g/100 mL (96 [Deg]C)
+Cobalt(II) oxide
+	CoO
+	Black powder
+	6.44
+	2206
+	[]
+	Insoluble
+Cobalt(II) sulfate
+	CoSO4
+	Reddish crystalline (anhydrous. monohydrate)[n]Pink salt (heptahydrate)
+	3.71
+	1008.15
+	[]
+	Anhydrous: 36.2 g/100 mL (20 [Deg]C)[n]38.3 g/100 mL (25 [Deg]C)[n]84 g/100 mL (100 [Deg]C)[n]Heptahydrate:[n]60.4 g/100 mL (3 [Deg]C)[n]67 g/100 mL (70 [Deg]C)
+Cobalt(II.III) oxide
+	Co3O4
+	Black solid
+	6.11
+	1168
+	[]
+	Insoluble
+Copper(I) chloride
+	CuCl
+	White powder. slightly green from oxidized impurities
+	4.145
+	703
+	1760
+	6.2 mg/100 mL (20 [Deg]C)
+Copper(I) cyanide
+	CuCN
+	Off-white or pale yellow powder
+	2.92
+	747
+	[]
+	Negligible
+Copper(I) oxide
+	Cu2O
+	Brownish-red solid
+	6
+	1505
+	2070
+	Insoluble
+Copper(I) sulfide
+	Cu2S
+	Dark brown powder
+	5.6
+	1403.15
+	[]
+	Insoluble
+Copper(II) azide
+	Cu(N3)2
+	Brown orthorhombic crystals
+	2.6
+	[]
+	[]
+	Soluble
+Copper sulfide
+	CuS
+	Black powder or lumps
+	4.76
+	773
+	[]
+	0.033 mg/100 mL (18 [Deg]C)
+Copper(II) carbonate
+	CuCO3
+	Green powder
+	3.9
+	473
+	563
+	Insoluble
+Copper(II) chloride
+	CuCl2
+	Yellow-brown solid (anhydrous)[n]Blue-green solid (dihydrate)
+	3.386
+	771.15
+	1266
+	70.6 g/100 mL (0 [Deg]C)[n]75.7 g/100 mL (25 [Deg]C)[n]107.9 g/100 mL (100 [Deg]C)
+Copper(II) hydroxide
+	Cu(OH)2
+	Blue or blue-green solid
+	3.368
+	353
+	[]
+	Negligible
+Copper(II) nitrate
+	Cu(NO3)2
+	Blue crystals. hygroscopic
+	3.05
+	529.15
+	[]
+	Trihydrate: 137.8 g/100 mL (0 [Deg]C)[n]1270 g/100 mL (100 [Deg]C)
+Copper(II) oxide
+	CuO
+	Black to brown powder
+	6.315
+	1599
+	2270
+	Insoluble
+Copper(II) sulfate
+	CuSO4
+	Blue (pentahydrate)[n]Gray-white (anhydrous)
+	3.6
+	830
+	[]
+	23.1 g/100 mL (0 [Deg]C)[n]27.5 g/100 mL (10 [Deg]C)[n]32 g/100 mL (20 [Deg]C)[n]37.8 g/100 mL (30 [Deg]C)[n]44.6 g/100 mL (40 [Deg]C)[n]61.8 g/100 mL (60 [Deg]C)[n]83.8 g/100 mL (80 [Deg]C)[n]114 g/100 mL (100 [Deg]C)
+Carbononitridic bromide
+	CNBr
+	Colourless crystals
+	2.015
+	324.5
+	334.5
+	Reacts
+Carbononitridic chloride
+	CNCl
+	Colorless gas
+	0.0027683
+	266.6
+	286
+	Soluble
+Carbononitridic iodide
+	CNI
+	White crystals
+	1.84
+	419.8
+	[]
+	Reacts
+Cyanogen
+	(CN)2
+	Colourless gas
+	0.002
+	245
+	252
+	45 g/100 mL (20 [Deg]C)
+Decaborane
+	B10H14
+	White crystals
+	0.94
+	372.75
+	486.15
+	Slightly. in cold water
+Diammonium hydrogen phosphate
+	(NH4)2HPO4
+	White powder
+	1.619
+	428.15
+	[]
+	57.5 g/100 mL (10 [Deg]C)[n]106.7 g/100 mL (100 [Deg]C)
+Diborane(6)
+	B2H6
+	Colourless gas
+	0.001216
+	108.3
+	180.7
+	Insoluble
+Dichlorine monoxide
+	Cl2O
+	Pale yellow to brown gas
+	1.507
+	152.6
+	275.1
+	Very soluble. 143 g/100 mL (20[Deg]C). hydrolyses
+Chlorine perchlorate
+	Cl2O4
+	Pale green liquid
+	1.81
+	156
+	293
+	Reacts
+Dichlorine hexoxide
+	Cl2O6
+	Red liquid
+	1.65
+	276.65
+	473.15
+	Reacts
+Dichlorine heptoxide
+	Cl2O7
+	Colourless oil
+	1.9
+	181.58
+	355.15
+	Reacts
+Dichlorosilane
+	H2SiCl2
+	Colourless gas
+	1.22
+	151
+	281
+	Reacts
+Dinitrogen pentoxide
+	N2O5
+	White solid
+	1.642
+	314
+	320
+	Reacts
+Dinitrogen tetroxide
+	N2O4
+	Colourless liquid. orange gas
+	1.44246
+	261.9
+	294.84
+	Reacts
+Disilane
+	Si2H6
+	Colourless gas
+	0.0027
+	141
+	259
+	No information
+Disulfur dichloride
+	S2Cl2
+	Yellow liquid
+	1.688
+	193
+	410.2
+	Decomposes
+Dysprosium trichloride
+	DyCl3
+	White solid
+	3.67
+	920.15
+	1803.15
+	Soluble
+Dysprosium trioxide
+	Dy2O3
+	White powder
+	1.8
+	2681.15
+	[]
+	Negligible
+Erbium(III) chloride
+	ErCl3
+	Violet hygroscopic monoclinic crystals (anhydrous)[n]Pink hygroscopic crystals (hexahydrate)
+	4.1
+	1049.15
+	1773.15
+	Soluble in water (anhydrous)[n]Slightly soluble in ethanol (hexahydrate)
+Erbium(III) oxide
+	Er2O3
+	Pink crystals
+	8.64
+	2617.15
+	3563.15
+	Insoluble
+Ethane
+	C2H6
+	Colourless gas
+	0.0013562
+	90.4
+	184.6
+	5.68 g/100 mL
+Europium(III) chloride
+	EuCl3
+	White crystals
+	4.89
+	905.15
+	[]
+	Soluble
+Gadolinium(III) chloride
+	GdCl3
+	White crystals. hygroscopic
+	4.52
+	882.15
+	1853.15
+	Soluble
+Gadolinium(III) oxide
+	Gd2O3
+	White powder
+	7.07
+	2693.15
+	[]
+	Insoluble
+Gallium antimonide
+	GaSb
+	Crystalline solid
+	5.614
+	985.15
+	[]
+	Insoluble
+Gallium arsenide
+	GaAs
+	Very dark red. vitreous crystals
+	5.3176
+	1511
+	[]
+	Insoluble
+Gallium trichloride
+	GaCl3
+	Colourless crystals. deliquescent
+	2.47
+	351.05
+	474.15
+	Very soluble
+Gallium nitride
+	GaN
+	Yellow powder
+	6.15
+	2800
+	[]
+	Reacts
+Gallium phosphide
+	GaP
+	Pale oragne solid
+	4.138
+	1750
+	[]
+	Insoluble
+Germane
+	GaH4
+	Colourless gas
+	0.0033
+	108
+	185
+	Low
+Germanium difluoride
+	GeF2
+	White orthorhombic hygroscopic crystals
+	3.61
+	403
+	403
+	Insoluble
+Germanium tetrafluoride
+	GeF4
+	Colourless gas
+	0.006074
+	236.7
+	236.7
+	Reacts
+Germanium tetrachloride
+	GeCl4
+	Colourless liquid
+	1.879
+	223.7
+	359.6
+	Decomposes
+Germanium(II) iodide
+	GeI2
+	Yellow to gold flakes or powder
+	5.37
+	733.15
+	818.15
+	[]
+Germanium(IV) iodide
+	GeI4
+	Crystalline solid
+	4.32
+	417.15
+	713.15
+	[]
+Germanium dioxide
+	GeO2
+	White powder or colourless crystals
+	4.228
+	1388
+	[]
+	0.447 mg/100 mL (25 [Deg]C)[n]1.07 g/100 mL (100 [Deg]C)
+Germanium disulfide
+	GeS2
+	White. translucent crystals
+	2.94
+	1110
+	1800
+	0.45 g/100 mL
+Germanium telluride
+	GeTe
+	Solid
+	6.14
+	998
+	[]
+	[]
+Germanium nitride
+	Ge3N4
+	Light brown powder
+	5.25
+	[]
+	1173
+	[]
+Gold(I) chloride
+	AuCl
+	Yellow solid
+	7.6
+	443.15
+	571.15
+	Very slightly soluble
+Gold(III) chloride
+	Au2Cl6
+	Red crystals (anhydrous)[n]Golden. yellow crystals (monohydrate)
+	4.7
+	527
+	[]
+	68 g/100 mL (cold)
+Gold(III) fluoride
+	AuF3
+	Orange-yellow hexagonal crystals
+	6.75
+	573
+	573
+	[]
+Gold(I) bromide
+	AuBr
+	Lemon yellow crystals (AuBr-I). yellow-brown (AuBr-P)
+	7.9
+	438
+	[]
+	[]
+Gold(III) bromide
+	Au2Br6
+	Dark red to black crystalline
+	3.9
+	370.65
+	[]
+	[]
+Gold(I) iodide
+	AuI
+	Yellowish to greenish-yellow powder
+	8.25
+	[]
+	[]
+	[]
+Gold(III) oxide
+	Au2O3
+	Red-brown solid
+	11.34
+	433
+	[]
+	Insoluble in water. soluble in hydrochloric and nitric acid
+Hydrazine
+	N2H4
+	Colourless liquid
+	1.021
+	275
+	387
+	Miscible
+Hydrazoic acid
+	HN3
+	Colourless. highly volatile liquid
+	1.09
+	193
+	310
+	Highly soluble
+Hydrogen bromide
+	HBr
+	Colorless gas
+	0.0036452
+	186.2
+	206.3
+	221 g/100 mL (0 [Deg]C)[n]204 g/100 mL (15 [Deg]C)[n]193 g/100 mL (20 [Deg]C)[n]130 g/100 mL (100 [Deg]C)
+Hydrogen iodide
+	HI
+	Colourless gas
+	2.85
+	184.55
+	237.79
+	Approximately 245 g/100 ml
+Hydrogen chloride
+	HCl
+	Colourless gas
+	0.00149
+	158.93
+	188.1
+	823 g/L (0 [Deg]C)[n]720 g/L (20 [Deg]C)[n]561 g/L (60 [Deg]C)
+Hydrogen fluoride
+	HF
+	Colourless gas or colourless liquid (below 19.5[Deg]C)
+	0.00115
+	189.6
+	292.6
+	Miscible
+Hydrogen peroxide
+	H2O2
+	Very light blue color; colourless in solution
+	1.45
+	272.72
+	423.3
+	Miscible
+Hydrogen selenide
+	H2Se
+	Colourless gas
+	0.003553
+	207.42
+	231.9
+	0.7 g/100 mL
+Hydrogen sulfide
+	H2S
+	Colourless gas
+	0.001363
+	191
+	213
+	0.4 g/100 mL (20 [Deg]C)
+Hydrogen telluride
+	H2Te
+	Colourless gas
+	3.31
+	224
+	271.8
+	0.7 g/100 mL
+Hydroxylamine
+	NH2OH
+	Vivid white. opaque crystals
+	1.21
+	306
+	331
+	[]
+Hypochlorous acid
+	HClO
+	Colourless aqueous solution
+	1.4
+	[]
+	[]
+	Soluble
+Phosphinic acid
+	H3PO2
+	Colourless. deliquescent crystals or oily liquid
+	1.493
+	299.6
+	403
+	Miscible
+Indium antimonide
+	InSb
+	Dark gray. metallic crystals
+	5.775
+	800
+	[]
+	Insoluble
+Indium arsenide
+	InAs
+	Gray cubic crystals
+	5.67
+	1215.15
+	[]
+	Insoluble
+Indium nitride
+	InN
+	Black powder
+	6.81
+	1373.15
+	[]
+	Hydrolises
+Indium(III) oxide
+	In2O3
+	Yellowish green odorless crystals
+	7.179
+	2183.15
+	[]
+	Insoluble
+Indium phosphide
+	InP
+	Black cubic crystals
+	4.81
+	1335
+	[]
+	Slightly soluble in acids
+Iodic acid
+	HIO3
+	White solid
+	4.62
+	383.15
+	[]
+	269 g/100 mL (20 [Deg]C)
+Iodine heptafluoride
+	IF7
+	Colourless gas
+	0.0027
+	278
+	278
+	Soluble
+Iodine pentafluoride
+	IF5
+	Colourless or pale yellow liquid
+	3.25
+	282.58
+	371
+	Reacts
+Iodine monochloride
+	ICl
+	Red to brown liquid[n]Black crystals
+	3.1
+	300.35
+	370.6
+	Hydrolises
+Iodine trichloride
+	I2Cl6
+	Yellow solid
+	3.11
+	336.15
+	[]
+	[]
+Iron(II) bromide
+	FeBr2
+	Yellow-brown solid
+	4.63
+	957
+	1207
+	Soluble
+Iron(II) chloride
+	FeCl2
+	Tan solid (anhydrous)[n]Pale green solid (di.tetrahydrate)
+	3.16
+	950
+	1296.15
+	64.4 g/100 mL (10 [Deg]C)[n]68.5 g/100mL (20 [Deg]C)[n]105.7 g/100 mL (100 [Deg]C)
+Iron(III) chloride
+	FeCl3
+	Green to black by reflected light[n]Purple to red by transmitted light[n]Hexahydrate: yellow solid[n]In solution: brown
+	2.898
+	579
+	588
+	74.4 g/100 mL (0 [Deg]C)[n]92 g/100 mL (hexahydrate. 20 [Deg]C)
+Iron(II.III) hexacyanoferrate(II.III)
+	Fe7(CN)18
+	Blue opaque crystals
+	1.8
+	[]
+	[]
+	Insoluble
+Iron(II) oxalate
+	FeC2O4
+	Yelllow powder
+	2.28
+	463
+	638.2
+	Dihydrate: 0.097 g/100 mL
+Iron(II) oxide
+	FeO
+	Black crystals
+	5.745
+	1650
+	3687
+	Insoluble
+Iron(II) sulfide
+	FeS
+	Black solid. sometimes in lumps or powder
+	4.84
+	1369.15
+	[]
+	Negligible
+Iron(III) bromide
+	FeBr3
+	Brown solid
+	4.5
+	[]
+	[]
+	[]
+Iron(III) nitrate
+	Fe(NO3)3
+	Pale violet crystals. hygroscopic
+	1.68
+	320.25
+	398.15
+	150 g/100 mL (hexahydrate)
+Iron(II.III) oxide
+	Fe3O4
+	Solid black powder
+	5
+	1811.15
+	[]
+	[]
+Iron(III) oxide
+	Fe2O3
+	Red-brown solid
+	5.242
+	1825
+	[]
+	Insoluble
+Iron(III) oxide-hydroxide
+	Fe(OH)3
+	Vivid dark orange. opaque crystals
+	4.25
+	[]
+	[]
+	0.115 g/100 mL (20 [Deg]C)
+Iron(III) fluoride
+	FeF3
+	Pale green crystals
+	3.87
+	1300
+	[]
+	Slightly soluble (anhydrous)[n]49.5 g/100 mL (trihydrate)
+Iron(III) sulfide
+	Fe2S3
+	Yellow-green
+	4.3
+	[]
+	[]
+	Very slightly soluble
+Krypton difluoride
+	KrF2
+	Colourless crystals
+	3.24
+	[]
+	[]
+	Reacts
+Lanthanum carbonate
+	La2(CO3)3
+	White powder. hygroscopic
+	2.65
+	[]
+	[]
+	Negligible
+Lead carbonate
+	PbCO3
+	White powder
+	6.582
+	588.15
+	[]
+	0.11 mg/100 mL (20 [Deg]C)
+Lead(II) chloride
+	PbCl2
+	White odorless solid
+	5.85
+	774.15
+	1223.15
+	1.08 g/100 mL (20 [Deg]C)
+Lead(II) iodide
+	PbI2
+	Bright yellow powder
+	6.16
+	675
+	1145
+	0.044 g/100 mL (0 [Deg]C)[n]0.0756 g/100 mL (20 [Deg]C)[n]0.41 g/100 mL (100 [Deg]C)
+Lead(II) nitrate
+	Pb(NO3)2
+	White colourless crystals
+	4.53
+	543.15
+	[]
+	37.65 g/100 mL (0 [Deg]C)[n]52 g/100 mL (20 [Deg]C)[n]127 g/100 mL (100 [Deg]C)
+Lead(II) oxide
+	PbO
+	Red to yellow powder
+	9.53
+	1161
+	1750
+	5.04 mg/100 mL (alpha form)[n]10.65 mg/100 mL (beta form)
+Lead(IV) oxide
+	PbO2
+	Dark brown to black powder
+	9.38
+	563.15
+	[]
+	Insoluble
+Lead(II) phosphate
+	Pb3(PO4)2
+	White powder
+	6.9
+	1287.15
+	[]
+	0.014 mg/100 mL
+Lead(II) sulfate
+	PbSO4
+	White solid
+	6.29
+	1360
+	[]
+	0.0032 g/100 mL (15 [Deg]C)[n]0.00443 g/100 mL (20 [Deg]C)
+Lead selenide
+	PbSe
+	Crystalline solid
+	8.1
+	1351
+	[]
+	Insoluble
+Lead(II) sulfide
+	PbS
+	Black powder
+	7.6
+	1391
+	1554
+	Insoluble
+Lead telluride
+	PbTe
+	Gray cubic crystals
+	8.164
+	1197.15
+	[]
+	Insoluble
+Lithium aluminium hydride
+	LiAlH4
+	White crystals (pure samples)[n]Gray powder (commercial material). hygroscopic
+	0.917
+	423
+	[]
+	Reacts
+Lithium bromide
+	LiBr
+	White solid
+	3.464
+	825
+	1538
+	143 g/100 mL (0 [Deg]C)[n]166.7 g/100 mL (20 [Deg]C)[n]266 g/100 mL (100 [Deg]C)
+Lithium borohydride
+	LiBH4
+	White solid
+	0.666
+	541
+	653
+	Reacts
+Lithium carbonate
+	Li2CO3
+	Odorless white powder
+	2.11
+	996
+	1580
+	1.54 g/100 mL (0 [Deg]C)[n]1.43 g/100 mL (10 [Deg]C)[n]1.29 g/100 mL (25 [Deg]C)[n]1.08 g/100 mL (40 [Deg]C)[n]0.69 g/100 mL (100 [Deg]C)
+Lithium chloride
+	LiCl
+	White solid. hygroscopic. sharp
+	2.068
+	882.5
+	1655
+	68.29 g/100 mL (0 [Deg]C)[n]74.48 g/100 mL (10 [Deg]C)[n]84.25 g/100 mL (25 [Deg]C)[n]88.7 g/100 mL (40 [Deg]C)[n]123.44 g/100 mL (100 [Deg]C)
+Lithium hypochlorite
+	LiClO
+	White solid
+	0.531
+	408
+	1609
+	Soluble
+Lithium perchlorate
+	LiClO4
+	White crystals
+	2.42
+	509
+	703
+	42.7 g/100 mL (0 [Deg]C)[n]49 g/100 mL (10 [Deg]C)[n]59.8 g/100 mL (25 [Deg]C)[n]71.8 g/100 mL (40 [Deg]C)[n]119.5 g/100 mL (80 [Deg]C)[n]300 g/100 g (120 [Deg]C)
+Lithium peroxide
+	Li2O2
+	Fine. white powder
+	2.31
+	468.15
+	[]
+	Soluble
+Lithium oxide
+	Li2O
+	White solid
+	2.013
+	1711
+	2870
+	Reacts violently to form LiOH
+Lithium hydride
+	LiH
+	Colourless to gray solid
+	0.78
+	961.15
+	[]
+	Reacts
+Lithium hydroxide
+	LiOH
+	Hygroscopic white solid. odorless
+	1.46
+	735.15
+	1197.15
+	Anhydrous: 12.7 g/100 mL (0 [Deg]C)[n]12.8 g/100 mL (20 [Deg]C)[n]17.5 g/100 mL (100 [Deg]C)[n]Monohydrate: 22.3 g/100 mL (10 [Deg]C)
+Lithium iodide
+	LiI
+	White crystalline solid
+	4.076
+	742
+	1444
+	151 g/100 mL (0 [Deg]C)[n]167 g/100 mL (25 [Deg]C)[n]433 g/100 mL (100 [Deg]C)
+Lithium nitrate
+	LiNO3
+	White to light yellow solid
+	2.38
+	528
+	873
+	52.2 g/100 mL (20 [Deg]C)[n]90 g/100 mL (28 [Deg]C)[n]234 g/100 mL (100 [Deg]C)
+Lithium sulfide
+	Li2S
+	White solid
+	1.66
+	1211
+	1645
+	Very soluble
+Lithium sulfate
+	Li2SO4
+	White crystalline solid. hygroscopic
+	2.221
+	1132
+	1650
+	34.9 g/100 mL (25 [Deg]C)[n]29.2 g/100 mL (100 [Deg]C)
+Methane
+	CH4
+	Colourless gas
+	0.000656
+	90.7
+	111.66
+	2.27 mg/100 mL (25 [Deg]C)
+Magnesium carbonate
+	MgCO3
+	White solid. hygroscopic
+	2.958
+	813
+	[]
+	Anhydrous: 0.0106 g/100 ml (25 [Deg]C)[n]0.0063 g/100 ml (100 [Deg]C)[n]Pentahydrate: 0.375 g/100 ml (20 [Deg]C)
+Magnesium chloride
+	MgCl2
+	White or colourless crystalline solid
+	2.32
+	987
+	1685
+	Anhydrous: 52.9 g/100 mL (0 [Deg]C)[n][n]54.3 g/100 ml (20 [Deg]C)[n]72.6 g/100 mL (100 [Deg]C)[n]Hexahydrate: 167 g/100 mL (20 [Deg]C)
+Magnesium oxide
+	MgO
+	White powder
+	3.58
+	3125
+	3870
+	0.00062 g/100 mL (0 [Deg]C)[n]0.0086 g/100 mL (30 [Deg]C)
+Magnesium phosphate tribasic
+	Mg3(PO4)2
+	White crystalline powder
+	2.195
+	1457
+	[]
+	Insoluble
+Magnesium sulfate
+	MgSO4
+	White crystalline solid
+	2.66
+	1397.15
+	[]
+	Anhydrous: 26.9 g/100 mL (0 [Deg]C)[n]25.5 g/100 mL (20 [Deg]C)[n]50.2 g/100 mL (100 [Deg]C)[n]Heptahydrate: 71 g/100 mL (20 [Deg]C)
+Manganese dioxide
+	MnO2
+	Black-brown solid
+	5.026
+	808.15
+	[]
+	Insoluble
+Manganese(II) sulfate
+	MnSO4
+	White crystals (anhydrous)[n]Pale pink solid (hydrates)
+	3.25
+	983.15
+	1023.15
+	52 g/100 mL (5 [Deg]C)[n]70 g/100 mL (7 [Deg]C)
+Manganese(II) chloride
+	MnCl2
+	Pink solid
+	2.977
+	927.15
+	1498.15
+	63.4 g/100 ml (0 [Deg]C)[n]73.9 g/100 ml (20 [Deg]C)[n]88.5 g/100 ml (40 [Deg]C)[n]123.8 g/100 ml (100 [Deg]C)
+Manganese(IV) fluoride
+	MnF4
+	Blue solid
+	3.61
+	343
+	[]
+	Reacts violently
+Mercury(I) chloride
+	Hg2Cl2
+	White solid
+	7.15
+	656.15
+	656.15
+	0.2 mg/100 mL
+Mercury(II) chloride
+	HgCl2
+	Colourless ow white solid
+	5.43
+	549
+	577
+	3.6 g/100 mL (0 [Deg]C)[n]7.4 g/100 mL (20 [Deg]C)[n]48 g/100 mL (100 [Deg]C)
+Mercury(II) cyanide
+	Hg(CN)2
+	Colourless crystals or white powder
+	3.996
+	[]
+	[]
+	9.3 g/100 mL (14 [Deg]C)[n]53.9 g/100 mL (100 [Deg]C)
+Mercury(II) fulminate
+	Hg(CNO)2
+	Grey. Pale Brown. or White Crystalline solid
+	4.42
+	433.15
+	629.75
+	Slightly soluble
+Mercury(II) oxide
+	HgO
+	Yellow or red solid
+	11.14
+	[]
+	[]
+	0.0053 g/100 mL (25 [Deg]C)[n]0.0395 g/100 mL (100 [Deg]C)
+Mercury selenide
+	HgSe
+	Gray-black solid
+	8.3
+	1270
+	[]
+	Insoluble
+Mercury(I) sulfate
+	Hg2SO4
+	White-yellow crystals
+	7.56
+	[]
+	[]
+	0.051 g/100 mL (25 [Deg]C)[n]0.09 g/100 mL (100 [Deg]C)
+Mercury(II) sulfate
+	HgSO4
+	White monoclinic crystals
+	6.47
+	[]
+	723.15
+	Decomposes to mercuric subsulfate and sulfuric acid
+Mercury sulfide
+	HgS
+	Red (alpha)[n]Black (beta)
+	8.1
+	853.15
+	[]
+	Insoluble
+Mercury telluride
+	HgTe
+	Near black cubic crystals
+	8.1
+	[]
+	[]
+	Insoluble
+Methanesulfonic acid
+	CH3SO3H
+	Colourless liquid
+	1.48
+	291.15
+	[]
+	[]
+Phosphoric acid
+	H3PO4
+	White solid or colourless. viscous liquid (>42 [Deg]C). deliquescent
+	2.03
+	315.5
+	431
+	392.2 g/100 g (-16.3 [Deg]C)[n]369.4 g/100 mL (0.5 [Deg]C)[n]446 g/100 mL (14.95 [Deg]C)[n]Miscible (42.3 [Deg]C)
+Molybdenum trioxide
+	MoO3
+	Yellow or light blue solid
+	4.69
+	1068
+	1428
+	0.1066 g/100 mL (18 [Deg]C)[n]0.490 g/100 mL (28 [Deg]C)[n]2.055 g/100 mL (70 [Deg]C)
+Molybdenum disulfide
+	MoS2
+	Black to lead gray solid
+	5.06
+	1458.15
+	[]
+	Insoluble
+Molybdenum hexacarbonyl
+	Mo(CO)6
+	Vivid white. translucennt crystals
+	1.96
+	423
+	429
+	Insoluble
+Neodymium(III) chloride
+	NdCl3
+	Mauve-coloured powder. hygroscopic
+	4.13
+	1031.15
+	1873.15
+	96.7 g/100 mL (13 [Deg]C)
+Potassium tetraiodomercurate(II)
+	K2HgI4
+	Yellow crystals
+	4.29
+	[]
+	[]
+	Very soluble
+Nickel(II) carbonate
+	NiCO3
+	Light green powder
+	4.39
+	478
+	[]
+	0.0093 g/100 mL
+Nickel(II) chloride
+	NiCl2
+	Yellow-brown crystals. deliquescent (anhydrous)[n]Green crystals (hexahydrate)
+	3.55
+	1274.15
+	[]
+	Anhydrous: 64.2 g/100 mL (20 [Deg]C)[n]87.6 g/100 mL (100 [Deg]C)[n]Hexahydrate: 254 g/100 mL (20 [Deg]C)[n]600 g/100 mL (100 [Deg]C)
+Nickel(II) hydroxide
+	Ni(OH)2
+	Green crystals
+	4.1
+	503.15
+	[]
+	0.013 g/100 mL
+Nickel(II) nitrate
+	Ni(NO3)2
+	Emerald green hygroscopic solid
+	2.05
+	329.85
+	409.85
+	94.2 g/100 mL (20 [Deg]C)[n]158 g/100 mL (60 [Deg]C)
+Nickel(II) oxide
+	NiO
+	Green crystalline solid
+	6.67
+	2228
+	[]
+	Negligible
+Niobium(V) chloride
+	NbCl5
+	Yellow monoclinic crystals. deliquescent
+	2.75
+	477.85
+	521.35
+	Decomposes
+Nitric acid
+	HNO3
+	Colourless liquid
+	1.5129
+	231
+	356
+	Miscible
+Nitric oxide
+	NO
+	Colourless gas
+	1.3402
+	109
+	121
+	0.0098 g/100ml (0 [Deg]C)[n]0.0056 g/100ml (20 [Deg]C)
+Nitrous acid
+	HNO2
+	Pale blue solution
+	1
+	[]
+	[]
+	[]
+Nitrosyl chloride
+	NOCl
+	Yellow gas
+	0.002872
+	213.8
+	267.6
+	Reacts
+Nitrogen dioxide
+	NO2
+	Vivid orange gas
+	0.00262
+	261.9
+	294.3
+	Hydrolyzes
+Nitrous oxide
+	N2O
+	Colourless gas
+	0.001977
+	182.29
+	184.67
+	0.15 g/100 mL (15 [Deg]C)
+Nitrosylsulfuric acid
+	NOHSO4
+	Pale yellow crystals
+	1.612
+	347.65
+	[]
+	Decomposes
+Osmium tetroxide
+	OsO4
+	White volatile solid
+	4.9
+	313.4
+	402.8
+	5.70 g/100 mL (10 [Deg]C)[n]6.23 g/100 mL (25 [Deg]C)
+Oxygen difluoride
+	OF2
+	Colourless gas. pale yellow liquid when condensed
+	0.00188
+	49.3
+	128.4
+	Hydrolyzes
+Ozone
+	O3
+	Pale blue gas
+	0.002144
+	81
+	161
+	0.105 g/100 mL (at 0 [Deg]C)
+Palladium(II) chloride
+	PdCl2
+	Dark red solid. hygroscopic (anhydrous)[n]Dark brown crystals (dihydrate)
+	4
+	952
+	[]
+	Soluble in trace amounts. better solubility in cold water
+Pentaborane
+	B5H9
+	Colourless pungent liquid
+	0.618
+	226.35
+	333.25
+	Reacts
+Perchloric acid
+	HClO4
+	Colourless liquid
+	1.67
+	256.15
+	476.15
+	Miscible
+Periodic acid
+	H5IO6
+	Colourless crystals
+	0.0014
+	401.65
+	[]
+	Soluble
+Perchloryl fluoride
+	ClO3F
+	Colourless gas
+	1.4
+	125.3
+	226.5
+	0.06 g/100 ml (20 [Deg]C)
+Peroxymonosulfuric acid
+	H2SO5
+	White crystals
+	2.239
+	[]
+	[]
+	[]
+Phosgene
+	COCl2
+	Colourless gas
+	0.004248
+	155
+	281.4
+	Decomposes
+Phosphine
+	PH3
+	Colourless gas
+	0.001379
+	140.3
+	185.5
+	0.0312 g/100 ml (17 [Deg]C)
+Phosphorous acid
+	H3PO3
+	White solid. deliquescent
+	1.651
+	346.8
+	473.15
+	310 g/100 mL
+Phosphorus pentabromide
+	PBr5
+	Yellow solid
+	3.61
+	373.15
+	[]
+	Decomposes
+Phosphorus pentafluoride
+	PF5
+	Colourless gas
+	5.527
+	179.37
+	188.6
+	Hydrolyzes
+Phosphorus pentasulfide
+	P4S10
+	Yellow solid
+	2.09
+	561
+	787
+	Hydrolyzes
+Phosphorus pentoxide
+	P4O10
+	White powder. very deliquescent. pungent odour
+	2.39
+	633
+	633
+	Exothermic hydrolysis
+Phosphorus sesquisulfide
+	P4S3
+	Yellow. yellow-green or gray solid
+	2.08
+	445.65
+	681.15
+	[]
+Phosphorus tribromide
+	PBr3
+	Clear. colourless liquid
+	2.852
+	231.7
+	446.4
+	Rapid hydrolysis
+Phosphorus trichloride
+	PCl3
+	Colourless liquid
+	1.574
+	179.6
+	349.2
+	Hydrolysis
+Phosphorus trifluoride
+	PF3
+	Colourless gas
+	0.00391
+	121.6
+	171.3
+	Slow hydrolysis
+Phosphorus triiodide
+	PI3
+	Dark red solid
+	4.18
+	334.35
+	473
+	Decomposes
+Platinum(II) chloride
+	PtCl2
+	Olive green crystals
+	6.05
+	854.15
+	[]
+	Insoluble
+Chloroplatinic acid
+	H2PtCl6
+	Reddish brown solid
+	2.431
+	333
+	[]
+	Highly soluble
+Platinum(IV) chloride
+	PtCl4
+	Brown-red powder
+	4.303
+	643.15
+	[]
+	58.7 g/100 mL (anhydrous)[n]Very soluble (pentahydrate)
+Potassium alum
+	KAl(SO4)2
+	White small crystals
+	1.725
+	365.65
+	473.15
+	14.00 g/100 mL (20 [Deg]C)[n]36.80 g/100 mL (50 [Deg]C)
+Potassium aluminium fluoride
+	KAlF4
+	White solid
+	2.9
+	880
+	[]
+	0.2 g/100 mL
+Potassium bromide
+	KBr
+	White solid
+	2.74
+	1007
+	1708
+	53.5 g/100 mL (0 [Deg]C)[n]67.8 g/100 mL (25 [Deg]C)[n]102 g/100 mL (100 [Deg]C)
+Potassium carbonate
+	K2CO3
+	White. hygroscopic solid
+	2.43
+	1164
+	[]
+	112 g/100 mL (20 [Deg]C)[n]156 g/100 mL (100 [Deg]C)
+Potassium chlorate
+	KClO3
+	White crystals or powder
+	2.34
+	629
+	673
+	3.13 g/100 mL (0 [Deg]C)[n]4.46 g/100 mL (10 [Deg]C)[n]8.15 g/100 mL (25 [Deg]C)[n]13.21 g/100 mL (40 [Deg]C)[n]53.51 g/100 mL (100 [Deg]C)
+Potassium chloride
+	KCl
+	White crystalline solid
+	1.984
+	1043.15
+	1693.15
+	28.1 g/100 mL (0[Deg]C)[n]34.4 g/100 mL (20[Deg]C)[n]56.7 g/100 mL (100[Deg]C)
+Potassium chromate
+	K2CrO4
+	Yellow powder
+	2.732
+	1241
+	1270
+	62.9 g/100 mL (20 [Deg]C)[n]75.1 g/100 mL (80 [Deg]C)[n]79.2 g/100 mL (100 [Deg]C)
+Potassium cyanide
+	KCN
+	White crystalline solid. deliquescent
+	1.52
+	907.6
+	1898
+	71.6 g/100 ml (25 [Deg]C)[n]100 g/100 mL (100 [Deg]C)
+Potassium dichromate
+	K2Cr2O7
+	Red-orange crystalline solid
+	2.676
+	671.15
+	[]
+	4.9 g/100 mL (0 [Deg]C)[n]102 g/100 mL (100 [Deg]C)
+Potassium ferrioxalate
+	K3Fe(C2O4)3
+	Emerald green hydrated crystals
+	2.13
+	503
+	[]
+	[]
+Potassium ferricyanide
+	K3Fe(CN)6
+	Deep red crystals. sometimes small pellets. orange to dark red powder
+	1.89
+	573
+	[]
+	46.4 g/100 mL (20 [Deg]C)
+Potassium bicarbonate
+	KHCO3
+	White crystals
+	2.17
+	[]
+	[]
+	33.7 g/100 mL (20 [Deg]C)[n]60 g/100 mL (60 [Deg]C)
+Potassium bifluoride
+	KHF2
+	Colourless solid
+	2.37
+	511.8
+	[]
+	24.5 g/100 mL (0 [Deg]C)[n]30.1 g/100mL (10 [Deg]C)[n]39.2 g/100 mL (20 [Deg]C)[n]114.0 g/100 mL (80 [Deg]C)
+Potassium hydroxide
+	KOH
+	White solid. deliquescent
+	2.12
+	679
+	1600
+	97 g/100 mL (0 [Deg]C)[n]121 g/100 mL (25 [Deg]C)[n]138.3 g/100 mL (50 [Deg]C)[n]162.9 g/100 mL (100 [Deg]C)
+Potassium iodide
+	KI
+	White crystalline solid
+	3.123
+	954
+	1600
+	128 g/100 ml (0 [Deg]C)[n]140 g/100 mL (20 [Deg]C)[n]176 g/100 mL (60[Deg]C)[n]206 g/100 mL (100[Deg]C)
+Potassium iodate
+	KIO3
+	White crystalline powder
+	3.89
+	[]
+	[]
+	4.74 g/100 mL (0 [Deg]C)[n]9.16 g/100 mL (25 [Deg]C)[n]32.3 g/100 mL (100 [Deg]C)
+Potassium nitrate
+	KNO3
+	White solid
+	2.109
+	607.15
+	[]
+	133 g/L (0 [Deg]C)[n]316 g/L (20 [Deg]C)[n]2460 g/L (100 [Deg]C)
+Potassium perchlorate
+	KClO4
+	Colourless/white crystalline powder
+	2.5239
+	[]
+	[]
+	0.76 g/100 mL (0 [Deg]C)[n]1.5 g/100 mL (25 [Deg]C)[1][n]4.76 g/100 mL (40 [Deg]C)[n]21.08 g/100 mL (100 [Deg]C)
+Potassium periodate
+	KIO4
+	White crystaline powder
+	3.618
+	[]
+	[]
+	0.17 g/100 mL (0 [Deg]C)[n]0.42 g/100 mL (20 [Deg]C)[n]4.44 g/100 mL (80 [Deg]C)[n]7.87 g/100 mL (100 [Deg]C)
+Potassium permanganate
+	KMnO4
+	Purplish-bronze-gray needles. magenta–rose in solution
+	2.703
+	[]
+	[]
+	63.8 g/L (20 [Deg]C)[n]250 g/L (65 [Deg]C)
+Potassium phosphate
+	K3PO4
+	White deliquescent powder
+	2.564
+	1650
+	[]
+	90 g/100 mL (20 [Deg]C)
+Potassium sulfate
+	K2SO4
+	White solid
+	2.66
+	1342
+	1962
+	11.1 g/100 mL (20 [Deg]C)[n]12 g/100 mL (25 [Deg]C)[n]24 g/100 mL (100 [Deg]C)
+Potassium sulfide
+	K2S
+	Pure: colourless[n]Impure: yellow-brown
+	1.74
+	1113.15
+	[]
+	Converts to KSH. KOH
+Praseodymium(III) chloride
+	PrCl3
+	Blue-green solid (anhydrous)[n]Light green solid (heptahydrate)
+	4.02
+	1059.15
+	1983.15
+	104 g/100 ml (13 [Deg]C)
+Rhodium(III) chloride
+	RhCl3
+	Dark red solid. deliquescent
+	5.38
+	723.15
+	990.15
+	Insoluble
+Rubidium bromide
+	RbBr
+	White crystalline solid
+	3.35
+	966
+	1610
+	98 g/100 mL
+Rubidium chloride
+	RbCl
+	White crystals. hygroscopic
+	2.8
+	991.15
+	1663.15
+	77 g/100mL (0 [Deg]C)[n]91 g/100 mL (20 [Deg]C)[n]130 g/100 mL (100 [Deg]C)
+Rubidium fluoride
+	RbF
+	White crystalline solid
+	3.557
+	1068
+	1681
+	130.6 g/100 mL (18 [Deg]C)
+Rubidium hydroxide
+	RbOH
+	Grayish-white solid. hygroscopic
+	3.203
+	574.15
+	1663.15
+	100 g/100 mL (15 [Deg]C)
+Rubidium iodide
+	RbI
+	Solid
+	3.11
+	920
+	1574.15
+	153 g/100 mL
+Rubidium nitrate
+	RbNO3
+	White solid. hygroscopic
+	3.11
+	[]
+	[]
+	44.28 g/100 mL (16 [Deg]C)[n]65 g/100 mL (25 [Deg]C)
+Rubidium oxide
+	Rb2O
+	Yellow solid
+	4
+	775
+	[]
+	Reacts violently to give RbOH
+Ruthenium tetroxide
+	RbO4
+	Colourless liquid
+	3.29
+	298.5
+	313.1
+	2 g/100 mL (100 [Deg]C)
+Samarium(III) chloride
+	SmCl3
+	Pale yellow solid (anhydrous)[n]Cream-coloured solid (hexahydrate)
+	4.46
+	955.15
+	[]
+	92.4 g/100 mL (10 [Deg]C)
+Scandium chloride
+	ScCl3
+	Grayish-white crystals
+	2.39
+	1233.15
+	[]
+	Soluble
+Scandium fluoride
+	ScF3
+	Bright white powder
+	2.53
+	1825.15
+	1880.15
+	[]
+Ammonium bifluoride
+	NH4HF2
+	White crystals
+	1.5
+	399
+	[]
+	63 g/100 mL (20 [Deg]C)
+Scandium oxide
+	Sc2O3
+	White powder
+	3.86
+	2758.15
+	[]
+	Insoluble
+Selenic acid
+	H2SeO4
+	Colourless deliquescent crystals
+	2.95
+	331
+	[]
+	130 g/100 mL (30 [Deg]C)
+Selenous acid
+	H2SeO3
+	White hygroscopic crystals
+	3
+	[]
+	[]
+	Very soluble
+Selenium dioxide
+	SeO2
+	White. yellowish white. or red crystalline solid
+	3.954
+	623.15
+	623.15
+	38.4 g/100 mL (20 [Deg]C)[n]39.5 g/100 ml (25 [Deg]C)[n]82.5 g/100 mL (65 [Deg]C)
+Selenium disulfide
+	SeS2
+	Orange to brown powder
+	3
+	384.15
+	[]
+	Negligible
+Selenium hexafluoride
+	SeF6
+	Colourless gas
+	7.887
+	226.55
+	226.55
+	Insoluble
+Selenium hexasulfide
+	Se2S6
+	Orange needles
+	2.44
+	394.65
+	[]
+	Insoluble. soluble in carbon disulfide
+Selenium oxybromide
+	SeOBr2
+	Red-yellow solid
+	3.38
+	314.75
+	[]
+	Reacts
+Selenium oxydichloride
+	SeOCl
+	Colourless liquid
+	2.43
+	276.05
+	450.35
+	[]
+Selenium tetrachloride
+	SeCl4
+	White to yellow crystals
+	2.6
+	464.55
+	464.55
+	Decomposes
+Selenium tetrafluoride
+	SeF4
+	Colourless liquid
+	2.77
+	259.95
+	374.15
+	[]
+Selenium trioxide
+	SeO3
+	White hygroscopic crystals
+	3.44
+	391.5
+	391.5
+	Very soluble
+Silane
+	SiH4
+	Colourless gas
+	1.342
+	88.1
+	161
+	Reacts slowly
+Trichlorosilane
+	HSiCl3
+	Colourless liquid
+	1.342
+	146.6
+	304.9
+	Hydrolysis
+Hexafluorosilicic acid
+	(H3O)2SiF6
+	Transparent. colourless. fuming liquid
+	1.46
+	292
+	[]
+	Miscible
+Silicon carbide
+	SiC
+	Colourless crystals
+	3.21
+	[]
+	[]
+	Insoluble
+Silicon dioxide
+	SiO2
+	Transparent crystals
+	2.648
+	1935.5
+	2500
+	[]
+Silicon monoxide
+	SiO
+	Brown-black glassy solid
+	2.13
+	1975
+	2150
+	Insoluble
+Silicon nitride
+	Si3N4
+	Gray. odorless powder
+	3.2
+	[]
+	[]
+	Insoluble
+Silicon tetrabromide
+	SiBr4
+	Colourless liquid
+	2.79
+	278
+	426
+	Hydrolysis
+Silicon tetrachloride
+	SiCl4
+	Colourless liquid
+	1.483
+	204.41
+	330.8
+	Reacts
+Silver azide
+	AgN3
+	Colourless solid
+	4.42
+	523.15
+	[]
+	Insoluble
+Silver bromate
+	AgBrO3
+	White powder. photosensitive
+	5.206
+	582
+	[]
+	0.167 g/100 mL
+Silver bromide
+	AgBr
+	Pale yellow solid. photosensitive
+	6.473
+	705
+	[]
+	0.014 mg/100 mL (20 [Deg]C)
+Silver chlorate
+	AgClO3
+	White crystals
+	4.443
+	503
+	[]
+	Slightly soluble
+Silver chloride
+	AgCl
+	White solid
+	5.56
+	728
+	1820
+	Negligible
+Silver chromate
+	Ag2CrO4
+	Brown-red powder
+	5.625
+	1820
+	1820
+	Soluble in nitric acid. ammonia. alkali cyanides and chromates
+Silver tetrafluoroborate
+	AgBF4
+	Off-white powder
+	0.936
+	344.6
+	[]
+	Soluble
+Silver oxide
+	Ag2O
+	Black / brown cubic crystals
+	7.14
+	[]
+	[]
+	0.0013 g/100 mL (20 [Deg]C)[n]0.0025 g/100 mL (25 [Deg]C)[n]0.0053 g/100 mL (80 [Deg]C)
+Silver iodide
+	AgI
+	Yellow. crystalline solid
+	5.675
+	831
+	1779
+	Negligible
+Silver nitrate
+	AgNO3
+	White solid
+	4.35
+	482.8
+	[]
+	Soluble in acetone. ammonia. ether. glycerol
+Silver nitride
+	Ag3N
+	Black metallic-looking solid
+	9
+	[]
+	[]
+	Poorly soluble
+Silver phosphate
+	Ag3PO4
+	Translucent yellow. becomes opaque or discolors when impure
+	6.37
+	1122
+	[]
+	0.65 mg/100 mL
+Silver perchlorate
+	AgClO4
+	Colourless hygroscopic crystals
+	2.806
+	[]
+	[]
+	557 g/100 mL (25 [Deg]C)[n]792.8 g/100 mL (99 [Deg]C)
+Silver subfluoride
+	Ag2F
+	Bronze-colored crystals with green luster
+	8.6
+	[]
+	[]
+	Reacts
+Silver sulfate
+	Ag2SO4
+	Colourless crystals
+	5.45
+	933.1
+	1358
+	0.57 g/100 mL (0 [Deg]C)[n]0.69 g/100 mL (10 [Deg]C)[n]0.83 g/100 mL (25 [Deg]C)[n]0.96 g/100 mL (40 [Deg]C)[n]1.33 g/100 mL (100 [Deg]C)
+Silver sulfide
+	Ag2S
+	Grayish-black crystals
+	7.234
+	1109
+	[]
+	0.014 mg/100 mL (20 [Deg]C)
+Silver(I) fluoride
+	AgF
+	Yellow-brown solid
+	5.852
+	708
+	1432
+	85.78 g/100 mL (0 [Deg]C)[n]119.8 g/100 mL (10 [Deg]C)[n]179.1 g/100 mL (25 [Deg]C)[n]213.4 g/100 mL (50 [Deg]C)
+Silver(II) fluoride
+	AgF2
+	White or gray crystalline powder. hygroscopic
+	4.58
+	963
+	[]
+	Decomposes violently
+Sodium amide
+	NaNH2
+	Colourless crystals
+	1.39
+	483
+	673
+	Reacts
+Sodium aluminate
+	NaAlO2
+	White powder (sometimes light-yellowish). hygroscopic
+	1.5
+	1920
+	[]
+	Soluble
+Sodium azide
+	NaN3
+	Colourless to white solid
+	1.846
+	[]
+	[]
+	38.9 g/100 mL (0 [Deg]C)[n]40.8 g/100 mL (20 [Deg]C)[n]55.3 g/100 mL (100 [Deg]C)
+Sodium borohydride
+	NaBH4
+	White crystals. hygroscopic
+	1.0740
+	673.15
+	[]
+	Reacts
+Sodium bromate
+	NaBrO3
+	Colourless or white solid
+	3.339
+	654
+	1660
+	27.5 g/100 mL (0 [Deg]C)[n]36.4 g/100 mL (20 [Deg]C)[n]48.8 g/100 mL (40 [Deg]C)[n]90.8 g/100 mL (100 [Deg]C)
+Sodium bromide
+	NaBr
+	White powder. hygroscopic
+	3.21
+	1020
+	1660
+	79.52 g/100 mL (0 [Deg]C)[n]94.32 g/100 mL (25 [Deg]C)[n]104.9 g/100 mL (40 [Deg]C)[n]116.2 g/100 mL (100 [Deg]C)
+Sodium carbonate
+	Na2CO3
+	White solid. hygroscopic
+	2.54
+	[]
+	[]
+	Decahydrate: 7 g/100 mL (0 [Deg]C)[n]16.4 g/100 mL (15 [Deg]C)[n]34.07 g/100 mL (27.8 [Deg]C)[n]Heptahydrate: 48.69 g/100 mL (34.8 [Deg]C)[n]Monohydrate: 50.31 g/100 mL (29.9 [Deg]C)[n]48.1 g/100 mL (41.9 [Deg]C)[n]45.62 g/100 mL (60 [Deg]C)[n]43.6 g/100 mL (100 [Deg]C)
+Sodium chlorate
+	NaClO3
+	Colourless or white solid. hygroscopic
+	2.54
+	528
+	[]
+	79 g/100 mL (0 [Deg]C)[n]89 g/100 mL (10 [Deg]C)[n]105.7 g/100 mL (25 [Deg]C)[n]125 g/100 mL (40 [Deg]C)[n]220.4 g/100 mL (100 [Deg]C)
+Sodium chloride
+	NaCl
+	Colourless crystals
+	2.165
+	1074
+	1686
+	35.9 g/100 mL
+Sodium chlorite
+	NaClO2
+	White solid
+	2.468
+	[]
+	[]
+	75.8 g/100 mL (25 [Deg]C)[n]122 g/100 mL (60 [Deg]C)
+Sodium chromate
+	Na2CrO4
+	Yellow crystals
+	2.698
+	1065.15
+	[]
+	31.8 g/100 mL (0 [Deg]C)[n]84.5 g/100 mL[n]126.7 g/100 mL (100 [Deg]C)
+Sodium cyanate
+	NaOCN
+	Colourless crystals
+	1.893
+	823
+	[]
+	11.6 g/100 mL
+Sodium cyanide
+	NaCN
+	White solid
+	1.5955
+	836.9
+	1769
+	48.15 g/100 mL (10 [Deg]C)[n]63.7 g/100 mL (25 [Deg]C)
+Sodium dichromate
+	Na2Cr2O7
+	Bright red
+	2.52
+	629.8
+	[]
+	73 g/100 mL
+Sodium peroxide
+	Na2O2
+	Yellow to white powder
+	2.805
+	[]
+	[]
+	Reacts violently
+Sodium ferrocyanide
+	Na4Fe(CN)6
+	Pale yellow crystals
+	1.458
+	708
+	[]
+	10.2 g/100 mL (10 [Deg]C)[n]17.6 g/100 mL (20 [Deg]C)[n]39.7 g/100 mL (96.6 [Deg]C)
+Sodium fluoride
+	NaF
+	White to greenish solid
+	2.558
+	1266
+	1977
+	3.64 g/100 mL(0 [Deg]C)[n]4.04 g/100 mL(20 [Deg]C)[n]5.05 g/100 mL(100 [Deg]C)
+Sodium fluorosilicate
+	Na2SiF6
+	White granular powder
+	2.7
+	[]
+	[]
+	0.64 g/100 mL (20 [Deg]C)[n]1.27 g/100 mL (50 [Deg]C)[n]2.45 g/100 mL (100 [Deg]C)
+Sodium hydride
+	NaH
+	White or gray solid. reacts with borosilicate glass!
+	1.396
+	[]
+	[]
+	Reacts
+Sodium bicarbonate
+	NaHCO3
+	White crystals
+	2.2
+	[]
+	[]
+	6.9 g/100 mL (0 [Deg]C)[n]9.6 g/100 mL (20 [Deg]C)[n]9 g/100 mL (25 [Deg]C)[n]16.5 g/100 mL (60 [Deg]C)[n]23.6 g/100 mL (100 [Deg]C)
+Sodium bisulfate
+	NaHSO4
+	White solid
+	2.742
+	[]
+	[]
+	50 g/100 mL (0 [Deg]C)[n]100 g/100 mL (100 [Deg]C)
+Sodium bisulfite
+	NaHSO3
+	White solid
+	1.48
+	423
+	588
+	42 g/100 mL
+Sodium hydrosulfide
+	NaHS
+	Off-white solid. deliquescent
+	1.79
+	723.15
+	[]
+	50 g/100 mL (22 [Deg]C)
+Sodium hydroxide
+	NaOH
+	White. waxy. opaque crystals
+	2.13
+	591
+	1661
+	41.8 g/100 mL (0 [Deg]C)[n]111 g/100 mL (20 [Deg]C)[n]337 g/100 mL (100 [Deg]C)
+Sodium hypochlorite
+	NaClO
+	Greenish-yellow solid (pentahydrate)
+	1.11
+	291
+	[]
+	29.3 g/100mL (0 [Deg]C)
+Sodium hypophosphite
+	NaH2PO2
+	White solid
+	0.8
+	363.15
+	[]
+	Soluble
+Sodium iodate
+	NaIO3
+	White orthorhombic crystals
+	4.28
+	[]
+	[]
+	2.5 g/100 mL (0 [Deg]C)[n]8.98 g/100 mL (20 [Deg]C)[n]9.47 g/100 mL[n]32.59 g/100 mL (100 [Deg]C)
+Sodium iodide
+	NaI
+	White solid. deliquescent
+	3.67
+	934
+	1577
+	178.8 g/100 mL (20 [Deg]C)[n]184 g/100 mL (25 [Deg]C)[n]294 g/100 mL (70 [Deg]C)[n]302 g/100 mL (100 [Deg]C)
+Sodium molybdate
+	Na2MoO4
+	White powder
+	3.78
+	960
+	[]
+	84 g/100 ml (100 [Deg]C)
+Sodium nitrate
+	NaNO3
+	White powder or colorless crystals
+	2.257
+	581
+	[]
+	73 g/100 mL (0[Deg]C)[n]91.2 g/100 mL (25 [Deg]C)[n]180 g/100 mL (100 [Deg]C)
+Sodium nitrite
+	NaNO2
+	White or slightly yellowish solid
+	2.168
+	544
+	[]
+	71.4 g/100 mL (0 [Deg]C)[n]84.8 g/100 mL (25 [Deg]C)[n]160 g/100 mL (100 [Deg]C)
+Sodium oxide
+	Na2O
+	White solid
+	2.27
+	1548.15
+	1548.15
+	Reacts
+Sodium perborate
+	NaBO3
+	White powder
+	1.73
+	336.15
+	[]
+	2.15 g/100 mL (18 [Deg]C)
+Sodium perchlorate
+	NaClO4
+	White crystalline solid
+	2.4994
+	[]
+	[]
+	Anhydrous: 209.6 g/100 mL (25 [Deg]C)[n]Monohydrate: 209 g/100 mL (15 [Deg]C)
+Sodium periodate
+	NaIO4
+	White crystals
+	3.865
+	573
+	[]
+	Soluble
+Sodium perrhenate
+	NaReO4
+	White crystalline powder
+	5.39
+	687
+	[]
+	103.3 g/100 mL (0 [Deg]C)[n]145.3 g/100 mL (30 [Deg]C)[n]173.0 g/100 mL (50 [Deg]C)
+Sodium permanganate
+	NaMnO4
+	Red solid
+	1.972
+	309.15
+	[]
+	90 g/100 mL
+Sodium persulfate
+	Na2S2O8
+	White powder
+	2.59
+	[]
+	[]
+	55.6 g/100 ml (20 [Deg]C)
+Sodium phosphate(V)
+	Na3PO4
+	White crystalline solid
+	2.536
+	610
+	[]
+	Anhydrous: 5.4 g/100 mL (0 [Deg]C)[n]12 g/100 mL (20 [Deg]C)[n]14.5 g/100 mL (25 [Deg]C)[n]23.3 g/100 mL (40 [Deg]C)[n]94.6 g/100 mL (100 [Deg]C)[n]Dodecahydrate: 28.3 g/100 mL (20 [Deg]C)
+Sodium selenate
+	Na2SeO4
+	White or gray powder
+	3.098
+	[]
+	[]
+	Soluble
+Sodium selenide
+	Na2Se
+	White to red solid
+	2.625
+	1148
+	[]
+	Reacts
+Sodium selenite
+	Na2SeO3
+	Colourless solid
+	3.1
+	[]
+	[]
+	85 g/100 mL (20 [Deg]C)
+Sodium silicate
+	Na2SiO3
+	White to greenish opaque crystals
+	2.61
+	1361
+	[]
+	22.2 g/100 mL (25 [Deg]C)[n]160.6 g/100 mL (80 [Deg]C)
+Sodium sulfate
+	Na2SO4
+	White crystalline solid. hygroscopic
+	2.664
+	1157.15
+	1702.15
+	Anhydrous: 4.76 g/100 mL (0 [Deg]C)[n]42.7 g/100 mL (100 [Deg]C)[n]Heptahydrate: 19.5 g/100 mL (0 [Deg]C)[n]44 g/100 mL (20 [Deg]C)
+Sodium sulfide
+	Na2S
+	Colourless. hygroscopic solid
+	1.856
+	1449.15
+	[]
+	12.4 g/100 mL (0 [Deg]C)[n]18.6 g/100 mL (20 [Deg]C)[n]39 g/100 mL (50 [Deg]C)
+Sodium sulfite
+	Na2SO3
+	White solid
+	2.633
+	773.15
+	[]
+	27 g/100 mL (20 [Deg]C)
+Sodium tellurite
+	Na2TeO3
+	White crystals. powder
+	6.245
+	983
+	[]
+	>= 10 g/100 mL (20 [Deg]C)
+Sodium thioantimoniate
+	Na3SbS4
+	Yellow crystals
+	1.806
+	360.15
+	[]
+	[]
+Sodium thiocyanate
+	NaSCN
+	Colourless crystals. deliquescent
+	1.735
+	560
+	[]
+	139 g/100 mL (21 [Deg]C)[n]225 g/100 mL (100 [Deg]C)
+Sodium thiosulfate
+	Na2S2O3
+	White crystals
+	1.667
+	321.45
+	[]
+	70.1 g/100 mL (20 [Deg]C)[n]231 g/100 mL (100 [Deg]C)
+Sodium tungstate
+	Na2WO4
+	White rhombohedral crystals
+	4.179
+	971
+	[]
+	57.5 g/100 mL (0 [Deg]C)[n]74.2 g/100 mL (25 [Deg]C)[n]96.9 g/100 mL (100 [Deg]C)
+Tin(II) chloride
+	SnCl2
+	White crystalline solid
+	3.95
+	520.15
+	[]
+	83.9 g/100 ml (0 [Deg]C)[n]Hydrolyses in hot water
+Strontium carbonate
+	SrCO3
+	White or gray powder. hygroscopic
+	3.74
+	[]
+	[]
+	0.0011 g/100 mL (18 [Deg]C)[n]0.065 g/100 mL (100 [Deg]C)
+Strontium chloride
+	SrCl2
+	White crystalline solid
+	3.052
+	1147.15
+	1523.15
+	Anhydrous: 53.8 g/100 mL (20 [Deg]C)[n]Hexahydrate: 106 g/100 mL (0 [Deg]C)[n]206 g/100 mL (40 [Deg]C)
+Strontium hydroxide
+	Sr(OH)2
+	Prismatic colourless crystals. deliquescent
+	3.625
+	648.15
+	[]
+	0.41 g/100 mL (0 [Deg]C)[n]1.77 g/100 mL (20 [Deg]C)[n]21.83 g/100 mL (100 [Deg]C)
+Strontium nitrate
+	Sr(NO3)2
+	White granular solid
+	2.986
+	843.15
+	[]
+	Anhydrous: 71 g/100 mL (18 [Deg]C)[n]66 g/100 mL (20 [Deg]C)[n]Tetrahydrate:60.43 g/100 mL (0 [Deg]C)[n]206.5 g/100 mL (100 [Deg]C)
+Strontium oxide
+	SrO
+	Colourless cubic crystals
+	4.7
+	2804
+	[]
+	Reacts
+Strontium titanate
+	SrTiO3
+	White. opaque crystals
+	5.11
+	2350
+	[]
+	Insoluble
+Sulfamic acid
+	H3NSO3
+	White crystals
+	2.15
+	[]
+	[]
+	Moderate. with slow hydrolysis
+Sulfur dioxide
+	SO2
+	Colourless gas
+	2.6288
+	201
+	263
+	9.4 g/100 mL
+Sulfur hexafluoride
+	SF6
+	Colourless. odorless gas
+	0.00617
+	209
+	[]
+	Slightly soluble in water. very soluble in ethanol. hexane. benzene
+Sulfur tetrafluoride
+	SF4
+	Colourless gas
+	1.95
+	152.15
+	235.15
+	Reacts
+Disulfur decafluoride
+	S2F10
+	Colourless liquid
+	2.08
+	220
+	303.2
+	Insoluble
+Sulfuric acid
+	H2SO4
+	Clear. colorless. odorless liquid
+	1.84
+	283
+	610
+	Miscible
+Sulfuryl chloride
+	SO2Cl2
+	Colourless liquid with a pungent odor. Yellows upon standing.
+	1.67
+	219.1
+	342.6
+	Hydrolyzes
+Tantalum carbide
+	TaC
+	Brown-gray powder
+	14.47
+	4135
+	5395
+	Insoluble
+Tantalum pentoxide
+	Ta2O5
+	White. odorless powder
+	8.18
+	2145
+	[]
+	Negligible
+Tantalum(V) chloride
+	TaCl5
+	White monoclinic crystals
+	3.68
+	489
+	[]
+	Reacts
+Telluric acid
+	Te(OH)6
+	White monoclinic crystals
+	3.07
+	409.15
+	[]
+	50.1 g/100 ml (30 [Deg]C)
+Tellurium dioxide
+	TeO2
+	White solid
+	5.67
+	1005.15
+	1618.15
+	Negligible
+Tellurium tetrachloride
+	TeCl4
+	Hygroscopic pale yellow solid (if fused. maroon liquid)
+	3.26
+	497.15
+	653.15
+	Hydrolises
+Tellurous acid
+	H2TeO3
+	Colourless crystals
+	3
+	[]
+	[]
+	Negligible
+Terbium(III) chloride
+	TbCl3
+	White powder
+	4.35
+	831.15
+	[]
+	Soluble
+Tetraborane
+	B4H10
+	Colourless gas
+	0.0023
+	152.35
+	291.15
+	[]
+Chloroauric acid
+	HAuCl4
+	Orange-yellow needle crystals. hygroscopic
+	3.9
+	[]
+	[]
+	350 g/100 mL
+Tetraamminecopper(II) sulfate
+	Cu(NH3)4SO4
+	Dark blue-purple solution or crystals
+	1.81
+	[]
+	[]
+	18.5 g/100 mL (21.5 [Deg]C)
+Thallium(I) carbonate
+	Tl2CO3
+	White crystals
+	7.11
+	545
+	[]
+	5.2 g/100 mL (25 [Deg]C)[n]27.2 g/100 mL (100 [Deg]C)
+Thallium(I) hydroxide
+	TlOH
+	Yellow needles
+	7.44
+	[]
+	[]
+	34.3 g/100 mL (18 [Deg]C)
+Thallium(I) fluoride
+	TlF
+	White crystals
+	8.36
+	600
+	[]
+	7.86 g/100 mL (15 [Deg]C)
+Thallium(III) oxide
+	Tl2O3
+	Very dark. nearly black solid
+	10.19
+	990
+	[]
+	Insoluble
+Thionyl chloride
+	SOCl2
+	Clear. colourless liquid (yellows on ageing)
+	1.638
+	168.7
+	347.8
+	Reacts
+Thiophosgene
+	CSCl2
+	Red liquid
+	1.5
+	[]
+	345.65
+	Decomposes
+Thiophosphoryl chloride
+	PSCl3
+	Colourless liquid
+	1.67
+	238
+	398
+	Reacts
+Thulium(III) chloride
+	TmCl3
+	Yellow crystals
+	3.98
+	1097
+	1760
+	Heptahydrate: very soluble
+Tin(II) fluoride
+	SnF2
+	Colourless liquid
+	4.57
+	486
+	1120
+	31 g/100 mL (0 [Deg]C)[n]35 g/100 mL (20 [Deg]C)[n]78.5 g/100 mL (106 [Deg]C)
+Tin(IV) chloride
+	SnCl4
+	Colourless fuming liquid
+	2.226
+	239.08
+	387.3
+	Anhydrous: decomposes[n]Pentahydrate: very soluble
+Titanium diboride
+	TiB2
+	Non-lustrous metallic grey
+	4.52
+	3500
+	[]
+	[]
+Titanium carbide
+	TiC
+	Black powder
+	4.93
+	3430
+	5090
+	Insoluble
+Titanium dioxide
+	TiO2
+	White solid
+	4.23
+	2116.15
+	3245.15
+	Insoluble
+Titanium nitride
+	TiN
+	Coating of golden color
+	5.22
+	3200
+	[]
+	Insoluble
+Titanium tetrabromide
+	TiBr4
+	Brown crystals. hygroscopic
+	3.25
+	312
+	503
+	Decomposes
+Titanium tetrachloride
+	TiCl4
+	Colourless liquid
+	1.726
+	249.1
+	409.5
+	Reacts
+Titanium(III) chloride
+	TiCl3
+	Red-violet crystals. hygroscopic
+	2.64
+	[]
+	[]
+	Very soluble
+Titanium(II) chloride
+	TiCl2
+	Black hexagonal crystals
+	3.13
+	1308
+	1770
+	[]
+Titanium tetraiodide
+	TiI4
+	Red-brown crystals
+	4.3
+	423.15
+	650.15
+	Hydrolysis
+Trifluoromethanesulfonic acid
+	CF3SO3H
+	Colourless liquid
+	1.696
+	233.15
+	435.15
+	Miscible
+Trimethylphosphine
+	P(CH3)3
+	Colourless liquid
+	0.735
+	187
+	311.5
+	[]
+Tungsten carbide
+	WC
+	Grey-black lustrous solid
+	15.64
+	3080.5
+	6270
+	Insoluble
+Tungsten hexachloride
+	WCl6
+	Dark blue crystals. moisture sensitive
+	3.52
+	548
+	619.8
+	Hydrolyzes
+Tungsten hexafluoride
+	WF6
+	Clourless gas
+	0.0124
+	275.4
+	290.2
+	Hydrolyzes
+Tungsten trioxide
+	WO3
+	Canary yellow powder
+	7.16
+	1746
+	1970
+	Insoluble
+Tungstic acid
+	H2WO4
+	Yellow powder
+	5.59
+	[]
+	[]
+	Insoluble
+Tungsten hexacarbonyl
+	W(CO)6
+	Colourless solid
+	2.65
+	[]
+	[]
+	Insoluble
+Vanadium carbide
+	VC
+	Refractory black cubic crystals
+	5.77
+	3083.15
+	[]
+	Insoluble
+Vanadium trichloride oxide
+	VOCl3
+	Vivid orange. transparent liquid
+	1.826
+	196.7
+	399.8
+	Decomposes
+Vanadium tetrachloride
+	VCl4
+	Bright red liquid. moisture sensitive
+	1.816
+	245.15
+	427.15
+	Decomposes
+Vanadium(II) chloride
+	VCl2
+	Pale green solid
+	3.23
+	1300
+	1779
+	Soluble
+Vanadium(II) oxide
+	VO
+	Gray solid with metallic lustre
+	5.758
+	2062.15
+	2900.15
+	[]
+Vanadium nitride
+	VN
+	Black powder
+	6.13
+	2323.15
+	[]
+	[]
+Vanadium(III) bromide
+	VBr3
+	Gray-brown solid
+	4
+	[]
+	[]
+	Soluble
+Vanadium(III) chloride
+	VCl3
+	Violet crystals. paramagnetic
+	3
+	[]
+	[]
+	Soluble
+Vanadium(III) fluoride
+	VF3
+	Anhydrous: yellow-green powder[n]Trihydrate: green powder
+	3.363
+	1668
+	1668
+	Insoluble
+Vanadium tetrafluoride
+	VF4
+	Lime green powder. hygroscopic
+	2.975
+	[]
+	[]
+	Very soluble
+Vanadium(III) oxide
+	V2O3
+	Black powder
+	4.87
+	2213.15
+	[]
+	Insoluble
+Vanadium(IV) oxide
+	VO2
+	Deep blue powder
+	4.571
+	2240.15
+	[]
+	[]
+Vanadyl sulfate
+	VOSO4
+	Blue crystalline solid
+	3
+	[]
+	[]
+	Soluble
+Vanadium(V) oxide
+	V2O5
+	Yellow solid
+	3.357
+	963
+	[]
+	0.08 g/100 mL (20 [Deg]C)
+Xenon difluoride
+	XeF2
+	White solid
+	4.32
+	401.75
+	[]
+	2.5 g/100 mL (0 [Deg]C)
+Xenon tetrafluoride
+	XeF4
+	White solid
+	4.04
+	388.85
+	388.85
+	Reacts
+Ytterbium(III) chloride
+	YbCl3
+	White powder
+	4.06
+	976.15
+	2173.15
+	17 g/100 mL
+Ytterbium(III) oxide
+	Yb2O3
+	White solid
+	9.17
+	2628.15
+	4343.15
+	Insoluble
+Yttrium(III) antimonide
+	YSb
+	Cubic crystals
+	5.97
+	2583.15
+	[]
+	[]
+Yttrium(III) arsenide
+	YAs
+	Cubic crystals
+	5.59
+	[]
+	[]
+	[]
+Yttrium barium copper oxide
+	YBa2Cu3O7
+	Black solid
+	6.3
+	1300
+	[]
+	Insoluble
+Yttrium(III) fluoride
+	YF3
+	White powder
+	4.01
+	1660
+	2500
+	Insoluble
+Yttrium(III) oxide
+	Y2O3
+	White solid
+	5.01
+	2698.15
+	4573.15
+	Insoluble
+Yttrium(III) sulfide
+	Y2S3
+	Yellow cubic crystals
+	3.87
+	2198.15
+	[]
+	[]
+Zinc bromide
+	ZnBr2
+	White crystalline powder. hygroscopic
+	4.22
+	667.15
+	970.15
+	311 g/100 mL (0 [Deg]C)[n]447 g/100 mL (20 [Deg]C)[n]538 g/100 mL (100 [Deg]C)
+Zinc chloride
+	ZnCl2
+	White crystalline solid. hygroscopic and very deliquescent
+	2.907
+	565
+	1029
+	432 g/100 mL
+Zinc cyanide
+	Zn(CN)2
+	White powder
+	1.852
+	[]
+	[]
+	0.05 mg/100 mL (20 [Deg]C)
+Zinc fluoride
+	ZnF2
+	White needles. hygroscopic
+	4.95
+	1145.15
+	1773.15
+	Anhydrous: 0.052 mg/100 mL[n]Tetrahydrate: 1.52 g/100 mL (20 [Deg]C)
+Zinc iodide
+	ZnI2
+	White solid
+	4.74
+	719.15
+	[]
+	450 g/100 mL (20 [Deg]C)
+Zinc oxide
+	ZnO
+	White solid
+	5.606
+	[]
+	[]
+	Insoluble
+Zinc selenide
+	ZnSe
+	Light yellow solid
+	5.27
+	1798.15
+	[]
+	Negligible
+Zinc sulfate
+	ZnSO4
+	White powder
+	3.54
+	[]
+	[]
+	57.7 g/100 mL (20 [Deg]C)
+Zinc sulfide
+	ZnS
+	Cubic crystals
+	4.09
+	1458.15
+	1458.15
+	Negligible
+Zinc telluride
+	ZnTe
+	Red crystals
+	6.34
+	1511.65
+	[]
+	Insoluble
+Zirconium carbide
+	ZrC
+	Gray refractory solid
+	6.73
+	3813
+	5370
+	Insoluble
+Zirconium(IV) chloride
+	ZrCl4
+	White hygroscopic crystals
+	2.8
+	604.15
+	604.15
+	Hydrolysis
+Zirconium nitride
+	ZrN
+	Yellow-brown crystals
+	7.09
+	3225
+	[]
+	Insoluble
+Zirconium(IV) hydroxide
+	Zr(OH)4
+	White filter cake
+	3.25
+	[]
+	[]
+	0.02 g/100 mL (20 [Deg]C)
+Zirconium dioxide
+	ZrO2
+	White powder
+	5.68
+	2988.15
+	4573.15
+	Negligible
+Zirconium(IV) silicate
+	ZrSiO4
+	Colourless crystals
+	4.56
+	[]
+	[]
+	Insoluble
+Zirconium tungstate
+	Zr(WO4)2
+	White powder
+	5.09
+	[]
+	[]
+	Negligible

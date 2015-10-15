@@ -1,0 +1,1330 @@
+2NaCl > 2Na + Cl2
+	Electrolysis
+2NaCl + 2H2O > Cl2 + H2 + 2NaOH
+	Electrolysis
+2KCl + 2H2O > Cl2 + H2 + 2KOH
+	Electrolysis
+4HCl + MnO2 > MnCl2 + 2H2O + Cl2
+S + O2 > SO2
+S + 3F2 > SF6
+5S + 4KOH > K2S3 + K2S2O3 + H2O
+4Ca5(PO4)3F + 18SiO2 + 30C > 3P4 + 30CO + 18CaSiO3 + 2CaF2
+2Ca3(PO4)2 + 6SiO2 + 10C > 6CaSiO3 + 10CO + P4
+3Ca(PO3)2 + 10C > Ca3(PO4)2 + 10CO + P4
+P4 + 6F2 > 4PF3
+P4 + 6I2 > 4PI3
+Si + O2 > SiO2
+Si + 2F2 > SiF4
+Si + 2Cl2 > SiCl4
+Si + 2Br2 > SiBr4
+Si + 2I2 > SiI4
+4Al + 3O2 > 2Al2O3
+2Al + 3I2 > Al2I6
+2Al + 3H2SO4 > Al2(SO4)3 + 3H2
+2Mg + O2 > 2MgO
+Mg + Cl2 > MgCl2
+Mg + Br2 > MgBr2
+Mg + H2SO4 > MgSO4 + H2
+2Na + 2H2O > 2NaOH + H2
+4Na + O2 > 2Na2O
+2Na + F2 > 2NaF
+2Na + Cl2 > 2NaCl
+2Na + Br2 > 2NaBr
+2Na + I2 > 2NaI
+2Na + H2SO4 > Na2SO4 + H2
+2K2MnF6 + 4SbF5 > 4KSbF6 + 2MnF3 + F2
+2F2 + 2H2O > O2 + 4HF
+2H2O > 2H2 + O2
+	Electrolysis
+2NaN3 > 2Na + 3N2
+	Abve 275 [Deg]C
+Ba(N3)2 > Ba + 3N2
+	Above 217 [Deg]C
+NH4Cl + NaNO2 > N2 + NaCl + 2H2O
+3Mg + N2 > Mg3N2
+C + O2 > CO2
+4B + 3O2 > 2B2O3
+2B + 3F2 > 2BF3
+2B + 2Cl2 > 2BCl3
+2B + 3Br2 > 2BBr3
+3Be + N2 > Be3N2
+4Li + O2 > 2Li2O
+6Li + N2 > 2Li3N
+2Li + 2H2O > 2LiOH + H2
+2Li + F2 > 2LiF
+2Li + Cl2 > 2LiCl
+2Li + Br2 > 2LiBr
+2Li + I2 > 2LiI
+6HCl + 2Al > 2AlCl3 + 3H2
+2CH4 + O2 > 2CO + 4H2
+2H2 + O2 > 2H2O
+K + O2 > KO2
+2K + 2H2O > 2KOH + H2
+2K + F2 > 2KF
+2K + Br2 > 2KBr
+2K + I2 > 2KI
+2K + H2SO4 > K2SO4 + H2
+MgCl2 + 2K > Mg + 2KCl
+Na + KCl > NaCl + K
+2KF + CaC2 > 2K + CaF2 + 2C
+2Ca + O2 > 2CaO
+Ca + 2H2O > Ca(OH)2 + H2
+Ca + F2 > CaF2
+Ca + Cl2 > CaCl2
+Ca + Br2 > CaBr2
+Ca + I2 > CaI2
+Ca + 2HCl > CaCl2 + H2
+4Sc + 3O2 > 2Sc2O3
+2Sc + 3F2 > 2ScF3
+2Sc + 3Cl2 > 2ScCl3
+2Sc + 3Br2 > 2ScBr3
+2Sc + 3I2 > 2ScI3
+2Sc + 6HCl > 2ScCl3 + 3H2
+Ti + O2 > TiO2
+2Ti + N2 > 2TiN
+Ti + 2H2O > TiO2 + 2H2
+Ti + 2F2 > TiF4
+Ti + 2Cl2 > TiCl4
+Ti + 2Br2 > TiBr4
+4V + 5O2 > 2V2O5
+2V + 5H2 > 2VH5
+2V + 3I2 <> 2VI3
+2Cr + 3F2 > 2CrF3
+2Cr + 3Cl2 > 2CrCl3
+2Cr + 3Br2 > 2CrBr3
+2Cr + 3I2 > 2CrI3
+Cr + 2HCl > CrCl2 + H2
+Cr2O3 + 2Al > Al2O3 + 2Cr
+3Mn + 2O2 > Mn3O4
+3Mn + N2 > Mn3N2
+Mn + Cl2 > MnCl2
+Mn + Br2 > MnBr2
+Mn + I2 > MnI2
+Mn + F2 > MnF2
+2Mn + 3F2 > 2MnF3
+Mn + H2SO4 > MnSO4 + H2
+4Fe + 3O2 > 2Fe2O3
+3Fe + 2O2 > Fe3O4
+2Fe + 3F2 > 2FeF3
+2Fe + 3Br2 > 2FeBr3
+4Fe + 3O2 + 2H2O > 4FeO(OH)
+Fe + H2SO4 > FeSO4 + H2
+Fe2O3 + CO + 2H2 > 2Fe + CO2 + 2H2O
+3Co + 4O2 > 2Co3O4
+2Co + O2 > 2CoO
+Co + Cl2 > CoCl2
+Co + Br2 > CoBr2
+Co + I2 > CoI2
+Co + H2SO4 > CoSO4 + H2
+2Ni + O2 > 2NiO
+Ni + Cl2 > NiCl2
+Ni + Br2 > NiBr2
+Ni + I2 > NiI2
+Ni + H2SO4 > NiSO4 + H2
+Ni(CO)4 <> Ni + 4CO
+4Cu + O2 > 2Cu2O
+Cu + F2 > CuF2
+Cu + Br2 > CuBr2
+Cu + H2SO4 > CuSO4 + H2
+Cu + 4HNO3 > Cu(NO3)2 + 2NO2 + 2H2O
+2Zn + O2 > 2ZnO
+Zn + Br2 > ZnBr2
+Zn + 2HCl > ZnCl2 + H2
+Zn + H2SO4 > ZnSO4 + H2
+Zn + 2KOH > K2ZnO2 + H2
+2Al(CH3)3 + O3 > Al2O3 + 3C2H6
+Al(OH)3 > Al2O3 + H2O
+Al2O3 + 6HF > 2AlF3 + 3H2O
+4Al + P4 > 4AlP
+AlP + 3H2O > Al(OH)3 + PH3
+2Al + 3Cl2 > 2AlCl3
+2Al + 6HCl > 2AlCl3 + 3H2
+AlCl3 + 3NaOH > Al(OH)3 + 3NaCl
+2AlCl3 + 3H2O > Al2O3 + 6HCl
+Al2(SO4)3 + 6NaHCO3 > 3Na2SO4 + 2Al(OH)3 + 6CO2
+2Al(OH)3 + 3H2SO4 > Al2(SO4)3 + 6H2O
+Al(OH)3 + 3HCl > AlCl3 + 3H2O
+Al(OH)3 + H3PO4 > AlPO4 + 3H2O
+Al(OH)3 + 3HNO3 > Al(NO3)3 + 3H2O
+Al(NO3)3 + 3NaOH > Al(OH)3 + 3NaNO3
+Al(NO3)3 + 3KOH > Al(OH)3 + 3KNO3
+Al(NO3)3 + 3LiOH > Al(OH)3 + 3LiNO3
+Al(NO3)3 + 3RbOH > Al(OH)3 + 3RbNO3
+Al(NO3)3 + 3CsOH > Al(OH)3 + 3CsNO3
+2NH4Cl + 2CaO > CaCl2 + Ca(OH)2 + 2NH3
+3H2 + N2 > 2NH3
+NH3 + HCl > NH4Cl
+2Li + 2NH3 > 2LiNH2 + H2
+4NH3 + 3O2 > 2N2 + 6H2O
+CO2 + 2NH3 + 2NaCl + H2O > 2NH4Cl + Na2CO3
+NH4Cl + NaOH > NH3 + NaCl + H2O
+2NH4Cl + Na2CO3 > 2NaCl + CO2 + H2O + 2NH3
+CO2 + NH3 + H2O > NH4HCO3
+NH4HCO3 > NH3 + H2O + CO2
+NH4HCO3 + HCl > NH4Cl + CO2 + H2O
+CaSO4 + 2NH4HCO3 > CaCO3 + (NH4)2SO4 + CO2 + H2O
+NH4HCO3 + KI > NH4I + KHCO3
+NH4HCO3 + NaBr > NH4Br + NaHCO3
+HCN + NH3 > NH4CN
+Ca(CN)2 + (NH4)2CO3 > 2NH4CN + CaCO3
+KCN + NH4Cl > NH4CN + KCl
+NH4CN + (CHO)2 > NH2CH2COOH + HCN
+NH4CN + CH3COCH3 > NH2CH2CH2CH2CN + H2O
+HNO3 + NH3 > NH4NO3
+(NH4)2SO4 + 2NaNO3 > 2NH4NO3 + Na2SO4
+(NH4)2SO4 + Ca(NO3)2 > 2NH4NO3 + CaSO4
+NH4NO3 + NaOH > NH3 + H2O + NaNO3
+NH4NO3 + HCl > NH4Cl + HNO3
+NH4NO3 > N2O + 2H2O
+H2S + 2NH3 > (NH4)2S
+2NH3 + SO2 + H2O > (NH4)2SO3
+2NH3 + H2SO4 > (NH4)2SO4
+(NH4)2CO3 + CaSO4 > (NH4)2SO4 + CaCO3
+2NH4ClO4 > Cl2 + N2 + 2O2 + 4H2O
+4Sb2O3 + 6LiAlH4 > 8SbH3 + 3Li2O + 3Al2O3
+4SbCl3 + 3NaBH4 > 4SbH3 + 3NaCl + 3BCl3
+Na3Sb + 3H2O > SbH3 + 3NaOH
+2SbH3 > 3H2 + 2Sb
+2SbH3 + 3O2 > Sb2O3 + 3H2O
+SbH3 + NaNH2 > NaSbH2 + NH3
+SbCl3 + Cl2 > SbCl5
+2SbCl5 + 5H2O > Sb2O5 + 10HCl
+Ba(N3)2 + Li2SO4 > 2LiN3 + BaSO4
+BaCO3 + 2HCl > BaCl2 + CO2 + H2O
+BaCO3 + 2HNO3 > Ba(NO3)2 + CO2 + H2O
+BaCl2 + 2NaClO3 > Ba(ClO3)2 + 2NaCl
+BaCl2 + 6H2O > Ba(ClO3)2 + 6H2
+	Electrolysis
+Ba(ClO3)2 > BaCl2 + 3O2
+Ba(ClO3)2 + H2SO4 > 2HClO3 + BaSO4
+BaS + CaCl2 > BaCl2 + CaS
+Ba(OH)2 + K2CrO4 > BaCrO4 + 2KOH
+BaO + H2O > Ba(OH)2
+Ba(OH)2 > BaO + H2O
+Ba(OH)2 + H2SO4 > BaSO4 + 2H2O
+3Ba(OH)2 + 2H3PO4 > Ba3(PO4)2 + 6H2O
+Ba(OH)2 + H2S > BaS + 2H2O
+Ba(OH)2 + CO2 > BaCO3 + H2O
+Ba(OH)2 + 2NH4Cl > BaCl2 + 2NH3 + 2H2O
+Ba(OH)2 + 2NH4SCN > Ba(SCN)2 + 2NH3 + 2H2O
+2Ba(NO3)2 > 2BaO + 4NO2 + O2
+2BaO + O2 <> 2BaO2
+BaO2 + H2SO4 > H2O2 + BaSO4
+BaSO4 + 4C > BaS + 4CO
+	Heating with coke
+BaS + H2SO4 > BaSO4 + H2S
+Be + Br2 > BeBr2
+	Between 300 - 700 [Deg]C
+BeO + 2HBr > BeBr2 + H2O
+BeBr2 + 2H2O > 2HBr + Be(OH)2
+Be + Cl2 > BeCl2
+	At elevated temperatures
+BeCl2 + 2H2O > Be(OH)2 + 2HCl
+BeCl2 > Be + Cl2
+	Electrolysis
+Be(OH)2 + 2(NH4)HF2 > (NH4)2BeF4 + 2H2O
+(NH4)2BeF4 > 2NH3 + 2HF + BeF2
+BeF2 + Mg > Be + MgF2
+	Above 1300 [Deg]C
+BeH2 > Be + H2
+	Above 250 [Deg]C
+2NaOH + Be(OH)2 > Na2Be(OH)4
+Be(OH)2 > BeO + H2O
+	Above 400 [Deg]C
+Be + I2 > BeI2
+	Between 500 - 700 [Deg]C
+Be2C + 4HI > 2BeI2 + CH4
+Be(OH)2 + 2HNO3 > Be(NO3)2 + 2H2O
+Be3N2 + 6HCl > 3BeCl2 + 2NH3
+Be3N2 + 6NaOH > 3Na2BeO2 + 2NH3
+Be3N2 + 6H2O > 3Be(OH)2 + 2NH3
+BeCO3 > BeO + CO2
+	Above 100 [Deg]C
+2Be + O2 > 2BeO
+BeCl2 + H2SO4 > BeSO4 + 2HCl
+Be(OH)2 + H2SO4 > BeSO4 + 2H2O
+BeCO3 + H2SO4 > BeSO4 + CO2 + H2O
+Be(NO3)2 + H2SO4 > BeSO4 + 2HNO3
+Na2B4O7 + + 5H2O + 2HCl > 4H3BO3 + 2NaCl
+H3BO3 > HBO2 + H2O
+	Above 170 [Deg]C
+2HBO2 > B2O3 + H2O
+	Above 300 [Deg]C
+2B2O3 + 7C > B4C + 6CO
+	Above 2763 [Deg]C
+B2O3 + 2NH3 > 2BN + 3H2O
+	Above 900 [Deg]C
+H3BO3 + NH3 > BN + 3H2O
+	Above 900 [Deg]C
+B2O3 + CO(NH2)2 > 2BN + CO2 + 2H2O
+	Above 1000 [Deg]C
+B2O3 + 3CaB6 + 10N2 > 20BN + 3CaO
+	Above 1000 [Deg]C
+Li3N + BN > Li3BN2
+Na3N + BN > Na3BN2
+K3N + BN > K3BN2
+B2O3 + 3C + 3Cl2 > 2BCl3 + 3CO
+	Above 500 [Deg]C
+BCl3 + 3H2O > B(OH)3 + 3HCl
+2BCl3 + 2Cu > B2Cl4 + CuCl
+B2O3 + 6HF > 2BF3 + 3H2O
+6NaBF4 + B2O3 + 6H2SO4 > 8BF3 + 6NaHSO4 + 3H2O
+BF3 + BCl3 > BF2Cl + BCl2F
+CsF + BF3 > CsBF4
+Br2 + 5F2 > 2BrF5
+	Above 150 [Deg]C, excess flourine
+KBr + 3F2 > KF + BrF5
+BrF5 + 3H2O > HBrO3 + 5HF
+Br2 + 3F2 > 2BrF3
+3BrF > BrF3 + Br2
+KF + BrF3 > KBrF4
+2Cd3As2 > 6Cd + As4
+	Between 220 - 280 [Deg]C
+Cd + 2HCl > CdCl2 + H2
+CdCl2 + H2S > CdS + 2HCl
+Cd(OH)2 + 2HI > CdI2 + 2H2O
+Cd + 2HI > CdI2 + H2
+CdCO3 + 2HI > CdI2 + CO2 + H2O
+Cd(OH)2 + 2HBr > CdBr2 + 2H2O
+Cd + 2HBr > CdBr2 + H2
+CdCO3 + 2HBr > CdBr2 + CO2 + H2O
+CdO + 2HNO3 > Cd(NO3)2 + H2O
+CdCO3 + 2HNO3 > Cd(NO3)2 + CO2 + H2O
+Cd + 4HNO3 > Cd(NO3)2 + 2NO2 + 2H2O
+CdO + H2SO4 > CdSO4 + H2O
+Cd + H2SO4 > CdSO4 + H2
+Cd + Na2S2O8 > CdSO4 + Na2SO4
+CdS + 2HCl > CdCl2 + H2S
+Cs2C2O4 > Cs2CO3 + CO
+2CsOH + CO2 > Cs2CO3 + H2O
+2CsCl + H2SO4 > Cs2SO4 + 2HCl
+	Between 550 - 700 [Deg]C
+CsCl + CsHSO4 > Cs2SO4 + HCl
+CsOH + HCl > CsCl + H2O
+CsOH + HF > CsF + H2O
+Cs2CO3 + 2HF > 2CsF + H2O + CO2
+2Cs + F2 > 2CsF
+CaO + 3C > CaC2 + CO
+	Above 2000 [Deg]C
+CaC2 + 2H2O > C2H2 + Ca(OH)2
+CaC2 + N2 > CaCN2 + C
+	At elevated temperatures
+3CaCl2 + 2K3PO4 > Ca3(PO4)2 + 6KCl
+CaCl2 > Ca + Cl2
+	Electrolysis
+Ca(OH)2 + 2HCl > CaCl2 + 2H2O
+CaC2 + N2 > CaCN2 + C
+	Above 1000 [Deg]C
+CaCN2 + 3H2O > 2NH3 + CaCO3
+CaCN2 + Na2CO3 + 2C > 2NaCN + CaO + 2CO
+CaCN2 + H2O + CO2 > CaCO3 + H2NCN
+CaCO3 + 2HF > CaF2 + CO2 + H2O
+CaF2 + H2SO4 > CaSO4 + 2HF
+CaH2 + 2H2O > Ca(OH)2 + 2H2
+Ca + H2 > CaH2
+	Between 300 - 400 [Deg]C
+CaCl2 + H2 + 2Na > CaH2 + 2NaCl
+CaO + Mg + H2 > CaH2 + MgO
+Ca(OH)2 > CaO + H2O
+	Above 512 [Deg]C
+Ca(OH)2 + CO2 > CaCO3 + H2O
+CaO + H2O > Ca(OH)2
+2Ca(OH)2 + 2Cl2 > Ca(ClO)2 + CaCl2 + 2H2O
+Ca(ClO)2 + CO2 > CaCO3 + Cl2O
+Ca(ClO)2 + 4HCl > CaCl2 + 2H2O + 2Cl2
+Ca(OH)2 + H2SO4 > CaSO4 + 2H2O
+CaCO3 > CaO + CO2
+	Above 850 [Deg]C
+Fe2O3 + 3CO > 2Fe + 3CO2
+CO + 2AgF2 > COF2 + 2AgF
+KSCN + 2H2SO4 + H2O > KHSO4 + NH4HSO4 + COS
+SiC > Si + C
+	Above 2730 [Deg]C
+3HClO > HClO3 + 2HCl
+	Heating
+8HClO3 > 4HClO4 + 2H2O + 2Cl2 + 3O2
+3HClO3 > HClO4 + H2O + 2ClO2
+2NaClO2 + Cl2 > 2ClO2 + 2NaCl
+HClO3 + HCl > HClO2 + HOCl
+HClO3 + HClO2 > 2ClO2 + Cl2 + 2H2O
+HOCl + HCl > Cl2 + H2O
+2NaClO2 + 2HCl + NaOCl > 2ClO2 + 3NaCl + H2O
+5NaClO2 + 4HCl > 5NaCl + 4ClO2 + 2H2O
+2NaClO2 + 2H2O > 2ClO2 + 2NaOH + H2
+	Electrolysis
+2NaClO2 + Cl2 > 2ClO2 + 2NaCl2
+NO + Cl2O6 > NOClO4 + ClO2
+SnCl4 + 6Cl2O6 > (ClO2)2Sn(ClO4)6 + 4ClO2 + 2Cl2
+2Au + 6Cl2O6 > 2ClO2Au(ClO4)4 + Cl2
+2AsF5 + Cl2O6 > 2ClO3AsF5
+H2CrO4 > CrO3 + H2O
+	Above 250 [Deg]C
+4CrO3 > 2Cr2O3 + 3O2
+	Above 197 [Deg]C
+H2SO4 + Na2Cr2O7 > 2CrO3 + Na2SO4 + H2O
+2CrCl3 + H2 > 2CrCl2 + 2HCl
+	Above 500 [Deg]C
+4CrCl3 + LiAlH4 > 4CrCl2 + LiCl + AlCl3 + 2H2
+2CrCl3 + Zn > 2CrCl2 + ZnCl2
+Cr2O3 + 3C + 3Cl2 > 2CrCl3 + 3CO
+	Between 650 - 800 [Deg]C
+Na2Cr2O7 + S > Na2SO4 + Cr2O3
+	At elevated temperatures
+(NH4)2Cr2O7 > Cr2O3 + N2 + 4H2O
+Cr2O3 + 3CrO3 > 5CrO2 + O2
+Cr2O3 + 2Al > 2Cr + Al2O3
+	Heating with fine Aluminium
+Cr2O3 + 3Cl2 + 3C > 2CrCl3 + 3CO
+	Heating
+Cr2O3 + 3H2SO4 > Cr2(SO4)3 + 3H2O
+CrO2Cl2 + 2H2O > H2CrO4 + 2HCl
+K2Cr2O7 + 4NaCl + 6H2SO4 > 2CrO2Cl2 + 2KHSO4 + 4NaHSO4 + 3H2O
+CrO3 + 2HCl > CrO2Cl2 + H2O
+CrO3 + 2HF > CrO2F2 + H2O
+CrO3 + 2ClF > CrO2F2 + Cl2 + O2
+CrO3 + COF2 > CrO2F2 + CO2
+2CoBr2 + 8NH3 + 2NH4Br + H2O2 > 2Co(NH3)5Br3 + 2H2O
+Co(OH)2 + 2HBr > CoBr2 + 2H2O
+CoCO3 > CoO + CO2
+	Above 427 [Deg]C
+6CoCO3 + O2 > 2Co3O4 + 6CO2
+	Heating
+Co(OH)2 + 2HCl > Co(H2O)6Cl2
+Co(OH)2 + H2SO4 > CoSO4 + 2H2O
+HgCl2 + 2Cu > 2CuCl + Hg
+2Cu2S + 3O2 > 2Cu2O + 2SO2
+Cu2S + 2Cu2O > 6Cu + SO2
+Cu(N3)2 + 2HNO3 > 3N2 + 2NO2 + Cu(OH)2
+CuCl2 + H2S > CuS + 2HCl
+Cu(NO3)2 + H2S > CuS + 2HNO3
+CuCO3 > CuO + CO2
+	Above 290 [Deg]C
+2CuSO4 + 2Na2CO3 + H2O > Cu2(OH)2CO3 + 2Na2SO4 + CO2
+CuCl2 + 2NaOH > Cu(OH)2 + 2NaCl
+2CuCl2 > 2CuCl + Cl2
+	Above 1000 [Deg]C
+2CuCl2 + SO2 + 2H2O > 2CuCl + 2HCl + H2SO4
+Cu + Cl2 > CuCl2
+Cu(OH)2 > CuO + H2O
+	Above 80 [Deg]C
+Cu + 4HNO3 > Cu(NO3)2 + 2NO2 + 2H2O
+Cu + 2N2O4 > Cu(NO3)2 + 2NO
+2Cu(NO3)2 > 2CuO + 4NO2 + O2
+	Above 256 [Deg]C
+2Cu + O2 > 2CuO
+	Heating
+CuO + 2HNO3 > Cu(NO3)2 + H2O
+CuO + 2HCl > CuCl2 + H2O
+CuO + H2SO4 > CuSO4 + H2O
+CuO + H2 > Cu + H2O
+CuO + CO > Cu + CO2
+CuSO4 + Zn > ZnSO4 +Cu
+CuSO4 + Fe > FeSO4 + Cu
+CuSO4 + Mg > MgSO4 + Cu
+CuSO4 + Sn > SnSO4 + Cu
+3CuSO4 + 2Al > Al2(SO4)3 + 3Cu
+(CN)2 + Br2 > 2CNBr
+2NaCN + Br2 > (CN)2 + 2NaBr
+CNBr + H2O > HCN + HBrO
+NaCN + Cl2 > CNCl + NaCl
+CNCl + H2O > HCN + HClO
+NaCN + I2 > NaI + CNI
+8BF3 + 6LiH > B2H6 + 6LiBF4
+4BCl3 + 3LiAlH4 > 2B2H6 + 3LiAlCl4
+4BF3 + 3NaBH4 > 2B2H6 + 3NaBF4
+2NaBH4 + I2 > 2NaI + B2H6 + H2
+B2H6 + 6H2O > 2H3BO3 + 6H2
+B2H6 + 2LiH > 2LiBH4
+B2H6 + HCl > B2H5Cl + H2
+B2H6 + HBr > B2H5Br + H2
+B2H6 + 2CO > 2H3BCO
+	Above 200 [Deg]C and at 20 bar
+2Cl2 + 2HgO > HgCl2 + Cl2O
+2Cl2 + 2Na2CO3 + H2O > Cl2O + 2NaHCO3 + 2NaCl
+2Cl2 + 2NaHCO3 > Cl2O + 2CO2 + 2NaCl + H2O
+2Cl2 + Na2CO3 > Cl2O + CO2 + 2NaCl
+	Between 150 - 200 [Deg]C
+VOCl3 + Cl2O > VO2Cl + 2Cl2
+TiCl4 + Cl2O > TiOCI2 + 2Cl2
+SbCI5 + 2CI2O > SbO2CI + 4Cl2
+AsCI3 + 2CI2O > AsO2CI + 3Cl2
+NOCl + Cl2O > NO2Cl + Cl2
+2ClOClO3 > O2 + Cl2 + Cl2O6
+	Above 20 [Deg]C
+CrO2Cl2 + 2ClOClO3 > 2Cl2 + CrO2(ClO4)2
+TiCl4 + 4ClOClO3 > 4Cl2 + Ti(ClO4)4
+CsClO4 + ClOSO2F > Cs(SO3)F + ClOClO3
+	At -45 [Deg]C
+2ClO2 + 2O3 > Cl2O6 + 2O2
+	Excess ozone
+NO2F + Cl2O6 > NO2ClO4 + ClO2F
+NO + Cl2O6 > NOClO4 + ClO2
+2V2O5 + 12Cl2O6 > 4VO(ClO4)3 + 12ClO2 + 3O2
+N2O5 + H2O > 2HNO3
+P4O10 + 12HNO3 > 4H3PO4 + 6N2O5
+N2O4 <> 2NO2
+N2O4 + H2O > HNO2 + HNO3
+2S2Cl2 + 2H2O > SO2 + 4HCl + 3S
+2H2S + S2Cl2 > H2S4 + 2HCl
+10NH4Cl + Dy2O3 > 2(NH4)2DyCl5 + 6NH3 + 3H2O
+(NH4)2DyCl5 > 2NH4Cl + DyCl3
+DyCl3 + 3NaF > DyF3 + 3NaCl
+Dy2O3 + 6HCl > 2DyCl3 + 3H2O
+ErCl3 + 3LiOH > Er(OH)3 + 3LiCl
+ErCl3 + 3NaOH > Er(OH)3 + 3NaCl
+ErCl3 + 3KOH > Er(OH)3 + 3KCl
+ErCl3 + 3RbOH > Er(OH)3 + 3RbCl
+4Er + 3O2 > 2Er2O3
+Er2O3 + 6HCl > 2ErCl3 + 3H2O
+10NH4Cl + Eu2O3 > 2(NH4)2EuCl5 + 6NH3 + 3H2O
+(NH4)2EuCl5 > 2NH4Cl + EuCl3
+10NH4Cl + Gd2O3 > 2(NH4)2GdCl5 + 6NH3 + 3H2O
+10NH4Cl + 2Gd > 2(NH4)2GdCl5 + 6NH3 + 3H2
+(NH4)2GdCl5 > GdCl3 + 2NH4Cl
+	Above 300 [Deg]C
+2Gd + 6HCl > 2GdCl3 + 3H2
+	At 600 [Deg]C
+2Ga + 2AsCl3 > 2GaAs + 3Cl2
+	Above 2400 [Deg]C
+4Ga + As4 > 4GaAs
+2Ga + 3Cl2 > 2GaCl3
+Ga2O3 + 3SOCl2 > 2GaCl3 + 3SO2
+2Ga + 2NH3 > 2GaN + 3H2
+Ga2O3 + 2NH3 > 2GaN + 3H2O
+Na2GeO3 + NaBH4 + H2O > GeH4 + 2NaOH + NaBO2
+Ge + 2F2 > GeF4
+Ba(GeF6) > GeF4 + BaF2
+3Ge + 4NH3 > Ge3N4 + 6H2
+3AuCl > 2Au + AuCl3
+	Above 420[Deg]C
+3AuCl + 4KBr > KAuBr4 + 2Au + 3KCl
+2Au + 3Cl2 > 2AuCl3
+	Above 180 [Deg]C, passing chlorine gas over gold powder
+AuCl3 > AuCl + Cl2
+	Above 160 [Deg]C
+HCl + AuCl3 > HAuCl4
+AuCl3 + 4KCN > KAu(CN)4 + 3KCl
+2AuCl3 + 3F2 > 2AuF3 + 3Cl2
+2Au + 3Br2 > Au2Br6
+	Above 140 [Deg]C, excess bromine
+Au2Cl6 + 6HBr > 6HCl + Au2Br6
+HBr + AuBr3 > HAuBr4
+2Au2O3 > 4Au + 3O2
+	Above 160[Deg]C
+NH2Cl + NH3 > N2H4 + HCl
+2NH3 + H2O2 > N2H4 + 2H2O
+	Pechiney-Ugine-Kuhlmann process or the Atofina-PCUK cycle
+NaN3 + HCl > HN3 + NaCl
+2HN3 > H2 + 3N2
+	Decomposition(explosion) triggered by shock, friction, spark, etc.
+Br2 + SO2 + 2H2O > H2SO4 + 2HBr
+H2SO4 + KBr > KHSO4 + HBr
+	~36% sulfuric acid
+2Br2 + S + 2H2O > 4HBr + SO2
+2I2 + N2H4 > 4HI + N2
+H2S + I2 > 2HI + S
+H2 + I2 > 2HI
+2PI3 + 6H2O > 6HI + 2H3PO3
+NaCl + H2SO4 > NaHSO4 + HCl
+NaCl + NaHSO4 > HCl + Na2SO4
+PCl5 + H2O > POCl3 + 2HCl
+2H2O2 > 2H2O + O2
+NaClO + H2O2 > O2 + NaCl + H2O
+2KMnO4 + 3H2O2 > 2MnO2 + 2KOH + 2H2O + 3O2
+Na2B4O7 + 4H2O2 + 2NaOH > 2Na2B2O4(OH)4 + H2O
+Al2Se3 + 6H2O <> 2Al(OH)3 + 3H2Se
+2H2Se + SO2 <> 2H2O + Se + S
+FeS + 2HCl > FeCl2 + H2S
+6H2O + Al2S3 > 3H2S + 2Al(OH)3
+Fe2O3 + H2O + 3H2S > Fe2S3 + 4H2O
+Al2Te3 + 6H2O > 2Al(OH)3 + 3H2Te
+2H2Te + O2 > 2H2O + 2Te
+4NH2OH + O2 > 2N2 + 6H2O
+	Explosion
+HClO + HCl > H2O + Cl2
+In2O3 +2NH3 > 2InN + 3H2O
+	At elevated temperatures
+P4 + 4InI3 > 4InP + 6I2
+	Above 400 [Deg]C, white phosphorus
+I2 + 6H2O + 5Cl2 <> 2HIO3 + 10HCl
+I2 + 10HNO3 <> 2HIO3 + 10NO2 + 4H2O
+I2 + H2O2 > 2HIO3 + 4H2O
+I2 + 5F2 > 2IF5
+	Burning iodine in fluorine gas
+I2 + Cl2 > 2ICl
+2FeCl3 + C6H5Cl > 2FeCl2 + C6H4Cl2 + HCl
+Fe + 2HCl > FeCl2 + H2
+	Excess HCl
+2Fe + 3Cl2 > 2FeCl3
+Fe + 2FeCl3 > 3FeCl2
+Fe3O4 + 8HCl > FeCl2 + 2FeCl3 + 4H2O
+2FeCl2 + Cl2 > 2FeCl3
+4FeCl2 + O2 + 4HCl > 4FeCl3 + 2H2O
+FeCl3 + Fe2O3 > 3FeOCl
+	Above 350[Deg]C
+FeCl3 + CuCl > FeCl2 + CuCl2
+4FeO > Fe + Fe3O4
+	Below 575 [Deg]C
+FeC2O4 > FeO + CO2 + CO
+2Fe + 8HNO3 > 2Fe(NO3)3 + 2NO + 4H2O
+3Fe2O3 + H2 > 2Fe3O4 + H2O
+3Fe2O3 + CO > 2Fe3O4 + CO2
+Fe3O4 + 4CO > 3Fe + 4CO2
+2Fe2O3 + 3C > 4Fe + 3CO2
+2Al + Fe2O3 > 2Fe + Al2O3
+	Thermite
+ZnO + Fe2O3 > Zn(FeO2)2
+2FeO(OH) > Fe2O3 + H2O
+	Above 200 [Deg]C
+2Fe(OH)3 > Fe2O3 + 3H2O
+	Above 200 [Deg]C
+FeCl3 + 3HF > FeF3 + 3HCl
+Pb(NO3)2 + 2NaCl > PbCl2 + 2NaNO3
+Pb(CH3COO)2 + HCl > PbCl2 + 2CH3COOH
+PbCO3 + 2HCl > PbCl2 + CO2 + H2O
+Pb(NO3)2 + 2HCl > PbCl2 + 2HNO3
+PbO2 + 4HCl > PbCl2 + Cl2 + 2H2O
+PbO + 2HCl > PbCl2 + H2O
+Pb + Cl2 > PbCl2
+PbCl2 + 3NaNO2 > PbO + NaNO3 + 2NO + 2NaCl
+	Molten NaNO2
+Pb(NO3)2 + 2KI > PbI2 + 2KNO3
+	Looks cool as hell
+Pb + 4HNO3 > Pb(NO3)2 + 2NO2 + 2H2O
+PbO + 2HNO3 > Pb(NO3)2 + H2O
+2Pb(NO3)2 > 2PbO + 4NO2 + O2
+	Above 270 [Deg]C
+PbCO3 > PbO + CO2
+	Above 315 [Deg]C
+2PbS + 3O2 > 2PbO + 2SO2
+PbO + CO > Pb + CO2
+	Above 1200 [Deg]C
+PbO2 + 2NaOH + 2H2O > Na2(Pb(OH)6)
+2PbO2 + 2H2SO4 > 2PbSO4 + 2H2O + O2
+2PbO2 + 4HNO3 > 2Pb(NO3)2 + 2H2O + O2
+PbO2 + 4HCl > PbCl2 + 2H2O + Cl2
+2MnSO4 + 5PbO2 + 6HNO3 > 2HMnO4 + 2PbSO4 + 3Pb(NO3)2 + 2H2O
+2Cr(OH)3 + 10KOH + 3PbO2 > 2K2CrO4 + 3K2PbO2 + 8H2O
+Pb3O4 + 4HNO3 > PbO2 + 2Pb(NO3)2 + 2H2O
+PbO + C > Pb + CO
+LiAlH4 + 4H2O > LiOH + Al(OH)3 + 4H2
+4LiH + AlCl3 > LiAlH4 + 3LiCl
+Na + Al + 2H2 > NaAlH4
+	Under high pressure and temperature
+NaAlH4 + LiCl > LiAlH4 + NaCl
+3LiAlH4 > Li3AlH6 + 2Al + 3H2
+	Above 150 [Deg]C
+2Li3AlH6 > 6LiH + 2Al + 3H2
+	Above 200 [Deg]C
+2LiH + 2Al > 2LiAl + H2
+	Above 400 [Deg]C
+LiAlH4 + 4NH3 > LiAl(NH2)4 + 4H2
+LiAlH4 + 4NaCl > 4NaH + LiCl + AlCl3
+2LiAlH4 + MgBr2 > Mg(AlH4)2 + 2LiBr
+LiOH + HBr > LiBr + H2O
+NaBH4 + LiBr > NaBr + LiBH4
+BF3 + 4LiH > LiBH4 + 3LiF
+	In diethyl ether
+Li2CO3 + CO2 + H2O > 2LiHCO3
+LiCl + AgNO3 > AgCl + LiNO3
+LiOH + HCl > LiCl + H2O
+Li2O2 > 2Li2O + O2
+	Above 450 [Deg]C
+2Li2O2 + 2CO2 > 2Li2CO3 + O2
+2Li + H2 > 2LiH
+LiH + H2O > LiOH + H2
+2LiH + 2SO2 > Li2S2O4 + H2
+LiH + LiOH > Li2O + H2
+	Above 200 [Deg]C
+4LiH + SiCl4 > 4LiCl + SiH4
+Li2CO3 + Ca(OH)2 > 2LiOH + CaCO3
+Li2O + H2O > 2LiOH
+LiOH + HF > LiF + H2O
+Li2CO3 + 2HNO3 > 2LiNO3 + H2O + CO2
+4LiNO3 > 2Li2O + 4NO2 + O2
+	Above 600 [Deg]C
+2Li + S > Li2S
+2LiOH + H2SO4 > Li2SO4 + 2H2O
+CH4 + 2O2 > CO2 + 2H2O
+MgSO4 + Na2CO3 > MgCO3 + Na2SO4
+MgCO3 + 2HCl > MgCl2 + CO2 + H2O
+MgCO3 + H2SO4 > MgSO4 + CO2 + H2O
+MgCO3 > MgO + CO2
+	Above 540 [Deg]C
+MgCl2 + Ca(OH)2 > Mg(OH)2 + CaCl2
+MgCl2 > Mg + Cl2
+	Electrolysis
+Mg(OH)2 + 2HCl > MgCl2 + 2H2O
+Cu + MgSO4 + 2H2O > H2 + CuSO4 + Mg(OH)2
+	Electrolysis with a copper anode
+Mn2O7 + 3MnO > 5MnO2
+2MnO2 + 2H2SO4 > 2MnSO4 + O2 + 2H2O
+MnO2 + 4HCl > MnCl2 + Cl2 + 2H2O
+H2O + KMnO4 + NaHSO4 + H2O2 > MnSO4 + MnSO2
+MnO2 + SO2 > MnSO4
+MnCl2 + 2NaC5H5 > Mn(C5H5)2 + 2NaCl
+MnO2 + 4HCl > MnCl2 + 2H2O + Cl2
+K2MnF6 + 2SbF5 > MnF4 + 2KSbF6
+2KMnO4 + 2KF + 10HF + 3H2O2 > 2K2MnF6 + 8H2O + 3O2
+Hg + HgCl2 > Hg2Cl2
+2HCl + Hg2(NO3)2 > Hg2Cl2 + 2HNO3
+Hg2Cl2 + 2NH3 > Hg + Hg(NH2)Cl + NH4Cl
+Hg2Cl2 > HgCl2 + Hg
+NO3 + 2HCl > HgCl2 + H2O + NO2
+Hg2(NO3)2 + H2SO4 > Hg2SO4 + 2HNO3
+2Hg + 2H2SO4 > Hg2SO4 + 2H2O + SO2
+Hg + 2H2SO4 > HgSO4 + SO2 + 2H2O
+P4 + 20HNO3 > 4H3PO4 + 20NO2 + 4H2O
+	With red phosphorus
+2H3PO4 + Fe2O3 > 2FePO4 + 3H2O
+2MoS2 + 7O2 > 2MoO3 + 4SO2
+Na2MoO4 + H2O + 2HClO4 > MoO3(H2O)2 + 2NaClO4
+MoO3 + 3H2 > Mo + 3H2O
+	At elevated temperatures
+2MoS2 + 7Cl2 > 2MoCl5 + 2S2Cl2
+	At elevated temperatures
+2NdCl3 + Nd > 3NdCl2
+	Above 650 [Deg]C
+NdCl3 + H2O > NdOCl + 2HCl
+	Heating
+2NdCl3 + SiO2 > 2NdOCl + SiCl4
+	Heating
+2NdCl3 + 3H2S > 2Nd2S3 + 6HCl
+	At 1100 [Deg]C
+NdCl3 + NH3 > NdN + 3HCl
+NdCl3 + PH3 > NdP + 3HCl
+NdCl3 + 3HF > NdF3 + 3HCl
+Nd2O3 + 6NH4Cl > 2NdCl3 + 3H2O + 6NH3
+K2HgI4 + CuCl + 2H2O > Cu2HgI4 + 2KOH + H2
+NiCO3 > NiO + CO2
+	Heating
+2Cr2O3 + 4NiO + 3O2 > 4NiCrO4
+2Nb + 5Cl2 > 2NbCl5
+	Between 300 - 500 [Deg]C
+NbCl5 + 3H2O > HNbO3 + 5HCl
+4HNO3 > 4NO2 + O2 + 2H2O
+3Cu + 8HNO3 > 3Cu(NO3)2 + 2NO + 4H2O
+3NO2 + H2O > 2HNO3 + NO
+2NO2 + H2O2 > 2HNO3
+2NaNO3 + H2SO4 > 2HNO3 + Na2SO4
+2KNO3 + H2SO4 > 2HNO3 + K2SO4
+2NO + O2 > 2NO2
+4NO + O2 + 2H2O > 4HNO2
+2NO + Cl2 > 2NOCl
+2NO + F2 > 2NOF
+2NO + Br2 > 2NOBr
+2NaNO2 + 2NaI + 2H2SO4 > I2 + 4NaHSO4 + 2NO
+2NaNO2 + 2FeSO4 + 3H2SO4 > Fe2(SO4)3 + 2NaHSO4 + 2H2O + 2NO
+3KNO2 + KNO3 + Cr2O3 > 2K2CrO4 + 4NO
+3HNO2 > HNO3 + 2NO + H2O
+3H2SO4 + 2KMnO4 + 5KNO2 > 5KNO3 + 3H2O + MnSO4 + K2SO4
+NaNO2 + HCl > HNO2 + NaCl
+HCl + NOHSO4 > H2SO4 + NOCl
+HNO2 + 2HCl > H2O + NOCl
+Cl2 + 2NO > 2NOCl
+2NOCl > Cl2 + 2NO
+	Above 100 [Deg]C
+HNO3 + 3HCl > Cl2 + 2H2O + NOCl
+2HNO3 > N2O5 + H2O
+2N2O5 > 4NO2 + O2
+4HNO3 + Sn > H2SnO3 + 4NO2 + H2O
+H2N2O2 > H2O + N2O
+HNO2 + H2SO4 > NOHSO4 + H2O
+Os + O2 > OsO4
+	At 400 [Deg]C
+2F2 + 2NaOH > OF2 + 2NaF + H2O
+OF2 + H2O > 2HF + O2
+	Slow
+OF2 + SO2 > SO3 + F2
+2NH3 + 4O3 > NH4NO3 + 4O2 + H2O
+C + 2O3 > CO2 + 2O2
+3O2 > 2O3
+	Spark of electricity
+PdCl2 + CO + H2O > Pd + CO2 + 2HCl
+PdCl2 + 2KI > PdI2 + 2KCl
+NaClO4 + HCl > NaCl + HClO4
+2HClO4 + P4O10 > Cl2O7 + H2P4O11
+2PH3 + 4O2 > P2O5 + 3H2O
+3KOH + P4 + 3H2O > 3KH2PO2 + PH3
+P4O6 + 6H2O > 4H3PO3
+K2HPO3 + 2HCl > 2KCl + H3PO3
+4H3PO3 > 3H3PO4 + PH3
+	Above 200 [Deg]C
+H3PO3 + NaOH > NaH2PO3 + H2O
+H3PO3 + 2NaOH > Na2HPO3 + 2H2O
+H3PO3 + 2HgCl2 + H2O > Hg2Cl2 + H3PO4 + 2HCl
+H3PO3 + Hg2Cl2 + H2O > 2Hg + H3PO4 + 2HCl
+PBr5 > PBr3 + Br2
+	Above 100 [Deg]C
+4Fe2P + 18S > P4S10 + 8FeS
+P4S10 + 16H2O > 4H3PO4 + 10H2S
+P4 + 5O2 > P4O10
+	Burning elemental phosphorus
+P4O10 + 6H2O > 4H3PO4
+P4 + 6Br2 > 4PBr3
+	Excess phosphorus
+PCl3 + 3H2O > H3PO3 + 3HCl
+P4 + 6Cl2 > 4PCl3
+	Excess phosphorus
+2PCl3 + 3ZnF2 > 2PF3 + 3ZnCl2
+P4 + 6I2 > 4PI3
+H2PtCl6 > PtCl2 + Cl2 + 2HCl
+	Above 350 [Deg]C
+Pt + 4HNO3 + 6HCl > H2PtCl6 + 4NO2 + 4H2O
+H2PtCl6 > PtCl4 + 2HCl
+PtCl4 <> PtCl2 + Cl2
+KBr + AgNO3 > AgBr + KNO3
+2KBr + CuBr2 > K2CuBr4
+4K2CO3 + Fe3Br8 > 8KBr + Fe3O4 + 4CO2
+2KOH + CO2 > K2CO3 + H2O
+KCl + NaClO3 > NaCl + KClO3
+6KOH + 3Cl2 > KClO3 + 5KCl + 3H2O
+2KClO3 > 3O2 + 2KCl
+	With a catalyst - typically manganese(IV) oxide
+4KClO3 > 3KClO4 + KCl
+	No catalyst
+KClO4 > KCl + 2O2
+	Above 400 [Deg]C
+2KClO3 + H2SO4 > 2HClO3 + K2SO4
+KCl + AgNO3 > AgCl + KNO3
+KOH + HCl > KCl + H2O
+2K + Cl2 > 2KCl
+HCN + KOH > KCN + H2O
+HCONH2 + KOH > KCN + 2H2O
+K4Fe(CN)6 > 4KCN + FeC2 + N2
+4Au + 8KCN + O2 + 2H2O > 4KAu(CN)2 + 4KOH
+KCN + H2O2 > KOCN + H2O
+4K2Cr2O7 > 4K2CrO4 + 2Cr2O3 + 3O2
+	Above 500 [Deg]C
+K2Cr2O7 + K2CO3 <> 2K2CrO4 + CO2
+K2Cr2O7 + 2H2SO4 > 2CrO3 + 2KHSO4 + H2O
+2K2Cr2O7 + 8H2SO4 > 2K2SO4 + 2Cr2(SO4)3 + 8H2O + 3O2
+	Heating with ~>96% H2SO4
+Fe2(SO4)3 + 3BaC2O4 + 3K2C2O4 > 2K3Fe(C2O4)3 + 3BaSO4
+6HCl + K3Fe(CN)6 > 6HCN + FeCl3 + 3KCl
+2K4Fe(CN)6 + Cl2 > 2K3Fe(CN)6 + 2KCl
+2KHCO3 > K2CO3 + CO2 + H2O
+	Between 100 - 200 [Deg]C
+K2CO3 + CO2 + H2O > 2KHCO3
+2HF + KOH > KHF2 + H2O
+KOH + CO2 > KHCO3
+Ca(OH)2 + K2CO3 > CaCO3 + 2KOH
+2KCl + 2H2O > 2KOH + Cl2 + H2
+	Electrolysis
+2KI + Cl2 > 2KCl + I2
+KI + I2 > KI3
+HIO3 + KOH > KIO3 + H2O
+3I2 + 6KOH > KIO3 + 5KI + 3H2O
+KI + KClO3 > KIO3 + KCl
+NH4NO3 + KOH > NH3 + KNO3 + H2O
+NH4NO3 + KCl > NH4Cl + KNO3
+KOH + HNO3 > KNO3 + H2O
+NaNO3 + KCl > NaCl + KNO3
+3KClO4 + C6H12O6 > 3KCl + 6CO2 + 6H2O
+KIO3 + Cl2 + 2KOH > KIO4 + 2KCl + H2O
+2MnO2 + 4KOH + O2 > 2K2MnO4 + 2H2O
+2K2MnO4 + 2H2O > 2KMnO4 + 4KOH + H2
+	Electrolysis
+K2MnO4 + Cl2 > KMnO4 + KCl
+3K2MnO4 + 4HCl > 2KMnO4 + MnO2 + 2H2O + 4KCl
+3K2MnO4 + 2CO2 > 2KMnO4 + 2K2CO3 + MnO2
+2KCl + H2SO4 > 2HCl + K2SO4
+H2SO4 + 2KOH > K2SO4 + 2H2O
+K2SO4 + 4C > K2S + 4CO
+	Heating
+K2S + H2O > KOH + KSH
+PrCl3 + K3PO4 > PrPO4 + 3KCl
+PrCl3 + 3NaF > PrF3 + 3NaCl
+2Pr + 6HCl > 2PrCl3 + 3H2
+Pr2(CO3)3 + 6HCl > 2PrCl3 + 3CO2 + 3H2O
+RbOH + HBr > RbBr + H2O
+Rb2CO3 + 2HBr > 2RbBr + H2O + CO2
+RbOH + HCl > RbCl + H2O
+RbCl + H2SO4 > RbHSO4 + HCl
+RbOH + HF > RbF + H2O
+Rb2CO3 + 2HF > 2RbF + H2O + CO2
+RbOH + NH4F > RbF + H2O + NH3
+2Rb + F2 > 2RbF
+Rb2O + H2O > 2RbOH
+2Rb + I2 > 2RbI
+RbOH + HNO3 > RbNO3 + H2O
+2Rb + 2HNO3 > 2RbNO3 + H2
+Rb2CO3 + 2HNO3 > 2RbNO3 + H2O + CO2
+10Rb + 2RbNO3 > 6Rb2O + N2
+2Rb + 2RbOH > 2Rb2O + H2
+Rb + O2 > RbO2
+3Rb + RbO2 > 2Rb2O
+10NH4Cl + Sm2O3 > 2(NH4)2SmCl5 + 6NH3 + 3H2O
+	Above 230 [Deg]C
+(NH4)2SmCl5 > 2NH4Cl + SmCl3
+	Between 350 - 400 [Deg]C
+2Sm + 6HCl > 2SmCl3 + 3H2
+SmCl3 + 3KF > SmF3 + 3KCl
+Sc2O3 + NH4HF2 > 2ScF3 + 6NH4F + 3H2O
+	At elevated temperatures
+H2SiF6 + 6NH3 + 2H2O > SiO2 + 6NH4F
+2NH4F > NH3 + NH4HF2
+	Above 100 [Deg]C
+SiO2 + 4NH4HF2 > SiF4 + 4NH4F + 2H2O
+Sc2O3 + 6HCl > 2ScCl3 + 3H2O
+SeO2 + H2O2 > H2SeO4
+Se + 4H2O + 3Cl2 > H2SeO4 + 6HCl
+2H2SeO4 > 2H2SeO3 + O2
+	Above 200 [Deg]C
+2Au + 6H2SeO4 > Au2(SeO4)3 + 3H2SeO3 + 3H2O
+3Se + 4HNO3 + H2O > 3H2SeO3 + 4NO
+2H2O2 + Se > SeO2 + 2H2O
+H2SeO3 <> SeO2 + H2O
+Se + F2 > 3SeF6
+	Probably at higher temperatures
+2BrF3 + SeO2 > SeF6 + O2 + Br2
+2Se + 2Br > Se2Br2
+Se2Br2 + 6Br > SeBr4
+SeBr4 + SeO2 > 2SeOBr2
+SeO2 + 2HCl > Se(OH)2Cl2
+Se(OH)2Cl2 > SeOCl2 + H2O
+SeCl4 + 3H2O > H2SeO3 + 4HCl
+SeCl4 + SeO2 > 2SeOCl2
+Se + 2F2 > SeF4
+SF4 + SeO2 > SeF4 + SO2
+3Se + 4ClF3 > 3SeF4 + 2Cl2
+2SeO3 > 2SeO2 + O2
+SO3 + K2SeO4 > K2SO4 + SeO3
+SeO3 + SeO2 > Se2O5
+	Above 120 [Deg]C
+SeO3 + SeF4 > SeO2F2
+Si + 3HCl > HSiCl3 + H2
+	Above 300 [Deg]C
+4HSiCl3 > SiH4 + 3SiCl4
+Si + 2H2 + 3SiCl4 > 4SiHCl3
+2SiHCl3 > SiH2Cl2 + SiCl4
+2SiH2Cl2 > SiHCl3 + SiH3Cl
+2SiH3Cl > SiH4 + SiH2Cl2
+3SiO2 + 6H2 + 4Al > 3SiH4 + 2Al2O3
+	Under high pressures
+4HCl + Mg2Si > SiH4 + 2MgCl2
+SiH4 + 2O2 > SiO2 + 2H2O
+Si + 3HCl > HSiCl3 + H2
+(H3O)2SiF6 + 2NaOH > Na2SiF6 + 4H2O
+H2SiF6 + Al2O3 > 2AlF3 + SiO2 + H2O
+SiCl4 + 2H2 + O2 > SiO2 + 4HCl
+Na2Si3O7 + H2SO4 > 3SiO2 + Na2SO4 + H2O
+Si(OC2H5)4 > SiO2 + 2(C2H5)2O
+	Above 600 [Deg]C
+Si(OC2H5)4 + 12O2 > SiO2 + 10H2O + 8CO2
+Si(OC2H5)4 + 2H2O > SiO2 + 4C2H5OH
+SiO2 + 2NaOH > Na2SiO3 + H2O
+2Na2O + SiO2 > Na4SiO4
+Na2O + SiO2 > Na2SiO3
+SiO2 + Si > 2SiO
+	At elevated temperatures
+3Si + 2N2 > Si3N4
+	Between 1300 - 1400 [Deg]C, heating powdered silicon in nitrogen
+SiCl4 + 6NH3 > Si(NH)2 + 4NH4Cl
+	At 0 [Deg]C
+3Si(NH)2 > Si3N4 + N2 + 3H2
+	Above 1000 [Deg]C
+Si + 4HBr > SiBr4 + 2H2
+	Above 600 [Deg]C
+SiBr4 + 2H2O > SiO2 + 4HBr
+Si + 2Cl2 > SiCl4
+SiCl4 + 2H2O > SiO2 + 4HCl
+AgNO3 + NaN3 > AgN3 + NaNO3
+AgNO3 + KBr > AgBr + KNO3
+AgNO3 + NaBr > AgBr + NaNO3
+2AgBr > 2Ag + Br2
+	Above 1502 [Deg]C
+AgNO3 + NaCl > AgCl + NaNO3
+2AgCl > 2Ag + Cl2
+2AgOH > Ag2O + H2O
+Ag2O + 2HBr > 2AgBr + H2O
+Ag2O + 2HF > 2AgF + H2O
+Ag2O + 2HCl > 2AgCl + H2O
+Ag2O + 2HO2CCF3 > 2Ag2CCF3 + H2O
+3Ag + 4HNO3 > 3AgNO3 + 2H2O + NO
+	Cold and diluted HNO3
+Ag + 2HNO3 > AgNO3 + H2O + NO2
+	Hot and concentrated HNO3
+2AgNO3 + Cu > Cu(NO3)2 + 2Ag
+2AgNO3 > 2Ag + O2 + 2NO2
+	Above 440 [Deg]C
+2AgNO3 + 2NaOH > Ag2O + 2NaNO3 + H2O
+2AgNO3 + 2KOH > Ag2O + 2KNO3 + H2O
+Ag + AgF > Ag2F
+2AgNO3 + H2SO4 > Ag2SO4 + 2HNO3
+2Ag2O + 2F2 > 2AgF2 + O2
+2AgF + F2 > 2AgF2
+	Above 200 [Deg]C
+2AgCl + 2F2 > 2AgF2 + Cl2
+	Above 200 [Deg]C
+2Na + NH3 > 2NaNH2 + H2
+NaNH2 + H2O > NH3 + NaOH
+2NaNH2 + 4O2 > Na2O + 2NO2 + 2H2O
+2Al + 2NaOH + 2H2O > NaAlO2 + 3H2
+2NaNH2 + N2O > NaN3 + NaOH + NH3
+2NaNO2 + 2C2H5OH + H2SO4 > 2C2H5ONO + Na2SO4 + 2H2O
+C2H5ONO + N2H4 + NaOH > NaN3 + C2H5OH + 2H2O
+3NaNH2 + NaNO3 > NaN3 + 3NaOH + NH3
+2NaN3 + 2HNO2 > 3N2 + 2NO + 2NaOH
+2NaBr + Cl2 > Br2 + 2NaCl
+3Na2CO3 + 3Br2 > 5NaBr + NaBrO3 + 3CO2
+2NaCl + H2SO4 > Na2SO4 + 2HCl
+	Hot H2SO4
+Na2SO4 + CaCO3 + 2C > Na2CO3 + 2CO2 + CaS
+NaCl + NH3 + CO2 + H2O > NaHCO3 + NH4Cl
+2NaHCO3 > Na2CO3 + H2O + CO2
+Ca(OH)2 + 2NH4Cl > CaCl2 + 2NH3 + 2H2O
+NH3 + CO2 + H2O > NH4HCO3
+NH4HCO3 + NaCl > NH4Cl + NaHCO3
+NaCl + 3H2O > NaClO3 + 3H2
+	Above 70 [Deg]C, electrolysis
+NaCN + H2O2 > NaOCN + H2O
+NaNH2 + C > NaCN + H2
+	At elevated temperatures
+4Au + 8NaCN + O2 + 2H2O > 4NaAu(CN)2 + 4NaOH
+HCN + NaOH > NaCN + H2O
+2Cr2O3 + 4Na2CO3 + 3O2 > 4Na2CrO4 + 4CO2
+	Above 1000 [Deg]C
+2Na2CrO4 + 2CO2 > Na2Cr2O7 + 2NaHCO3
+2Na2O2 > 2Na2O + O2
+	Above 675 [Deg]C
+Na2O2 + 2H2O > 2NaOH + H2O2
+2Na2O + O2 > 2Na2O2
+NaH + 2BF3 > B2H6 + 6NaF
+CO2 + 2NaOH > Na2CO3 + H2O
+Na2CO3 + CO2 + H2O > 2NaHCO3
+NaHCO3 + HCl > NaCl + H2CO3
+NaHCO3 + CH3COOH > CH3COONa + H2O + CO2
+NaHCO3 + NaOH > Na2CO3 + H2O
+Na2CO3 > Na2O + CO2
+	Above 850 [Deg]C
+Al2(SO4)3 + 6NaOH > 2Al(OH)3 + 3Na2SO4
+Ca(OH)2 + Na2CO3 > CaCO3 + 2NaOH
+Cl2 + 2NaOH > NaCl + NaClO + H2O
+NaClO + 2HCl > Cl2 + H2O + NaCl
+NaClO + CH3COOH > HClO + CH3COONa
+3NaClO > NaClO3 + 2NaCl
+NaClO + H2O2 > H2O + NaCl + O2
+NH3 + NaOCl > NH2Cl + NaOH
+NH2Cl + NaOCl > NHCl2 + NaOH
+NHCl2 + NaOCl > NCl3 + NaOH
+NaClO + Zn > ZnO + NaCl
+NH4OH + NaClO > NaOH + NH2Cl + H2O
+2NaH2PO2 > Na2HPO4 + PH3
+HIO3 + NaOH > NaIO3 + H2O
+3I2 + 6NaOH > NaIO3 + 5NaI + 3H2O
+	Hot & concetrated NaOH
+NaIO3 + NaOCl > NaIO4 + NaCl
+MoO3 + 2NaOH > Na2MoO4 + H2O
+	Between 50 - 70 [Deg]C
+Na2MoO4 + NaBH4 + 2H2O > NaBO2 + MoO2 + 2NaOH + 3H2
+2HNO3 + Na2CO3 > 2NaNO3 + CO2 + H2O
+HNO3 + NaHCO3 > NaNO3 + CO2 + H2O
+HNO3 + NaOH > NaNO3 + H2O
+NH4NO3 + NaOH > NaNO3 + NH4OH
+NH4NO3 + NaHCO3 > NaNO3 + NH4HCO3
+2NH4NO3 + Na2CO3 > 2NaNO3 + (NH4)2CO3
+2NaNO3 > 2NaNO2 + O2
+	Above 380 [Deg]C
+2NaNO2 + H2SO4 > 2HNO2 + Na2SO4
+2NaNO2 > Na2O + NO + NO2
+	Above 330 [Deg]C
+Na2O + H2O > 2NaOH
+2NaOH + 2Na > 2Na2O + H2
+Na2O2 + 2Na > 2Na2O
+2NaNO2 + 6Na > 4Na2O + N2
+Na2O + SiO2 > Na2SiO3
+NaIO3 + Cl2 + 4NaOH > Na3H2IO6 + 2NaCl + H2O
+NaI + 4Br2 + 10NaOH > Na3H2IO6 + 8NaBr + 4H2O
+Na3H2IO6 + 2HNO3 > NaIO4 + 2NaNO3 + 2H2O
+2MnO2 + 3NaClO + 2NaOH > 2NaMnO4 + 3NaCl + H2O
+Na2CO3 + H3PO4 > Na2HPO4 + CO2 + H2O
+Na2HPO4 + NaOH > Na3PO4 + H2O
+3NaOH + H3PO4 > Na3PO4 + 3H2O
+Se + 2HNO3 > H2SeO3 + NO + NO2
+H2SeO3 + Na2CO3 > Na2SeO3 + H2O + CO2
+Na2SeO3 + H2O2 > Na2SeO4 + H2O
+Na2Se + H2O > NaHSe + NaOH
+Na2Se + 2HCl > H2Se + 2NaCl
+SeO2 + 2NaOH > Na2SeO3 + H2O
+Na2CO3 + SiO2 > Na2SiO3 + CO2
+2Na2SO4 + C + 2SiO2 > 2Na2SiO3 + 2SO2 + CO2
+Na2SO4 + BaCl2 > 2NaCl + BaSO4
+2NaCl + H2SO4 > 2HCl + Na2SO4
+2NaOH + H2SO4 > Na2SO4 + 2H2O
+2NaHCO3 + MgSO4 > Na2SO4 + Mg(OH)2 + 2CO2
+Na2SO4 + 2C > Na2S + 2CO2
+2Na + S > Na2S
+Na2S + H2O > 2NaHS + NaOH
+2Na2S + 3O2 + 2CO2 > 2Na2CO3 + 2SO2
+2Na2S + 4H2O2 > 4H2O + Na2SO4
+2Na2S + 8S > 2Na2S5
+2NaOH + SO2 > Na2SO3 + H2O
+Na2SO3 + 2HCl > 2NaCl + SO2 + H2O
+SO2 + Na2CO3 > Na2SO3 + CO2
+Ag2Te + Na2CO3 + O2 > 2Ag + Na2TeO3 + CO2
+	Between 400 - 500 [Deg]C
+3Na2S + 2S + Sb2S3 + 9H2O > 2Na3SbS4
+Sb2S3 + 8NaOH + 6S > 2Na3SbS4 + Na2SO4 + 4H2O
+2SbCl3 + 3H2S > Sb2S3 + 6HCl
+NaCN + S > NaSCN
+Na2S2O3 + 2HCl > 2NaCl + S + SO2 + H2O
+6NaOH + 4S > 2Na2S + Na2S2O3 + 3H2O
+	Heating
+4NaClO + Na2S2O3 + 2NaOH > 4NaCl + 2Na2SO4 + H2O
+MnWO4 + 2NaOH > Na2WO4 + Mn(OH)2
+FeWO4 + 2NaOH > Na2WO4 + Fe(OH)2
+Na2WO4 + 2HCl > WO3 + 2NaCl + H2O
+Sr(NO3)2 + Na2CO3 > SrCO3 + 2NaNO3
+SrCO3 + 2HNO3 > Sr(NO3)2 + CO2 + H2O
+Sr(OH)2 + 2HCl > SrCl2 + 2H2O
+SrCl2 + Na2CrO4 > SrCrO4 + 2NaCl
+SrO + H2O > Sr(OH)2
+OC(NH2)2 + SO3 > OCNH2NHSO3H
+OCNH2NHSO3H + H2SO4 > CO2 + 2H3NSO3
+H3NSO3 + NaOH > NaH2NSO3 + H2O
+HNO2 + H3NSO3 > H2SO4 + N2 + H2O
+HNO3 + H3NSO3 > H2SO4 + N2O + H2O
+S + O2 > SO2
+2H2S + 3O2 > 2H2O + 2SO2
+4FeS2 + 11O2 > 2Fe2O3 + 8SO2
+2ZnS + 3O2 > 2ZnO + 2SO2
+HgS + O2 > Hg + SO2
+4FeS + 7O2 > 2Fe2O3 + 4SO2
+2CaSO4 + 2SiO2 + C > 2CaSiO3 + 2SO2 + CO2
+Cu + 2H2SO4 > CuSO4 + SO2 + 2H2O
+H2SO4 + Na2S2O5 > 2SO2 + Na2SO4 + H2O
+SO2 + Cl2 > SO2Cl2
+SO2 + 2H2S > 3S + 2H2O
+2SO2 + 2H2O + O2 > 2H2SO4
+CaO + SO2 > CaSO3
+SCl2 + Cl2 + 4NaF > SF4 + 4NaCl
+SF4 + 2H2O > SO2 + 4HF
+2SF6 > S2F10 + F2
+S2F10 > SF6 + SF4
+	Above 150 [Deg]C
+S2F10 + Cl2 > 2SF5Cl
+SO3 + H2O > H2SO4
+SO2 + H2O2 > H2SO4
+SO2Cl2 + H2O > 2HCl + H2SO4
+FeMn(NbTa)2O6 + 16HF > H2TaF7 + H2NbOF5 + FeF2 + MnF2 + 6H2O
+2H2TaF7 + 14NH3 > Ta2O5 + 14NH4F
+2TaCl5 + 5H2O > Ta2O5 + 10HCl
+Ta2O5 + 4KHF2 + 6HF > 2K4TaF7 + 5H2O
+Ta2O5 + 5Ca > 2Ta + 5CaO
+2Ta + 5Cl2 > 2TaCl5
+	Between 170 - 250 [Deg]C
+2Ta + 10HCl > 2TaCl5 + 5H2
+	Above 400 [Deg]C
+Ta2O5 + 5SOCl2 > 2TaCl5 + 5SO2
+TeO2 + H2O2 + 2H2O > Te(OH)6
+Te + O2 > TeO2
+Te + 2Cl2 > TeCl4
+	Initiated with heat
+H3OAuCl4 + 2H2O <> Au(OH)3 + 4HCl
+Au + HNO3 + 4HCl > HAuCl4 + NO + 2H2O
+2Au + 8HCl > 2HAuCl4 + 3H2
+2Au + 3Cl2 + 2HCl > 2HAuCl4
+CuSO4 + 4NH3 > CU(NH3)4SO4
+	Concentrated ammonia and a saturated solition of copper sulfate
+2TlOH + CO2 > Tl2CO3 + H2O
+	Hot & saturated thalium hydroxide
+Tl2CO3 + 2HF > 2TlF + CO2 + H2O
+SO3 + SCl2 > SOCl2 + SO2
+SO2 + PCl5 > SOCl2 + POCl3
+SO2 + Cl2 + SCl2 > 2SOCl2
+SO3 + Cl2 + 2SCl2 > 3SOCl2
+SO2 + COCl2 > SOCl2 + CO2
+SOCl2 + H2O > 2HCl + SO2
+CS2 + 3Cl2 > CCl3SCl + S2Cl2
+PCl3 + S > PSCl3
+	Above 180 [Deg]C, with excess sulfur
+3PCl5 + P2S5 > 5PSCl3
+PSCl3 + 4H2O > H3PO4 + H2S + 3HCl
+PSCl3 + H2O > HOPSCl2 + HCl
+PSCl3 + 2C2H5OH > (C2H5O)2PSCl + 2HCl
+SnO + 2HF > SnF2 + H2O
+	~40% HF
+Sn + 2Cl2 > SnCl4
+2TiO2 + B4C + 3C > 2TiB2 + 4CO
+TiCl4 + 2B + 4Na > TiB2 + 4NaCl
+	Above 400 [Deg]C
+2FeTiO3 + 7Cl2 + 6C > 2TiCl4 + 2FeCl3 + 6CO
+2Mg + TiCl4 > 2MgCl2 + Ti
+TiCl4 + 2H2O > TiO2 + 4HCl
+2TiCl4 + H2 > 2HCl + 2TiCl3
+2Ti + 6HCl + 3H2O > 2TiCl3(H2O)3 + 3H2
+2TiCl3 > TiCl2 + TiCl4
+	Above 500 [Deg]C
+Ti + 2I2 > TiI4
+	Above 425 [Deg]C
+TiCl4 + 4HI > TiI4 + 4HCl
+3TiO2 + 4AlI3 > 3TiI4 + 2Al2O3
+C6H6 + H2SO4 > C6H5SO3H + H2O
+2CH3SO3H + 8HF > 2CF3SO2F + 2H2O + 3H2
+CF3SCl + 2Cl2 + 2H2O > CF3SO2OH + 4HCl
+CuCO3 + 2CF3SO3H > Cu(O3SCF3)2 + H2O + CO2
+3CH3MgCl + P(OC6H5)3 > P(CH3)3 + 3C6H5OMgCl
+WCl6 + H2 + CH4 > WC + 6HCl
+	Above 670 [Deg]C
+WF6 + 2H2 + CH3OH > WC + 6HF + H2O
+	Above 350 [Deg]C
+WCl6 + 3Al2(CH3)6 > W(CH3)6 + 3Al2(CH3)4Cl2
+W + 3F2 > WF6
+	Between 350 - 400 [Deg]C
+WCl6 + 6HF > WF6 + 6HCl
+WCl6 + 2AsF3 > WF6 + 2AsCl3
+WCl6 + 3SbF5 > WF6 + 3SbF3Cl2
+WF6 + 3H2O > WO3 + 6HF
+2WF6 + 3Si > 2W + 3SiF4
+	Below 400 [Deg]C
+WF6 + 3Si > W + 3SiF2
+	Above 400 [Deg]C
+WF6 + 3H2 > W + 6HF
+	Between 300 - 800 [Deg]C
+CaWO4 + 2HCl > CaCl2 + H2WO4
+H2WO4 > H2O + WO3
+6Cl2 + 2V2O5 > 4VOCl3 + 3O2
+	Above 600 [Deg]C
+6Cl2 + 2V2O3 > 4VOCl3 + O2
+V2O5 + 3SOCl2 > 2VOCl3 + 3SO2
+2VOCl3 + 3H2O > V2O5 + 6HCl
+V2O5 + 3VCl3 + VOCl3 > 6VOCl2
+VOCl3 + Cl2O > VO2Cl + 2Cl2
+2VCl4 + 8HBr > 2VBr3 + 8HCl + Br2
+	At -50 [Deg]C
+2VCl3 > VCl2 + VCl4
+2VCl4 + 8HBr > 2VBr3 + 8HCl + Br2	
+2VCl3 + H2 > 2VCl2 + 2HCl
+	Between 675 - 700 [Deg]C
+V2O3 + 6(NH4)HF2 > 2(NH4)3VF6 + 3H2O
+(NH4)3VF6 > 3NH3 + 3HF + VF3
+VCl4 + 4HF > VF4 + 4HCl
+2VF4 > VF3 + VF5
+	Above 325 [Deg]C
+V2O5 + V2O3 > 4VO2
+V2O5 + SO2 + H2SO4 > 2VOSO4 + H2O
+V2O5 + 2HNO3 > 2VO2NO3 + H2O
+V2O5 + 3SOCl2 > 2VOCl3 + 3SO2
+V2O5 + 6HCl > (VO)2Cl4 + Cl2 + 3H2O
+V2O5 + 6HBr > (VO)2Br4 + Br2 + 3H2O
+2NH4VO3 > V2O5 + 2NH3 + H2O
+	Above 200 [Deg]C
+SO2 + V2O5 > SO3 + 2VO2
+	Between 400 - 620 [Deg]C
+Xe + F2 > XeF2
+2Ca(AsF6)2 + 9XeF2 > Ca2(XeF2)9(AsF6)4
+Mg(AsF6)2 + 2XeF2 > Mg(XeF2)2(AsF6)2
+2XeF2 + Si > 2Xe + SiF4
+CsF + XeF4 > CsXeF5
+BiF5 + XeF4 > XeF3BiF6
+XeF4 + Xe > 2XeF2
+	Above 400 [Deg]C
+XeF4 + Pt > PtF4 + Xe
+2Yb2O3 + 3CCl4 > 4YbCl3 + 3CO2
+Yb2O3 + 6HCl > 2YbCl3 + 3H2O
+8BaCO3 + 2Y2(CO3)3 + 12CuCO3 + O2 > 4YBa2Cu3O7 + 26CO2
+	Between 830 - 1130 [Deg]C
+Y(OH)3 + 3HF > YF3 + 3H2O
+2Y2O3 + 8BaO + 12CuO + O2 > 4YBa2Cu3O7
+	At 800 [Deg]C
+ZnO + 2HBr > ZnBr2 + H2O
+Zn + 2HCl > ZnCl2 + H2
+ZnS + 2HCl > ZnCl2 + H2S
+ZnCl2 + Na2CO3 > ZnCO3 + 2NaCl
+ZnBr2 + Na2CO3 > ZnCO3 + 2NaBr
+ZnSO2 + 2KCN > Zn(CN)2 + K2SO4
+Zn(CH3COO)2 + HCN > Zn(CN)2 + 2CH3COOH
+Zn + I2 > ZnI2
+ZnI2 > Zn + I2
+	Above 1150 [Deg]C
+ZnO + 2NaOH + H2O > Na2Zn(OH)4
+ZnO + C > Zn + CO
+	Above 950 [Deg]C
+ZnO > Zn + O2
+	Above 1975 [Deg]C
+ZnO + H2S > ZnS + H2O
+Zn + 2H2O > Zn(OH)2 + H2
+	Electrolysis of NaHCO3 with a zinc anode
+Zn(OH)2 > ZnO + H2O
+Zn + H2SO4 + 7H2O > ZnSO4(H2O)7 + H2
+ZnO + H2SO4 + 6H2O > ZnSO4(H2O)7
+Zn + CuSO4 > ZnSO4 + Cu
+ZnSO4 + BaCl2 > BaSO4 + ZnCl2
+ZrO2 + 2C + 2Cl2 > ZrCl4 + 2CO
+ZrO2 + 2CCl4 > ZrCl4 + 2COCl2
+ZrO2 + 4HNO3 > Zr(NO3)4 + 2H2O
+NH4F + HF > NH4HF2
+2CuSO4 + NaHSO3 + H2O + 2NaCN > 2CuCN + 3NaHSO4
+2CuSO4 + 4NaCN > 2CuCN + (CN)2 + 2Na2SO4
+H2NC(O)C(O)NH2 <> (CN)2 + 2H2O
+2Hg(CN)2 > (CN)2 + Hg2(CN)2
+	Above 320 [Deg]C
+2CuSO4 + 4KCN > (CN)2 + 2CuCN + 2K2SO4
+HgO + 2HCN > Hg(CN)2 + H2O
+K4Fe(CN)6 + 3HgSO4 > 3Hg(CN)2 + 2K2SO4 + FeSO4
+Hg2(NO3)2 + 2KCN > Hg + Hg(CN)2 + 2KNO3
+FeS + 2HCl > FeCl2 + H2S
+Fe + S > FeS
+	Heating
+2FeCl3 + 3Na2S > Fe2S3 + 6NaCl
+Fe2S3 > 2FeS + S
+	Above 20 [Deg]C
+Fe2S3 + 4HCl > 2FeCl2 + 2H2S + S
+NaOH + H2SO4 > NaHSO4 + H2O
+NaCl + H2SO4 > NaHSO4 + HCl
+	At elevated temperatures
+2NaHSO4 > Na2S2O7 + H2O
+	Above 315 [Deg]C
+(NH4)2CO3 > NH4HCO3 + NH3
+CaCO3 + 2HCl > CaCl2 + CO2 + H2O
+CaCO3 > CaO + CO2
+	Above 840 [Deg]C
+CaCO3 + CO2 + H2O > Ca(HCO3)2
+Ca(OH)2 + CO2 > CaCO3 + H2O
+CaCO3 + 2HNO3 > Ca(NO3)2 + CO2 + H2O
+Ca3(PO4)2 + 6HNO3 + 12H2O > 2H3PO4 + 3Ca(NO3)2 + 12H2O
+2NH4NO3 + Ca(OH)2 > Ca(NO3)2 + 2NH4OH
+2Ca(NO3)2 > 2CaO + 4NO2 + O2
+2Al + 6HBr > Al2Br6 + 3H2
+2Al + 3Br2 > Al2Br6
+4AlBr3 + 3CCl4 > 4AlCl3 + 3CBr4
+	At 100 [Deg]C
+AlBr3 + COCl2 > COBr2 + AlCl2Br
+2C2H6 + 7O2 > 4CO2 + 6H2O
+2As + 5F2 > 2AsF5
+AsF3 + F2 > AsF5
+2As2O5 + 10F2 > 4AsF5 + 5O2
+2As2O3 + 10F2 > 4AsF5 + 3O2
+2AsCl3 + 3H2O > As2O3 + 6HCl
+2As2S3 + 9O2 > 2As2O3 + 6SO2
+As2O3 + 6HCl > 2AsCl3 + 3H2O
+As2O3 + 6HF > 2AsF3 + 3H2O
+2HNO3 + As2O3 + 2H2O > 2H3AsO4 + N2O3
+As2O3 + 6Zn + 12HNO3 > 2AsH3 + 6Zn(NO3)2 + 3H2O
+B2O3 + 3C + 3Br2 > 2BBr3 + 3CO
+	At elevated temperatures
+2B + 3Br2 > 2BBr3
+3B2Cl4 + 6H2 > 2B2H6 + 4BCl3
+CaCl2 + H3PO4 + 2NaOH > CaHPO4 + 2NaCl + 2H2O
+Ca(OH)2 + 2H3PO4 > Ca(H2PO4)2 + 2H2O
+Ca5(PO4)3F + 7H3PO4 > 5Ca(H2PO4)2 + HF
+CsClO4 + ClOSO2F > CsSO3F + ClOClO
+CrO2Cl2 + 2ClOClO3 > 2Cl2 + CrO2(ClO4)2
+TiCl4 + 4ClOClO3 > 4Cl2 + Ti(ClO4)4
+2Co3O4 > 6CoO + O2
+	Above 950 [Deg]C
+CoCl2 + H2O > CoO + H2 + Cl2
+	Electrolysis
+Co(OH)2 > CoO + H2O
+CrCl3 + 3HF > CrF3 + 3HCl
+Cr2O3 + 6HF > 2CrF3 + 3H2O
+Na2Cr2O7 + 2NaOH > 2 Na2CrO4 + H2O
+Na2CrO4 + H2SO4 > CrO3 + Na2SO4 + H2O
+2Cs + 2H2O > 2CsOH + H2
+	Above -116 [Deg]C, explosive
+2NaHSO3 + O2 > 2NaHSO4
+HF + NaOH > NaF + H2O
+2FeBr3 > 2FeBr2 + Br2
+	Above 200 [Deg]C
+FeCl3 + 3NaOH > Fe(OH)3 + 3NaCl
