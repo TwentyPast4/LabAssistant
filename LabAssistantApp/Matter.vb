@@ -1229,7 +1229,7 @@ res:
             Return formula_
         End Function
 
-        Public Shared Function NameOf(ByVal CompoundFormula As String) As String
+        Public Shared Function [NameOf](ByVal CompoundFormula As String) As String
             Dim cf As New CompoundFormula(CompoundFormula)
             If cf.IsElement Then
                 Return cf.Elements.First.Name

@@ -34,7 +34,6 @@ Public Class ImageButton
     <Browsable(False)>
     Public Overloads Property VerticalContentAlignment
 
-    'btntext
     <Description("The padding of the button's text."), Category("Layout")>
     Public Property TextPadding As Thickness
         Get
