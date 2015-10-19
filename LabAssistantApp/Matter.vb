@@ -85,23 +85,23 @@ Namespace Matter
         End Property
         Protected state_ As StateOfMatter
 
-        Public ReadOnly Property MeltingPoint As Double
+        Public ReadOnly Property MeltingPoint As Double?
             Get
-                Return melt_
+                If melt_ < 0 Then Return Nothing Else Return melt_
             End Get
         End Property
         Protected melt_ As Double
 
-        Public ReadOnly Property BoilingPoint As Double
+        Public ReadOnly Property BoilingPoint As Double?
             Get
-                Return boil_
+                If boil_ < 0 Then Return Nothing Else Return boil_
             End Get
         End Property
         Protected boil_ As Double
 
         Public ReadOnly Property Density As Double
             Get
-                Return dens_
+                If dens_ < 0 Then Return Nothing Else Return dens_
             End Get
         End Property
         Protected dens_ As Double
@@ -157,8 +157,8 @@ Namespace Matter
                     SetLabState(StateInLab.In_Stock)
                 End If
             Else
-                If Reaction.ReactionList.FindAll( _
-                    Function(x As Reaction) (x.Status = Reaction.ReactionStatus.Recreatable) AndAlso _
+                If Reaction.ReactionList.FindAll(
+                    Function(x As Reaction) (x.Status = Reaction.ReactionStatus.Recreatable) AndAlso
                         (x.Products.FindAll(Function(y As String) y.Equals(formula_.ToString)).Count > 0)).Count > 0 Then
                     SetLabState(StateInLab.Synthesizable)
                 Else
@@ -271,7 +271,7 @@ Namespace Matter
         Private Sub New(ByVal AtomicNumber As Integer, ByVal name As String, ByVal appearance As String, ByVal oxidationStates() As Integer, ByVal symbol As String, ByVal atomicMass As Double, ByVal meltingP As Double, ByVal boilingP As Double, ByVal density As Double)
             numb = AtomicNumber
             name_ = name
-            appearance_ = appearance
+            appearance_ = appearance.Replace(Constants.NewLine, vbNewLine)
             sym = symbol
             mass = atomicMass
             melt_ = meltingP
@@ -573,11 +573,11 @@ res:
         End Property
         Private compoundSolubility As String
 
-        Private Sub New(ByVal name As String, ByVal formula As CompoundFormula, ByVal appearance As String, ByVal density As Double, _
+        Private Sub New(ByVal name As String, ByVal formula As CompoundFormula, ByVal appearance As String, ByVal density As Double,
                         ByVal melt As Double, ByVal boil As Double, ByVal solubility As String, ByVal state As StateOfMatter)
             name_ = name
             formula_ = formula
-            appearance_ = appearance
+            appearance_ = appearance.Replace(Constants.NewLine, vbNewLine)
             boil_ = boil
             melt_ = melt
             dens_ = density
@@ -605,19 +605,19 @@ res:
                             If raw(1).Equals(Constants.NoInformation) Then raw(1) = String.Empty
                             If raw(2).Equals(Constants.NoInformation) Then
                                 raw(2) = Nothing
-                                dens = Nothing
+                                dens = -1
                             Else
                                 dens = ToDouble(raw(2))
                             End If
                             If raw(3).Equals(Constants.NoInformation) Then
                                 raw(3) = Nothing
-                                melt = Nothing
+                                melt = -1
                             Else
                                 melt = ToDouble(raw(3))
                             End If
                             If raw(4).Equals(Constants.NoInformation) Then
                                 raw(4) = Nothing
-                                boil = Nothing
+                                boil = -1
                             Else
                                 boil = ToDouble(raw(4))
                             End If
@@ -647,7 +647,12 @@ res:
                     End If
                 End While
             End Using
+            CompoundList.Sort(New Comparison(Of Compound)(AddressOf CompoundSorter))
         End Sub
+
+        Private Shared Function CompoundSorter(a As Compound, b As Compound) As Integer
+            Return a.Name.CompareTo(b.Name)
+        End Function
 
         Public Shared Function FromName(ByVal name As String) As Compound
             Return CompoundList.Find(Function(x As Compound) x.Name = name)
@@ -1080,7 +1085,7 @@ res:
                     Else
                         If Char.IsNumber(str.ToCharArray()(endi + 1)) Then
                             Dim valuu As String = StrVal(str.Remove(0, endi + 1))
-                            str = str.Remove(starti) & Factorize(str.Remove(endi).Remove(0, starti + 1), valuu) & _
+                            str = str.Remove(starti) & Factorize(str.Remove(endi).Remove(0, starti + 1), valuu) &
                                 str.Remove(0, endi + valuu.ToString.Length + 1)
                         Else
                             str = str.Remove(endi, 1).Remove(starti, 1)
@@ -1246,7 +1251,7 @@ res:
                         b = True
                     End If
                     If e.Group = Element.Groups.AlkaliMetals Or e.Group = Element.Groups.AlkalineEarthMetals _
-                        Or e.Group = Element.Groups.Lanthanides Or e.Group = Element.Groups.Metalloids Or _
+                        Or e.Group = Element.Groups.Lanthanides Or e.Group = Element.Groups.Metalloids Or
                         e.Group = Element.Groups.TransitionMetals Or e.Group = Element.Groups.Post_transitionMetals Then
                         b = False
                         Exit For

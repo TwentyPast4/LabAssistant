@@ -23,7 +23,7 @@
         </Grid.RowDefinitions>
         <Border x:Name="iconGrid" HorizontalAlignment="Center" Width="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}}" Background="{DynamicResource LogoBrush_Hollow}" Grid.Row="4">
             <Border x:Name="fillGrid" OpacityMask="{DynamicResource LogoBrush_Full}" Background="{DynamicResource GrayBrush}" Margin="3,2">
-                <Rectangle x:Name="fillRectangle" VerticalAlignment="Bottom" Height="0"/>
+                <Rectangle x:Name="fillRectangle"/>
             </Border>
         </Border>
         <TextBlock HorizontalAlignment="Center" Margin="93,2,93,0" TextWrapping="Wrap" Text="Lab Assistant" VerticalAlignment="Top" Foreground="{DynamicResource labBlueBrush}" Grid.Row="1"/>

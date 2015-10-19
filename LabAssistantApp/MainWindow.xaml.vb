@@ -245,6 +245,28 @@ Class MainWindow
         Next
     End Sub
 
+
+
 #End Region
+
+    Private lastSearch As String = String.Empty
+    Private searchEngine As New RowSearchConverter()
+    Private Sub searchChanged(sender As Object, e As TextChangedEventArgs)
+        Dim searchTxt As String = sender.Text
+        If Not lastSearch.Equals(searchTxt) Then searchFor(searchTxt)
+    End Sub
+
+    Private Sub searchFor(ByVal s As String)
+        Dim b As New Binding()
+        b.Path = New PropertyPath("Item")
+        b.RelativeSource = RelativeSource.Self
+        b.Converter = searchEngine
+        b.ConverterParameter = s
+        Dim sty As New Style(GetType(DataGridRow))
+        Dim str As New Setter(DataGridRow.VisibilityProperty, b)
+        sty.Setters.Add(str)
+        inorganicGrid.RowStyle = sty
+        lastSearch = s
+    End Sub
 
 End Class

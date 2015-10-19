@@ -44,23 +44,21 @@
 
         <DrawingBrush x:Key="tick" Stretch="Uniform">
             <DrawingBrush.Drawing>
-                <DrawingGroup>
-                    <GeometryDrawing>
-                        <GeometryDrawing.Pen>
-                            <Pen Brush="White" Thickness="0.2" EndLineCap="Round" StartLineCap="Round"/>
-                        </GeometryDrawing.Pen>
-                        <GeometryDrawing.Geometry>
-                            <PathGeometry>
-                                <PathFigure IsClosed="False" IsFilled="False" StartPoint="0,0.6">
-                                    <PathFigure.Segments>
-                                        <LineSegment Point="0.3,1"/>
-                                        <LineSegment Point="1,0"/>
-                                    </PathFigure.Segments>
-                                </PathFigure>
-                            </PathGeometry>
-                        </GeometryDrawing.Geometry>
-                    </GeometryDrawing>
-                </DrawingGroup>
+                <GeometryDrawing>
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="White" Thickness="0.2" EndLineCap="Round" StartLineCap="Round"/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                        <PathGeometry>
+                            <PathFigure IsClosed="False" IsFilled="False" StartPoint="0,0.6">
+                                <PathFigure.Segments>
+                                    <LineSegment Point="0.3,1"/>
+                                    <LineSegment Point="1,0"/>
+                                </PathFigure.Segments>
+                            </PathFigure>
+                        </PathGeometry>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
             </DrawingBrush.Drawing>
         </DrawingBrush>
         
