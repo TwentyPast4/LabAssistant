@@ -14,6 +14,9 @@ Class MainWindow
         handleMenuClick(tableMenuBtn, Nothing)
         inorganicGrid.ItemsSource = Matter.Compound.GetAllOfType(False)
 
+        timer1 = New Threading.DispatcherTimer()
+        timer1.Interval = TimeSpan.FromSeconds(0.7)
+        AddHandler timer1.Tick, AddressOf handleTick
     End Sub
 
     Private Sub SetElements(inElement As DependencyObject)
@@ -249,24 +252,20 @@ Class MainWindow
 
 #End Region
 
-    Private lastSearch As String = String.Empty
-    Private searchEngine As New RowSearchConverter()
-    Private Sub searchChanged(sender As Object, e As TextChangedEventArgs)
-        Dim searchTxt As String = sender.Text
-        If Not lastSearch.Equals(searchTxt) Then searchFor(searchTxt)
+#Region "Searching"
+    Private timer1 As Threading.DispatcherTimer
+    Private Sub handleTick(sender As Object, e As EventArgs)
+        searchBox.Text = searchBox.Template.FindName("tbCore", searchBox).Text
     End Sub
 
-    Private Sub searchFor(ByVal s As String)
-        Dim b As New Binding()
-        b.Path = New PropertyPath("Item")
-        b.RelativeSource = RelativeSource.Self
-        b.Converter = searchEngine
-        b.ConverterParameter = s
-        Dim sty As New Style(GetType(DataGridRow))
-        Dim str As New Setter(DataGridRow.VisibilityProperty, b)
-        sty.Setters.Add(str)
-        inorganicGrid.RowStyle = sty
-        lastSearch = s
+    Private lastSearch As String = String.Empty
+    Private Sub handleSearchChanged(sender As Object, e As TextChangedEventArgs)
+        If Not lastSearch.Equals(sender.Text) Then
+            timer1.Stop()
+            timer1.Start()
+            lastSearch = sender.Text
+        End If
     End Sub
+#End Region
 
 End Class

@@ -345,13 +345,13 @@
                                         <ColumnDefinition Width="1*"/>
                                         <ColumnDefinition Width="1*"/>
                                     </Grid.ColumnDefinitions>
-                                    <TextBox x:Name="searchBox" BorderBrush="#FF009BBD" DockPanel.Dock="Right" Margin="5" Padding="50,0,0,0" Background="#FF2B2B2B" Foreground="#FFE0E0E0" CaretBrush="White" TextChanged="searchChanged">
+                                    <TextBox x:Name="searchBox" BorderBrush="#FF009BBD" DockPanel.Dock="Right" Margin="5" Padding="50,0,0,0" Background="#FF2B2B2B" Foreground="#FFE0E0E0" CaretBrush="White">
                                         <TextBox.Template>
                                             <ControlTemplate TargetType="TextBox">
                                                 <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
                                                     <DockPanel FocusManager.FocusedElement="{Binding ElementName=tbCore}">
                                                         <Canvas Background="{StaticResource searchTB}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}}" AllowDrop="False" IsHitTestVisible="False"/>
-                                                        <TextBox x:Name="tbCore" DockPanel.Dock="Right" FocusVisualStyle="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{TemplateBinding Foreground}" CaretBrush="{TemplateBinding CaretBrush}" SelectionBrush="{TemplateBinding SelectionBrush}" Text="{Binding Text, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}, UpdateSourceTrigger=PropertyChanged}" BorderThickness="0" VerticalContentAlignment="Center" />
+                                                        <TextBox x:Name="tbCore" TextChanged="handleSearchChanged" DockPanel.Dock="Right" FocusVisualStyle="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{TemplateBinding Foreground}" CaretBrush="{TemplateBinding CaretBrush}" SelectionBrush="{TemplateBinding SelectionBrush}" BorderThickness="0" VerticalContentAlignment="Center" />
                                                     </DockPanel>
                                                 </Border>
                                                 <ControlTemplate.Triggers>
@@ -363,10 +363,28 @@
                                         </TextBox.Template>
                                     </TextBox>
                                 </Grid>
-                                <DataGrid x:Name="inorganicGrid" SelectionUnit="FullRow" AutoGenerateColumns="False" Background="Gray" Foreground="#FFE4E4E4" BorderThickness="1,0,0,0" ColumnHeaderHeight="30" HeadersVisibility="Column" CanUserResizeRows="False" CanUserDeleteRows="False" CanUserAddRows="False" RowBackground="#FF383838" AlternatingRowBackground="#FF474747" RowDetailsVisibilityMode="Collapsed" SelectionMode="Single" Grid.Row="1">
+                                <DataGrid x:Name="inorganicGrid" local:DataGridTextSearch.SearchValue="{Binding ElementName=searchBox, Path=Text, UpdateSourceTrigger=PropertyChanged}" SelectionUnit="FullRow" AutoGenerateColumns="False" Background="Gray" Foreground="#FFE4E4E4" BorderThickness="1,0,0,0" ColumnHeaderHeight="30" HeadersVisibility="Column" CanUserResizeRows="False" CanUserDeleteRows="False" CanUserAddRows="False" RowBackground="#FF383838" AlternatingRowBackground="#FF474747" RowDetailsVisibilityMode="Collapsed" SelectionMode="Single" Grid.Row="1">
                                     <DataGrid.Resources>
+                                        <local:RowSearchConverter x:Key="RowSearchConverter" />
                                         <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#FF0089BD"/>
                                     </DataGrid.Resources>
+                                    <DataGrid.RowStyle>
+                                        <Style TargetType="DataGridRow">
+                                            <Setter Property="local:DataGridTextSearch.IsTextMatch">
+                                                <Setter.Value>
+                                                    <MultiBinding Converter="{StaticResource RowSearchConverter}">
+                                                        <Binding RelativeSource="{RelativeSource Self}" Path="Item" />
+                                                        <Binding RelativeSource="{RelativeSource Self}" Path="(local:DataGridTextSearch.SearchValue)" />
+                                                    </MultiBinding>
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Style.Triggers>
+                                                <Trigger Property="local:DataGridTextSearch.IsTextMatch" Value="False">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </DataGrid.RowStyle>
                                     <DataGrid.CellStyle>
                                         <Style TargetType="{x:Type DataGridCell}">
                                             <Setter Property="Padding" Value="5,0"/>
