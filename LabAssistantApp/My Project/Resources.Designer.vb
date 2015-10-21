@@ -63,35 +63,44 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to Structure:
         '''	[Name]
+        '''		[Symbol]
         '''		[Appearance]
+        '''		[Atomic weight]
+        '''		[Density]
         '''		[Oxidation states]
+        '''		[Melting point]
+        '''		[Boiling point]
         '''Elements:
         '''Hydrogen
+        '''	H
         '''	Colourless gas
+        '''	1.008
+        '''	8988e-9
         '''	101
+        '''	13.99
+        '''	20.271
         '''Helium
+        '''	He
         '''	Colourless gas, exhibiting a red-orange glow when placed in a high-voltage electric field
+        '''	4.003
+        '''	1786e-7
         '''	0
+        '''	0.95
+        '''	4.222
         '''Lithium
+        '''	Li
         '''	Silvery-white (shown floating in oil)
+        '''	6.94
+        '''	0.534
         '''	1
+        '''	453.65
+        '''	1603
         '''Beryllium
+        '''	Be
         '''	White-grey metallic
-        '''	2
-        '''Boron
-        '''	Black-brown
-        '''	3
-        '''Carbon
-        '''	Diamond: clear[n]Graphite: black
-        '''	432101234
-        '''Nitrogen
-        '''	Colourless gas, liquid or solid
-        '''	3035
-        '''Oxygen
-        '''	Colorless gas, pale blue liquid
-        '''	20
-        '''Fluorine
-        '''	Gas: very pale yellow[n]Li [rest of string was truncated]&quot;;.
+        '''	9.012
+        '''	1.848
+        '''	2        ''' [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property ElementsResx() As String
             Get
@@ -112,21 +121,21 @@ Namespace My.Resources
         '''Aluminium antimonide
         '''	AlSb
         '''	Black crystals
-        '''	4,36
+        '''	4.36
         '''	1330
         '''	2740
         '''	Insoluble
         '''Aluminium arsenide
         '''	AlAs
         '''	Orange crystals
-        '''	3,72
+        '''	3.72
         '''	2013
         '''	[]
         '''	Reacts
         '''Aluminium nitride
         '''	AlN
         '''	White to pale-yellow solid
-        '''	3,26
+        '''	3.26
         '''	2470
         '''	[]
         '''	Reacts
@@ -140,7 +149,7 @@ Namespace My.Resources
         '''Aluminium phosphide
         '''	AlP
         '''	Yellow or gray crystals
-        '''	2,85
+        '''	2.85
         '''	2800
         '''	[]
         '''	Reacts

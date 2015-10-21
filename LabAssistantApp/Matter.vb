@@ -85,26 +85,26 @@ Namespace Matter
         End Property
         Protected state_ As StateOfMatter
 
-        Public ReadOnly Property MeltingPoint As Double?
+        Public ReadOnly Property MeltingPoint As Single?
             Get
                 If melt_ < 0 Then Return Nothing Else Return melt_
             End Get
         End Property
-        Protected melt_ As Double
+        Protected melt_ As Single
 
-        Public ReadOnly Property BoilingPoint As Double?
+        Public ReadOnly Property BoilingPoint As Single?
             Get
                 If boil_ < 0 Then Return Nothing Else Return boil_
             End Get
         End Property
-        Protected boil_ As Double
+        Protected boil_ As Single
 
-        Public ReadOnly Property Density As Double
+        Public ReadOnly Property Density As Single
             Get
                 If dens_ < 0 Then Return Nothing Else Return dens_
             End Get
         End Property
-        Protected dens_ As Double
+        Protected dens_ As Single
 
         Public ReadOnly Property Formula As CompoundFormula
             Get
@@ -268,7 +268,7 @@ Namespace Matter
         End Property
         Private elconfig As Integer()
 
-        Private Sub New(ByVal AtomicNumber As Integer, ByVal name As String, ByVal appearance As String, ByVal oxidationStates() As Integer, ByVal symbol As String, ByVal atomicMass As Double, ByVal meltingP As Double, ByVal boilingP As Double, ByVal density As Double)
+        Private Sub New(ByVal AtomicNumber As Integer, ByVal name As String, ByVal appearance As String, ByVal oxidationStates() As Integer, ByVal symbol As String, ByVal atomicMass As Double, ByVal meltingP As Single, ByVal boilingP As Single, ByVal density As Single)
             numb = AtomicNumber
             name_ = name
             appearance_ = appearance.Replace(Constants.NewLine, vbNewLine)
@@ -282,7 +282,7 @@ Namespace Matter
             per = GetPeriod()
             gro = GetGroup()
             formula_ = New CompoundFormula(MakeFormula(numb, sym, gro))
-            elconfig = GetElConfig()
+            elconfig = GetElConfig(AtomicNumber)
         End Sub
 
         Public Shared Sub Initialize()
@@ -404,129 +404,98 @@ Namespace Matter
             Return Groups.TransitionMetals
         End Function
 
-        Private Function GetElConfig() As Integer()
-            Dim ell As New List(Of Integer)
-            Dim lim1 As Integer = 1
-            Dim lim2 As Integer = 5
-            Dim lim3 As Integer = 9
-            Dim lim4 As Integer = 13
-            Dim n As Integer = numb
-            For p6 As Integer = 0 To lim2
-                If ell.Count <= 13 Then
-                    For d5 As Integer = 0 To lim3
-                        If ell.Count <= 12 Then
-                            For f4 As Integer = 0 To lim4
-                                If ell.Count <= 11 Then
-                                    For s6 As Integer = 0 To lim1
-                                        If ell.Count <= 10 Then
-                                            For p5 As Integer = 0 To lim2
-                                                If ell.Count <= 9 Then
-                                                    For d4 As Integer = 0 To lim3
-                                                        If ell.Count <= 8 Then
-                                                            For s5 As Integer = 0 To lim1
-                                                                If ell.Count <= 7 Then
-                                                                    For p4 As Integer = 0 To lim2
-                                                                        If ell.Count <= 6 Then
-                                                                            For d3 As Integer = 0 To lim3
-                                                                                If ell.Count <= 5 Then
-                                                                                    For s4 As Integer = 0 To lim1
-                                                                                        If ell.Count <= 4 Then
-                                                                                            For p3 As Integer = 0 To lim2
-                                                                                                If ell.Count <= 3 Then
-                                                                                                    For s3 As Integer = 0 To lim1
-                                                                                                        If ell.Count <= 2 Then
-                                                                                                            For p2 As Integer = 0 To lim2
-                                                                                                                If ell.Count <= 1 Then
-                                                                                                                    For s2 As Integer = 0 To lim1
-                                                                                                                        If ell.Count <= 0 Then
-                                                                                                                            For s1 As Integer = 0 To lim1
-                                                                                                                                n -= 1
-                                                                                                                                If s1 = lim1 Or n = 0 Then ell.Add(s1 + 1)
-                                                                                                                                If n = 0 Then GoTo res
-                                                                                                                            Next
-                                                                                                                        End If
-                                                                                                                        n -= 1
-                                                                                                                        If s2 = lim1 Or n = 0 Then ell.Add(s2 + 1)
-                                                                                                                        If n = 0 Then GoTo res
-                                                                                                                    Next
-                                                                                                                End If
-                                                                                                                n -= 1
-                                                                                                                If p2 = lim2 Or n = 0 Then ell.Add(p2 + 1)
-                                                                                                                If n = 0 Then GoTo res
-                                                                                                            Next
-                                                                                                        End If
-                                                                                                        n -= 1
-                                                                                                        If s3 = lim1 Or n = 0 Then ell.Add(s3 + 1)
-                                                                                                        If n = 0 Then GoTo res
-                                                                                                    Next
-                                                                                                End If
-                                                                                                n -= 1
-                                                                                                If p3 = lim2 Or n = 0 Then ell.Add(p3 + 1)
-                                                                                                If n = 0 Then GoTo res
-                                                                                            Next
-                                                                                        End If
-                                                                                        n -= 1
-                                                                                        If s4 = lim1 Or n = 0 Then ell.Add(s4 + 1)
-                                                                                        If n = 0 Then GoTo res
-                                                                                    Next
-                                                                                End If
-                                                                                n -= 1
-                                                                                If d3 = lim3 Or n = 0 Then ell.Add(d3 + 1)
-                                                                                If n = 0 Then GoTo res
-                                                                            Next
-                                                                        End If
-                                                                        n -= 1
-                                                                        If p4 = lim2 Or n = 0 Then ell.Add(p4 + 1)
-                                                                        If n = 0 Then GoTo res
-                                                                    Next
-                                                                End If
-                                                                n -= 1
-                                                                If s5 = lim1 Or n = 0 Then ell.Add(s5 + 1)
-                                                                If n = 0 Then GoTo res
-                                                            Next
-                                                        End If
-                                                        n -= 1
-                                                        If d4 = lim3 Or n = 0 Then ell.Add(d4 + 1)
-                                                        If n = 0 Then GoTo res
-                                                    Next
-                                                End If
-                                                n -= 1
-                                                If p5 = lim2 Or n = 0 Then ell.Add(p5 + 1)
-                                                If n = 0 Then GoTo res
-                                            Next
-                                        End If
-                                        n -= 1
-                                        If s6 = lim1 Or n = 0 Then ell.Add(s6 + 1)
-                                        If n = 0 Then GoTo res
-                                    Next
-                                End If
-                                n -= 1
-                                If f4 = lim4 Or n = 0 Then ell.Add(f4 + 1)
-                                If n = 0 Then GoTo res
-                            Next
-                        End If
-                        n -= 1
-                        If d5 = lim3 Or n = 0 Then ell.Add(d5 + 1)
-                        If n = 0 Then GoTo res
-                    Next
-                End If
-                n -= 1
-                If p6 = lim2 Or n = 0 Then ell.Add(p6 + 1)
-                If n = 0 Then GoTo res
+        Public Shared ReadOnly Property Orbitals As Orbital()
+            Get
+                Return orbitals_
+            End Get
+        End Property
+        Private Shared orbitals_ As Orbital() = getOrbitals()
+
+        Private Shared Function getOrbitals() As Orbital()
+            Dim d As New List(Of Orbital)
+            Dim a(6)() As Short
+            Dim deltaN As Short = 0
+            For i As Integer = 0 To a.Count() - 1
+                Dim b(6) As Short
+                Dim limit As Short = 2 + i * 4
+                For j As Integer = deltaN To b.Count - 1
+                    b(j) = limit
+                Next
+                a(i) = b
+                deltaN += 1
             Next
 
-res:
-            While ell.Count < 15
-                ell.Add(0)
-            End While
-            Dim ell2 As New List(Of Integer)
-            ell2.Add(ell(0))
-            ell2.Add(ell(1) + ell(2))
-            ell2.Add(ell(3) + ell(4) + ell(6))
-            ell2.Add(ell(5) + ell(7) + ell(9) + ell(12))
-            ell2.Add(ell(8) + ell(10) + ell(13))
-            ell2.Add(ell(11) + ell(14))
-            Return ell2.ToArray
+            For i As Integer = 0 To a.Count - 1
+                For j As Integer = 0 To i
+                    Dim suffix As String = ""
+                    Select Case i - j
+                        Case Is = 0
+                            suffix = "s"
+                        Case 1
+                            suffix = "p"
+                        Case 2
+                            suffix = "d"
+                        Case 3
+                            suffix = "f"
+                        Case 4
+                            suffix = "g"
+                        Case 5
+                            suffix = "h"
+                        Case 6
+                            suffix = "i"
+                    End Select
+                    Dim limit As Short = a(i - j)(j)
+                    If limit > 0 Then d.Add(New Orbital(suffix, j + 1, limit))
+                Next
+            Next
+
+            Return d.ToArray()
+        End Function
+
+        Public Class Orbital
+            Public ReadOnly Property Name(ByVal withShellNumber As Boolean) As String
+                Get
+                    If withShellNumber Then
+                        Return String.Concat(shell_, name_)
+                    Else
+                        Return name_
+                    End If
+                End Get
+            End Property
+            Private name_ As Char
+
+            Public ReadOnly Property Shell As Integer
+                Get
+                    Return shell_
+                End Get
+            End Property
+            Private shell_ As Integer
+
+            Public ReadOnly Property Capacity As Integer
+                Get
+                    Return cap_
+                End Get
+            End Property
+            Private cap_ As Integer
+
+            Friend Sub New(ByVal oName As String, ByVal oShell As Integer, ByVal oCapacity As Integer)
+                name_ = oName
+                shell_ = oShell
+                cap_ = oCapacity
+            End Sub
+        End Class
+
+        Private Shared Function GetElConfig(ByVal electrons As Integer) As Integer()
+            Dim ell As New List(Of Integer)
+            For Each o In Orbitals
+                If ell.Count < o.Shell Then ell.Add(0)
+                Dim take As Integer
+                If electrons < o.Capacity Then take = electrons Else take = o.Capacity
+                ell(o.Shell - 1) += take
+                electrons -= take
+                If electrons <= 0 Then Exit For
+            Next
+            Return ell.ToArray
         End Function
 
         Private Structure GroupStrings
@@ -573,8 +542,8 @@ res:
         End Property
         Private compoundSolubility As String
 
-        Private Sub New(ByVal name As String, ByVal formula As CompoundFormula, ByVal appearance As String, ByVal density As Double,
-                        ByVal melt As Double, ByVal boil As Double, ByVal solubility As String, ByVal state As StateOfMatter)
+        Private Sub New(ByVal name As String, ByVal formula As CompoundFormula, ByVal appearance As String, ByVal density As Single,
+                        ByVal melt As Single, ByVal boil As Single, ByVal solubility As String, ByVal state As StateOfMatter)
             name_ = name
             formula_ = formula
             appearance_ = appearance.Replace(Constants.NewLine, vbNewLine)
@@ -1011,12 +980,12 @@ res:
                 Return els
             End Get
         End Property
-        Public ReadOnly Property ElementNumbers As List(Of Integer)
+        Public ReadOnly Property ElementNumbers As List(Of Byte)
             Get
                 Return eln
             End Get
         End Property
-        Private eln As List(Of Integer)
+        Private eln As List(Of Byte)
         Private els As List(Of Element)
         Private formula_ As String
 
@@ -1097,7 +1066,7 @@ res:
             End While
             'List of elements
             Me.els = New List(Of Element)
-            Me.eln = New List(Of Integer)
+            Me.eln = New List(Of Byte)
             'Loop 2
             While New String(str).Length > 0
                 If str.Length = 1 Then
@@ -1145,7 +1114,7 @@ res:
             End While
         End Sub
 
-        Sub New(ByVal elements As List(Of Element), ByVal numbers As List(Of Integer))
+        Sub New(ByVal elements As List(Of Element), ByVal numbers As List(Of Byte))
             Me.els = elements
             Me.eln = numbers
             Me.formula_ = String.Empty

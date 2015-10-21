@@ -191,6 +191,7 @@
                             <Label Content="Laboratory" Style="{DynamicResource menuLabel}" Background="{x:Null}"/>
                             <Label Content="Settings" Style="{DynamicResource menuLabel}" Background="{x:Null}"/>
                             <local:ImageButton Tag="start" Text="Startup" ImageBrush="{DynamicResource onOffBrush}" Style="{DynamicResource menuBtnStyle}" Width="Auto"/>
+                            <local:ImageButton Tag="about" Text="About" ImageBrush="{DynamicResource infoBrush}" Style="{DynamicResource menuBtnStyle}" Width="Auto"/>
                         </StackPanel>
                         <local:ImageButton x:Name="panelHider" Tag="hide" Text="Hide panel" ImageBrush="{DynamicResource leftArrow}" Style="{DynamicResource menuBtnStyle}" Grid.Row="1" Width="Auto"/>
                     </Grid>
@@ -363,10 +364,15 @@
                                         </TextBox.Template>
                                     </TextBox>
                                 </Grid>
-                                <DataGrid x:Name="inorganicGrid" local:DataGridTextSearch.SearchValue="{Binding ElementName=searchBox, Path=Text, UpdateSourceTrigger=PropertyChanged}" SelectionUnit="FullRow" AutoGenerateColumns="False" Background="Gray" Foreground="#FFE4E4E4" BorderThickness="1,0,0,0" ColumnHeaderHeight="30" HeadersVisibility="Column" CanUserResizeRows="False" CanUserDeleteRows="False" CanUserAddRows="False" RowBackground="#FF383838" AlternatingRowBackground="#FF474747" RowDetailsVisibilityMode="Collapsed" SelectionMode="Single" Grid.Row="1">
+                                <DataGrid x:Name="inorganicGrid" local:DataGridTextSearch.SearchValue="{Binding ElementName=searchBox, Path=Text, UpdateSourceTrigger=PropertyChanged}" Foreground="#FFE4E4E4" SelectionUnit="FullRow" AutoGenerateColumns="False" Background="Gray" BorderThickness="1,0,0,0" ColumnHeaderHeight="30" HeadersVisibility="Column" CanUserResizeRows="False" CanUserDeleteRows="False" CanUserAddRows="False" RowBackground="#FF383838" AlternatingRowBackground="#FF474747" RowDetailsVisibilityMode="Collapsed" SelectionMode="Single" Grid.Row="1">
                                     <DataGrid.Resources>
+                                        <SolidColorBrush x:Key="rowSelected" Color="#FF00AEFF"/>
+                                        <SolidColorBrush x:Key="rowSelectedForeground" Color="White"/>
                                         <local:RowSearchConverter x:Key="RowSearchConverter" />
-                                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#FF0089BD"/>
+                                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="{Binding Color, Source={StaticResource rowSelected}}"/>
+                                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="{Binding Color, Source={StaticResource rowSelectedForeground}}"/>
+                                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="{Binding Color, Source={StaticResource rowSelected}}"/>
+                                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}" Color="{Binding Color, Source={StaticResource rowSelectedForeground}}"/>
                                     </DataGrid.Resources>
                                     <DataGrid.RowStyle>
                                         <Style TargetType="DataGridRow">
@@ -376,6 +382,15 @@
                                                         <Binding RelativeSource="{RelativeSource Self}" Path="Item" />
                                                         <Binding RelativeSource="{RelativeSource Self}" Path="(local:DataGridTextSearch.SearchValue)" />
                                                     </MultiBinding>
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="ContextMenu">
+                                                <Setter.Value>
+                                                    <ContextMenu>
+                                                        <MenuItem Header="Add to laboratory" Icon="{DynamicResource addImage}"/>
+                                                        <MenuItem Header="Remove from laboratory" Icon="{DynamicResource removeImage}"/>
+                                                        <MenuItem Header="Properties" Icon="{DynamicResource infoImage}"/>
+                                                    </ContextMenu>
                                                 </Setter.Value>
                                             </Setter>
                                             <Style.Triggers>
@@ -388,6 +403,9 @@
                                     <DataGrid.CellStyle>
                                         <Style TargetType="{x:Type DataGridCell}">
                                             <Setter Property="Padding" Value="5,0"/>
+                                            <Setter Property="BorderThickness" Value="0"/>
+                                            <Setter Property="Focusable" Value="False"/>
+                                            <Setter Property="IsTabStop" Value="False"/>
                                         </Style>
                                     </DataGrid.CellStyle>
                                     <DataGrid.ColumnHeaderStyle>
@@ -413,12 +431,10 @@
                                                 <DataTemplate>
                                                     <DataTemplate.Resources>
                                                         <Style TargetType="{x:Type TextBlock}">
-                                                            <Setter Property="Foreground" Value="#FFE4E4E4"/>
                                                             <Setter Property="FontFamily" Value="Calibri"/>
                                                         </Style>
                                                     </DataTemplate.Resources>
-                                                    <Label Content="{Binding Formula, Converter={StaticResource myConverter}, Mode=OneWay}"/>
-
+                                                    <Label Content="{Binding Formula, Converter={StaticResource myConverter}, Mode=OneWay}" Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGridCell}}}"/>
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
@@ -433,6 +449,7 @@
                                 </DataGrid>
                             </Grid>
                         </TabItem>
+                        <TabItem x:Name="aboutPage"/>
                     </TabControl>
                 </Grid>
             </Border>

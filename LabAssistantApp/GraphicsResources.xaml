@@ -256,31 +256,31 @@
             <DrawingGroup>
                 <GeometryDrawing>
                     <GeometryDrawing.Pen>
-                        <Pen Brush="White" Thickness="0.07"/>
+                        <Pen Brush="White" Thickness="0.05"/>
                     </GeometryDrawing.Pen>
                     <GeometryDrawing.Geometry>
-                        <PathGeometry>
-                            <PathFigure IsClosed="False" IsFilled="False" StartPoint="0.15,0.15">
-                                <PathFigure.Segments>
-                                    <LineSegment Point="0.5,0.73"/>
-                                    <LineSegment Point="0.85,0.15"/>
-                                </PathFigure.Segments>
-                            </PathFigure>
-                        </PathGeometry>
+                        <GeometryGroup>
+                            <LineGeometry StartPoint="0.5,0.15" EndPoint="0.5,0.6"/>
+                            <LineGeometry StartPoint="0.5,0.6" EndPoint="0.1,0.9"/>
+                            <LineGeometry StartPoint="0.5,0.6" EndPoint="0.9,0.9"/>
+                        </GeometryGroup>
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
                 <GeometryDrawing Brush="Red">
                     <GeometryDrawing.Geometry>
-                        <GeometryGroup>
-                            <EllipseGeometry RadiusX="0.15" RadiusY="0.15" Center="0.15,0.15"/>
-                            <EllipseGeometry RadiusX="0.15" RadiusY="0.15" Center="0.85,0.15"/>
-                        </GeometryGroup>
+                        <EllipseGeometry RadiusX="0.15" RadiusY="0.15" Center="0.5,0.15"/>
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
                 <GeometryDrawing Brush="Black">
                     <GeometryDrawing.Geometry>
+                        <EllipseGeometry RadiusX="0.2" RadiusY="0.2" Center="0.5,0.6"/>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="White">
+                    <GeometryDrawing.Geometry>
                         <GeometryGroup>
-                            <EllipseGeometry RadiusX="0.27" RadiusY="0.27" Center="0.5,0.73"/>
+                            <EllipseGeometry RadiusX="0.1" RadiusY="0.1" Center="0.1,0.9"/>
+                            <EllipseGeometry RadiusX="0.1" RadiusY="0.1" Center="0.9,0.9"/>
                         </GeometryGroup>
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
@@ -409,5 +409,82 @@
             </DrawingGroup>
         </DrawingBrush.Drawing>
     </DrawingBrush>
+
+    <DrawingGroup x:Key="infoDrawing">
+        <GeometryDrawing>
+            <GeometryDrawing.Pen>
+                <Pen Brush="White" Thickness="0.1"/>
+            </GeometryDrawing.Pen>
+            <GeometryDrawing.Geometry>
+                <EllipseGeometry Center="0.5,0.5" RadiusX="0.5" RadiusY="0.5"/>
+            </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Brush="White">
+            <GeometryDrawing.Geometry>
+                <GeometryGroup>
+                    <EllipseGeometry Center="0.5,0.25" RadiusX="0.08" RadiusY="0.08"/>
+                    <RectangleGeometry>
+                        <RectangleGeometry.Rect>
+                            <Rect Location="0.42,0.42" Size="0.16,0.45"/>
+                        </RectangleGeometry.Rect>
+                    </RectangleGeometry>
+                </GeometryGroup>
+            </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+    </DrawingGroup>
     
+    <Image x:Key="infoImage" Height="16" Width="16">
+        <Image.Source>
+            <DrawingImage Drawing="{StaticResource infoDrawing}"/>
+        </Image.Source>
+    </Image>
+
+    <DrawingBrush x:Key="infoBrush" Stretch="Uniform" Drawing="{StaticResource infoDrawing}"/>
+    
+    <Image x:Key="removeImage" Height="16" Width="16">
+        <Image.Source>
+            <DrawingImage>
+                <DrawingImage.Drawing>
+                    <GeometryDrawing Brush="White">
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry>
+                                <PathFigure StartPoint="0.15,0" Segments="{StaticResource crossPath}" IsClosed="True"/>
+                            </PathGeometry>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingImage.Drawing>
+            </DrawingImage>
+        </Image.Source>
+    </Image>
+
+    <Image x:Key="addImage" Height="16" Width="16">
+        <Image.Source>
+            <DrawingImage>
+                <DrawingImage.Drawing>
+                    <GeometryDrawing Brush="White">
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry>
+                                <PathFigure StartPoint="0.4,0" IsClosed="True" IsFilled="True">
+                                    <PathFigure.Segments>
+                                        <LineSegment Point="0.6,0"/>
+                                        <LineSegment Point="0.6,0.4"/>
+                                        <LineSegment Point="1,0.4"/>
+                                        <LineSegment Point="1,0.6"/>
+                                        <LineSegment Point="0.6,0.6"/>
+                                        <LineSegment Point="0.6,1"/>
+                                        <LineSegment Point="0.4,1"/>
+                                        <LineSegment Point="0.4,0.6"/>
+                                        <LineSegment Point="0,0.6"/>
+                                        <LineSegment Point="0,0.4"/>
+                                        <LineSegment Point="0.4,0.4"/>
+                                    </PathFigure.Segments>
+                                </PathFigure>
+                            </PathGeometry>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingImage.Drawing>
+            </DrawingImage>
+        </Image.Source>
+    </Image>
+
 </ResourceDictionary>
