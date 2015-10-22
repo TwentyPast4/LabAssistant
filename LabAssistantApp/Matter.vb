@@ -185,6 +185,7 @@ Namespace Matter
         Public Shared ElementList As New List(Of Element)
 
         Public Enum Groups
+            Actinides
             AlkaliMetals
             AlkalineEarthMetals
             TransitionMetals
@@ -194,6 +195,7 @@ Namespace Matter
             Halogens
             NobleGases
             Lanthanides
+            Unknown
         End Enum
 
         Public Function GetGroupName() As String
@@ -308,9 +310,10 @@ Namespace Matter
                                 dens = ToDouble(raw(3))
                             End If
                             Dim oxi() As Integer = GetOxy(raw(4))
-                            Dim melt As Double = ToDouble(raw(5))
-                            Dim boil As Double = ToDouble(raw(6))
-
+                            Dim melt As Double
+                            If raw(5).Equals(Constants.NoInformation) Then melt = -1 Else melt = ToDouble(raw(5))
+                            Dim boil As Double
+                            If raw(6).Equals(Constants.NoInformation) Then boil = -1 Else boil = ToDouble(raw(6))
                             Dim e As New Element(n, name, raw(1), oxi, raw(0), atomW, melt, boil, dens)
                             ElementList.Add(e)
                             n += 1
@@ -395,12 +398,14 @@ Namespace Matter
         Private Function GetGroup() As Groups
             If numb = 1 Or (numb >= 6 And numb <= 8) Or numb = 15 Or numb = 16 Or numb = 34 Then Return Groups.NonMetals
             If numb = 2 Or numb = 10 Or numb = 18 Or numb = 36 Or numb = 54 Or numb = 86 Then Return Groups.NobleGases
-            If numb = 3 Or numb = 11 Or numb = 19 Or numb = 37 Or numb = 55 Then Return Groups.AlkaliMetals
-            If numb = 4 Or numb = 12 Or numb = 20 Or numb = 38 Or numb = 56 Then Return Groups.AlkalineEarthMetals
+            If numb = 3 Or numb = 11 Or numb = 19 Or numb = 37 Or numb = 55 Or numb = 87 Then Return Groups.AlkaliMetals
+            If numb = 4 Or numb = 12 Or numb = 20 Or numb = 38 Or numb = 56 Or numb = 88 Then Return Groups.AlkalineEarthMetals
             If numb = 5 Or numb = 14 Or numb = 32 Or numb = 33 Or numb = 51 Or numb = 52 Or numb = 84 Then Return Groups.Metalloids
             If numb = 9 Or numb = 17 Or numb = 35 Or numb = 53 Or numb = 85 Then Return Groups.Halogens
-            If numb = 13 Or numb = 31 Or numb = 49 Or numb = 50 Or (numb >= 81 And numb <= 83) Then Return Groups.Post_transitionMetals
+            If numb = 13 Or numb = 31 Or numb = 49 Or numb = 50 Or (numb >= 81 And numb <= 83) Or numb = 114 Then Return Groups.Post_transitionMetals
             If numb >= 57 And numb <= 71 Then Return Groups.Lanthanides
+            If numb >= 89 And numb <= 103 Then Return Groups.Actinides
+            If (numb >= 109 And numb <= 111) Or (numb = 113) Or (numb >= 115 And numb <= 118) Then Return Groups.Unknown
             Return Groups.TransitionMetals
         End Function
 

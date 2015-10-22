@@ -29,10 +29,9 @@
                                 <Rectangle Fill="{TemplateBinding Background}" OpacityMask="{TemplateBinding OpacityMask}"/>
                             </Grid>
                         </ControlTemplate>
-
                     </Setter.Value>
                 </Setter>
-                <EventSetter Event="UIElement.MouseEnter" Handler="handleToolbarEnter"/>
+                <EventSetter Event="MouseEnter" Handler="handleToolbarEnter"/>
                 <EventSetter Event="UIElement.MouseLeave" Handler="handleToolbarLeave"/>
                 <EventSetter Event="ButtonBase.Click" Handler="handleToolbarClick"/>
                 <EventSetter Event="UIElement.MouseLeftButtonDown" Handler="handleToolbarDown"/>
@@ -117,7 +116,7 @@
                     </Setter.Value>
                 </Setter>
             </Style>
-            <local:FormulaDisplayConverter x:Key="myConverter"/>
+            <local:FormulaDisplayConverter x:Key="formulaDisplayConverter"/>
         </ResourceDictionary>
         
     </Window.Resources>
@@ -196,6 +195,102 @@
                         <local:ImageButton x:Name="panelHider" Tag="hide" Text="Hide panel" ImageBrush="{DynamicResource leftArrow}" Style="{DynamicResource menuBtnStyle}" Grid.Row="1" Width="Auto"/>
                     </Grid>
                     <TabControl x:Name="tabDisplay" Grid.Column="1" BorderBrush="{DynamicResource labBlueBrush}" Background="#FF404040" Style="{DynamicResource TabControl_plain}" SelectedIndex="0" BorderThickness="2,0,0,0">
+                        <TabControl.Resources>
+                            <Style x:Key="labGrid" TargetType="DataGrid">
+                                <Style.Resources>
+                                    <SolidColorBrush x:Key="rowSelected" Color="#FF00AEFF"/>
+                                    <SolidColorBrush x:Key="rowSelectedForeground" Color="White"/>
+                                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="{Binding Color, Source={StaticResource rowSelected}}"/>
+                                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="{Binding Color, Source={StaticResource rowSelectedForeground}}"/>
+                                    <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="{Binding Color, Source={StaticResource rowSelected}}"/>
+                                    <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}" Color="{Binding Color, Source={StaticResource rowSelectedForeground}}"/>
+                                </Style.Resources>
+                                <Setter Property="Foreground" Value="#FFE4E4E4"/>
+                                <Setter Property="SelectionUnit" Value="FullRow"/>
+                                <Setter Property="AutoGenerateColumns" Value="False"/>
+                                <Setter Property="Background" Value="Gray"/>
+                                <Setter Property="BorderThickness" Value="0"/>
+                                <Setter Property="ColumnHeaderHeight" Value="30"/>
+                                <Setter Property="HeadersVisibility" Value="Column"/>
+                                <Setter Property="CanUserResizeRows" Value="False"/>
+                                <Setter Property="CanUserDeleteRows" Value="False"/>
+                                <Setter Property="CanUserAddRows" Value="False"/>
+                                <Setter Property="RowBackground" Value="#FF383838"/>
+                                <Setter Property="AlternatingRowBackground" Value="#FF474747"/>
+                                <Setter Property="RowDetailsVisibilityMode" Value="Collapsed"/>
+                                <Setter Property="SelectionMode" Value="Single"/>
+                                <Setter Property="RowStyle">
+                                    <Setter.Value>
+                                        <Style TargetType="DataGridRow">
+                                            <Setter Property="ContextMenu">
+                                                <Setter.Value>
+                                                    <ContextMenu>
+                                                        <MenuItem Header="Add to laboratory" Icon="{DynamicResource addImage}"/>
+                                                        <MenuItem Header="Remove from laboratory" Icon="{DynamicResource removeImage}"/>
+                                                        <MenuItem Header="Properties" Icon="{DynamicResource infoImage}"/>
+                                                    </ContextMenu>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="CellStyle">
+                                    <Setter.Value>
+                                        <Style TargetType="{x:Type DataGridCell}">
+                                            <Setter Property="Padding" Value="5,0"/>
+                                            <Setter Property="BorderThickness" Value="0"/>
+                                            <Setter Property="Focusable" Value="False"/>
+                                            <Setter Property="IsTabStop" Value="False"/>
+                                        </Style>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="ColumnHeaderStyle">
+                                    <Setter.Value>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="Background">
+                                                <Setter.Value>
+                                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                        <GradientStop Color="#FFB0B0B0" Offset="1"/>
+                                                        <GradientStop Color="#FFCBCBCB" Offset="0"/>
+                                                    </LinearGradientBrush>
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="BorderBrush" Value="Black"/>
+                                            <Setter Property="BorderThickness" Value="0,0,1,0"/>
+                                            <Setter Property="Foreground" Value="#FF1D1D1D"/>
+                                            <Setter Property="Padding" Value="5,0"/>
+                                        </Style>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                            <Style x:Key="searchBoxStyle" TargetType="TextBox">
+                                <Setter Property="BorderBrush" Value="#FF009BBD"/>
+                                <Setter Property="DockPanel.Dock" Value="Right"/>
+                                <Setter Property="Margin" Value="5"/>
+                                <Setter Property="Padding" Value="50,0,0,0"/>
+                                <Setter Property="Background" Value="#FF2B2B2B"/>
+                                <Setter Property="Foreground" Value="#FFE0E0E0"/>
+                                <Setter Property="CaretBrush" Value="White"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="TextBox">
+                                            <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                                                <DockPanel FocusManager.FocusedElement="{Binding ElementName=tbCore}">
+                                                    <Canvas Background="{StaticResource searchTB}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}}" AllowDrop="False" IsHitTestVisible="False"/>
+                                                    <TextBox x:Name="tbCore" TextChanged="handleSearchChanged" DockPanel.Dock="Right" FocusVisualStyle="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{TemplateBinding Foreground}" CaretBrush="{TemplateBinding CaretBrush}" SelectionBrush="{TemplateBinding SelectionBrush}" BorderThickness="0" VerticalContentAlignment="Center" />
+                                                </DockPanel>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsFocused" SourceName="tbCore" Value="True">
+                                                    <Setter TargetName="border" Property="BorderBrush" Value="Cyan"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+
+                        </TabControl.Resources>
                         <TabItem x:Name="tableTabPage" Header="TabItem" BorderThickness="2,0,0,0">
                             <Grid Background="#FF464646">
                                 <Grid.ColumnDefinitions>
@@ -218,6 +313,8 @@
                                     </Viewbox.Resources>
                                     <Grid HorizontalAlignment="Right">
                                         <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
                                             <RowDefinition Height="1*"/>
                                             <RowDefinition Height="1*"/>
                                             <RowDefinition Height="1*"/>
@@ -313,8 +410,28 @@
                                             <local:TableButton Tag="85"/>
                                             <local:TableButton Tag="86"/>
                                         </StackPanel>
-                                        <Rectangle Grid.Row="6" Height="{Binding ActualHeight, ElementName=hydrogenButton, Mode=OneWay}"/>
-                                        <StackPanel x:Name="LanthanidesStackPanel" Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center">
+                                        <StackPanel Grid.Row="6" Orientation="Horizontal">
+                                            <local:TableButton Tag="87"/>
+                                            <local:TableButton Tag="88"/>
+                                            <local:TableButton Tag="Actinides"/>
+                                            <local:TableButton Tag="104"/>
+                                            <local:TableButton Tag="105"/>
+                                            <local:TableButton Tag="106"/>
+                                            <local:TableButton Tag="107"/>
+                                            <local:TableButton Tag="108"/>
+                                            <local:TableButton Tag="109"/>
+                                            <local:TableButton Tag="110"/>
+                                            <local:TableButton Tag="111"/>
+                                            <local:TableButton Tag="112"/>
+                                            <local:TableButton Tag="113"/>
+                                            <local:TableButton Tag="114"/>
+                                            <local:TableButton Tag="115"/>
+                                            <local:TableButton Tag="116"/>
+                                            <local:TableButton Tag="117"/>
+                                            <local:TableButton Tag="118"/>
+                                        </StackPanel>
+                                        <Rectangle Grid.Row="7" Height="{Binding ActualHeight, ElementName=hydrogenButton, Mode=OneWay}"/>
+                                        <StackPanel x:Name="LanthanidesStackPanel" Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Center">
                                             <local:TableButton Tag="57"/>
                                             <local:TableButton Tag="58"/>
                                             <local:TableButton Tag="59"/>
@@ -331,11 +448,28 @@
                                             <local:TableButton Tag="70"/>
                                             <local:TableButton Tag="71"/>
                                         </StackPanel>
+                                        <StackPanel x:Name="ActinidesStackPanel" Grid.Row="9" Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <local:TableButton Tag="89"/>
+                                            <local:TableButton Tag="90"/>
+                                            <local:TableButton Tag="91"/>
+                                            <local:TableButton Tag="92"/>
+                                            <local:TableButton Tag="93"/>
+                                            <local:TableButton Tag="94"/>
+                                            <local:TableButton Tag="95"/>
+                                            <local:TableButton Tag="96"/>
+                                            <local:TableButton Tag="97"/>
+                                            <local:TableButton Tag="98"/>
+                                            <local:TableButton Tag="99"/>
+                                            <local:TableButton Tag="100"/>
+                                            <local:TableButton Tag="101"/>
+                                            <local:TableButton Tag="102"/>
+                                            <local:TableButton Tag="103"/>
+                                        </StackPanel>
                                     </Grid>
                                 </Viewbox>
                             </Grid>
                         </TabItem>
-                        <TabItem x:Name="inorganicsPage" Header="TabItem">
+                        <TabItem x:Name="inorganicsPage">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
@@ -346,84 +480,10 @@
                                         <ColumnDefinition Width="1*"/>
                                         <ColumnDefinition Width="1*"/>
                                     </Grid.ColumnDefinitions>
-                                    <TextBox x:Name="searchBox" BorderBrush="#FF009BBD" DockPanel.Dock="Right" Margin="5" Padding="50,0,0,0" Background="#FF2B2B2B" Foreground="#FFE0E0E0" CaretBrush="White">
-                                        <TextBox.Template>
-                                            <ControlTemplate TargetType="TextBox">
-                                                <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
-                                                    <DockPanel FocusManager.FocusedElement="{Binding ElementName=tbCore}">
-                                                        <Canvas Background="{StaticResource searchTB}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}}" AllowDrop="False" IsHitTestVisible="False"/>
-                                                        <TextBox x:Name="tbCore" TextChanged="handleSearchChanged" DockPanel.Dock="Right" FocusVisualStyle="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{TemplateBinding Foreground}" CaretBrush="{TemplateBinding CaretBrush}" SelectionBrush="{TemplateBinding SelectionBrush}" BorderThickness="0" VerticalContentAlignment="Center" />
-                                                    </DockPanel>
-                                                </Border>
-                                                <ControlTemplate.Triggers>
-                                                    <Trigger Property="IsFocused" SourceName="tbCore" Value="True">
-                                                        <Setter TargetName="border" Property="BorderBrush" Value="Cyan"/>
-                                                    </Trigger>
-                                                </ControlTemplate.Triggers>
-                                            </ControlTemplate>
-                                        </TextBox.Template>
-                                    </TextBox>
+                                    <TextBox x:Name="searchBox" Style="{DynamicResource searchBoxStyle}"/>
                                 </Grid>
-                                <DataGrid x:Name="inorganicGrid" local:DataGridTextSearch.SearchValue="{Binding ElementName=searchBox, Path=Text, UpdateSourceTrigger=PropertyChanged}" Foreground="#FFE4E4E4" SelectionUnit="FullRow" AutoGenerateColumns="False" Background="Gray" BorderThickness="1,0,0,0" ColumnHeaderHeight="30" HeadersVisibility="Column" CanUserResizeRows="False" CanUserDeleteRows="False" CanUserAddRows="False" RowBackground="#FF383838" AlternatingRowBackground="#FF474747" RowDetailsVisibilityMode="Collapsed" SelectionMode="Single" Grid.Row="1">
-                                    <DataGrid.Resources>
-                                        <SolidColorBrush x:Key="rowSelected" Color="#FF00AEFF"/>
-                                        <SolidColorBrush x:Key="rowSelectedForeground" Color="White"/>
-                                        <local:RowSearchConverter x:Key="RowSearchConverter" />
-                                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="{Binding Color, Source={StaticResource rowSelected}}"/>
-                                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="{Binding Color, Source={StaticResource rowSelectedForeground}}"/>
-                                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="{Binding Color, Source={StaticResource rowSelected}}"/>
-                                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}" Color="{Binding Color, Source={StaticResource rowSelectedForeground}}"/>
-                                    </DataGrid.Resources>
-                                    <DataGrid.RowStyle>
-                                        <Style TargetType="DataGridRow">
-                                            <Setter Property="local:DataGridTextSearch.IsTextMatch">
-                                                <Setter.Value>
-                                                    <MultiBinding Converter="{StaticResource RowSearchConverter}">
-                                                        <Binding RelativeSource="{RelativeSource Self}" Path="Item" />
-                                                        <Binding RelativeSource="{RelativeSource Self}" Path="(local:DataGridTextSearch.SearchValue)" />
-                                                    </MultiBinding>
-                                                </Setter.Value>
-                                            </Setter>
-                                            <Setter Property="ContextMenu">
-                                                <Setter.Value>
-                                                    <ContextMenu>
-                                                        <MenuItem Header="Add to laboratory" Icon="{DynamicResource addImage}"/>
-                                                        <MenuItem Header="Remove from laboratory" Icon="{DynamicResource removeImage}"/>
-                                                        <MenuItem Header="Properties" Icon="{DynamicResource infoImage}"/>
-                                                    </ContextMenu>
-                                                </Setter.Value>
-                                            </Setter>
-                                            <Style.Triggers>
-                                                <Trigger Property="local:DataGridTextSearch.IsTextMatch" Value="False">
-                                                    <Setter Property="Visibility" Value="Collapsed" />
-                                                </Trigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </DataGrid.RowStyle>
-                                    <DataGrid.CellStyle>
-                                        <Style TargetType="{x:Type DataGridCell}">
-                                            <Setter Property="Padding" Value="5,0"/>
-                                            <Setter Property="BorderThickness" Value="0"/>
-                                            <Setter Property="Focusable" Value="False"/>
-                                            <Setter Property="IsTabStop" Value="False"/>
-                                        </Style>
-                                    </DataGrid.CellStyle>
-                                    <DataGrid.ColumnHeaderStyle>
-                                        <Style TargetType="{x:Type DataGridColumnHeader}">
-                                            <Setter Property="Background">
-                                                <Setter.Value>
-                                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                                        <GradientStop Color="#FFB0B0B0" Offset="1"/>
-                                                        <GradientStop Color="#FFCBCBCB" Offset="0"/>
-                                                    </LinearGradientBrush>
-                                                </Setter.Value>
-                                            </Setter>
-                                            <Setter Property="BorderBrush" Value="Black"/>
-                                            <Setter Property="BorderThickness" Value="0,0,1,0"/>
-                                            <Setter Property="Foreground" Value="#FF1D1D1D"/>
-                                            <Setter Property="Padding" Value="5,0"/>
-                                        </Style>
-                                    </DataGrid.ColumnHeaderStyle>
+                                <DataGrid x:Name="inorganicGrid" ItemsSource="{Binding Text, ElementName=searchBox, Converter={StaticResource searchEngine}, ConverterParameter=inorganic}" Grid.Row="1" Style="{DynamicResource labGrid}">
+
                                     <DataGrid.Columns>
                                         <DataGridTextColumn Header="Name" SortDirection="Descending" SortMemberPath="Name" IsReadOnly="True" Binding="{Binding Name}"/>
                                         <DataGridTemplateColumn Header="Formula" SortMemberPath="FormulaString" IsReadOnly="True">
@@ -434,7 +494,7 @@
                                                             <Setter Property="FontFamily" Value="Calibri"/>
                                                         </Style>
                                                     </DataTemplate.Resources>
-                                                    <Label Content="{Binding Formula, Converter={StaticResource myConverter}, Mode=OneWay}" Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGridCell}}}"/>
+                                                    <Label Content="{Binding Formula, Converter={StaticResource formulaDisplayConverter}, Mode=OneWay}" Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGridCell}}}"/>
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
@@ -449,6 +509,7 @@
                                 </DataGrid>
                             </Grid>
                         </TabItem>
+                        <TabItem x:Name="inorganicPage"/>
                         <TabItem x:Name="aboutPage"/>
                     </TabControl>
                 </Grid>

@@ -696,3 +696,259 @@ Radon
 	2
 	202
 	211.5
+Francium
+	Fr
+	Highly reflective metal (speculation)
+	223
+	1.87
+	1
+	300
+	950
+Radium
+	Ra
+	Silvery white metallic
+	226
+	5.5
+	2
+	1233
+	2010
+Actinium
+	Ac
+	Silvery-white, glowing with an eerie blue light[n]Sometimes with a golden cast
+	227
+	10
+	23
+	1500
+	3500
+Thorium
+	Th
+	Silvery, often with black tarnish
+	232.0377
+	11.724
+	1234
+	2023
+	5061
+Protactinium
+	Pa
+	Bright, silvery metallic luster
+	231.03588
+	15.37
+	2345
+	1841
+	4300
+Uranium
+	U
+	Silvery gray metallic[n]Corrodes to a spalling black oxide coat in air
+	238.02891
+	19.1
+	123456
+	1405.3
+	4404
+Neptunium
+	Np
+	Silvery metallic
+	237
+	19.38
+	234567
+	912
+	4447
+Plutonium
+	Pu
+	Silvery white, tarnishing to dark gray in air
+	244
+	19.816
+	12345678
+	912.5
+	3505
+Americium
+	Am
+	Silvery white
+	243
+	12
+	2345678
+	1449
+	2880
+Curium
+	Cm
+	Silvery metallic, glows purple in the dark
+	247
+	13.51
+	2346
+	1613
+	3383
+Berkelium
+	Bk
+	Silvery
+	247
+	13.25
+	234
+	1259
+	2900
+Californium
+	Cf
+	Silvery
+	251
+	15.1
+	234
+	1173
+	1143
+Einsteinium
+	Es
+	Silver-colored
+	252
+	8.84
+	234
+	1133
+	1269
+Fermium
+	Fm
+	Unknown
+	257
+	8.84
+	23
+	1800
+	[]
+Mendelevium
+	Md
+	Unknown
+	258
+	12.47
+	23
+	1100
+	[]
+Nobelium
+	No
+	Unknown
+	259
+	12.99
+	23
+	1100
+	[]
+Lawrencium
+	Lr
+	Silvery
+	266
+	19.91
+	3
+	1900
+	[]
+Rutherfordium
+	Rf
+	Unknown
+	267
+	23.2
+	234
+	2400
+	5800
+Dubnium
+	Db
+	Unknown
+	268
+	29.3
+	345
+	2260
+	[]
+Seaborgium
+	Sg
+	Unknown
+	269
+	35
+	3456
+	4600
+	[]
+Bohrium
+	Bh
+	Unknown
+	270
+	37.1
+	3457
+	3400
+	[]
+Hassium
+	Hs
+	Silvery
+	269
+	40.7
+	234568
+	3250
+	[]
+Meitnerium
+	Mt
+	Unknown
+	278
+	37.4
+	134689
+	2700
+	[]
+Darmstadtium
+	Ds
+	Unknown
+	281
+	34.8
+	2468
+	2000
+	[]
+Roentgenium
+	Rg
+	Silvery
+	282
+	28.7
+	10135
+	1400
+	[]
+Copernicium
+	Cn
+	Unknown
+	285
+	23.7
+	124
+	136.74
+	37.58
+Ununtrium
+	Uut
+	Unknown
+	286
+	16
+	101235
+	700
+	1430
+Flerovium
+	Fl
+	Unknown
+	289
+	14
+	1246
+	340
+	420
+Ununpentium
+	Uup
+	Unknown
+	289
+	13.5
+	13
+	670
+	1400
+Livermorium
+	Lv
+	Unknown
+	293
+	12.9
+	2024
+	700
+	1070
+Ununseptium
+	Uus
+	Semimetallic
+	294
+	7.2
+	10135
+	670
+	823
+Ununoctium
+	Uuo
+	Unknown
+	294
+	5
+	101246
+	250
+	350

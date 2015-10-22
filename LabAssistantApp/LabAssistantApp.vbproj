@@ -73,10 +73,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DataGridTextSearch.vb" />
     <Compile Include="FormulaDisplayConverter.vb" />
     <Compile Include="RowSearchConverter.vb" />
-    <Compile Include="Synchronizer.vb" />
     <Compile Include="TableButton.xaml.vb">
       <DependentUpon>TableButton.xaml</DependentUpon>
     </Compile>

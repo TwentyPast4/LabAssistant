@@ -12,7 +12,7 @@ Class MainWindow
         ' Add any initialization after the InitializeComponent() call.
         SetElements(tableViewbox)
         handleMenuClick(tableMenuBtn, Nothing)
-        inorganicGrid.ItemsSource = Matter.Compound.GetAllOfType(False)
+        'inorganicGrid.ItemsSource = Matter.Compound.GetAllOfType(False)
 
         timer1 = New Threading.DispatcherTimer()
         timer1.Interval = TimeSpan.FromSeconds(0.7)

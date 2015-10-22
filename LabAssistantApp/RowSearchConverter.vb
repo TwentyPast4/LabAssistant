@@ -1,22 +1,32 @@
 ﻿Imports System.Globalization
 
 Public Class RowSearchConverter
-    Implements IMultiValueConverter
+    Implements IValueConverter
 
-    Public Function Convert(values() As Object, targetType As Type, parameter As Object, culture As CultureInfo) As Object Implements IMultiValueConverter.Convert
-        If IsNothing(values(0)) Then Return True
-        Dim chemName As String = values(0).Name
-        chemName = chemName.ToLower.Replace(Space(1), String.Empty)
-        Dim searchFor As String = values(1)
-        searchFor = searchFor.ToLower.Replace(Space(1), String.Empty)
-        If searchFor.Length = 0 OrElse (chemName.Contains(searchFor) Or searchFor.Contains(chemName)) Then
-            Return True
+    Public Function Convert(value As Object, targetType As Type, parameter As Object, culture As CultureInfo) As Object Implements IValueConverter.Convert
+        Debug.Print("test")
+        Dim s As String = value
+        s = s.ToLower().Replace(Space(1), String.Empty)
+        If s.Length > 0 Then
+            If parameter.ToString.Equals("inorganic") Then
+                Return Matter.Compound.GetAllOfType(False).Where(Function(ByVal c As Matter.Compound) c.Name.ToLower.Replace(Space(1), String.Empty).Contains(s))
+            ElseIf parameter.ToString.Equals("organic") Then
+                Return Matter.Compound.GetAllOfType(True).Where(Function(ByVal c As Matter.Compound) c.Name.ToLower.Replace(Space(1), String.Empty).Contains(s))
+            Else
+                Return Matter.Compound.CompoundList.Where(Function(ByVal c As Matter.Compound) c.Name.ToLower.Replace(Space(1), String.Empty).Contains(s))
+            End If
         Else
-            Return False
+            If parameter.ToString.Equals("inorganic") Then
+                Return Matter.Compound.GetAllOfType(False)
+            ElseIf parameter.ToString.Equals("organic") Then
+                Return Matter.Compound.GetAllOfType(True)
+            Else
+                Return Matter.Compound.CompoundList
+            End If
         End If
     End Function
 
-    Public Function ConvertBack(value As Object, targetTypes() As Type, parameter As Object, culture As CultureInfo) As Object() Implements IMultiValueConverter.ConvertBack
+    Public Function ConvertBack(value As Object, targetType As Type, parameter As Object, culture As CultureInfo) As Object Implements IValueConverter.ConvertBack
         Throw New NotImplementedException()
     End Function
 
