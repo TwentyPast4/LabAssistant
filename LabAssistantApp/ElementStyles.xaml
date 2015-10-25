@@ -11,7 +11,7 @@
     <SolidColorBrush x:Key="NonMetals" Color="#FF00B9FF"/>
     <SolidColorBrush x:Key="Post_transitionMetals" Color="Lime"/>
     <SolidColorBrush x:Key="TransitionMetals" Color="Yellow"/>
-    <SolidColorBrush x:Key="Unknown" Color="#FF878787"/>
+    <SolidColorBrush x:Key="Unknown" Color="#FFA6A6A6"/>
 
     <DrawingBrush x:Key="LogoBrush_edited">
         <DrawingBrush.RelativeTransform>
@@ -20,17 +20,32 @@
             </TransformGroup>
         </DrawingBrush.RelativeTransform>
         <DrawingBrush.Drawing>
-            <GeometryDrawing>
+            <GeometryDrawing Brush="Transparent" Geometry="{DynamicResource logoGeometry}">
                 <GeometryDrawing.Pen>
                     <Pen Brush="White" Thickness="0.07"/>
                 </GeometryDrawing.Pen>
-                <GeometryDrawing.Geometry>
-                    <PathGeometry>
-                        <PathFigure IsClosed="True" StartPoint="0.35,0" IsFilled="False" Segments="{DynamicResource logoPath}"/>
-                    </PathGeometry>
-                </GeometryDrawing.Geometry>
             </GeometryDrawing>
         </DrawingBrush.Drawing>
     </DrawingBrush>
 
+    <SolidColorBrush x:Key="Solid" Color="Black"/>
+    <VisualBrush x:Key="Liquid" TileMode="Tile" Viewport="0,0,7,7" ViewportUnits="Absolute" Viewbox="0,0,7,7" ViewboxUnits="Absolute">
+        <VisualBrush.Visual>
+            <Grid>
+                <Path Data="M 0 7 L 7 0" Stroke="Black" />
+                <Path Data="M 0 0 L 7 7" Stroke="Black" />
+            </Grid>
+        </VisualBrush.Visual>
+    </VisualBrush>
+    <SolidColorBrush x:Key="Gas" Color="#AA000000"/>
+
+    <LinearGradientBrush x:Key="Available" EndPoint="1,1" StartPoint="0,0">
+        <GradientStop Color="Transparent" Offset="0.5"/>
+        <GradientStop Color="White" Offset="0.5"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="In_Stock" EndPoint="1,1" StartPoint="0,0">
+        <GradientStop Color="Transparent" Offset="0.5"/>
+        <GradientStop Color="Black" Offset="0.5"/>
+    </LinearGradientBrush>
 </ResourceDictionary>

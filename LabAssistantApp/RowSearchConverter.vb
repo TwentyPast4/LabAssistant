@@ -4,7 +4,6 @@ Public Class RowSearchConverter
     Implements IValueConverter
 
     Public Function Convert(value As Object, targetType As Type, parameter As Object, culture As CultureInfo) As Object Implements IValueConverter.Convert
-        Debug.Print("test")
         Dim s As String = value
         s = s.ToLower().Replace(Space(1), String.Empty)
         If s.Length > 0 Then

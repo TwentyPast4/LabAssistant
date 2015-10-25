@@ -1,6 +1,4 @@
-﻿Imports System.Configuration
-Imports System.ComponentModel
-Imports System.Globalization
+﻿Imports System.Globalization
 
 Namespace Matter
 
@@ -14,7 +12,7 @@ Namespace Matter
         Unavailable
         Available
         Synthesizable
-        <Description("In Stock")> In_Stock
+        In_Stock
     End Enum
 
     Public Enum UnitOfMass
@@ -206,15 +204,6 @@ Namespace Matter
             Return CallByName(New GroupStrings, group.ToString, CallType.Get, Nothing)
         End Function
 
-        Public Function GetElectronConfigurationString() As String
-            Dim str As String = String.Empty
-            For n As Integer = 0 To elconfig.Count - 1
-                If elconfig(n) = 0 Then Exit For
-                If n = 0 Then str = elconfig(n) Else str = str & "-" & elconfig(n)
-            Next
-            Return str
-        End Function
-
         Public ReadOnly Property AtomicMass As Double
             Get
                 Return mass
@@ -263,12 +252,12 @@ Namespace Matter
         End Property
         Private numb As Integer
 
-        Public ReadOnly Property ElectronConfiguration As Integer()
+        Public ReadOnly Property ElectronConfiguration As ElectronConfig()
             Get
                 Return elconfig
             End Get
         End Property
-        Private elconfig As Integer()
+        Private elconfig As ElectronConfig()
 
         Private Sub New(ByVal AtomicNumber As Integer, ByVal name As String, ByVal appearance As String, ByVal oxidationStates() As Integer, ByVal symbol As String, ByVal atomicMass As Double, ByVal meltingP As Single, ByVal boilingP As Single, ByVal density As Single)
             numb = AtomicNumber
@@ -418,23 +407,13 @@ Namespace Matter
 
         Private Shared Function getOrbitals() As Orbital()
             Dim d As New List(Of Orbital)
-            Dim a(6)() As Short
-            Dim deltaN As Short = 0
-            For i As Integer = 0 To a.Count() - 1
-                Dim b(6) As Short
-                Dim limit As Short = 2 + i * 4
-                For j As Integer = deltaN To b.Count - 1
-                    b(j) = limit
-                Next
-                a(i) = b
-                deltaN += 1
-            Next
-
-            For i As Integer = 0 To a.Count - 1
-                For j As Integer = 0 To i
+            For x As Single = 0 To 6 Step 0.5
+                Dim curX As Integer = Math.Floor(x)
+                Dim curY As Integer = Math.Ceiling(x)
+                For delta As Integer = 0 To curX
                     Dim suffix As String = ""
-                    Select Case i - j
-                        Case Is = 0
+                    Select Case curX - delta
+                        Case 0
                             suffix = "s"
                         Case 1
                             suffix = "p"
@@ -449,11 +428,9 @@ Namespace Matter
                         Case 6
                             suffix = "i"
                     End Select
-                    Dim limit As Short = a(i - j)(j)
-                    If limit > 0 Then d.Add(New Orbital(suffix, j + 1, limit))
+                    d.Add(New Orbital(suffix, curY + delta + 1, 2 + 4 * (curX - delta)))
                 Next
             Next
-
             Return d.ToArray()
         End Function
 
@@ -488,19 +465,121 @@ Namespace Matter
                 shell_ = oShell
                 cap_ = oCapacity
             End Sub
+
+            Public Overloads Function Equals(obj As Orbital) As Boolean
+                Return (name_ = obj.name_ And shell_ = obj.shell_ And cap_ = obj.cap_)
+            End Function
         End Class
 
-        Private Shared Function GetElConfig(ByVal electrons As Integer) As Integer()
+        Public Class ElectronConfig
+            Public ReadOnly Property Orbital As Orbital
+                Get
+                    Return orb_
+                End Get
+            End Property
+            Private orb_ As Orbital
+            Public ReadOnly Property NumberOfElectrons As Integer
+                Get
+                    Return ele_
+                End Get
+            End Property
+            Private ele_ As Integer
+            Friend Sub New(ByRef orb As Orbital, ByVal ele As Integer)
+                orb_ = orb
+                ele_ = ele
+            End Sub
+            Friend Sub New(ByVal orbitalName As String, ByVal ele As Integer)
+                orb_ = Orbitals.First(Function(ByVal com As Orbital) com.Name(True).Equals(orbitalName))
+                ele_ = ele
+            End Sub
+
+            Public Shared Function AddOrbital(ByRef e As ElectronConfig(), ByVal add As ElectronConfig) As ElectronConfig()
+                Dim ec As ElectronConfig = e.ToList().Find(Function(ByVal com As ElectronConfig) com.Orbital.Equals(add.Orbital))
+                If IsNothing(ec) Then
+                    ReDim Preserve e(e.Count)
+                    e(e.Count - 1) = add
+                Else
+                    ec.ele_ += add.ele_
+                End If
+                Return e
+            End Function
+        End Class
+
+        Private Shared Function GetElConfig(ByVal electrons As Integer) As ElectronConfig()
+            'Elements with anomalies
+            Select Case electrons
+                Case 24
+                    Return ElectronConfig.AddOrbital(GetElConfig(19), New ElectronConfig("3d", 5))
+                Case 29
+                    Return ElectronConfig.AddOrbital(GetElConfig(19), New ElectronConfig("3d", 10))
+                Case 41
+                    Return ElectronConfig.AddOrbital(GetElConfig(37), New ElectronConfig("4d", 4))
+                Case 42
+                    Return ElectronConfig.AddOrbital(GetElConfig(37), New ElectronConfig("4d", 5))
+                Case 44
+                    Return ElectronConfig.AddOrbital(GetElConfig(37), New ElectronConfig("4d", 7))
+                Case 45
+                    Return ElectronConfig.AddOrbital(GetElConfig(37), New ElectronConfig("4d", 8))
+                Case 46
+                    Return ElectronConfig.AddOrbital(GetElConfig(36), New ElectronConfig("4d", 10))
+                Case 47
+                    Return ElectronConfig.AddOrbital(GetElConfig(37), New ElectronConfig("4d", 10))
+                Case 57
+                    Return ElectronConfig.AddOrbital(GetElConfig(56), New ElectronConfig("5d", 1))
+                Case 58
+                    Return ElectronConfig.AddOrbital(ElectronConfig.AddOrbital(GetElConfig(56), New ElectronConfig("4f", 1)), New ElectronConfig("5d", 1))
+                Case 64
+                    Return ElectronConfig.AddOrbital(GetElConfig(63), New ElectronConfig("5d", 1))
+                Case 78
+                    Return ElectronConfig.AddOrbital(ElectronConfig.AddOrbital(GetElConfig(55), New ElectronConfig("4f", 14)), New ElectronConfig("5d", 9))
+                Case 79
+                    Return ElectronConfig.AddOrbital(ElectronConfig.AddOrbital(GetElConfig(55), New ElectronConfig("4f", 14)), New ElectronConfig("5d", 10))
+                Case 89
+                    Return ElectronConfig.AddOrbital(GetElConfig(88), New ElectronConfig("6d", 1))
+                Case 90
+                    Return ElectronConfig.AddOrbital(GetElConfig(88), New ElectronConfig("6d", 2))
+                Case 91
+                    Return ElectronConfig.AddOrbital(ElectronConfig.AddOrbital(GetElConfig(88), New ElectronConfig("5f", 2)), New ElectronConfig("6d", 1))
+                Case 92
+                    Return ElectronConfig.AddOrbital(ElectronConfig.AddOrbital(GetElConfig(88), New ElectronConfig("5f", 3)), New ElectronConfig("6d", 1))
+                Case 93
+                    Return ElectronConfig.AddOrbital(ElectronConfig.AddOrbital(GetElConfig(88), New ElectronConfig("5f", 4)), New ElectronConfig("6d", 1))
+                Case 96
+                    Return ElectronConfig.AddOrbital(GetElConfig(95), New ElectronConfig("6d", 1))
+                Case Else
+                    'Elements without anomalies
+                    Dim ell As New List(Of ElectronConfig)
+                    Dim orbital As Integer = 0
+                    While electrons > 0
+                        Dim o As Orbital = Orbitals(orbital)
+                        Dim take As Integer
+                        If electrons < o.Capacity Then take = electrons Else take = o.Capacity
+                        ell.Add(New ElectronConfig(o, take))
+                        electrons -= take
+                        orbital += 1
+                    End While
+                    Return ell.ToArray()
+            End Select
+        End Function
+
+        Public Function GetElectronConfigurationByShell() As Integer()
             Dim ell As New List(Of Integer)
-            For Each o In Orbitals
-                If ell.Count < o.Shell Then ell.Add(0)
-                Dim take As Integer
-                If electrons < o.Capacity Then take = electrons Else take = o.Capacity
-                ell(o.Shell - 1) += take
-                electrons -= take
-                If electrons <= 0 Then Exit For
+            Dim electrons As Integer = numb
+            For Each ec In elconfig
+                If ell.Count < ec.Orbital.Shell Then ell.Add(0)
+                ell(ec.Orbital.Shell - 1) += ec.NumberOfElectrons
             Next
             Return ell.ToArray
+        End Function
+
+        Public Function GetElectronConfigurationByShellString() As String
+            Dim config() As Integer = GetElectronConfigurationByShell()
+            Dim str As String = String.Empty
+            For n As Integer = 0 To config.Count - 1
+                If config(n) = 0 Then Exit For
+                If n = 0 Then str = config(n) Else str = str & "-" & config(n)
+            Next
+            Return str
         End Function
 
         Private Structure GroupStrings

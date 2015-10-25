@@ -1,85 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <PathSegmentCollection x:Key="crossPath">
-        <LineSegment Point="0.5,0.35"/>
-        <LineSegment Point="0.85,0"/>
-        <LineSegment Point="1,0.15"/>
-        <LineSegment Point="0.65,0.5"/>
-        <LineSegment Point="1,0.85"/>
-        <LineSegment Point="0.85,1"/>
-        <LineSegment Point="0.5,0.65"/>
-        <LineSegment Point="0.15,1"/>
-        <LineSegment Point="0,0.85"/>
-        <LineSegment Point="0.35,0.5"/>
-        <LineSegment Point="0,0.15"/>
-    </PathSegmentCollection>
-
-    <PathSegmentCollection x:Key="disk_model">
-        <LineSegment Point="0,1"/>
-        <LineSegment Point="1,1"/>
-        <LineSegment Point="1,0.8"/>
-    </PathSegmentCollection>
-
-    <PathGeometry x:Key="maxPath">
-        <PathFigureCollection>
-            <PathFigure IsClosed="True" IsFilled="True" StartPoint="0,0">
-                <PathFigure.Segments>
-                    <LineSegment Point="1,0"/>
-                    <LineSegment Point="1,0.15"/>
-                    <LineSegment Point="0,0.15"/>
-                </PathFigure.Segments>
-            </PathFigure>
-            <PathFigure IsClosed="True" IsFilled="False" StartPoint="0,0">
-                <PathFigure.Segments>
-                    <LineSegment Point="1,0"/>
-                    <LineSegment Point="1,1"/>
-                    <LineSegment Point="0,1"/>
-                </PathFigure.Segments>
-            </PathFigure>
-        </PathFigureCollection>
-    </PathGeometry>
-
-    <DrawingBrush x:Key="cross_Full" Stretch="Fill">
-        <DrawingBrush.Drawing>
-            <GeometryDrawing Brush="White">
-                <GeometryDrawing.Geometry>
-                    <PathGeometry>
-                        <PathFigure IsClosed="True" StartPoint="0.15,0" Segments="{DynamicResource crossPath}"/>
-                    </PathGeometry>
-                </GeometryDrawing.Geometry>
-            </GeometryDrawing>
-        </DrawingBrush.Drawing>
-    </DrawingBrush>
-
-    <DrawingBrush x:Key="max_Full" Stretch="Fill">
-        <DrawingBrush.Drawing>
-            <GeometryDrawing Brush="White" Geometry="{DynamicResource maxPath}">
-                <GeometryDrawing.Pen>
-                    <Pen Brush="White" Thickness="0.1"/>
-                </GeometryDrawing.Pen>
-            </GeometryDrawing>
-        </DrawingBrush.Drawing>
-    </DrawingBrush>
-
-    <DrawingBrush x:Key="min_Full" Stretch="Uniform" AlignmentY="Bottom">
-        <DrawingBrush.Drawing>
-            <GeometryDrawing Brush="White">
-                <GeometryDrawing.Geometry>
-                    <PathGeometry>
-                        <PathFigure IsClosed="True" IsFilled="True" StartPoint="0,0.85">
-                            <PathFigure.Segments>
-                                <LineSegment Point="1,0.85"/>
-                                <LineSegment Point="1,1"/>
-                                <LineSegment Point="0,1"/>
-                            </PathFigure.Segments>
-                        </PathFigure>
-                    </PathGeometry>
-                </GeometryDrawing.Geometry>
-            </GeometryDrawing>
-        </DrawingBrush.Drawing>
-    </DrawingBrush>
-
     <DrawingBrush x:Key="save_Full" Stretch="Uniform">
         <DrawingBrush.Drawing>
             <GeometryDrawing Brush="White">
@@ -89,7 +10,13 @@
                 <GeometryDrawing.Geometry>
                     <PathGeometry>
                         <PathFigureCollection>
-                            <PathFigure IsClosed="False" IsFilled="False" StartPoint="0,0.8" Segments="{DynamicResource disk_model}"/>
+                            <PathFigure IsClosed="False" IsFilled="False" StartPoint="0,0.8">
+                                <PathFigure.Segments>
+                                    <LineSegment Point="0,1"/>
+                                    <LineSegment Point="1,1"/>
+                                    <LineSegment Point="1,0.8"/>
+                                </PathFigure.Segments>
+                            </PathFigure>
                             <PathFigure IsClosed="False" IsFilled="False" StartPoint="0.15,0.85">
                                 <PathFigure.Segments>
                                     <LineSegment Point="0.85,0.85"/>
@@ -121,7 +48,13 @@
                 <GeometryDrawing.Geometry>
                     <PathGeometry>
                         <PathFigureCollection>
-                            <PathFigure IsClosed="False" IsFilled="False" StartPoint="0,0.8" Segments="{DynamicResource disk_model}"/>
+                            <PathFigure IsClosed="False" IsFilled="False" StartPoint="0,0.8">
+                                <PathFigure.Segments>
+                                    <LineSegment Point="0,1"/>
+                                    <LineSegment Point="1,1"/>
+                                    <LineSegment Point="1,0.8"/>
+                                </PathFigure.Segments>
+                            </PathFigure>
                             <PathFigure IsClosed="False" IsFilled="False" StartPoint="0.15,0">
                                 <PathFigure.Segments>
                                     <LineSegment Point="0.85,0"/>
@@ -147,13 +80,7 @@
     <DrawingBrush x:Key="new_Full" Stretch="Uniform">
         <DrawingBrush.Drawing>
             <DrawingGroup>
-                <GeometryDrawing Brush="White">
-                    <GeometryDrawing.Geometry>
-                        <PathGeometry>
-                            <PathFigure IsClosed="True" IsFilled="True" StartPoint="0.35,0" Segments="{DynamicResource logoPath}"/>
-                        </PathGeometry>
-                    </GeometryDrawing.Geometry>
-                </GeometryDrawing>
+                <GeometryDrawing Brush="White" Geometry="{DynamicResource logoGeometry}"/>
                 <GeometryDrawing Brush="LimeGreen">
                     <GeometryDrawing.Pen>
                         <Pen Brush="Black" Thickness="0.02"/>
@@ -432,7 +359,7 @@
             </GeometryDrawing.Geometry>
         </GeometryDrawing>
     </DrawingGroup>
-    
+
     <Image x:Key="infoImage" Height="16" Width="16">
         <Image.Source>
             <DrawingImage Drawing="{StaticResource infoDrawing}"/>
@@ -440,7 +367,7 @@
     </Image>
 
     <DrawingBrush x:Key="infoBrush" Stretch="Uniform" Drawing="{StaticResource infoDrawing}"/>
-    
+
     <Image x:Key="removeImage" Height="16" Width="16">
         <Image.Source>
             <DrawingImage>

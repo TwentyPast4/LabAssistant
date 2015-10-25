@@ -61,7 +61,8 @@ Public Partial Class TableButton
 	End Sub
 
     Private Sub handleElementChange()
-        symbolBox.Text = el.Symbol
+        symbolBox.Content = el.Symbol
+        symbolBox.Foreground = Me.FindResource(el.State.ToString())
         weightBox.Text = Matter.Info.ToStringDecimal(el.AtomicMass)
         numberBox.Text = el.AtomicNumber.ToString
         Dim s As String = String.Empty
@@ -71,7 +72,7 @@ Public Partial Class TableButton
             s += v.ToString()
         Next
         oxyBox.Text = s
-        configBox.Text = el.GetElectronConfigurationString()
+        configBox.Text = el.GetElectronConfigurationByShellString()
         PaintGroup(el.Group)
         paintLabState()
         AddHandler el.LabStateChanged, AddressOf handleLabStateChanged
@@ -82,16 +83,15 @@ Public Partial Class TableButton
     End Sub
 
     Private Sub paintLabState()
-        Select Case el.LabState
-            Case Is = Matter.StateInLab.Unavailable
-                iconCanvas.Background = Nothing
-            Case Is = Matter.StateInLab.Available
-                iconCanvas.Background = My.Application.FindResource("infinity")
-            Case Is = Matter.StateInLab.In_Stock
-                iconCanvas.Background = My.Application.FindResource("tick")
-            Case Is = Matter.StateInLab.Synthesizable
-                iconCanvas.Background = Me.FindResource("LogoBrush_edited")
-        End Select
+        If el.LabState = Matter.StateInLab.Unavailable Then
+            iconCanvas.Background = Nothing
+            symbolBox.BorderBrush = Nothing
+        ElseIf el.LabState = Matter.StateInLab.Synthesizable Then
+            symbolBox.BorderBrush = Brushes.White
+        Else
+            iconCanvas.Background = Me.FindResource(el.LabState.ToString())
+            symbolBox.BorderBrush = Nothing
+        End If
     End Sub
 
     Public Sub PaintGroup(g As Matter.Element.Groups)

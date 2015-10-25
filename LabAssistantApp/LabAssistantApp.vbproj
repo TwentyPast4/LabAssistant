@@ -73,7 +73,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DarkColorConverter.vb" />
     <Compile Include="FormulaDisplayConverter.vb" />
+    <Compile Include="LabAssistantWindow.vb" />
     <Compile Include="RowSearchConverter.vb" />
     <Compile Include="TableButton.xaml.vb">
       <DependentUpon>TableButton.xaml</DependentUpon>
@@ -94,7 +96,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="LabWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -110,8 +112,8 @@
     <Compile Include="LoadWindow.xaml.vb">
       <DependentUpon>LoadWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.vb">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="LabWindow.xaml.vb">
+      <DependentUpon>LabWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="TableButton.xaml">
