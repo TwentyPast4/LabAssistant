@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+<local:ClickableControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:local="clr-namespace:LabAssistantApp" mc:Ignorable="d"
 	x:Class="TableButton"
 	Width="100"
 	Height="100"
-	FontFamily="/LabAssistantApp;component/#Arial MT" BorderThickness="1" MouseEnter="handleMouseOver" MouseLeave="handleMouseLeave" Focusable="True" FontSize="14" Background="White" BorderBrush="Black">
-    <UserControl.Resources>
+	FontFamily="{DynamicResource ArialMTFont}" BorderThickness="1" MouseEnter="handleMouseOver" MouseLeave="handleMouseLeave" Focusable="True" FontSize="14" Background="White">
+    <local:ClickableControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="ElementStyles.xaml"/>
@@ -15,8 +15,8 @@
                 <Setter Property="LineStackingStrategy" Value="BlockLineHeight"/>
             </Style>
         </ResourceDictionary>
-    </UserControl.Resources>
-    <Border BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:TableButton}}}" Background="{Binding Background, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:TableButton}}}">
+    </local:ClickableControl.Resources>
+    <Border Background="{Binding Background, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:TableButton}}}">
         <Viewbox Stretch="Fill">
             <Grid x:Name="baseGrid" IsHitTestVisible="False" Height="98" Width="98">
                 <Grid.Background>
@@ -43,4 +43,4 @@
             </Grid>
         </Viewbox>
     </Border>
-</UserControl>
+</local:ClickableControl>

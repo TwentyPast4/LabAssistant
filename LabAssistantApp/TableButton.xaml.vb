@@ -4,16 +4,18 @@
 ''' Interaction logic for TableButton.xaml
 ''' </summary>
 Public Partial Class TableButton
-	Inherits UserControl
-	
+    Inherits ClickableControl
+
     Public Shared ReadOnly BackgroundHoverProperty As DependencyProperty = _
         DependencyProperty.Register("BackgroundHover", GetType(Color), GetType(TableButton), New UIPropertyMetadata(Colors.White))
     Public Shared ReadOnly BackgroundHoverOpacityProperty As DependencyProperty = _
         DependencyProperty.Register("BackgroundHoverOpacity", GetType(Double), GetType(TableButton), New UIPropertyMetadata(0.5))
-    Public Shared ReadOnly ElementProperty As DependencyProperty = _
+    Public Shared ReadOnly ElementProperty As DependencyProperty =
         DependencyProperty.Register("Element", GetType(Matter.Element), GetType(TableButton), New UIPropertyMetadata(Nothing))
+    Public Shared ReadOnly CanHoverProperty As DependencyProperty =
+        DependencyProperty.Register("CanHover", GetType(Boolean), GetType(TableButton), New UIPropertyMetadata(True))
 
-	Public Property BackgroundHover As Color
+    Public Property BackgroundHover As Color
 		Get
 			Return hovBr
 		End Get
@@ -22,6 +24,16 @@ Public Partial Class TableButton
 		End Set
 	End Property
     Private hovBr As Color
+
+    Public Property CanHover As Boolean
+        Get
+            Return hovEnabled
+        End Get
+        Set(value As Boolean)
+            hovEnabled = value
+        End Set
+    End Property
+    Private hovEnabled As Boolean
 
     Public Property BackgroundHoverOpacity As Double
         Get
@@ -45,12 +57,12 @@ Public Partial Class TableButton
     Private el As Matter.Element
 
 	Private Sub handleMouseOver(ByVal sender as object, e as MouseEventArgs)
-		If baseGrid.Background isnot nothing then
+        If baseGrid.Background IsNot Nothing And Me.GetValue(TableButton.CanHoverProperty) Then
             Dim da As New DoubleAnimation(Me.GetValue(TableButton.BackgroundHoverOpacityProperty), New Duration(TimeSpan.FromSeconds(0.3)))
-			baseGrid.Background.BeginAnimation(Brush.OpacityProperty, da)
-		end if
-		
-	End Sub
+            baseGrid.Background.BeginAnimation(Brush.OpacityProperty, da)
+        End If
+
+    End Sub
 
 	Private Sub handleMouseLeave(ByVal sender as object, e as MouseEventArgs)
 		If baseGrid.Background isnot nothing then

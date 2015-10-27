@@ -4,7 +4,10 @@
     xmlns:local="clr-namespace:LabAssistantApp"
     StartupUri="LoadWindow.xaml">
     <Application.Resources>
-        
+        <FontFamily x:Key="NevisFont">/LabAssistantApp;component/#nevis</FontFamily>
+        <FontFamily x:Key="TelegraficoFont">/LabAssistantApp;component/#Telegrafico</FontFamily>
+        <FontFamily x:Key="ArialMTFont">/LabAssistantApp;component/#Arial MT</FontFamily>
+
         <PathGeometry x:Key="logoGeometry">
             <PathFigure StartPoint="0.35,0" IsClosed="True">
                 <PathFigure.Segments>

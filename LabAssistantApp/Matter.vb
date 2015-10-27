@@ -97,12 +97,12 @@ Namespace Matter
         End Property
         Protected boil_ As Single
 
-        Public ReadOnly Property Density As Single
+        Public ReadOnly Property Density As Double
             Get
                 If dens_ < 0 Then Return Nothing Else Return dens_
             End Get
         End Property
-        Protected dens_ As Single
+        Protected dens_ As Double
 
         Public ReadOnly Property Formula As CompoundFormula
             Get
@@ -245,6 +245,13 @@ Namespace Matter
         End Property
         Private gro As Groups
 
+        Public ReadOnly Property TableGroupNumber As Integer
+            Get
+                Return groupNum
+            End Get
+        End Property
+        Private groupNum As Integer
+
         Public ReadOnly Property AtomicNumber As Integer
             Get
                 Return numb
@@ -259,7 +266,7 @@ Namespace Matter
         End Property
         Private elconfig As ElectronConfig()
 
-        Private Sub New(ByVal AtomicNumber As Integer, ByVal name As String, ByVal appearance As String, ByVal oxidationStates() As Integer, ByVal symbol As String, ByVal atomicMass As Double, ByVal meltingP As Single, ByVal boilingP As Single, ByVal density As Single)
+        Private Sub New(ByVal AtomicNumber As Integer, ByVal name As String, ByVal appearance As String, ByVal oxidationStates() As Integer, ByVal symbol As String, ByVal atomicMass As Double, ByVal meltingP As Single, ByVal boilingP As Single, ByVal density As Double)
             numb = AtomicNumber
             name_ = name
             appearance_ = appearance.Replace(Constants.NewLine, vbNewLine)
@@ -270,8 +277,9 @@ Namespace Matter
             dens_ = density
             oxy = oxidationStates
             state_ = GetStateAt(ChemistryConstants.RoomTemperature)
-            per = GetPeriod()
+            per = GetPeriod(numb)
             gro = GetGroup()
+            groupNum = getGroupNumber()
             formula_ = New CompoundFormula(MakeFormula(numb, sym, gro))
             elconfig = GetElConfig(AtomicNumber)
         End Sub
@@ -374,14 +382,29 @@ Namespace Matter
             Return oxlst.ToArray
         End Function
 
-        Private Function GetPeriod() As Integer
+        Private Shared Function GetPeriod(ByVal numb As Integer) As Integer
             If numb >= 3 And numb <= 10 Then Return 2
             If numb >= 11 And numb <= 18 Then Return 3
             If numb >= 19 And numb <= 36 Then Return 4
             If numb >= 37 And numb <= 54 Then Return 5
             If numb >= 55 And numb <= 86 Then Return 6
             If numb = 1 Or numb = 2 Then Return 1
-            Return 0
+            Return 7
+        End Function
+
+        Private Function getGroupNumber() As Integer
+
+            If gro = Groups.AlkaliMetals Or numb = 1 Then Return 1
+            If gro = Groups.AlkalineEarthMetals Then Return 2
+            If numb > 102 Then Return numb - 100
+            If gro = Groups.Actinides Then Return 0
+            If numb > 70 Then Return numb - 68
+            If gro = Groups.Lanthanides Then Return 0
+            If numb > 38 Then Return numb - 36
+            If numb > 20 Then Return numb - 18
+            If numb > 12 Then Return numb
+            If numb > 4 Then Return numb + 8
+            Return numb
         End Function
 
         Private Function GetGroup() As Groups
@@ -583,6 +606,7 @@ Namespace Matter
         End Function
 
         Private Structure GroupStrings
+            Public Const Actinides As String = "Actinides"
             Public Const AlkaliMetals As String = "Alkali metals"
             Public Const AlkalineEarthMetals As String = "Alkaline earth metals"
             Public Const TransitionMetals As String = "Transition metals"
@@ -592,6 +616,7 @@ Namespace Matter
             Public Const Halogens As String = "Halogens"
             Public Const NobleGases As String = "Noble gases"
             Public Const Lanthanides As String = "Lanthanides"
+            Public Const Unknown As String = "Unknown"
         End Structure
 
         Public Shared Sub UpdateLabStates()
@@ -1368,7 +1393,8 @@ Namespace Matter
             Return Double.Parse(s, System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.NumberFormatInfo.InvariantInfo)
         End Function
 
-        Public Function ToStringDecimal(ByVal d As Double) As String
+        Public Function ToStringDecimal(ByVal d As Decimal, ByVal Optional decimals As Integer = -1) As String
+            If decimals >= 0 Then d = Decimal.Round(d, decimals)
             Return d.ToString(nfi)
         End Function
 

@@ -14,15 +14,16 @@
             <local:RowSearchConverter x:Key="searchEngine"/>
 
             <sys:Double x:Key="itemHeight">35</sys:Double>
-            <sys:Double x:Key="labelHeight">25</sys:Double>
+            <sys:Double x:Key="labelHeight">20</sys:Double>
             <Style x:Key="menuLabel" TargetType="{x:Type Label}">
+                <Setter Property="FontFamily" Value="{StaticResource NevisFont}"/>
                 <Setter Property="Background" Value="{x:Null}"/>
-                <Setter Property="Foreground" Value="Gray"/>
-                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="Foreground" Value="#FFD4D4D4"/>
+                <Setter Property="FontSize" Value="11"/>
                 <Setter Property="BorderThickness" Value="0,0,0,1"/>
-                <Setter Property="BorderBrush" Value="#FF636363"/>
+                <Setter Property="BorderBrush" Value="#FF9B9B9B"/>
+                <Setter Property="Padding" Value="5,0"/>
                 <Setter Property="Height" Value="{StaticResource labelHeight}"/>
-                <Setter Property="Padding" Value="5,0,0,0"/>
                 <Setter Property="HorizontalAlignment" Value="Stretch"/>
                 <Setter Property="VerticalAlignment" Value="Top"/>
                 <Setter Property="VerticalContentAlignment" Value="Bottom"/>
@@ -30,6 +31,7 @@
             </Style>
 
             <Style x:Key="menuBtnStyle" TargetType="{x:Type local:ImageButton}">
+                <Setter Property="FontFamily" Value="{StaticResource NevisFont}"/>
                 <Setter Property="VerticalAlignment" Value="Top"/>
                 <Setter Property="HorizontalAlignment" Value="Stretch"/>
                 <Setter Property="Width" Value="Auto"/>
@@ -41,7 +43,7 @@
                         </TransformGroup>
                     </Setter.Value>
                 </Setter>
-                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontSize" Value="14"/>
                 <Setter Property="TextPadding" Value="7,0"/>
                 <Setter Property="Foreground" Value="White"/>
                 <Setter Property="SelectedBrush">
@@ -102,20 +104,20 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <StackPanel x:Name="menuStackPanel" HorizontalAlignment="Left">
-                <Label Content="Actions" Style="{DynamicResource menuLabel}" Background="{x:Null}"/>
-                <local:ImageButton Tag="save" Text="Save" ImageBrush="{DynamicResource save_Full}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" Width="Auto" IsEnabled="False"/>
-                <local:ImageButton Tag="load" Text="Load" ImageBrush="{DynamicResource load_Full}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" Width="Auto"/>
-                <local:ImageButton Tag="new" Text="New" ImageBrush="{DynamicResource new_Full}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" VerticalAlignment="Top" Width="Auto"/>
-                <Label Content="Library" Style="{DynamicResource menuLabel}" Background="{x:Null}"/>
-                <local:ImageButton x:Name="tableMenuBtn" Tag="table" Text="Table of elements" ImageBrush="{DynamicResource elementBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" Width="Auto" IsSelected="True"/>
-                <local:ImageButton Tag="inorganic" Text="Inorganics" ImageBrush="{DynamicResource compoundBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" Width="Auto"/>
-                <local:ImageButton Tag="organic" Text="Organics" ImageBrush="{DynamicResource organicBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" Width="Auto"/>
-                <Label Content="Laboratory" Style="{DynamicResource menuLabel}" Background="{x:Null}"/>
-                <Label Content="Settings" Style="{DynamicResource menuLabel}" Background="{x:Null}"/>
-                <local:ImageButton Tag="start" Text="Startup" ImageBrush="{DynamicResource onOffBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" Width="Auto"/>
-                <local:ImageButton Tag="about" Text="About" ImageBrush="{DynamicResource infoBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" Width="Auto"/>
+                <Label Content="ACTIONS" Style="{DynamicResource menuLabel}" Background="{x:Null}"/>
+                <local:ImageButton Tag="save" Text="SAVE" ImageBrush="{DynamicResource save_Full}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" Width="Auto" IsEnabled="False"/>
+                <local:ImageButton Tag="load" Text="LOAD" ImageBrush="{DynamicResource load_Full}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" Width="Auto"/>
+                <local:ImageButton Tag="new" Text="NEW" ImageBrush="{DynamicResource new_Full}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" VerticalAlignment="Top" Width="Auto"/>
+                <Label Content="LIBRARY" Style="{DynamicResource menuLabel}" Background="{x:Null}"/>
+                <local:ImageButton x:Name="tableMenuBtn" Tag="table" Text="TABLE OF ELEMENTS" ImageBrush="{DynamicResource elementBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" Width="Auto" IsSelected="True"/>
+                <local:ImageButton Tag="inorganic" Text="INORGANICS" ImageBrush="{DynamicResource compoundBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" Width="Auto"/>
+                <local:ImageButton Tag="organic" Text="ORGANICS" ImageBrush="{DynamicResource organicBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" Width="Auto"/>
+                <Label Content="LABORATORY" Style="{DynamicResource menuLabel}" Background="{x:Null}"/>
+                <Label Content="SETTINGS" Style="{DynamicResource menuLabel}" Background="{x:Null}"/>
+                <local:ImageButton Tag="start" Text="STARTUP" ImageBrush="{DynamicResource onOffBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" Width="Auto"/>
+                <local:ImageButton Tag="about" Text="ABOUT" ImageBrush="{DynamicResource infoBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" Width="Auto"/>
             </StackPanel>
-            <local:ImageButton x:Name="panelHider" Tag="hide" Text="Hide panel" ImageBrush="{DynamicResource leftArrow}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" Grid.Row="1" Width="Auto"/>
+            <local:ImageButton x:Name="panelHider" Tag="hide" Text="ICONS" ImageBrush="{DynamicResource leftArrow}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" Grid.Row="1" Width="Auto"/>
         </Grid>
         <TabControl x:Name="tabDisplay" Grid.Column="1" BorderBrush="{DynamicResource labBlueBrush}" Background="#FF404040" Style="{DynamicResource TabControl_plain}" SelectedIndex="0" BorderThickness="2,0,0,0">
             <TabControl.Resources>
@@ -232,6 +234,7 @@
                                 <Setter Property="HorizontalAlignment" Value="Left"/>
                                 <Setter Property="VerticalAlignment" Value="Top"/>
                                 <Setter Property="BorderThickness" Value="2"/>
+                                <EventSetter Event="Click" Handler="handleElementClick"/>
                             </Style>
                         </Viewbox.Resources>
                         <Grid HorizontalAlignment="Right">

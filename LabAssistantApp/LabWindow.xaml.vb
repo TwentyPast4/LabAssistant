@@ -147,4 +147,10 @@ Public Class LabWindow
     End Sub
 #End Region
 
+    Private Sub handleElementClick(sender As Object, e As RoutedEventArgs)
+        Dim tb As TableButton = sender
+        Dim infoDialog As New ElementInfoWindow(tb.Element)
+        infoDialog.Show()
+    End Sub
+
 End Class

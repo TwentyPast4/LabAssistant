@@ -73,13 +73,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ClickableControl.vb" />
     <Compile Include="DarkColorConverter.vb" />
+    <Compile Include="ElementInfoWindow.xaml.vb">
+      <DependentUpon>ElementInfoWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FormulaDisplayConverter.vb" />
     <Compile Include="LabAssistantWindow.vb" />
     <Compile Include="RowSearchConverter.vb" />
     <Compile Include="TableButton.xaml.vb">
       <DependentUpon>TableButton.xaml</DependentUpon>
     </Compile>
+    <Page Include="ElementInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ElementStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -164,6 +172,7 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
     </EmbeddedResource>
+    <Resource Include="telegrafico.ttf" />
     <Resource Include="ArialMTBold.otf" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Settings.settings">
@@ -176,6 +185,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="nevis.ttf" />
     <None Include="Resources\ElementsResx.txt" />
   </ItemGroup>
   <ItemGroup>
