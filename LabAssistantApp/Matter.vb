@@ -97,12 +97,12 @@ Namespace Matter
         End Property
         Protected boil_ As Single
 
-        Public ReadOnly Property Density As Double
+        Public ReadOnly Property Density As Decimal
             Get
                 If dens_ < 0 Then Return Nothing Else Return dens_
             End Get
         End Property
-        Protected dens_ As Double
+        Protected dens_ As Decimal
 
         Public ReadOnly Property Formula As CompoundFormula
             Get
@@ -127,13 +127,15 @@ Namespace Matter
         Public Event LabStateChanged As EventHandler(Of LabStateChangedEventArgs)
 
         Private Sub handleLabStateChanged(ByVal sender As Object, e As LabStateChangedEventArgs) Handles Me.LabStateChanged
-            If e.PreviousStateInLab = StateInLab.Available Or e.PreviousStateInLab = StateInLab.In_Stock Then
-                If e.StateInLab = StateInLab.Synthesizable Or e.StateInLab = StateInLab.Unavailable Then
-                    Reaction.UpdateRecreatable()
-                End If
-            Else
-                If e.StateInLab = StateInLab.Available Or e.StateInLab = StateInLab.In_Stock Then
-                    Reaction.UpdateRecreatable()
+            If Not IsNothing(Info.LoadedLab) Then
+                If e.PreviousStateInLab = StateInLab.Available Or e.PreviousStateInLab = StateInLab.In_Stock Then
+                    If e.StateInLab = StateInLab.Synthesizable Or e.StateInLab = StateInLab.Unavailable Then
+                        Reaction.UpdateRecreatable()
+                    End If
+                Else
+                    If e.StateInLab = StateInLab.Available Or e.StateInLab = StateInLab.In_Stock Then
+                        Reaction.UpdateRecreatable()
+                    End If
                 End If
             End If
         End Sub
@@ -172,6 +174,20 @@ Namespace Matter
                 Return StateOfMatter.Gas
             Else
                 Return StateOfMatter.Liquid
+            End If
+        End Function
+
+        Public Shared Function GetLabStateFromFormula(ByVal chemicalFormula As String)
+            Dim elementFind As Element = Element.ElementList.Find(Function(ByVal x As Element) x.FormulaString.Equals(chemicalFormula))
+            If IsNothing(elementFind) Then
+                Dim compoundFind As Compound = Compound.CompoundList.Find(Function(ByVal x As Compound) x.FormulaString.Equals(chemicalFormula))
+                If IsNothing(compoundFind) Then
+                    Return Nothing
+                Else
+                    Return compoundFind.LabState
+                End If
+            Else
+                Return elementFind.LabState
             End If
         End Function
 
@@ -1062,11 +1078,15 @@ Namespace Matter
             For Each r In ReactionList
                 Dim b As Boolean = Not IsNothing(Info.LoadedLab)
                 Dim i As Integer = 0
-                While b
+                While b And i < r.Reactants.Count()
                     b = Info.LoadedLab.IsAvailable(r.Reactants.ElementAt(i))
                     i += 1
                 End While
-                If b Then r.state = ReactionStatus.Recreatable Else r.state = ReactionStatus.Unreacreatable
+                If b Then
+                    r.state = ReactionStatus.Recreatable
+                Else
+                    r.state = ReactionStatus.Unreacreatable
+                End If
             Next
             Element.UpdateLabStates()
             Compound.UpdateLabStates()

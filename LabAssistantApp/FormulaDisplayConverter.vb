@@ -6,6 +6,12 @@ Public Class FormulaDisplayConverter
     Public Function Convert(value As Object, targetType As Type, parameter As Object, culture As CultureInfo) As Object Implements IValueConverter.Convert
         Dim f As Matter.CompoundFormula = value
         Dim tb As New TextBlock()
+        If Not IsNothing(parameter) Then
+            Dim coef As Integer = parameter
+            If coef > 1 Then
+                tb.Inlines.Add(coef.ToString())
+            End If
+        End If
         For Each rs In f.Raw
             Dim s As New Span()
             If rs.Type = Matter.CompoundFormula.RawStructure.Types.Number Then

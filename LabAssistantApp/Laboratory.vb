@@ -4,6 +4,7 @@ Imports System.Runtime.Serialization.Formatters.Binary
 <Serializable>
 Public Class Laboratory
 
+    <Serializable>
     Public Class OwnershipInfo
 
         Public Enum ChemicalType
@@ -49,13 +50,20 @@ Public Class Laboratory
             End Get
         End Property
 
+        Public ReadOnly Property Comment As String
+            Get
+                Return cmt
+            End Get
+        End Property
+        Private cmt As String
+
         Public Event MassChanged As EventHandler(Of EventArgs)
 
-        Public Sub New(ByVal name As String, ByVal formula As String, ByVal mass As Double, ByVal type As ChemicalType)
+        Public Sub New(ByVal name As String, ByVal formula As String, ByVal mass As Double, ByVal comment As String)
             nm = name
             formula_ = formula
             mass_ = mass
-            typ = type
+            cmt = comment
         End Sub
 
     End Class
@@ -91,6 +99,10 @@ Public Class Laboratory
         RaiseEvent LabChanged(Me, EventArgs.Empty)
     End Sub
 
+    Public Sub New()
+        lab_name = "Unnamed laboratory"
+    End Sub
+
     Public Sub New(ByVal labName As String)
         If IsNothing(labName) OrElse labName.Length = 0 Then
             lab_name = "Unnamed laboratory"
@@ -101,14 +113,18 @@ Public Class Laboratory
 
     Public Sub AddCompound(ByVal c As Compound, ByVal mass As Double, Optional ByVal isUnlimeted As Boolean = False, Optional ByVal Comment As String = "")
         If inv.FindAll(Function(x As OwnershipInfo) x.Name = c.Name).Count = 0 Then
-            inv.Add(New OwnershipInfo(c.Name, mass, isUnlimeted, Comment))
+            If isUnlimeted Then mass = -1
+            inv.Add(New OwnershipInfo(c.Name, c.FormulaString, mass, Comment))
+            If isUnlimeted Then c.SetLabState(StateInLab.Available) Else c.SetLabState(StateInLab.In_Stock)
             raiseChanged()
         End If
     End Sub
 
     Public Sub AddElement(ByVal e As Element, ByVal mass As Double, Optional ByVal isUnlimeted As Boolean = False, Optional ByVal Comment As String = "")
         If inv.FindAll(Function(x As OwnershipInfo) x.Name = e.Name).Count = 0 Then
-            inv.Add(New OwnershipInfo(e.Name, mass, isUnlimeted, Comment))
+            If isUnlimeted Then mass = -1
+            inv.Add(New OwnershipInfo(e.Name, e.FormulaString, mass, Comment))
+            If isUnlimeted Then e.SetLabState(StateInLab.Available) Else e.SetLabState(StateInLab.In_Stock)
             raiseChanged()
         End If
     End Sub
@@ -126,18 +142,18 @@ Public Class Laboratory
     End Sub
 
     Public Function IsAvailable(ByVal formula As String) As Boolean
-        Return inv.FindAll(Function(x As OwnershipInfo) x.Formula = formula).Count > 0
+        Return inv.FindAll(Function(x As OwnershipInfo) x.Formula.Equals(formula)).Count > 0
     End Function
 
     Public Function GetInfoOf(ByVal formula As String) As OwnershipInfo
         Return inv.Find(Function(x As OwnershipInfo) x.Formula = formula)
     End Function
 
-    Public Function SaveTo(ByVal path As String) As Boolean
+    Public Shared Function SaveTo(ByVal path As String, ByVal lab As Laboratory) As Boolean
         Try
             Dim bf As New BinaryFormatter()
             Using ms As New IO.MemoryStream()
-                bf.Serialize(ms, Me)
+                bf.Serialize(ms, lab)
                 IO.File.WriteAllBytes(path, ms.ToArray())
             End Using
             Return True

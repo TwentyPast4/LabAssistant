@@ -9,6 +9,7 @@ Public Class LabWindow
         timer1 = New Threading.DispatcherTimer()
         timer1.Interval = TimeSpan.FromSeconds(0.7)
         AddHandler timer1.Tick, AddressOf handleTick
+        versionBlock.Text = My.Application.Info.Version.ToString(3)
     End Sub
 
     Private Sub SetElements(inElement As DependencyObject)
@@ -35,11 +36,19 @@ Public Class LabWindow
     End Sub
 
     Public Sub handleLaboratoryLoaded(sender As Laboratory, e As EventArgs)
-        AddHandler sender.LabChanged, AddressOf Me.handleLabChange
+        handleLabLoaded(sender, e)
+        handleLabChanged(sender, e)
     End Sub
 
-    Private Sub handleLabChange(sender As Laboratory, e As EventArgs)
+    Private Sub handleLabLoaded(sender As Laboratory, e As EventArgs)
+        saveBtn.IsEnabled = False
+        AddHandler sender.LabChanged, labChangedDelegate
+    End Sub
 
+    Private labChangedDelegate As EventHandler(Of EventArgs) = AddressOf handleLabChanged
+    Private Sub handleLabChanged(sender As Laboratory, e As EventArgs)
+        Matter.Reaction.UpdateRecreatable()
+        saveBtn.IsEnabled = True
     End Sub
 
 #Region "Menu Selection"
@@ -51,9 +60,15 @@ Public Class LabWindow
     Private Sub handleMenuClick(sender As Object, e As RoutedEventArgs)
         Select Case sender.Tag
             Case Is = "start"
+                Dim l As New Laboratory("Yo mama")
+                Dim r As New Random()
                 For Each el In Matter.Element.ElementList
-                    el.SetLabState(CType(Math.Floor(Rnd() * 4), Matter.StateInLab))
+                    Dim rndState As Matter.StateInLab = r.Next(4)
+                    If rndState = Matter.StateInLab.Available Or rndState = Matter.StateInLab.In_Stock Then
+                        l.AddElement(el, r.NextDouble(), rndState = Matter.StateInLab.Available,)
+                    End If
                 Next
+                Matter.Info.LoadLab(l)
             Case Is = "table"
                 DeselectMenuItems(menuStackPanel, sender.Tag)
                 sender.IsSelected = True
@@ -80,7 +95,65 @@ Public Class LabWindow
                     End If
                     hidden = Not hidden
                 End If
+            Case Is = "about"
+                DeselectMenuItems(menuStackPanel, sender.Tag)
+                sender.IsSelected = True
+                tabDisplay.SelectedItem = aboutPage
+            Case Is = "load"
+                Dim o As New Microsoft.Win32.OpenFileDialog()
+                o.Filter = OpenLabFilter
+                o.Multiselect = False
+                o.Title = "Load a Laboratory"
+                o.CheckFileExists = True
+                o.CheckPathExists = True
+
+                If o.ShowDialog(Me) Then
+                    Dim l As Laboratory = Laboratory.LoadFrom(o.FileName)
+                    If Not IsNothing(l) Then
+                        Matter.Info.LoadLab(l)
+                    End If
+                End If
+            Case Is = "save"
+                Dim s As New Microsoft.Win32.SaveFileDialog()
+                s.Filter = Constants.OpenLabFilter
+                s.AddExtension = True
+                s.CheckPathExists = True
+                s.DefaultExt = "*.clab"
+                If s.ShowDialog(Me) Then
+                    Try
+                        RemoveHandler Matter.Info.LoadedLab.LabChanged, labChangedDelegate
+                        If Laboratory.SaveTo(s.FileName, Matter.Info.LoadedLab) Then
+                            MsgBox("Laboratory saved!")
+                            saveBtn.IsEnabled = False
+                        Else
+                            Throw New Exception()
+                        End If
+                    Catch ex As Exception
+                        MsgBox("An error occured!")
+                    Finally
+                        AddHandler Matter.Info.LoadedLab.LabChanged, labChangedDelegate
+                    End Try
+                Else
+                    MsgBox("Not saved!")
+                End If
+            Case Is = "new"
+                If saveBtn.IsEnabled Then
+                    Dim dr As MsgBoxResult = MsgBox("You have modified the current laboratory." & vbNewLine & "Do you want to save first?", MsgBoxStyle.YesNoCancel)
+                    Select Case dr
+                        Case MsgBoxResult.Yes
+                            saveBtn.PerformClick()
+                        Case MsgBoxResult.No
+                            createNewLab()
+                    End Select
+                Else
+                    createNewLab()
+                End If
         End Select
+    End Sub
+
+    Private Sub createNewLab()
+        Dim l As New Laboratory()
+        Matter.Info.LoadLab(l)
     End Sub
 
     Private Sub aniCompleted(sender As Object, e As EventArgs) Handles da.Completed

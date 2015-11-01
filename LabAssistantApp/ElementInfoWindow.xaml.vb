@@ -43,6 +43,8 @@ Public Class ElementInfoWindow
         categoryLabel.Content = el.GetGroupName()
         groupLabel.Content = el.TableGroupNumber
         periodLabel.Content = el.Period
+
+        reactionList.LoadReactions(Reaction.GetAllOf(el.FormulaString))
     End Sub
 
 End Class

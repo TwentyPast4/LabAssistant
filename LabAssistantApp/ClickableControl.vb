@@ -49,4 +49,8 @@ Public Class ClickableControl
         clicked_ = False
     End Sub
 
+    Public Sub PerformClick()
+        RaiseEvent Click(Me, New RoutedEventArgs(ClickableControl.ClickEvent))
+    End Sub
+
 End Class

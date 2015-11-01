@@ -414,4 +414,66 @@
         </Image.Source>
     </Image>
 
+    <GeometryGroup x:Key="reactionArrowAbsolute">
+        <LineGeometry StartPoint="0,10" EndPoint="20,10"/>
+        <PathGeometry>
+            <PathFigure IsClosed="False" IsFilled="False" StartPoint="10,6">
+                <PathFigure.Segments>
+                    <LineSegment Point="20,10"/>
+                    <LineSegment Point="10,14"/>
+                </PathFigure.Segments>
+            </PathFigure>
+        </PathGeometry>
+    </GeometryGroup>
+
+    <PathGeometry x:Key="reversibleReactionArrowAbsolute">
+        <PathFigureCollection>
+            <PathFigure IsClosed="False" IsFilled="False" StartPoint="0,14">
+                <PathFigure.Segments>
+                    <LineSegment Point="27,14"/>
+                    <LineSegment Point="15,9"/>
+                </PathFigure.Segments>
+            </PathFigure>
+            <PathFigure IsClosed="False" IsFilled="False" StartPoint="30,18">
+                <PathFigure.Segments>
+                    <LineSegment Point="3,18"/>
+                    <LineSegment Point="15,23"/>
+                </PathFigure.Segments>
+            </PathFigure>
+        </PathFigureCollection>
+    </PathGeometry>
+
+    <GeometryGroup x:Key="reactionPlusAbsolute">
+        <LineGeometry StartPoint="0,15" EndPoint="30,15"/>
+        <LineGeometry StartPoint="15,0" EndPoint="15,30"/>
+    </GeometryGroup>
+
+    <DrawingBrush x:Key="reversibleReactionBrush" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <GeometryDrawing>
+                <GeometryDrawing.Pen>
+                    <Pen Brush="White" Thickness="0.05"/>
+                </GeometryDrawing.Pen>
+                <GeometryDrawing.Geometry>
+                    <PathGeometry>
+                        <PathFigureCollection>
+                            <PathFigure IsClosed="False" IsFilled="False" StartPoint="0,0.42">
+                                <PathFigure.Segments>
+                                    <LineSegment Point="0.95,0.42"/>
+                                    <LineSegment Point="0.5,0.2"/>
+                                </PathFigure.Segments>
+                            </PathFigure>
+                            <PathFigure IsClosed="False" IsFilled="False" StartPoint="1,0.58">
+                                <PathFigure.Segments>
+                                    <LineSegment Point="0.1,0.58"/>
+                                    <LineSegment Point="0.5,0.8"/>
+                                </PathFigure.Segments>
+                            </PathFigure>
+                        </PathFigureCollection>
+                    </PathGeometry>
+                </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
 </ResourceDictionary>

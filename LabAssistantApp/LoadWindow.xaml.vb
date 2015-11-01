@@ -77,6 +77,7 @@ Public Class LoadWindow
     Private Sub loadFinished(sender As Object, e As RunWorkerCompletedEventArgs) Handles bw.RunWorkerCompleted
         Dim mw As New LabWindow
         mw.Initialize()
+        My.Application.MainWindow = mw
         AddHandler Matter.Info.LabratoryLoaded, AddressOf mw.handleLaboratoryLoaded
         mw.Show()
         Me.Close()

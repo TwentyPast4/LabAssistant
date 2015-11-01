@@ -105,19 +105,21 @@
             </Grid.RowDefinitions>
             <StackPanel x:Name="menuStackPanel" HorizontalAlignment="Left">
                 <Label Content="ACTIONS" Style="{DynamicResource menuLabel}" Background="{x:Null}"/>
-                <local:ImageButton Tag="save" Text="SAVE" ImageBrush="{DynamicResource save_Full}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" Width="Auto" IsEnabled="False"/>
+                <local:ImageButton x:Name="saveBtn" Tag="save" Text="SAVE" ImageBrush="{DynamicResource save_Full}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" IsEnabled="False"/>
                 <local:ImageButton Tag="load" Text="LOAD" ImageBrush="{DynamicResource load_Full}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" Width="Auto"/>
-                <local:ImageButton Tag="new" Text="NEW" ImageBrush="{DynamicResource new_Full}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" VerticalAlignment="Top" Width="Auto"/>
+                <local:ImageButton Tag="new" Text="NEW" ImageBrush="{DynamicResource new_Full}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" VerticalAlignment="Top"/>
                 <Label Content="LIBRARY" Style="{DynamicResource menuLabel}" Background="{x:Null}"/>
-                <local:ImageButton x:Name="tableMenuBtn" Tag="table" Text="TABLE OF ELEMENTS" ImageBrush="{DynamicResource elementBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" Width="Auto" IsSelected="True"/>
-                <local:ImageButton Tag="inorganic" Text="INORGANICS" ImageBrush="{DynamicResource compoundBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" Width="Auto"/>
-                <local:ImageButton Tag="organic" Text="ORGANICS" ImageBrush="{DynamicResource organicBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" Width="Auto"/>
+                <local:ImageButton x:Name="tableMenuBtn" Tag="table" Text="TABLE OF ELEMENTS" ImageBrush="{DynamicResource elementBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" IsSelected="True"/>
+                <local:ImageButton Tag="inorganic" Text="INORGANICS" ImageBrush="{DynamicResource compoundBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick"/>
+                <local:ImageButton Tag="organic" Text="ORGANICS" ImageBrush="{DynamicResource organicBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick"/>
+                <local:ImageButton Tag="reaction" Text="REACTIONS" ImageBrush="{DynamicResource reversibleReactionBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick"/>
                 <Label Content="LABORATORY" Style="{DynamicResource menuLabel}" Background="{x:Null}"/>
                 <Label Content="SETTINGS" Style="{DynamicResource menuLabel}" Background="{x:Null}"/>
-                <local:ImageButton Tag="start" Text="STARTUP" ImageBrush="{DynamicResource onOffBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" Width="Auto"/>
-                <local:ImageButton Tag="about" Text="ABOUT" ImageBrush="{DynamicResource infoBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" Width="Auto"/>
+                <local:ImageButton Tag="start" Text="STARTUP" ImageBrush="{DynamicResource onOffBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick"/>
+                <local:ImageButton Tag="about" Text="ABOUT" ImageBrush="{DynamicResource infoBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick"/>
+                
             </StackPanel>
-            <local:ImageButton x:Name="panelHider" Tag="hide" Text="ICONS" ImageBrush="{DynamicResource leftArrow}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" Grid.Row="1" Width="Auto"/>
+            <local:ImageButton x:Name="panelHider" Tag="hide" Text="ICONS" ImageBrush="{DynamicResource leftArrow}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" Grid.Row="1"/>
         </Grid>
         <TabControl x:Name="tabDisplay" Grid.Column="1" BorderBrush="{DynamicResource labBlueBrush}" Background="#FF404040" Style="{DynamicResource TabControl_plain}" SelectedIndex="0" BorderThickness="2,0,0,0">
             <TabControl.Resources>
@@ -526,8 +528,27 @@
                     </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="inorganicPage"/>
-            <TabItem x:Name="aboutPage"/>
+            <TabItem x:Name="organicsPage"/>
+            <TabItem x:Name="aboutPage" Foreground="{DynamicResource labBlueBrush}" FontSize="25" FontFamily="{DynamicResource TelegraficoFont}">
+                <StackPanel Orientation="Vertical" Margin="0,5,0,0">
+                    <StackPanel.Resources>
+                        <Style TargetType="StackPanel">
+                            <Setter Property="VerticalAlignment" Value="Top"/>
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                            <Setter Property="Orientation" Value="Horizontal"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <StackPanel>
+                        <TextBlock TextWrapping="Wrap" Text="Version: " VerticalAlignment="Center"/>
+                        <TextBlock x:Name="versionBlock" TextWrapping="Wrap" FontFamily="{DynamicResource NevisFont}"/>
+                    </StackPanel>
+                    <StackPanel Margin="0,5,0,0">
+                        <TextBlock TextWrapping="Wrap" Text="Author: " VerticalAlignment="Center"/>
+                        <TextBlock x:Name="authorBlock" TextWrapping="Wrap" FontFamily="{DynamicResource NevisFont}" Text="Dan Toskan"/>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+
         </TabControl>
     </Grid>
 </local:LabAssistantWindow>

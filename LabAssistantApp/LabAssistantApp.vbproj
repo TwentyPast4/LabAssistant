@@ -80,6 +80,12 @@
     </Compile>
     <Compile Include="FormulaDisplayConverter.vb" />
     <Compile Include="LabAssistantWindow.vb" />
+    <Compile Include="ReactionList.xaml.vb">
+      <DependentUpon>ReactionList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReactionRow.xaml.vb">
+      <DependentUpon>ReactionRow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RowSearchConverter.vb" />
     <Compile Include="TableButton.xaml.vb">
       <DependentUpon>TableButton.xaml</DependentUpon>
@@ -124,6 +130,14 @@
       <DependentUpon>LabWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ReactionList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReactionRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TableButton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
