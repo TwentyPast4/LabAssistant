@@ -67,15 +67,7 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type TabControl}">
                             <Grid x:Name="templateRoot" ClipToBounds="True" SnapsToDevicePixels="True" KeyboardNavigation.TabNavigation="Local">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition x:Name="ColumnDefinition0"/>
-                                    <ColumnDefinition x:Name="ColumnDefinition1" Width="0"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition x:Name="RowDefinition0" Height="Auto"/>
-                                    <RowDefinition x:Name="RowDefinition1" Height="*"/>
-                                </Grid.RowDefinitions>
-                                <Border x:Name="ContentPanel" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Grid.Column="0" KeyboardNavigation.DirectionalNavigation="Contained" Grid.Row="1" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local">
+                                <Border x:Name="ContentPanel" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" KeyboardNavigation.DirectionalNavigation="Contained" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local">
                                     <ContentPresenter x:Name="PART_SelectedContentHost" ContentTemplate="{TemplateBinding SelectedContentTemplate}" Content="{TemplateBinding SelectedContent}" ContentStringFormat="{TemplateBinding SelectedContentStringFormat}" ContentSource="SelectedContent" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                                 </Border>
                             </Grid>
@@ -89,6 +81,10 @@
                 </Setter>
             </Style>
             <local:FormulaDisplayConverter x:Key="formulaDisplayConverter"/>
+
+            <ControlTemplate x:Key="dataGridSearchTemplate" TargetType="TabItem">
+
+            </ControlTemplate>
         </ResourceDictionary>
 
     </local:LabAssistantWindow.Resources>
@@ -103,7 +99,7 @@
                 <RowDefinition/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <StackPanel x:Name="menuStackPanel" HorizontalAlignment="Left">
+            <StackPanel x:Name="menuStackPanel">
                 <Label Content="ACTIONS" Style="{DynamicResource menuLabel}" Background="{x:Null}"/>
                 <local:ImageButton x:Name="saveBtn" Tag="save" Text="SAVE" ImageBrush="{DynamicResource save_Full}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" IsEnabled="False"/>
                 <local:ImageButton Tag="load" Text="LOAD" ImageBrush="{DynamicResource load_Full}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" Width="Auto"/>
@@ -117,7 +113,7 @@
                 <Label Content="SETTINGS" Style="{DynamicResource menuLabel}" Background="{x:Null}"/>
                 <local:ImageButton Tag="start" Text="STARTUP" ImageBrush="{DynamicResource onOffBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick"/>
                 <local:ImageButton Tag="about" Text="ABOUT" ImageBrush="{DynamicResource infoBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick"/>
-                
+
             </StackPanel>
             <local:ImageButton x:Name="panelHider" Tag="hide" Text="ICONS" ImageBrush="{DynamicResource leftArrow}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" Grid.Row="1"/>
         </Grid>
@@ -528,7 +524,55 @@
                     </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="organicsPage"/>
+            <TabItem x:Name="organicsPage">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid Height="35">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox x:Name="organicSearchBox" Style="{DynamicResource searchBoxStyle}"/>
+                    </Grid>
+                    <DataGrid x:Name="organicGrid" ItemsSource="{Binding Text, ElementName=organicSearchBox, Converter={StaticResource searchEngine}, ConverterParameter=organic}" Grid.Row="1" Style="{DynamicResource labGrid}">
+
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Name" SortDirection="Descending" SortMemberPath="Name" IsReadOnly="True" Binding="{Binding Name}"/>
+                            <DataGridTemplateColumn Header="Formula" SortMemberPath="FormulaString" IsReadOnly="True">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <DataTemplate.Resources>
+                                            <Style TargetType="{x:Type TextBlock}">
+                                                <Setter Property="FontFamily" Value="Calibri"/>
+                                            </Style>
+                                        </DataTemplate.Resources>
+                                        <Label Content="{Binding Formula, Converter={StaticResource formulaDisplayConverter}, Mode=OneWay}" Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGridCell}}}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Header="State" SortMemberPath="State" IsReadOnly="True" Binding="{Binding State}"/>
+                            <DataGridTextColumn Header="Appearance" SortMemberPath="Appearance" IsReadOnly="True" Binding="{Binding Appearance}"/>
+                            <DataGridTextColumn Header="Molar Mass" SortMemberPath="MolarMass" IsReadOnly="True" Binding="{Binding MolarMass, StringFormat=\{0\} g/mol}"/>
+                            <DataGridTextColumn Header="Density" SortMemberPath="Density" IsReadOnly="True" Binding="{Binding Density, StringFormat=\{0\} g/mL, TargetNullValue=No data}"/>
+                            <DataGridTextColumn Header="Melting Point" SortMemberPath="MeltingPoint" IsReadOnly="True" Binding="{Binding MeltingPoint, StringFormat=\{0\} K, TargetNullValue=No data}"/>
+                            <DataGridTextColumn Header="Boiling Point" SortMemberPath="BoilingPoint" IsReadOnly="True" Binding="{Binding BoilingPoint, StringFormat=\{0\} K, TargetNullValue=No data}"/>
+                            <DataGridTextColumn Header="Solubility" Width="*" SortMemberPath="Solubility" IsReadOnly="True" Binding="{Binding Solubility}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="startupSettingsPage" Foreground="#FFECECEC">
+                <Grid Margin="15">
+                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <Label Content="Laboratory loading on startup" HorizontalAlignment="Center" Background="#FF272727" BorderBrush="#FF8F8F8F" BorderThickness="1,1,1,0" Foreground="#FFECECEC"/>
+                        <local:LabToggleButton Enabled="True" VerticalAlignment="Top" Height="22" BorderBrush="#FF8F8F8F" Background="#FF272727" BorderThickness="1,0"/>
+                    </StackPanel>
+                    
+                </Grid>
+            </TabItem>
             <TabItem x:Name="aboutPage" Foreground="{DynamicResource labBlueBrush}" FontSize="25" FontFamily="{DynamicResource TelegraficoFont}">
                 <StackPanel Orientation="Vertical" Margin="0,5,0,0">
                     <StackPanel.Resources>

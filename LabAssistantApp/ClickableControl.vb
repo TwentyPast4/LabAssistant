@@ -20,11 +20,6 @@ Public Class ClickableControl
         End RaiseEvent
     End Event
 
-    Private Sub RaiseTapEvent()
-        Dim newEventArgs As New RoutedEventArgs(ClickableControl.ClickEvent)
-        MyBase.RaiseEvent(newEventArgs)
-    End Sub
-
     Private Sub RaiseClickEvent()
         Dim e As New RoutedEventArgs(ClickableControl.ClickEvent)
         MyBase.RaiseEvent(e)

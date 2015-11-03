@@ -91,6 +91,7 @@ Public Class LabAssistantWindow
         topBorder = GetTemplateChild("topBorder")
 
         AddHandler topBorder.MouseLeftButtonDown, AddressOf topBorderMouseDown
+        AddHandler topBorder.MouseLeftButtonUp, AddressOf topBorderMouseUp
 
         Dim btvc As New BooleanToVisibilityConverter()
         Dim b As New Binding()
@@ -130,6 +131,16 @@ Public Class LabAssistantWindow
 
     Private Sub topBorderMouseDown(sender As Object, e As MouseButtonEventArgs)
         Me.DragMove()
+    End Sub
+
+    Private Sub topBorderMouseUp(sender As Object, e As MouseButtonEventArgs)
+        If e.ClickCount = 2 Then
+            If Me.WindowState = WindowState.Maximized Then
+                Me.WindowState = WindowState.Normal
+            Else
+                Me.WindowState = WindowState.Maximized
+            End If
+        End If
     End Sub
 
     Private Sub handleToolbarEnter(sender As Button, e As MouseEventArgs)
@@ -236,6 +247,12 @@ Public Class LabAssistantWindow
     Private _hwndSource As HwndSource
     Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
 
+    Private Sub srcHandle(sender As Object, e As EventArgs) Handles Me.SourceInitialized
+        _hwndSource = CType(PresentationSource.FromVisual(Me), HwndSource)
+    End Sub
+
+#End Region
+
     Protected Overloads Sub OnPropertyChanged(propertyName As String)
         RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
     End Sub
@@ -248,11 +265,5 @@ Public Class LabAssistantWindow
         OnPropertyChanged(propertyName)
         Return True
     End Function
-
-    Private Sub srcHandle(sender As Object, e As EventArgs) Handles Me.SourceInitialized
-        _hwndSource = CType(PresentationSource.FromVisual(Me), HwndSource)
-    End Sub
-
-#End Region
 
 End Class

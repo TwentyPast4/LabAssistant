@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LabAssistantApp" x:Class="ImageButton" 
-             mc:Ignorable="d" Height="39" Width="152" MouseLeftButtonDown="meLeftDown" MouseLeftButtonUp="meLeftUp" MouseEnter="meMouseOver" MouseLeave="meMouseLeave" IsEnabledChanged="meEnabledChanged">
+             mc:Ignorable="d" MouseLeftButtonDown="meLeftDown" MouseLeftButtonUp="meLeftUp" MouseEnter="meMouseOver" MouseLeave="meMouseLeave" IsEnabledChanged="meEnabledChanged">
     <local:ClickableControl.Effect>
         <BlurEffect x:Name="controlBlur" Radius="0"/>
     </local:ClickableControl.Effect>

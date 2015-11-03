@@ -60,23 +60,17 @@ Public Class LabWindow
     Private Sub handleMenuClick(sender As Object, e As RoutedEventArgs)
         Select Case sender.Tag
             Case Is = "start"
-                Dim l As New Laboratory("Yo mama")
-                Dim r As New Random()
-                For Each el In Matter.Element.ElementList
-                    Dim rndState As Matter.StateInLab = r.Next(4)
-                    If rndState = Matter.StateInLab.Available Or rndState = Matter.StateInLab.In_Stock Then
-                        l.AddElement(el, r.NextDouble(), rndState = Matter.StateInLab.Available,)
-                    End If
-                Next
-                Matter.Info.LoadLab(l)
+                DeselectMenuItems(menuStackPanel, sender)
+                tabDisplay.SelectedItem = startupSettingsPage
             Case Is = "table"
-                DeselectMenuItems(menuStackPanel, sender.Tag)
-                sender.IsSelected = True
-                tabDisplay.SelectedIndex = 0
+                DeselectMenuItems(menuStackPanel, sender)
+                tabDisplay.SelectedItem = tableTabPage
             Case Is = "inorganic"
-                DeselectMenuItems(menuStackPanel, sender.Tag)
-                sender.IsSelected = True
-                tabDisplay.SelectedIndex = 1
+                DeselectMenuItems(menuStackPanel, sender)
+                tabDisplay.SelectedItem = inorganicsPage
+            Case Is = "organic"
+                DeselectMenuItems(menuStackPanel, sender)
+                tabDisplay.SelectedItem = organicsPage
             Case Is = "hide"
                 If Not animating Then
                     If hidden Then
@@ -96,8 +90,7 @@ Public Class LabWindow
                     hidden = Not hidden
                 End If
             Case Is = "about"
-                DeselectMenuItems(menuStackPanel, sender.Tag)
-                sender.IsSelected = True
+                DeselectMenuItems(menuStackPanel, sender)
                 tabDisplay.SelectedItem = aboutPage
             Case Is = "load"
                 Dim o As New Microsoft.Win32.OpenFileDialog()
@@ -187,14 +180,19 @@ Public Class LabWindow
         Next
     End Sub
 
-    Private Sub DeselectMenuItems(inElement As DependencyObject, ByVal exceptionTag As String)
+    Private Sub DeselectMenuItems(inElement As DependencyObject, ByVal exception As ImageButton)
+        RecursiveDeselect(inElement, exception.Tag)
+        exception.IsSelected = True
+    End Sub
+
+    Private Sub RecursiveDeselect(inElement As DependencyObject, ByVal exceptTag As String)
         For Each o As Object In LogicalTreeHelper.GetChildren(inElement)
 
             If o.GetType().IsEquivalentTo(GetType(ImageButton)) Then
                 Dim tb As ImageButton = o
-                If Not tb.Tag.Equals(exceptionTag) Then tb.IsSelected = False
+                If Not tb.Tag.Equals(exceptTag) Then tb.IsSelected = False
                 If o.GetType().IsSubclassOf(GetType(DependencyObject)) Then
-                    DeselectMenuItems(o, exceptionTag)
+                    RecursiveDeselect(o, exceptTag)
                 End If
             End If
         Next

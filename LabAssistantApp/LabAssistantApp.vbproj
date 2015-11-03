@@ -80,6 +80,9 @@
     </Compile>
     <Compile Include="FormulaDisplayConverter.vb" />
     <Compile Include="LabAssistantWindow.vb" />
+    <Compile Include="LabToggleButton.xaml.vb">
+      <DependentUpon>LabToggleButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ReactionList.xaml.vb">
       <DependentUpon>ReactionList.xaml</DependentUpon>
     </Compile>
@@ -90,6 +93,7 @@
     <Compile Include="TableButton.xaml.vb">
       <DependentUpon>TableButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ToggleButtonConverter.vb" />
     <Page Include="ElementInfoWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -103,6 +107,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ImageButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LabToggleButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
