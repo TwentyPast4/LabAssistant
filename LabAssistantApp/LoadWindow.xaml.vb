@@ -40,17 +40,20 @@ Public Class LoadWindow
         bw1.ReportProgress(0, "Loading chemicals")
         Matter.Info.InitializeEnvironment()
 
-        bw1.ReportProgress(0, "Checking for laboratory")
-        Dim startFile As String = My.Settings.AutoStartupFile
-        If IO.File.Exists(startFile) Then
-            bw1.ReportProgress(0, "Loading laboratory")
-            Dim l As Laboratory = Laboratory.LoadFrom(startFile)
-            If IsNothing(l) Then
-                MsgBox(String.Format("Error loading data from {0}", startFile), MsgBoxStyle.Exclamation, "Lab Assistant")
-            Else
-                Matter.Info.LoadLab(l)
+        If My.Settings.AutoStartup Then
+            bw1.ReportProgress(0, "Searching for laboratory")
+            Dim startFile As String = My.Settings.AutoStartupFile
+            If IO.File.Exists(startFile) Then
+                bw1.ReportProgress(0, "Loading laboratory")
+                Dim l As Laboratory = Laboratory.LoadFrom(startFile)
+                If IsNothing(l) Then
+                    MsgBox(String.Format("Error loading data from {0}", startFile), MsgBoxStyle.Exclamation, "Lab Assistant")
+                Else
+                    Matter.Info.LoadLab(l)
+                End If
             End If
         End If
+
     End Sub
 
     Private Sub handleProgress(sender As Object, e As ProgressChangedEventArgs) Handles bw.ProgressChanged

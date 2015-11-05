@@ -10,6 +10,14 @@ Public Class LabWindow
         timer1.Interval = TimeSpan.FromSeconds(0.7)
         AddHandler timer1.Tick, AddressOf handleTick
         versionBlock.Text = My.Application.Info.Version.ToString(3)
+        Dim b As New Binding("AutoStartup")
+        b.Source = My.Settings
+        b.Mode = BindingMode.TwoWay
+        startSelection.SetBinding(LabToggleButton.EnabledProperty, b)
+        Dim b2 As New Binding("AutoStartupFile")
+        b2.Source = My.Settings
+        b2.Mode = BindingMode.TwoWay
+        selectStartupLabel.SetBinding(Label.ContentProperty, b2)
     End Sub
 
     Private Sub SetElements(inElement As DependencyObject)
@@ -222,6 +230,23 @@ Public Class LabWindow
         Dim tb As TableButton = sender
         Dim infoDialog As New ElementInfoWindow(tb.Element)
         infoDialog.Show()
+    End Sub
+
+    Private Sub handleClosing(sender As Object, e As ComponentModel.CancelEventArgs)
+        My.Settings.Save()
+    End Sub
+
+    Private Sub changeAutoLoadPath(sender As Object, e As MouseButtonEventArgs) Handles selectStartupLabel.MouseLeftButtonDown
+        Dim o As New Microsoft.Win32.OpenFileDialog()
+        o.Filter = OpenLabFilter
+        o.Multiselect = False
+        o.Title = "Select autoload laboratory"
+        o.CheckFileExists = True
+        o.CheckPathExists = True
+
+        If o.ShowDialog(Me) Then
+            My.Settings.AutoStartupFile = o.FileName
+        End If
     End Sub
 
 End Class

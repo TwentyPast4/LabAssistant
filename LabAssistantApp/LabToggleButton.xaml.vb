@@ -133,7 +133,6 @@ Public Class LabToggleButton
         End If
         field = value
         OnPropertyChanged(propertyName)
-        Debug.Print("set field")
         Return True
     End Function
 

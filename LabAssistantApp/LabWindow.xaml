@@ -3,13 +3,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:sys="clr-namespace:System;assembly=mscorlib"
     xmlns:local="clr-namespace:LabAssistantApp" x:Class="LabWindow"
-    Title="Lab Assistant" Height="620" Width="1080" WindowStartupLocation="CenterScreen" Style="{DynamicResource LabAssistantWindowStyle}" BorderBrush="#FF292929" Background="#FF3A3A3A">
+    Title="Lab Assistant" Height="620" Width="1080" WindowStartupLocation="CenterScreen" Style="{DynamicResource LabAssistantWindowStyle}" BorderBrush="#FF292929" Background="#FF3A3A3A" Closing="handleClosing">
     <local:LabAssistantWindow.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="GraphicsResources.xaml"/>
                 <ResourceDictionary Source="ElementStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
             <local:DarkColorConverter x:Key="DarkColorConverter"/>
             <local:RowSearchConverter x:Key="searchEngine"/>
 
@@ -566,11 +567,19 @@
             </TabItem>
             <TabItem x:Name="startupSettingsPage" Foreground="#FFECECEC">
                 <Grid Margin="15">
-                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
-                        <Label Content="Laboratory loading on startup" HorizontalAlignment="Center" Background="#FF272727" BorderBrush="#FF8F8F8F" BorderThickness="1,1,1,0" Foreground="#FFECECEC"/>
-                        <local:LabToggleButton Enabled="True" VerticalAlignment="Top" Height="22" BorderBrush="#FF8F8F8F" Background="#FF272727" BorderThickness="1,0"/>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <Label Content="Laboratory loading on startup:" Background="{x:Null}" Foreground="#FFECECEC" FontFamily="/LabAssistantApp;component/#nevis" FontSize="16"/>
+                        <local:LabToggleButton x:Name="startSelection" BorderBrush="#FF8F8F8F" Background="#FF272727" BorderThickness="1,0" Width="200" VerticalAlignment="Center" Height="22" Margin="10,0,0,0"/>
                     </StackPanel>
-                    
+                    <StackPanel Orientation="Horizontal" Visibility="{Binding Enabled, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=startSelection}" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,7,0,0">
+                        <TextBlock Text="Laboratory path:" VerticalAlignment="Center"/>
+                        <Label x:Name="selectStartupLabel" Background="#FF323232" BorderBrush="#FF009722" BorderThickness="1" VerticalAlignment="Top" Foreground="#FFD8D8D8" MinHeight="20" Margin="10,0,0,0"/>
+                    </StackPanel>
+
                 </Grid>
             </TabItem>
             <TabItem x:Name="aboutPage" Foreground="{DynamicResource labBlueBrush}" FontSize="25" FontFamily="{DynamicResource TelegraficoFont}">
