@@ -149,6 +149,9 @@ Public Class LabWindow
                 Else
                     createNewLab()
                 End If
+            Case Is = "reaction"
+                DeselectMenuItems(menuStackPanel, sender)
+                tabDisplay.SelectedItem = reactionsPage
         End Select
     End Sub
 
@@ -228,8 +231,10 @@ Public Class LabWindow
 
     Private Sub handleElementClick(sender As Object, e As RoutedEventArgs)
         Dim tb As TableButton = sender
-        Dim infoDialog As New ElementInfoWindow(tb.Element)
-        infoDialog.Show()
+        If Not IsNothing(tb.Element) Then
+            Dim infoDialog As New ElementInfoWindow(tb.Element)
+            infoDialog.Show()
+        End If
     End Sub
 
     Private Sub handleClosing(sender As Object, e As ComponentModel.CancelEventArgs)

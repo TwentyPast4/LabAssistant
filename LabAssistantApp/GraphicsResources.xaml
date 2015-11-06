@@ -249,7 +249,7 @@
     <Style x:Key="labWindow" TargetType="Window">
         <Setter Property="WindowStyle" Value="None"/>
         <Setter Property="ResizeMode" Value="NoResize"/>
-        <Setter Property="FontFamily" Value="Gadugi"/>
+        <Setter Property="FontFamily" Value="{StaticResource GadugiFont}"/>
         <Setter Property="MaxHeight" Value="{Binding Source={x:Static SystemParameters.WorkArea}, Path=Height}"/>
         <Setter Property="MaxWidth" Value="{Binding Source={x:Static SystemParameters.WorkArea}, Path=Width}"/>
     </Style>

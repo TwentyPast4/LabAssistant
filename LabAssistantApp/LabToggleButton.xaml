@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LabAssistantApp"
              mc:Ignorable="d" 
-             x:Name="baseControl" d:DesignHeight="22" d:DesignWidth="200" MinHeight="20" Foreground="White" Background="#FF383838" BorderBrush="White" BorderThickness="1,0" FontFamily="/LabAssistantApp;component/#nevis" FontSize="9.5">
+             x:Name="baseControl" d:DesignHeight="22" d:DesignWidth="200" MinHeight="20" Foreground="White" Background="#FF383838" BorderBrush="White" BorderThickness="1,0" FontFamily="{DynamicResource NevisFont}" FontSize="9.5">
     <UserControl.Resources>
         <local:ToggleButtonConverter x:Key="toggleConverter"/>
         <Style TargetType="Button">

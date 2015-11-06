@@ -196,6 +196,7 @@
     </EmbeddedResource>
     <Resource Include="telegrafico.ttf" />
     <Resource Include="ArialMTBold.otf" />
+    <Resource Include="gadugi.ttf" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

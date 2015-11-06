@@ -8,6 +8,7 @@ ShutdownMode="OnMainWindowClose">
         <FontFamily x:Key="NevisFont">/LabAssistantApp;component/#nevis</FontFamily>
         <FontFamily x:Key="TelegraficoFont">/LabAssistantApp;component/#Telegrafico</FontFamily>
         <FontFamily x:Key="ArialMTFont">/LabAssistantApp;component/#Arial MT</FontFamily>
+        <FontFamily x:Key="GadugiFont">/LabAssistantApp;component/#Gadugi</FontFamily>
 
         <PathGeometry x:Key="logoGeometry">
             <PathFigure StartPoint="0.35,0" IsClosed="True">
@@ -425,7 +426,7 @@ ShutdownMode="OnMainWindowClose">
             <Setter Property="BorderBrush" Value="{StaticResource labBorder}"/>
             <Setter Property="WindowStyle" Value="None"/>
             <Setter Property="ResizeMode" Value="NoResize"/>
-            <Setter Property="FontFamily" Value="Gadugi"/>
+            <Setter Property="FontFamily" Value="{StaticResource GadugiFont}"/>
             <Setter Property="MaxHeight" Value="{Binding Source={x:Static SystemParameters.WorkArea}, Path=Height}"/>
             <Setter Property="MaxWidth" Value="{Binding Source={x:Static SystemParameters.WorkArea}, Path=Width}"/>
             <Setter Property="FontSize" Value="15"/>
@@ -603,5 +604,75 @@ ShutdownMode="OnMainWindowClose">
                 </Setter.Value>
             </Setter>
         </Style>
+        
+        <Style x:Key="labGrid" TargetType="DataGrid">
+            <Style.Resources>
+                <Style TargetType="{x:Type ScrollBar}"/>
+                <SolidColorBrush x:Key="rowSelected" Color="#FF00AEFF"/>
+                <SolidColorBrush x:Key="rowSelectedForeground" Color="White"/>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="{Binding Color, Source={StaticResource rowSelected}}"/>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="{Binding Color, Source={StaticResource rowSelectedForeground}}"/>
+                <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="{Binding Color, Source={StaticResource rowSelected}}"/>
+                <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}" Color="{Binding Color, Source={StaticResource rowSelectedForeground}}"/>
+            </Style.Resources>
+            <Setter Property="Foreground" Value="#FFE4E4E4"/>
+            <Setter Property="SelectionUnit" Value="FullRow"/>
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="Background" Value="Gray"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="ColumnHeaderHeight" Value="30"/>
+            <Setter Property="HeadersVisibility" Value="Column"/>
+            <Setter Property="CanUserResizeRows" Value="False"/>
+            <Setter Property="CanUserDeleteRows" Value="False"/>
+            <Setter Property="CanUserAddRows" Value="False"/>
+            <Setter Property="RowBackground" Value="#FF383838"/>
+            <Setter Property="AlternatingRowBackground" Value="#FF474747"/>
+            <Setter Property="RowDetailsVisibilityMode" Value="Collapsed"/>
+            <Setter Property="SelectionMode" Value="Single"/>
+            <Setter Property="RowStyle">
+                <Setter.Value>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="ContextMenu">
+                            <Setter.Value>
+                                <ContextMenu>
+                                    <MenuItem Header="Add to laboratory" Icon="{DynamicResource addImage}"/>
+                                    <MenuItem Header="Remove from laboratory" Icon="{DynamicResource removeImage}"/>
+                                    <MenuItem Header="Properties" Icon="{DynamicResource infoImage}"/>
+                                </ContextMenu>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="CellStyle">
+                <Setter.Value>
+                    <Style TargetType="{x:Type DataGridCell}">
+                        <Setter Property="Padding" Value="5,0"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="Focusable" Value="False"/>
+                        <Setter Property="IsTabStop" Value="False"/>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ColumnHeaderStyle">
+                <Setter.Value>
+                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFB0B0B0" Offset="1"/>
+                                    <GradientStop Color="#FFCBCBCB" Offset="0"/>
+                                </LinearGradientBrush>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="BorderBrush" Value="Black"/>
+                        <Setter Property="BorderThickness" Value="0,0,1,0"/>
+                        <Setter Property="Foreground" Value="#FF1D1D1D"/>
+                        <Setter Property="Padding" Value="5,0"/>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
     </Application.Resources>
 </Application>

@@ -120,73 +120,6 @@
         </Grid>
         <TabControl x:Name="tabDisplay" Grid.Column="1" BorderBrush="{DynamicResource labBlueBrush}" Background="#FF404040" Style="{DynamicResource TabControl_plain}" SelectedIndex="0" BorderThickness="2,0,0,0">
             <TabControl.Resources>
-                <Style x:Key="labGrid" TargetType="DataGrid">
-                    <Style.Resources>
-                        <SolidColorBrush x:Key="rowSelected" Color="#FF00AEFF"/>
-                        <SolidColorBrush x:Key="rowSelectedForeground" Color="White"/>
-                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="{Binding Color, Source={StaticResource rowSelected}}"/>
-                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="{Binding Color, Source={StaticResource rowSelectedForeground}}"/>
-                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="{Binding Color, Source={StaticResource rowSelected}}"/>
-                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}" Color="{Binding Color, Source={StaticResource rowSelectedForeground}}"/>
-                    </Style.Resources>
-                    <Setter Property="Foreground" Value="#FFE4E4E4"/>
-                    <Setter Property="SelectionUnit" Value="FullRow"/>
-                    <Setter Property="AutoGenerateColumns" Value="False"/>
-                    <Setter Property="Background" Value="Gray"/>
-                    <Setter Property="BorderThickness" Value="0"/>
-                    <Setter Property="ColumnHeaderHeight" Value="30"/>
-                    <Setter Property="HeadersVisibility" Value="Column"/>
-                    <Setter Property="CanUserResizeRows" Value="False"/>
-                    <Setter Property="CanUserDeleteRows" Value="False"/>
-                    <Setter Property="CanUserAddRows" Value="False"/>
-                    <Setter Property="RowBackground" Value="#FF383838"/>
-                    <Setter Property="AlternatingRowBackground" Value="#FF474747"/>
-                    <Setter Property="RowDetailsVisibilityMode" Value="Collapsed"/>
-                    <Setter Property="SelectionMode" Value="Single"/>
-                    <Setter Property="RowStyle">
-                        <Setter.Value>
-                            <Style TargetType="DataGridRow">
-                                <Setter Property="ContextMenu">
-                                    <Setter.Value>
-                                        <ContextMenu>
-                                            <MenuItem Header="Add to laboratory" Icon="{DynamicResource addImage}"/>
-                                            <MenuItem Header="Remove from laboratory" Icon="{DynamicResource removeImage}"/>
-                                            <MenuItem Header="Properties" Icon="{DynamicResource infoImage}"/>
-                                        </ContextMenu>
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
-                        </Setter.Value>
-                    </Setter>
-                    <Setter Property="CellStyle">
-                        <Setter.Value>
-                            <Style TargetType="{x:Type DataGridCell}">
-                                <Setter Property="Padding" Value="5,0"/>
-                                <Setter Property="BorderThickness" Value="0"/>
-                                <Setter Property="Focusable" Value="False"/>
-                                <Setter Property="IsTabStop" Value="False"/>
-                            </Style>
-                        </Setter.Value>
-                    </Setter>
-                    <Setter Property="ColumnHeaderStyle">
-                        <Setter.Value>
-                            <Style TargetType="{x:Type DataGridColumnHeader}">
-                                <Setter Property="Background">
-                                    <Setter.Value>
-                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                            <GradientStop Color="#FFB0B0B0" Offset="1"/>
-                                            <GradientStop Color="#FFCBCBCB" Offset="0"/>
-                                        </LinearGradientBrush>
-                                    </Setter.Value>
-                                </Setter>
-                                <Setter Property="BorderBrush" Value="Black"/>
-                                <Setter Property="BorderThickness" Value="0,0,1,0"/>
-                                <Setter Property="Foreground" Value="#FF1D1D1D"/>
-                                <Setter Property="Padding" Value="5,0"/>
-                            </Style>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
                 <Style x:Key="searchBoxStyle" TargetType="TextBox">
                     <Setter Property="BorderBrush" Value="#FF009BBD"/>
                     <Setter Property="DockPanel.Dock" Value="Right"/>
@@ -565,6 +498,7 @@
                     </DataGrid>
                 </Grid>
             </TabItem>
+            <TabItem x:Name="reactionsPage"/>
             <TabItem x:Name="startupSettingsPage" Foreground="#FFECECEC">
                 <Grid Margin="15">
                     <Grid.RowDefinitions>
@@ -572,12 +506,12 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
-                        <Label Content="Laboratory loading on startup:" Background="{x:Null}" Foreground="#FFECECEC" FontFamily="/LabAssistantApp;component/#nevis" FontSize="16"/>
+                        <Label Content="Laboratory loading on startup:" Background="{x:Null}" Foreground="#FFECECEC" FontFamily="{DynamicResource NevisFont}" FontSize="16"/>
                         <local:LabToggleButton x:Name="startSelection" BorderBrush="#FF8F8F8F" Background="#FF272727" BorderThickness="1,0" Width="200" VerticalAlignment="Center" Height="22" Margin="10,0,0,0"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Visibility="{Binding Enabled, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=startSelection}" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,7,0,0">
                         <TextBlock Text="Laboratory path:" VerticalAlignment="Center"/>
-                        <Label x:Name="selectStartupLabel" Background="#FF323232" BorderBrush="#FF009722" BorderThickness="1" VerticalAlignment="Top" Foreground="#FFD8D8D8" MinHeight="20" Margin="10,0,0,0"/>
+                        <Label x:Name="selectStartupLabel" Background="#FF323232" BorderBrush="#FF009722" BorderThickness="1" VerticalAlignment="Top" Foreground="#FFD8D8D8" MinHeight="20" Margin="10,0,0,0" MinWidth="150"/>
                     </StackPanel>
 
                 </Grid>
