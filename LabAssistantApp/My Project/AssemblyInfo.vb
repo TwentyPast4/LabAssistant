@@ -42,7 +42,7 @@ Imports System.Windows
 
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("3b17c04f-8013-45c8-b853-899ccf180111")> 
+<Assembly: Guid("3b17c04f-8013-45c8-b853-899ccf180111")>
 
 ' Version information for an assembly consists of the following four values:
 '
@@ -55,5 +55,5 @@ Imports System.Windows
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.1.0")> 
-<Assembly: AssemblyFileVersion("1.0.1.0")> 
+<Assembly: AssemblyVersion("1.0.2.0")>
+<Assembly: AssemblyFileVersion("1.0.2.0")>

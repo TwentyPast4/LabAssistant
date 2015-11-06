@@ -28,15 +28,15 @@
     </Window.Resources>
     <Grid x:Name="yoGrid">
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="182"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="182"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <local:TableButton x:Name="infoElement" CanHover="False" HorizontalAlignment="Left" Height="Auto" Width="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}}"/>
-        <StackPanel Orientation="Vertical" Grid.Column="1" Margin="5,0">
+        <StackPanel Grid.Column="1" Margin="5,0" Orientation="Vertical">
             <Label Content="APPEARANCE" Style="{DynamicResource subtitleStyle}"/>
             <Label x:Name="appearanceLabel" Style="{DynamicResource descriptionStyle}"/>
             <Label Content="CATEGORY" Style="{DynamicResource subtitleStyle}"/>
@@ -52,17 +52,19 @@
                 </StackPanel>
             </Grid>
         </StackPanel>
-        <StackPanel Orientation="Vertical" Margin="5,0" Grid.Row="1" VerticalAlignment="Top">
-            <Label Content="DENSITY" Style="{DynamicResource subtitleStyle}"/>
-            <Label x:Name="densityLabel" FontSize="22" Style="{DynamicResource descriptionStyle}"/>
-        </StackPanel>
-        <StackPanel Orientation="Vertical" Margin="5,0" Grid.Row="1" VerticalAlignment="Center">
-            <Label Content="MELTING POINT" Style="{DynamicResource subtitleStyle}"/>
-            <Label x:Name="meltingLabel" FontSize="22" Style="{DynamicResource descriptionStyle}"/>
-        </StackPanel>
-        <StackPanel Orientation="Vertical" Margin="5,0,0,5" Grid.Row="1" VerticalAlignment="Bottom">
-            <Label Content="BOILING POINT" Style="{DynamicResource subtitleStyle}"/>
-            <Label x:Name="boilingLabel" FontSize="22" Style="{DynamicResource descriptionStyle}"/>
+        <StackPanel Margin="5,0" Orientation="Vertical" Grid.Row="1">
+            <StackPanel VerticalAlignment="Top">
+                <Label Content="DENSITY" Style="{DynamicResource subtitleStyle}"/>
+                <Label x:Name="densityLabel" FontSize="22" Style="{DynamicResource descriptionStyle}"/>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Top" Margin="0,10,0,0">
+                <Label Content="MELTING POINT" Style="{DynamicResource subtitleStyle}"/>
+                <Label x:Name="meltingLabel" FontSize="22" Style="{DynamicResource descriptionStyle}"/>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Top" Margin="0,10,0,0">
+                <Label Content="BOILING POINT" Style="{DynamicResource subtitleStyle}"/>
+                <Label x:Name="boilingLabel" FontSize="22" Style="{DynamicResource descriptionStyle}"/>
+            </StackPanel>
         </StackPanel>
         <local:ReactionList x:Name="reactionList" Grid.Column="1" Grid.Row="1" Width="Auto" Height="Auto" Foreground="WhiteSmoke" Background="#FF232323" BorderBrush="{DynamicResource labBlueBrush}" BorderThickness="1,1,0,0" RowSeperator="#FFC5C5C5" AlternateIndex="0"/>
     </Grid>

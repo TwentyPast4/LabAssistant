@@ -209,8 +209,6 @@ Public Class LabWindow
         Next
     End Sub
 
-
-
 #End Region
 
 #Region "Searching"
