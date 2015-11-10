@@ -453,7 +453,7 @@
                             <DataGridTextColumn Header="Density" SortMemberPath="Density" IsReadOnly="True" Binding="{Binding Density, StringFormat=\{0\} g/mL, TargetNullValue=No data}"/>
                             <DataGridTextColumn Header="Melting Point" SortMemberPath="MeltingPoint" IsReadOnly="True" Binding="{Binding MeltingPoint, StringFormat=\{0\} K, TargetNullValue=No data}"/>
                             <DataGridTextColumn Header="Boiling Point" SortMemberPath="BoilingPoint" IsReadOnly="True" Binding="{Binding BoilingPoint, StringFormat=\{0\} K, TargetNullValue=No data}"/>
-                            <DataGridTextColumn Header="Solubility" Width="*" SortMemberPath="Solubility" IsReadOnly="True" Binding="{Binding Solubility}"/>
+                            <DataGridTextColumn Header="Solubility" SortMemberPath="Solubility" IsReadOnly="True" Binding="{Binding Solubility}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
@@ -493,7 +493,7 @@
                             <DataGridTextColumn Header="Density" SortMemberPath="Density" IsReadOnly="True" Binding="{Binding Density, StringFormat=\{0\} g/mL, TargetNullValue=No data}"/>
                             <DataGridTextColumn Header="Melting Point" SortMemberPath="MeltingPoint" IsReadOnly="True" Binding="{Binding MeltingPoint, StringFormat=\{0\} K, TargetNullValue=No data}"/>
                             <DataGridTextColumn Header="Boiling Point" SortMemberPath="BoilingPoint" IsReadOnly="True" Binding="{Binding BoilingPoint, StringFormat=\{0\} K, TargetNullValue=No data}"/>
-                            <DataGridTextColumn Header="Solubility" Width="*" SortMemberPath="Solubility" IsReadOnly="True" Binding="{Binding Solubility}"/>
+                            <DataGridTextColumn Header="Solubility" SortMemberPath="Solubility" IsReadOnly="True" Binding="{Binding Solubility}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>

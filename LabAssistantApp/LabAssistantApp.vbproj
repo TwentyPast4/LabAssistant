@@ -56,6 +56,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System" />
@@ -89,6 +90,7 @@
     <Compile Include="ReactionRow.xaml.vb">
       <DependentUpon>ReactionRow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MenuVisibilityConverter.vb" />
     <Compile Include="RowSearchConverter.vb" />
     <Compile Include="TableButton.xaml.vb">
       <DependentUpon>TableButton.xaml</DependentUpon>

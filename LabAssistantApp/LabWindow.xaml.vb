@@ -6,9 +6,8 @@ Public Class LabWindow
     Public Sub Initialize()
         SetElements(tableViewbox)
         handleMenuClick(tableMenuBtn, Nothing)
-        timer1 = New Threading.DispatcherTimer()
         timer1.Interval = TimeSpan.FromSeconds(0.7)
-        AddHandler timer1.Tick, AddressOf handleTick
+        timer2.Interval = TimeSpan.FromSeconds(0.7)
         versionBlock.Text = My.Application.Info.Version.ToString(3)
         Dim b As New Binding("AutoStartup")
         b.Source = My.Settings
@@ -212,19 +211,38 @@ Public Class LabWindow
 #End Region
 
 #Region "Searching"
-    Private timer1 As Threading.DispatcherTimer
-    Private Sub handleTick(sender As Object, e As EventArgs)
+
+    Private WithEvents timer1 As New Threading.DispatcherTimer
+    Private Sub handleTick(sender As Object, e As EventArgs) Handles timer1.Tick
         searchBox.Text = searchBox.Template.FindName("tbCore", searchBox).Text
     End Sub
 
     Private lastSearch As String = String.Empty
+    Private lastSearch2 As String = String.Empty
     Private Sub handleSearchChanged(sender As Object, e As TextChangedEventArgs)
-        If Not lastSearch.Equals(sender.Text) Then
-            timer1.Stop()
-            timer1.Start()
-            lastSearch = sender.Text
-        End If
+        Dim tbCore As TextBox = sender
+        Select Case tbCore.TemplatedParent.GetValue(TextBox.NameProperty)
+            Case "searchBox"
+                If Not lastSearch.Equals(sender.Text) Then
+                    timer1.Stop()
+                    timer1.Start()
+                    lastSearch = sender.Text
+                End If
+            Case "organicSearchBox"
+                If Not lastSearch2.Equals(sender.Text) Then
+                    timer2.Stop()
+                    timer2.Start()
+                    lastSearch2 = sender.Text
+                End If
+        End Select
+
     End Sub
+
+    Private WithEvents timer2 As New Threading.DispatcherTimer
+    Private Sub handleTick2(sender As Object, e As EventArgs) Handles timer2.Tick
+        organicSearchBox.Text = organicSearchBox.Template.FindName("tbCore", organicSearchBox).Text
+    End Sub
+
 #End Region
 
     Private Sub handleElementClick(sender As Object, e As RoutedEventArgs)

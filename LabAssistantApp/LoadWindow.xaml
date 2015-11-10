@@ -52,6 +52,6 @@
         </Border>
         <TextBlock HorizontalAlignment="Center" Margin="93,2,93,0" TextWrapping="Wrap" Text="Lab Assistant" VerticalAlignment="Top" Foreground="{DynamicResource labBlueBrush2}" Grid.Row="1"/>
         <TextBlock x:Name="versionText" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Text="v 1.0" VerticalAlignment="Top" Foreground="{DynamicResource labBlueBrush2}" Grid.Row="2" FontSize="12"/>
-        <TextBlock x:Name="statusText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="status" VerticalAlignment="Center" Foreground="{DynamicResource labBlueBrush2}" FontSize="12" Grid.Row="5"/>
+        <TextBlock x:Name="statusText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Initializing" VerticalAlignment="Center" Foreground="{DynamicResource labBlueBrush2}" FontSize="12" Grid.Row="5"/>
     </Grid>
 </Window>

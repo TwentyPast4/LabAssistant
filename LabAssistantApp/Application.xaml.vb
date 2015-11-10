@@ -1,10 +1,9 @@
-﻿Imports System.Collections.Concurrent
-Imports System.Threading
+﻿Imports System.Threading
 Imports System.Windows.Threading
 
 Class Application
 
-    Public bc As New BlockingCollection(Of String)
+    Public Shared bc As New Concurrent.ConcurrentQueue(Of String)
 
     ' Application-level events, such as Startup, Exit, and DispatcherUnhandledException
     ' can be handled in this file.
@@ -13,34 +12,15 @@ Class Application
         t.SetApartmentState(ApartmentState.STA)
         t.IsBackground = True
         t.Start(Me)
-        bc.Add("Loading chemicals")
-    End Sub
 
-    Private Sub setMainWindow(ByVal w As Window)
-        Me.MainWindow = w
-    End Sub
-
-#Region "Loading thread"
-
-    Private Shared Sub loadingStart(ByVal app As Application)
-        Dim lw As New LoadWindow(app)
-        AddHandler lw.ContentRendered, AddressOf loadingRendered
-        lw.Show()
-        Dispatcher.Run()
-    End Sub
-
-    Private Shared Sub loadingRendered(ByVal sender As LoadWindow, e As EventArgs)
-        sender.ApplicationReference.Dispatcher.Invoke(New Action(Of LoadWindow)(AddressOf sender.ApplicationReference.doWork), sender)
-    End Sub
-
-    Private Sub doWork(ByVal sender As LoadWindow)
+        bc.Enqueue("Loading chemicals")
+        'Work
         Matter.Info.InitializeEnvironment()
 
+        bc.Enqueue("Checking for laboratory")
         If My.Settings.AutoStartup Then
-            'writeProgress(sender, "Searching for laboratory")
             Dim startFile As String = My.Settings.AutoStartupFile
             If IO.File.Exists(startFile) Then
-                'writeProgress(sender, "Loading laboratory")
                 Dim l As Laboratory = Laboratory.LoadFrom(startFile)
                 If IsNothing(l) Then
                     MsgBox(String.Format("Error loading data from {0}", startFile), MsgBoxStyle.Exclamation, "Lab Assistant")
@@ -50,17 +30,54 @@ Class Application
             End If
         End If
 
-        'writeProgress(sender, "Loading main interface")
+        bc.Enqueue("Creating interface")
         Dim mw As New LabWindow
         Me.MainWindow = mw
         AddHandler Matter.Info.LabratoryLoaded, AddressOf mw.handleLaboratoryLoaded
-        'writeProgress(sender, "Loading graphics")
         mw.Initialize()
         mw.Show()
-        bc.Add("close")
+
+        Dim cm As ContextMenu = Me.FindResource("labMenu")
+        AddHandler cm.ContextMenuOpening, AddressOf handleMenuOpened
+        Dim asstolabbtn As MenuItem = cm.Template.FindName("addToLab", cm)
+
+
+        bc.Enqueue("close")
+    End Sub
+
+    Private Sub handleMenuOpened(ByVal sender As ContextMenu, e As EventArgs)
+        Dim clickedSubstance As Matter.Chemical = CType(sender.PlacementTarget, DataGridRow).Item
+        Dim addtolabbtn As MenuItem = sender.Template.FindName("addToLab", sender)
+        If Not IsNothing(Matter.Info.LoadedLab) AndAlso Matter.Info.LoadedLab.IsAvailable(clickedSubstance.FormulaString) Then
+            addtolabbtn.IsEnabled = False
+        Else
+            addtolabbtn.IsEnabled = True
+        End If
+    End Sub
+
+#Region "Loading thread"
+
+    Private Shared Sub loadingStart(ByVal app As Application)
+        Dim lw As New LoadWindow(app)
+        lw.Show()
+        Dispatcher.Run()
     End Sub
 
 #End Region
+
+    Private Shared Sub handleMenuClick(ByVal sender As Object, e As EventArgs)
+        Dim s As MenuItem = sender
+        Dim clickedSubstance As Matter.Chemical = CType(CType(s.Parent, ContextMenu).PlacementTarget, DataGridRow).Item
+        Select Case s.Name
+            Case "addToLab"
+                Console.Write("Add to laboratory: ")
+            Case "removeFromLab"
+                Console.Write("Remove from laboratory: ")
+            Case "info"
+                Console.Write("Properties of: ")
+        End Select
+        Console.WriteLine(clickedSubstance.Name)
+    End Sub
 
 
 End Class

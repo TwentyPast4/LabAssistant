@@ -493,97 +493,101 @@ ShutdownMode="OnMainWindowClose">
             </Setter>
         </Style>
 
+        <Style x:Key="labScrollBar" TargetType="{x:Type ScrollBar}">
+            <Style.Resources>
+                <Style x:Key="ScrollBarPageButton" TargetType="{x:Type RepeatButton}">
+                    <Setter Property="OverridesDefaultStyle" Value="true"/>
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Focusable" Value="false"/>
+                    <Setter Property="IsTabStop" Value="false"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type RepeatButton}">
+                                <Rectangle Fill="{TemplateBinding Background}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}"/>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+                <Style x:Key="MyThumb" TargetType="{x:Type Thumb}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Thumb}">
+                                <Grid x:Name="thumbGrid" Background="{TemplateBinding Background}">
+                                    <Rectangle x:Name="thumbRect"/>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="thumbRect" Property="Fill" Value="#77FFFFFF"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+                <SolidColorBrush x:Key="defaultScrollBarBackground" Color="#7F000000"/>
+                <SolidColorBrush x:Key="defaultScrollBarForeground" Color="#7FFFFFFF"/>
+                
+            </Style.Resources>
+            <Setter Property="Background" Value="{StaticResource defaultScrollBarBackground}"/>
+            <Setter Property="Foreground" Value="{StaticResource defaultScrollBarForeground}"/>
+            <Setter Property="Width" Value="10"/>
+            <Setter Property="MinWidth" Value="10"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ScrollBar}">
+                        <Grid x:Name="Bg" SnapsToDevicePixels="true" Background="{TemplateBinding Background}">
+                            <Track x:Name="PART_Track" IsDirectionReversed="True" IsEnabled="{TemplateBinding IsMouseOver}">
+                                <Track.DecreaseRepeatButton>
+                                    <RepeatButton Command="{x:Static ScrollBar.PageUpCommand}" Style="{StaticResource ScrollBarPageButton}"/>
+                                </Track.DecreaseRepeatButton>
+                                <Track.IncreaseRepeatButton>
+                                    <RepeatButton Command="{x:Static ScrollBar.PageDownCommand}" Style="{StaticResource ScrollBarPageButton}"/>
+                                </Track.IncreaseRepeatButton>
+                                <Track.Thumb>
+                                    <Thumb Style="{DynamicResource MyThumb}" Width="8" Margin="0,1" Background="{TemplateBinding Foreground}"/>
+                                </Track.Thumb>
+                            </Track>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="Orientation" Value="Horizontal">
+                    <Setter Property="Width" Value="Auto"/>
+                    <Setter Property="Height" Value="10"/>
+                    <Setter Property="MinHeight" Value="10"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type ScrollBar}">
+                                <Grid x:Name="Bg" SnapsToDevicePixels="true" Background="{TemplateBinding Background}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.00001*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Track x:Name="PART_Track" Grid.Column="1" IsEnabled="{TemplateBinding IsMouseOver}">
+                                        <Track.DecreaseRepeatButton>
+                                            <RepeatButton Command="{x:Static ScrollBar.PageLeftCommand}" Style="{StaticResource ScrollBarPageButton}"/>
+                                        </Track.DecreaseRepeatButton>
+                                        <Track.IncreaseRepeatButton>
+                                            <RepeatButton Command="{x:Static ScrollBar.PageRightCommand}" Style="{StaticResource ScrollBarPageButton}"/>
+                                        </Track.IncreaseRepeatButton>
+                                        <Track.Thumb>
+                                            <Thumb Style="{DynamicResource MyThumb}" Height="8" Margin="1,0" Background="{TemplateBinding Foreground}"/>
+                                        </Track.Thumb>
+                                    </Track>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
         <Style x:Key="labScrollViewerStyle" TargetType="ScrollViewer">
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type ScrollViewer}">
                         <ControlTemplate.Resources>
-                            <Style x:Key="ScrollBarPageButton" TargetType="{x:Type RepeatButton}">
-                                <Setter Property="OverridesDefaultStyle" Value="true"/>
-                                <Setter Property="Background" Value="Transparent"/>
-                                <Setter Property="Focusable" Value="false"/>
-                                <Setter Property="IsTabStop" Value="false"/>
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="{x:Type RepeatButton}">
-                                            <Rectangle Fill="{TemplateBinding Background}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}"/>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
-                            <Style x:Key="MyThumb" TargetType="{x:Type Thumb}">
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="{x:Type Thumb}">
-                                            <Grid x:Name="thumbGrid" Background="{TemplateBinding Background}">
-                                                <Rectangle x:Name="thumbRect"/>
-                                            </Grid>
-                                            <ControlTemplate.Triggers>
-                                                <Trigger Property="IsMouseOver" Value="True">
-                                                    <Setter TargetName="thumbRect" Property="Fill" Value="#77FFFFFF"/>
-                                                </Trigger>
-                                            </ControlTemplate.Triggers>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
-                            <SolidColorBrush x:Key="defaultScrollBarBackground" Color="#7F000000"/>
-                            <SolidColorBrush x:Key="defaultScrollBarForeground" Color="#7FFFFFFF"/>
-                            <Style TargetType="{x:Type ScrollBar}">
-                                <Setter Property="Background" Value="{StaticResource defaultScrollBarBackground}"/>
-                                <Setter Property="Foreground" Value="{StaticResource defaultScrollBarForeground}"/>
-                                <Setter Property="Width" Value="10"/>
-                                <Setter Property="MinWidth" Value="10"/>
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="{x:Type ScrollBar}">
-                                            <Grid x:Name="Bg" SnapsToDevicePixels="true" Background="{TemplateBinding Background}">
-                                                <Track x:Name="PART_Track" IsDirectionReversed="True" IsEnabled="{TemplateBinding IsMouseOver}">
-                                                    <Track.DecreaseRepeatButton>
-                                                        <RepeatButton Command="{x:Static ScrollBar.PageUpCommand}" Style="{StaticResource ScrollBarPageButton}"/>
-                                                    </Track.DecreaseRepeatButton>
-                                                    <Track.IncreaseRepeatButton>
-                                                        <RepeatButton Command="{x:Static ScrollBar.PageDownCommand}" Style="{StaticResource ScrollBarPageButton}"/>
-                                                    </Track.IncreaseRepeatButton>
-                                                    <Track.Thumb>
-                                                        <Thumb Style="{DynamicResource MyThumb}" Width="8" Margin="0,1" Background="{TemplateBinding Foreground}"/>
-                                                    </Track.Thumb>
-                                                </Track>
-                                            </Grid>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                                <Style.Triggers>
-                                    <Trigger Property="Orientation" Value="Horizontal">
-                                        <Setter Property="Width" Value="Auto"/>
-                                        <Setter Property="MinWidth" Value="0"/>
-                                        <Setter Property="Height" Value="10"/>
-                                        <Setter Property="MinHeight" Value="10"/>
-                                        <Setter Property="Template">
-                                            <Setter.Value>
-                                                <ControlTemplate TargetType="{x:Type ScrollBar}">
-                                                    <Grid x:Name="Bg" SnapsToDevicePixels="true" Background="{TemplateBinding Background}">
-                                                        <Grid.ColumnDefinitions>
-                                                            <ColumnDefinition Width="0.00001*"/>
-                                                        </Grid.ColumnDefinitions>
-                                                        <Track x:Name="PART_Track" Grid.Column="1" IsEnabled="{TemplateBinding IsMouseOver}">
-                                                            <Track.DecreaseRepeatButton>
-                                                                <RepeatButton Command="{x:Static ScrollBar.PageLeftCommand}" Style="{StaticResource ScrollBarPageButton}"/>
-                                                            </Track.DecreaseRepeatButton>
-                                                            <Track.IncreaseRepeatButton>
-                                                                <RepeatButton Command="{x:Static ScrollBar.PageRightCommand}" Style="{StaticResource ScrollBarPageButton}"/>
-                                                            </Track.IncreaseRepeatButton>
-                                                            <Track.Thumb>
-                                                                <Thumb Style="{DynamicResource MyThumb}" Height="8" Margin="1,0" Background="{TemplateBinding Foreground}"/>
-                                                            </Track.Thumb>
-                                                        </Track>
-                                                    </Grid>
-                                                </ControlTemplate>
-                                            </Setter.Value>
-                                        </Setter>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
+                            <Style TargetType="{x:Type ScrollBar}" BasedOn="{StaticResource labScrollBar}"/>
                         </ControlTemplate.Resources>
                         <Grid Background="{TemplateBinding Background}">
                             <Grid.ColumnDefinitions>
@@ -603,10 +607,23 @@ ShutdownMode="OnMainWindowClose">
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <ContextMenu x:Key="labMenu">
+            <ContextMenu.Resources>
+                <local:MenuVisibilityConverter x:Key="visConverter"/>
+                <Style TargetType="{x:Type MenuItem}">
+                    <Setter Property="CommandParameter" Value="{Binding RelativeSource={RelativeSource Self}, Path=Parent}"/>
+                    <EventSetter Event="Click" Handler="handleMenuClick"/>
+                </Style>
+            </ContextMenu.Resources>
+            <MenuItem x:Name="addToLab" Header="Add to laboratory" Icon="{DynamicResource addImage}"/>
+            <MenuItem x:Name="removeFromLab" Header="Remove from laboratory" Icon="{DynamicResource removeImage}"/>
+            <MenuItem x:Name="info" Header="Properties" Icon="{DynamicResource infoImage}"/>
+        </ContextMenu>
         
         <Style x:Key="labGrid" TargetType="DataGrid">
             <Style.Resources>
-                <Style TargetType="{x:Type ScrollBar}"/>
+                <Style TargetType="{x:Type ScrollBar}" BasedOn="{StaticResource labScrollBar}"/>
                 <SolidColorBrush x:Key="rowSelected" Color="#FF00AEFF"/>
                 <SolidColorBrush x:Key="rowSelectedForeground" Color="White"/>
                 <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="{Binding Color, Source={StaticResource rowSelected}}"/>
@@ -617,7 +634,7 @@ ShutdownMode="OnMainWindowClose">
             <Setter Property="Foreground" Value="#FFE4E4E4"/>
             <Setter Property="SelectionUnit" Value="FullRow"/>
             <Setter Property="AutoGenerateColumns" Value="False"/>
-            <Setter Property="Background" Value="Gray"/>
+            <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="ColumnHeaderHeight" Value="30"/>
             <Setter Property="HeadersVisibility" Value="Column"/>
@@ -631,15 +648,7 @@ ShutdownMode="OnMainWindowClose">
             <Setter Property="RowStyle">
                 <Setter.Value>
                     <Style TargetType="DataGridRow">
-                        <Setter Property="ContextMenu">
-                            <Setter.Value>
-                                <ContextMenu>
-                                    <MenuItem Header="Add to laboratory" Icon="{DynamicResource addImage}"/>
-                                    <MenuItem Header="Remove from laboratory" Icon="{DynamicResource removeImage}"/>
-                                    <MenuItem Header="Properties" Icon="{DynamicResource infoImage}"/>
-                                </ContextMenu>
-                            </Setter.Value>
-                        </Setter>
+                        <Setter Property="ContextMenu" Value="{StaticResource labMenu}"/>
                     </Style>
                 </Setter.Value>
             </Setter>
