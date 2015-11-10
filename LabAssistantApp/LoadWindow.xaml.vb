@@ -2,8 +2,8 @@
 
 Public Class LoadWindow
 
-    Private WithEvents da As New DoubleAnimation()
     Private WithEvents ca As New ColorAnimation(Colors.Green, New Duration(TimeSpan.FromSeconds(2)))
+    Private WithEvents checker As New Timers.Timer()
     Private isAnimRunning As Boolean = False
     Private nextGoal As Double = -1
     Private progress As Double = 0
@@ -19,7 +19,7 @@ Public Class LoadWindow
 
         ' Add any initialization after the InitializeComponent() call.
         ApplicationReference = app
-        da.Duration = New Duration(TimeSpan.FromSeconds(2))
+        checker.Interval = 100
 
         statusText.Text = "Initializing"
         fillRectangle.Fill = New SolidColorBrush(Colors.Blue)
@@ -27,10 +27,6 @@ Public Class LoadWindow
         With app.Info.Version
             versionText.Text = String.Format("v {0}.{1}.{2}", .Major, .Minor, .Build)
         End With
-    End Sub
-
-    Public Sub writeInfo(ByVal text As String)
-        statusText.Text = text
     End Sub
 
     Private Sub animateColor()
@@ -48,6 +44,17 @@ Public Class LoadWindow
         End Select
         animateColor()
         lastColor += 1
+    End Sub
+
+    Private Sub handleCheckTick(sender As Object, e As EventArgs) Handles checker.Elapsed
+        If ApplicationReference.bc.Count > 0 Then
+            Dim info As String = ApplicationReference.bc.Take()
+            If info.Equals("close") Then
+                Me.Close()
+            Else
+                statusText.Text = info
+            End If
+        End If
     End Sub
 
 End Class

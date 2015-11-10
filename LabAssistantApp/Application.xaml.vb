@@ -1,7 +1,10 @@
-﻿Imports System.Threading
+﻿Imports System.Collections.Concurrent
+Imports System.Threading
 Imports System.Windows.Threading
 
 Class Application
+
+    Public bc As New BlockingCollection(Of String)
 
     ' Application-level events, such as Startup, Exit, and DispatcherUnhandledException
     ' can be handled in this file.
@@ -10,6 +13,7 @@ Class Application
         t.SetApartmentState(ApartmentState.STA)
         t.IsBackground = True
         t.Start(Me)
+        bc.Add("Loading chemicals")
     End Sub
 
     Private Sub setMainWindow(ByVal w As Window)
@@ -23,13 +27,13 @@ Class Application
         AddHandler lw.ContentRendered, AddressOf loadingRendered
         lw.Show()
         Dispatcher.Run()
-
-        'app.Dispatcher.Invoke(New Action(Of Window)(AddressOf app.setMainWindow), lw)
     End Sub
 
-    Public Shared Sub loadingRendered(ByVal sender As LoadWindow, e As EventArgs)
-        sender.writeInfo("Loading chemicals")
-        'writeProgress(sender, "Loading chemicals")
+    Private Shared Sub loadingRendered(ByVal sender As LoadWindow, e As EventArgs)
+        sender.ApplicationReference.Dispatcher.Invoke(New Action(Of LoadWindow)(AddressOf sender.ApplicationReference.doWork), sender)
+    End Sub
+
+    Private Sub doWork(ByVal sender As LoadWindow)
         Matter.Info.InitializeEnvironment()
 
         If My.Settings.AutoStartup Then
@@ -48,17 +52,12 @@ Class Application
 
         'writeProgress(sender, "Loading main interface")
         Dim mw As New LabWindow
-        sender.ApplicationReference.Dispatcher.Invoke(New Action(Of Window)(AddressOf sender.ApplicationReference.setMainWindow), mw)
+        Me.MainWindow = mw
         AddHandler Matter.Info.LabratoryLoaded, AddressOf mw.handleLaboratoryLoaded
         'writeProgress(sender, "Loading graphics")
         mw.Initialize()
-
         mw.Show()
-        sender.Dispatcher.Invoke(New Action(AddressOf sender.Close))
-    End Sub
-
-    Private Sub writeProgress(ByVal window As LoadWindow, ByVal info As String)
-        window.Dispatcher.Invoke(New Action(Of String)(AddressOf window.writeInfo), info)
+        bc.Add("close")
     End Sub
 
 #End Region
