@@ -166,6 +166,7 @@
                                 <Setter Property="HorizontalAlignment" Value="Left"/>
                                 <Setter Property="VerticalAlignment" Value="Top"/>
                                 <Setter Property="BorderThickness" Value="2"/>
+                                <Setter Property="ContextMenu" Value="{DynamicResource labMenu}"/>
                                 <EventSetter Event="Click" Handler="handleElementClick"/>
                             </Style>
                         </Viewbox.Resources>
@@ -498,7 +499,8 @@
                     </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="reactionsPage"/>
+            <TabItem x:Name="reactionsPage">
+            </TabItem>
             <TabItem x:Name="startupSettingsPage" Foreground="#FFECECEC">
                 <Grid Margin="15">
                     <Grid.RowDefinitions>
@@ -535,6 +537,7 @@
                     </StackPanel>
                 </StackPanel>
             </TabItem>
+            
 
         </TabControl>
     </Grid>

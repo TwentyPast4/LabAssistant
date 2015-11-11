@@ -248,8 +248,7 @@ Public Class LabWindow
     Private Sub handleElementClick(sender As Object, e As RoutedEventArgs)
         Dim tb As TableButton = sender
         If Not IsNothing(tb.Element) Then
-            Dim infoDialog As New ElementInfoWindow(tb.Element)
-            infoDialog.Show()
+            Application.CreateElementInfoForm(tb.Element)
         End If
     End Sub
 

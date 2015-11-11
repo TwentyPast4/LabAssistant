@@ -111,7 +111,7 @@ Public Class Laboratory
         End If
     End Sub
 
-    Public Sub AddCompound(ByVal c As Compound, ByVal mass As Double, Optional ByVal isUnlimeted As Boolean = False, Optional ByVal Comment As String = "")
+    Public Sub AddChemical(ByVal c As Chemical, ByVal mass As Double, Optional ByVal isUnlimeted As Boolean = False, Optional ByVal Comment As String = "")
         If inv.FindAll(Function(x As OwnershipInfo) x.Name = c.Name).Count = 0 Then
             If isUnlimeted Then mass = -1
             inv.Add(New OwnershipInfo(c.Name, c.FormulaString, mass, Comment))
@@ -120,23 +120,8 @@ Public Class Laboratory
         End If
     End Sub
 
-    Public Sub AddElement(ByVal e As Element, ByVal mass As Double, Optional ByVal isUnlimeted As Boolean = False, Optional ByVal Comment As String = "")
-        If inv.FindAll(Function(x As OwnershipInfo) x.Name = e.Name).Count = 0 Then
-            If isUnlimeted Then mass = -1
-            inv.Add(New OwnershipInfo(e.Name, e.FormulaString, mass, Comment))
-            If isUnlimeted Then e.SetLabState(StateInLab.Available) Else e.SetLabState(StateInLab.In_Stock)
-            raiseChanged()
-        End If
-    End Sub
-
-    Public Sub RemoveCompound(ByVal c As Compound)
+    Public Sub RemoveChemical(ByVal c As Chemical)
         If inv.RemoveAll(Function(x As OwnershipInfo) x.Name = c.Name) > 0 Then
-            raiseChanged()
-        End If
-    End Sub
-
-    Public Sub RemoveElement(ByVal e As Element)
-        If inv.RemoveAll(Function(x As OwnershipInfo) x.Name = e.Name) > 0 Then
             raiseChanged()
         End If
     End Sub

@@ -1,5 +1,6 @@
 ﻿Imports System.Threading
 Imports System.Windows.Threading
+Imports LabAssistantApp.Matter
 
 Class Application
 
@@ -7,7 +8,7 @@ Class Application
 
     ' Application-level events, such as Startup, Exit, and DispatcherUnhandledException
     ' can be handled in this file.
-    Public Sub test(sender As Object, e As StartupEventArgs) Handles Me.Startup
+    Public Sub startSub(sender As Object, e As StartupEventArgs) Handles Me.Startup
         Dim t As New Thread(New ParameterizedThreadStart(AddressOf loadingStart))
         t.SetApartmentState(ApartmentState.STA)
         t.IsBackground = True
@@ -17,10 +18,10 @@ Class Application
         'Work
         Matter.Info.InitializeEnvironment()
 
-        bc.Enqueue("Checking for laboratory")
         If My.Settings.AutoStartup Then
             Dim startFile As String = My.Settings.AutoStartupFile
             If IO.File.Exists(startFile) Then
+                bc.Enqueue("Loading laboratory")
                 Dim l As Laboratory = Laboratory.LoadFrom(startFile)
                 If IsNothing(l) Then
                     MsgBox(String.Format("Error loading data from {0}", startFile), MsgBoxStyle.Exclamation, "Lab Assistant")
@@ -32,28 +33,46 @@ Class Application
 
         bc.Enqueue("Creating interface")
         Dim mw As New LabWindow
+        mw.Icon = getIconSource()
         Me.MainWindow = mw
         AddHandler Matter.Info.LabratoryLoaded, AddressOf mw.handleLaboratoryLoaded
         mw.Initialize()
         mw.Show()
 
         Dim cm As ContextMenu = Me.FindResource("labMenu")
-        AddHandler cm.ContextMenuOpening, AddressOf handleMenuOpened
-        Dim asstolabbtn As MenuItem = cm.Template.FindName("addToLab", cm)
-
+        For Each i As MenuItem In cm.Items
+            AddHandler i.Click, AddressOf handleMenuClick
+        Next
+        AddHandler cm.Opened, AddressOf handleMenuOpened
 
         bc.Enqueue("close")
     End Sub
 
-    Private Sub handleMenuOpened(ByVal sender As ContextMenu, e As EventArgs)
-        Dim clickedSubstance As Matter.Chemical = CType(sender.PlacementTarget, DataGridRow).Item
-        Dim addtolabbtn As MenuItem = sender.Template.FindName("addToLab", sender)
-        If Not IsNothing(Matter.Info.LoadedLab) AndAlso Matter.Info.LoadedLab.IsAvailable(clickedSubstance.FormulaString) Then
-            addtolabbtn.IsEnabled = False
-        Else
-            addtolabbtn.IsEnabled = True
+    Private Shared lastChemical As Chemical
+    Private Shared Sub handleMenuOpened(ByVal sender As ContextMenu, e As RoutedEventArgs)
+        Dim clickedSubstance As Chemical = Nothing
+        Dim senderType As Type = sender.PlacementTarget.GetType()
+        If senderType.Equals(GetType(DataGridRow)) Then
+            clickedSubstance = CType(sender.PlacementTarget, DataGridRow).Item
+        ElseIf senderType.Equals(GetType(TableButton)) Then
+            clickedSubstance = CType(sender.PlacementTarget, TableButton).Element
         End If
+        lastChemical = clickedSubstance
+        Dim b As Boolean = Not IsNothing(Matter.Info.LoadedLab) AndAlso Matter.Info.LoadedLab.IsAvailable(clickedSubstance.FormulaString)
+        For Each itm As MenuItem In sender.Items
+            If itm.Name.Equals("addToLab") Then
+                itm.IsEnabled = Not b
+            ElseIf itm.Name.Equals("removeFromLab") Then
+                itm.IsEnabled = b
+            End If
+        Next
     End Sub
+
+    Private Shared Function getIconSource() As ImageSource
+        Dim img As System.Drawing.Icon = My.Resources.LabAssistantIcon
+        Dim bitmap As System.Drawing.Bitmap = img.ToBitmap()
+        Return Interop.Imaging.CreateBitmapSourceFromHBitmap(bitmap.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions())
+    End Function
 
 #Region "Loading thread"
 
@@ -66,18 +85,31 @@ Class Application
 #End Region
 
     Private Shared Sub handleMenuClick(ByVal sender As Object, e As EventArgs)
-        Dim s As MenuItem = sender
-        Dim clickedSubstance As Matter.Chemical = CType(CType(s.Parent, ContextMenu).PlacementTarget, DataGridRow).Item
-        Select Case s.Name
+        Select Case sender.Name
             Case "addToLab"
-                Console.Write("Add to laboratory: ")
+                Dim aw As New AddChemicalWindow
+                aw.ShowDialog()
             Case "removeFromLab"
                 Console.Write("Remove from laboratory: ")
             Case "info"
-                Console.Write("Properties of: ")
+                If lastChemical.Formula.IsElement Then
+                    CreateElementInfoForm(Element.GetElementFromName(lastChemical.Name))
+                End If
         End Select
-        Console.WriteLine(clickedSubstance.Name)
+        Console.WriteLine(lastChemical.Name)
     End Sub
 
+    Public Shared Sub CreateElementInfoForm(ByVal e As Element)
+        Dim infoDialog As New ElementInfoWindow(e)
+        infoDialog.Show()
+    End Sub
+
+    Public Shared Sub AddToLaboratory(ByVal c As Chemical)
+        If IsNothing(Matter.Info.LoadedLab) Then
+            'DisplayWarning()
+        Else
+            'Matter.Info.LoadedLab.AddChemical(c)
+        End If
+    End Sub
 
 End Class

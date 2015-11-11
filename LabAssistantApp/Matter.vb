@@ -349,6 +349,10 @@ Namespace Matter
             Return ElementList.Find(Function(x As Element) x.Symbol = symbol)
         End Function
 
+        Public Shared Function GetElementFromName(ByVal name As String) As Element
+            Return ElementList.First(Function(ByVal comp As Element) comp.Name = name)
+        End Function
+
         Private Shared Function MakeFormula(ByVal number As Integer, ByVal symbol As String, ByVal group As Groups) As String
             Select Case number
                 Case Is = 1

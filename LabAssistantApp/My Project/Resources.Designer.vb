@@ -162,6 +162,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        '''</summary>
+        Friend ReadOnly Property LabAssistantIcon() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("LabAssistantIcon", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to 2NaCl &gt; 2Na + Cl2
         '''	Electrolysis
         '''2NaCl + 2H2O &gt; Cl2 + H2 + 2NaOH

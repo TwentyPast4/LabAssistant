@@ -292,7 +292,11 @@ ShutdownMode="OnMainWindowClose">
                     <Setter TargetName="Border" Property="Background" Value="#44FFFFFF"/>
                 </Trigger>
                 <Trigger Property="IsEnabled" Value="false">
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <BlurEffect Radius="3"/>
+                        </Setter.Value>
+                    </Setter>
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
@@ -452,7 +456,7 @@ ShutdownMode="OnMainWindowClose">
                                     </Grid.RowDefinitions>
                                     <StackPanel Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" Orientation="Horizontal">
                                         <Canvas HorizontalAlignment="Left" Width="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}}" Background="{DynamicResource LogoBrush_Hollow}"/>
-                                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Title, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Foreground="#FFE2E2E2" Padding="7,0,0,0" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Fixed" VerticalAlignment="Center"/>
+                                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{TemplateBinding Title}" Foreground="#FFE2E2E2" Padding="7,0,0,0" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Fixed" VerticalAlignment="Center"/>
                                     </StackPanel>
                                     <StackPanel Grid.Column="1" HorizontalAlignment="Right" Grid.Row="1" Orientation="Horizontal" FlowDirection="RightToLeft">
                                         <Button x:Name="exitBtn" Background="White" OpacityMask="{DynamicResource cross_Full}" Style="{DynamicResource toolbarButton}"/>
@@ -608,14 +612,7 @@ ShutdownMode="OnMainWindowClose">
             </Setter>
         </Style>
 
-        <ContextMenu x:Key="labMenu">
-            <ContextMenu.Resources>
-                <local:MenuVisibilityConverter x:Key="visConverter"/>
-                <Style TargetType="{x:Type MenuItem}">
-                    <Setter Property="CommandParameter" Value="{Binding RelativeSource={RelativeSource Self}, Path=Parent}"/>
-                    <EventSetter Event="Click" Handler="handleMenuClick"/>
-                </Style>
-            </ContextMenu.Resources>
+        <ContextMenu x:Key="labMenu" Foreground="White">
             <MenuItem x:Name="addToLab" Header="Add to laboratory" Icon="{DynamicResource addImage}"/>
             <MenuItem x:Name="removeFromLab" Header="Remove from laboratory" Icon="{DynamicResource removeImage}"/>
             <MenuItem x:Name="info" Header="Properties" Icon="{DynamicResource infoImage}"/>
@@ -681,6 +678,77 @@ ShutdownMode="OnMainWindowClose">
                 </Setter.Value>
             </Setter>
         </Style>
+
         
+        <Style x:Key="labComboBoxStyle" TargetType="{x:Type ComboBox}">
+            <Style.Resources>
+                <SolidColorBrush x:Key="toggleButtonHover" Color="#4CFFFFFF"/>
+                <SolidColorBrush x:Key="toggleButtonChecked" Color="#4C000000"/>
+                <SolidColorBrush x:Key="toggleButtonArrow" Color="#FFE8E8E8"/>
+                <ControlTemplate x:Key="CustomToggleButton" TargetType="ToggleButton">
+                    <Grid x:Name="btnGrid" Background="Transparent">
+                        <Path x:Name="Arrow" Width="10" Data="M0,0 L0,2 L4,6 L8,2 L8,0 L4,4 z" Fill="{DynamicResource toggleButtonArrow}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger SourceName="btnGrid" Property="IsMouseOver" Value="True">
+                            <Setter TargetName="btnGrid" Property="Background" Value="{StaticResource toggleButtonHover}" />
+                            <Setter TargetName="Arrow" Property="Fill" Value="White" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="btnGrid" Property="Background" Value="{StaticResource toggleButtonChecked}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Arrow" Property="Fill" Value="#FF292929" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+                <Style TargetType="{x:Type ComboBoxItem}">
+                    <Setter Property="OverridesDefaultStyle" Value="True"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type ComboBoxItem}">
+                                <Border x:Name="itemBorder">
+                                    <ContentPresenter Margin="5,0,0,0"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger SourceName="itemBorder" Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="itemBorder" Property="Background" Value="#33BBF3FF"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Style.Resources>
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBox">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <Grid Background="{TemplateBinding Background}">
+                                <ContentPresenter Name="ContentSite" Margin="5,0,0,0" Content="{TemplateBinding SelectionBoxItem}" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" VerticalAlignment="Center"/>
+                                <TextBox x:Name="PART_EditableTextBox" Foreground="{TemplateBinding Foreground}" IsReadOnly="{TemplateBinding IsReadOnly}" Visibility="Hidden" />
+                                <ToggleButton Name="ToggleButton" Template="{DynamicResource CustomToggleButton}" Width="22" HorizontalAlignment="Right" IsChecked="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"/>
+                                <Popup Name="PART_Popup" IsOpen="{TemplateBinding IsDropDownOpen}">
+                                    <Border Name="DropDownBorder" MinWidth="{TemplateBinding ActualWidth}" MaxHeight="{TemplateBinding MaxDropDownHeight}" Background="{TemplateBinding Background}">
+                                        <ScrollViewer Style="{DynamicResource labScrollViewerStyle}" VerticalScrollBarVisibility="Auto">
+                                            <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Contained"/>
+                                        </ScrollViewer>
+                                    </Border>
+                                </Popup>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="ComboBox.IsEditable" Value="True">
+                                <Setter Property="KeyboardNavigation.IsTabStop" Value="False" />
+                                <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible" />
+                                <Setter TargetName="ContentSite" Property="Visibility" Value="Hidden" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
     </Application.Resources>
 </Application>

@@ -124,6 +124,9 @@
   <data name="InorganicCompoundsResx" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\InorganicCompoundsResx.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1250</value>
   </data>
+  <data name="LabAssistantIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LabAssistantIcon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ReactionsResx" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ReactionsResx.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1250</value>
   </data>

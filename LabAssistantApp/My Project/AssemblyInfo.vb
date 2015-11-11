@@ -11,10 +11,10 @@ Imports System.Windows
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("LabAssistantApp")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("LabAssistantApp")> 
+<Assembly: AssemblyTitle("Lab Assistant")>
+<Assembly: AssemblyDescription("A program for help in chemistry laboratories.")>
+<Assembly: AssemblyCompany("")>
+<Assembly: AssemblyProduct("Lab Assistant")>
 <Assembly: AssemblyCopyright("Copyright ©  2015")> 
 <Assembly: AssemblyTrademark("")> 
 <Assembly: ComVisible(false)>

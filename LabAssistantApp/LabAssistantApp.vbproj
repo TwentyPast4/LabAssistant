@@ -54,8 +54,12 @@
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\LabAssistantIcon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -74,7 +78,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddChemicalWindow.xaml.vb">
+      <DependentUpon>AddChemicalWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ClickableControl.vb" />
+    <Compile Include="NotBooleanToVisibilityConverter.vb" />
     <Compile Include="DarkColorConverter.vb" />
     <Compile Include="ElementInfoWindow.xaml.vb">
       <DependentUpon>ElementInfoWindow.xaml</DependentUpon>
@@ -90,12 +98,15 @@
     <Compile Include="ReactionRow.xaml.vb">
       <DependentUpon>ReactionRow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MenuVisibilityConverter.vb" />
     <Compile Include="RowSearchConverter.vb" />
     <Compile Include="TableButton.xaml.vb">
       <DependentUpon>TableButton.xaml</DependentUpon>
     </Compile>
     <Compile Include="ToggleButtonConverter.vb" />
+    <Page Include="AddChemicalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ElementInfoWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -221,6 +232,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="My Project\DataSources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LabAssistantIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
