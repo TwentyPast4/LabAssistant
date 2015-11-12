@@ -46,5 +46,4 @@ Public Class ElementInfoWindow
 
         reactionList.LoadReactions(Reaction.GetAllOf(el.FormulaString))
     End Sub
-
 End Class

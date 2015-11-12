@@ -5,23 +5,30 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LabAssistantApp" x:Class="ImageButton" 
              mc:Ignorable="d" MouseLeftButtonDown="meLeftDown" MouseLeftButtonUp="meLeftUp" MouseEnter="meMouseOver" MouseLeave="meMouseLeave" IsEnabledChanged="meEnabledChanged">
+    <local:ClickableControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </local:ClickableControl.Resources>
     <local:ClickableControl.Effect>
         <BlurEffect x:Name="controlBlur" Radius="0"/>
     </local:ClickableControl.Effect>
     <Border x:Name="controlBorder">
-        <StackPanel Orientation="Horizontal">
-            <StackPanel.Background>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.Background>
                 <SolidColorBrush x:Name="stackPanelBrush" Color="{Binding HoverColor, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ImageButton}}}" Opacity="0"/>
-            </StackPanel.Background>
+            </Grid.Background>
 
-            <Canvas RenderTransform="{Binding ImageTransform, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ImageButton}}}" Background="{Binding ImageBrush, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ImageButton}}}" IsHitTestVisible="False" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5" Width="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}}"/>
+            <Rectangle VerticalAlignment="Stretch" RenderTransform="{Binding ImageTransform, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ImageButton}}}" Fill="{Binding ImageBrush, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ImageButton}}}" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5" Width="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}}" Visibility="{Binding ReserveImageSpace, Converter={StaticResource BooleanToVisibilityConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ImageButton}}}"/>
 
-            <Label Content="{Binding Text, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ImageButton}}}" IsHitTestVisible="False" Padding="{Binding TextPadding, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ImageButton}}}" HorizontalContentAlignment="{Binding HorizontalTextAlignment, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ImageButton}}}" VerticalContentAlignment="{Binding VerticalTextAlignment, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ImageButton}}}" Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ImageButton}}}">
+            <Label Grid.Column="1" Content="{Binding Text, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ImageButton}}}" IsHitTestVisible="False" Padding="{Binding TextPadding, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ImageButton}}}" HorizontalContentAlignment="{Binding HorizontalTextAlignment, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ImageButton}}}" VerticalContentAlignment="{Binding VerticalTextAlignment, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ImageButton}}}" Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ImageButton}}}">
                 <Label.Effect>
                     <DropShadowEffect BlurRadius="4" ShadowDepth="1"/>
                 </Label.Effect>
             </Label>
 
-        </StackPanel>
+        </Grid>
     </Border>
 </local:ClickableControl>

@@ -4,6 +4,7 @@ Imports System.Windows.Media.Animation
 
 Public Class ImageButton
     Inherits ClickableControl
+    Implements INotifyPropertyChanged
 
     Public Shared ReadOnly TextPaddingProperty As DependencyProperty =
         DependencyProperty.Register("TextPadding", GetType(Thickness), GetType(ImageButton), New UIPropertyMetadata(New Thickness(0)))
@@ -27,6 +28,8 @@ Public Class ImageButton
         DependencyProperty.Register("IsSelected", GetType(Boolean), GetType(ImageButton), New UIPropertyMetadata(False))
     Public Shared ReadOnly SelectedBrushProperty As DependencyProperty =
         DependencyProperty.Register("SelectedBrush", GetType(Brush), GetType(ImageButton), New UIPropertyMetadata(Nothing))
+    Public Shared ReadOnly ReserveImageSpaceProperty As DependencyProperty =
+        DependencyProperty.Register("ReserveImageSpace", GetType(Boolean), GetType(ImageButton), New UIPropertyMetadata(True))
 
     <Browsable(False)>
     Public Overloads Property Content
@@ -54,6 +57,7 @@ Public Class ImageButton
         End Get
         Set(value As HorizontalAlignment)
             txtHLayout = value
+            OnPropertyChanged("HorizontalTextAlignment")
         End Set
     End Property
     Private txtHLayout As HorizontalAlignment
@@ -65,6 +69,7 @@ Public Class ImageButton
         End Get
         Set(value As VerticalAlignment)
             txtVLayout = value
+            OnPropertyChanged("VerticalTextAlignment")
         End Set
     End Property
     Private txtVLayout As VerticalAlignment
@@ -99,6 +104,19 @@ Public Class ImageButton
     End Property
     Private sel As Boolean
 
+    <Description("Gets or sets a boolean value, indicating weather to reserve space for the image."), Category("Common")>
+    Public Property ReserveImageSpace As Boolean
+        Get
+            Return resimgSpace
+        End Get
+        Set(value As Boolean)
+            resimgSpace = value
+            OnPropertyChanged("ReserveImageSpace")
+        End Set
+    End Property
+    Private resimgSpace As Boolean
+
+
     <Description("The brush to use when the button is selected."), Category("Brush")>
     Public Property SelectedBrush As Brush
         Get
@@ -117,6 +135,8 @@ Public Class ImageButton
         End Get
         Set(value As Brush)
             img = value
+            OnPropertyChanged("ImageBrush")
+            OnPropertyChanged("HasImage")
         End Set
     End Property
     Private img As Brush
@@ -208,5 +228,20 @@ Public Class ImageButton
             Me.BeginAnimation(ImageButton.OpacityProperty, da2)
         End If
     End Sub
+
+    Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
+
+    Protected Overloads Sub OnPropertyChanged(propertyName As String)
+        RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+    End Sub
+
+    Protected Function SetField(Of T)(ByRef field As T, value As T, propertyName As String) As Boolean
+        If EqualityComparer(Of T).[Default].Equals(field, value) Then
+            Return False
+        End If
+        field = value
+        OnPropertyChanged(propertyName)
+        Return True
+    End Function
 
 End Class

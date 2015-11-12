@@ -87,8 +87,15 @@ Class Application
     Private Shared Sub handleMenuClick(ByVal sender As Object, e As EventArgs)
         Select Case sender.Name
             Case "addToLab"
-                Dim aw As New AddChemicalWindow
-                aw.ShowDialog()
+                If IsNothing(Matter.Info.LoadedLab) Then
+                    displayLabWarning()
+                Else
+                    Dim aw As New AddChemicalWindow(lastChemical)
+                    aw.Owner = My.Application.MainWindow
+                    If aw.ShowDialog() Then
+                        AddToLaboratory(lastChemical, aw.Amount, aw.Comment)
+                    End If
+                End If
             Case "removeFromLab"
                 Console.Write("Remove from laboratory: ")
             Case "info"
@@ -96,7 +103,6 @@ Class Application
                     CreateElementInfoForm(Element.GetElementFromName(lastChemical.Name))
                 End If
         End Select
-        Console.WriteLine(lastChemical.Name)
     End Sub
 
     Public Shared Sub CreateElementInfoForm(ByVal e As Element)
@@ -104,12 +110,16 @@ Class Application
         infoDialog.Show()
     End Sub
 
-    Public Shared Sub AddToLaboratory(ByVal c As Chemical)
+    Public Shared Sub AddToLaboratory(ByVal c As Chemical, amount As Double, ByVal Optional comment As String = "")
         If IsNothing(Matter.Info.LoadedLab) Then
-            'DisplayWarning()
+            displayLabWarning()
         Else
-            'Matter.Info.LoadedLab.AddChemical(c)
+            Matter.Info.LoadedLab.AddChemical(c, amount, amount < 0, comment)
         End If
+    End Sub
+
+    Private Shared Sub displayLabWarning()
+        MsgBox("You do not have an open laboratory." & vbNewLine & "Create or load a laboratory to begin adding chemicals.", MsgBoxStyle.Information, "Lab Assistant")
     End Sub
 
 End Class

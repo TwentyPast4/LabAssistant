@@ -346,7 +346,7 @@ Namespace Matter
         End Function
 
         Public Shared Function GetElementFromSymbol(ByVal symbol As String) As Element
-            Return ElementList.Find(Function(x As Element) x.Symbol = symbol)
+            Return ElementList.Find(Function(x As Element) x.Symbol.Equals(symbol))
         End Function
 
         Public Shared Function GetElementFromName(ByVal name As String) As Element
@@ -1108,7 +1108,7 @@ Namespace Matter
 
     Public Class CompoundFormula
 
-        Public ReadOnly Property Elements As List(Of Element)
+        Public ReadOnly Property Elements As List(Of String)
             Get
                 Return els
             End Get
@@ -1119,7 +1119,7 @@ Namespace Matter
             End Get
         End Property
         Private eln As List(Of Byte)
-        Private els As List(Of Element)
+        Private els As List(Of String)
         Private formula_ As String
 
         Public ReadOnly Property IsElement As Boolean
@@ -1129,6 +1129,7 @@ Namespace Matter
         End Property
 
         Public Class RawStructure
+
             Public Enum Types
                 Element
                 Number
@@ -1198,12 +1199,12 @@ Namespace Matter
                 End If
             End While
             'List of elements
-            Me.els = New List(Of Element)
+            Me.els = New List(Of String)
             Me.eln = New List(Of Byte)
             'Loop 2
             While New String(str).Length > 0
                 If str.Length = 1 Then
-                    els.Add(Element.GetElementFromSymbol(str))
+                    els.Add(str)
                     eln.Add(1)
                     str = String.Empty
                 Else
@@ -1211,13 +1212,13 @@ Namespace Matter
                     If Char.IsNumber(c(1)) Then
                         Dim valu As Integer = StrVal(str)
                         If valu = 0 Then valu = 1
-                        els.Add(Element.GetElementFromSymbol(c(0)))
+                        els.Add(c(0))
                         eln.Add(valu)
                         str = str.Remove(0, 1 + valu.ToString.Length)
                         Continue While
                     End If
                     If Char.IsUpper(c(1)) Then
-                        els.Add(Element.GetElementFromSymbol(str.Remove(1)))
+                        els.Add(str.Remove(1))
                         eln.Add(1)
                         str = str.Remove(0, 1)
                         Continue While
@@ -1226,18 +1227,18 @@ Namespace Matter
                         If str.Length < 3 Then
                             Dim valu As Integer = StrVal(str)
                             If valu = 0 Then valu = 1
-                            els.Add(Element.GetElementFromSymbol(str.Replace(valu, String.Empty)))
+                            els.Add(str.Replace(valu, String.Empty))
                             eln.Add(valu)
                             str = String.Empty
                         Else
                             If Char.IsNumber(c(2)) Then
                                 Dim valu As Integer = StrVal(str)
                                 If valu = 0 Then valu = 1
-                                els.Add(Element.GetElementFromSymbol(str.Remove(2)))
+                                els.Add(str.Remove(2))
                                 eln.Add(valu)
                                 str = str.Remove(0, 2 + valu.ToString.Length)
                             Else
-                                els.Add(Element.GetElementFromSymbol(str.Remove(2)))
+                                els.Add(str.Remove(2))
                                 eln.Add(1)
                                 str = str.Remove(0, 2)
                             End If
@@ -1247,19 +1248,19 @@ Namespace Matter
             End While
         End Sub
 
-        Sub New(ByVal elements As List(Of Element), ByVal numbers As List(Of Byte))
+        Sub New(ByVal elements As List(Of String), ByVal numbers As List(Of Byte))
             Me.els = elements
             Me.eln = numbers
             Me.formula_ = String.Empty
             For i As Integer = 0 To elements.Count - 1
-                formula_ = formula_ & elements(i).Symbol & numbers(i)
+                formula_ = formula_ & elements(i) & numbers(i)
             Next
         End Sub
 
         Public Function GetMolarMass() As Double
             Dim d As Double = 0
             For i As Integer = 0 To els.Count - 1
-                d += els(i).AtomicMass * eln(i)
+                d += Element.GetElementFromSymbol(els(i)).AtomicMass * eln(i)
             Next
             Return d
         End Function
@@ -1339,7 +1340,7 @@ Namespace Matter
         Public Shared Function [NameOf](ByVal CompoundFormula As String) As String
             Dim cf As New CompoundFormula(CompoundFormula)
             If cf.IsElement Then
-                Return cf.Elements.First.Name
+                Return Element.GetElementFromSymbol(cf.els.First()).Name
             Else
                 Return Compound.CompoundList.Find(Function(x As Compound) x.Formula.Equals(cf)).Name
             End If
@@ -1349,12 +1350,13 @@ Namespace Matter
             If els.Count > 1 Then
                 Dim b As Boolean = False
                 For Each e In els
-                    If e.AtomicNumber = 6 Then
+                    Dim el As Element = Element.GetElementFromSymbol(e)
+                    If el.AtomicNumber = 6 Then
                         b = True
                     End If
-                    If e.Group = Element.Groups.AlkaliMetals Or e.Group = Element.Groups.AlkalineEarthMetals _
-                        Or e.Group = Element.Groups.Lanthanides Or e.Group = Element.Groups.Metalloids Or
-                        e.Group = Element.Groups.TransitionMetals Or e.Group = Element.Groups.Post_transitionMetals Then
+                    If el.Group = Element.Groups.AlkaliMetals Or el.Group = Element.Groups.AlkalineEarthMetals _
+                        Or el.Group = Element.Groups.Lanthanides Or el.Group = Element.Groups.Metalloids Or
+                        el.Group = Element.Groups.TransitionMetals Or el.Group = Element.Groups.Post_transitionMetals Then
                         b = False
                         Exit For
                     End If
@@ -1362,7 +1364,7 @@ Namespace Matter
                 If b Then
                     Dim n As String = name.ToLower
                     If els.Count = 2 Then
-                        If els(0).AtomicNumber = 8 Or els(1).AtomicNumber = 8 Then Return False
+                        If els(0).Equals("O") Or els(1).Equals("O") Then Return False
                     End If
                     If n.Contains(Constants.CarbonateString.ToLower) Then Return False
                     If n.Contains(Constants.CyanideString.ToLower) Then Return False
@@ -1413,6 +1415,7 @@ Namespace Matter
         End Sub
 
         Public Function ToDouble(ByVal s As String) As Double
+            If s.StartsWith(Constants.Period) AndAlso s.Length > 1 Then s = String.Concat("0", s)
             Return Double.Parse(s, NumberStyles.AllowDecimalPoint, nfi)
             Return Double.Parse(s, System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.NumberFormatInfo.InvariantInfo)
         End Function
