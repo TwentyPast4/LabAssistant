@@ -1,0 +1,71 @@
+﻿<local:LabAssistantWindow x:Class="CompoundInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LabAssistantApp"
+        mc:Ignorable="d"
+        Width="500" Height="500" MinWidth="500" Style="{DynamicResource LabAssistantWindowStyle}" SizeToContent="Width">
+    <Window.Resources>
+        <SolidColorBrush x:Key="borderBrush" Color="#FF6C6C6C"/>
+        <Style x:Key="descriptionStyle" TargetType="Label">
+            <Setter Property="Foreground" Value="LightGray"/>
+            <Setter Property="BorderThickness" Value="1,0,0,0"/>
+            <Setter Property="BorderBrush" Value="{StaticResource borderBrush}"/>
+            <Setter Property="Padding" Value="5,0"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+        <Style x:Key="numberStyle" TargetType="Label" BasedOn="{StaticResource descriptionStyle}">
+            <Setter Property="BorderThickness" Value="0,0,1,0"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="FontSize" Value="22"/>
+        </Style>
+        <Style x:Key="subtitleStyle" TargetType="Label">
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="0,5,5,0"/>
+            <Setter Property="BorderThickness" Value="0,0,0,1"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="BorderBrush" Value="{StaticResource borderBrush}"/>
+            <Setter Property="FontFamily" Value="{StaticResource NevisFont}"/>
+        </Style>
+        <Style x:Key="rightSubtitleStyle" TargetType="Label" BasedOn="{StaticResource subtitleStyle}">
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="5" Orientation="Vertical">
+            <Label Content="FORMULA" Style="{DynamicResource subtitleStyle}"/>
+            <Label x:Name="formulaLabel" FontSize="22" Style="{DynamicResource descriptionStyle}"/>
+            <Label Content="APPEARANCE" Style="{DynamicResource subtitleStyle}"/>
+            <Label x:Name="appearanceLabel" Style="{DynamicResource descriptionStyle}"/>
+            <Label Content="STATUS IN LABORATORY" Style="{DynamicResource subtitleStyle}"/>
+            <Label x:Name="statusLabel" Style="{DynamicResource descriptionStyle}"/>
+            <Label Content="SOLUBILITY" Style="{DynamicResource subtitleStyle}"/>
+            <ScrollViewer Style="{DynamicResource labScrollViewerStyle}" MaxHeight="100" HorizontalAlignment="Left">
+                <Label x:Name="solubilityLabel" Style="{DynamicResource descriptionStyle}" Margin="0,0,10,0"/>
+            </ScrollViewer>
+        </StackPanel>
+        <local:ReactionList x:Name="reactionList" Grid.Row="1" Foreground="WhiteSmoke" Background="#FF232323" BorderBrush="{DynamicResource labBlueBrush}" BorderThickness="0,1,0,0" RowSeperator="#FFC5C5C5" AlternateIndex="0" Grid.ColumnSpan="2"/>
+        <StackPanel Margin="5" Orientation="Vertical" Grid.Column="1">
+            <Label Content="MOLAR MASS" Style="{DynamicResource rightSubtitleStyle}"/>
+            <Label x:Name="molarMassLabel" Style="{DynamicResource numberStyle}"/>
+            <Label Content="DENSITY" Style="{DynamicResource rightSubtitleStyle}"/>
+            <Label x:Name="densityLabel" Style="{DynamicResource numberStyle}"/>
+            <Label Content="MELTING POINT" Style="{DynamicResource rightSubtitleStyle}"/>
+            <Label x:Name="meltingLabel" Style="{DynamicResource numberStyle}"/>
+            <Label Content="BOILING POINT" Style="{DynamicResource rightSubtitleStyle}"/>
+            <Label x:Name="boilingLabel" Style="{DynamicResource numberStyle}"/>
+        </StackPanel>
+    </Grid>
+</local:LabAssistantWindow>

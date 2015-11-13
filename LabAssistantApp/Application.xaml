@@ -648,6 +648,7 @@ ShutdownMode="OnMainWindowClose">
                 <Setter.Value>
                     <Style TargetType="DataGridRow">
                         <Setter Property="ContextMenu" Value="{StaticResource labMenu}"/>
+                        <EventSetter Event="MouseDoubleClick" Handler="handleRowDoubleClick"/>
                     </Style>
                 </Setter.Value>
             </Setter>

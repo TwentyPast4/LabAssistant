@@ -82,6 +82,9 @@
       <DependentUpon>AddChemicalWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ClickableControl.vb" />
+    <Compile Include="CompoundInfoWindow.xaml.vb">
+      <DependentUpon>CompoundInfoWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NotBooleanToVisibilityConverter.vb" />
     <Compile Include="DarkColorConverter.vb" />
     <Compile Include="ElementInfoWindow.xaml.vb">
@@ -106,6 +109,10 @@
     <Page Include="AddChemicalWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CompoundInfoWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="ElementInfoWindow.xaml">
       <SubType>Designer</SubType>

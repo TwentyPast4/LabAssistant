@@ -111,6 +111,7 @@
                 <local:ImageButton Tag="organic" Text="ORGANICS" ImageBrush="{DynamicResource organicBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick"/>
                 <local:ImageButton Tag="reaction" Text="REACTIONS" ImageBrush="{DynamicResource reversibleReactionBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick"/>
                 <Label Content="LABORATORY" Style="{DynamicResource menuLabel}" Background="{x:Null}"/>
+                <local:ImageButton Tag="reaction" Text="INVENTORY" ImageBrush="{DynamicResource inventoryBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick"/>
                 <Label Content="SETTINGS" Style="{DynamicResource menuLabel}" Background="{x:Null}"/>
                 <local:ImageButton Tag="start" Text="STARTUP" ImageBrush="{DynamicResource onOffBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick"/>
                 <local:ImageButton Tag="about" Text="ABOUT" ImageBrush="{DynamicResource infoBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick"/>

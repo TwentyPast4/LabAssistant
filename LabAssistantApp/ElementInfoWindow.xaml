@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LabAssistantApp"
         mc:Ignorable="d"
-        Height="400" Width="500" MinHeight="400" MinWidth="500" Style="{DynamicResource LabAssistantWindowStyle}" MaximizeShown="False">
+        Height="400" Width="500" MinHeight="400" MinWidth="500" Style="{DynamicResource LabAssistantWindowStyle}">
     <Window.Resources>
         <SolidColorBrush x:Key="borderBrush" Color="#FF6C6C6C"/>
         <Style x:Key="descriptionStyle" TargetType="Label">

@@ -5,7 +5,7 @@ Imports LabAssistantApp.Matter
 Class Application
 
     Public Shared bc As New Concurrent.ConcurrentQueue(Of String)
-
+    Public Icon As ImageSource
     ' Application-level events, such as Startup, Exit, and DispatcherUnhandledException
     ' can be handled in this file.
     Public Sub startSub(sender As Object, e As StartupEventArgs) Handles Me.Startup
@@ -33,7 +33,8 @@ Class Application
 
         bc.Enqueue("Creating interface")
         Dim mw As New LabWindow
-        mw.Icon = getIconSource()
+        Icon = getIconSource()
+        mw.Icon = Me.Icon
         Me.MainWindow = mw
         AddHandler Matter.Info.LabratoryLoaded, AddressOf mw.handleLaboratoryLoaded
         mw.Initialize()
@@ -46,6 +47,10 @@ Class Application
         AddHandler cm.Opened, AddressOf handleMenuOpened
 
         bc.Enqueue("close")
+    End Sub
+
+    Private Sub handleRowDoubleClick(sender As Object, e As RoutedEventArgs)
+        CreateCompoundInfoForm(CType(sender, DataGridRow).Item)
     End Sub
 
     Private Shared lastChemical As Chemical
@@ -101,12 +106,21 @@ Class Application
             Case "info"
                 If lastChemical.Formula.IsElement Then
                     CreateElementInfoForm(Element.GetElementFromName(lastChemical.Name))
+                Else
+                    CreateCompoundInfoForm(Compound.FromName(lastChemical.Name))
                 End If
         End Select
     End Sub
 
     Public Shared Sub CreateElementInfoForm(ByVal e As Element)
         Dim infoDialog As New ElementInfoWindow(e)
+        infoDialog.Icon = My.Application.Icon
+        infoDialog.Show()
+    End Sub
+
+    Public Shared Sub CreateCompoundInfoForm(ByVal c As Compound)
+        Dim infoDialog As New CompoundInfoWindow(c)
+        infoDialog.Icon = My.Application.Icon
         infoDialog.Show()
     End Sub
 

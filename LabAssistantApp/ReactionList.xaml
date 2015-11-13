@@ -6,7 +6,6 @@
              xmlns:local="clr-namespace:LabAssistantApp"
              mc:Ignorable="d">
     <ScrollViewer Style="{DynamicResource labScrollViewerStyle}" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-        <StackPanel x:Name="basePanel">
-        </StackPanel>
+        <StackPanel x:Name="basePanel"/>
     </ScrollViewer>
 </UserControl>
