@@ -4,7 +4,12 @@ Public Class FormulaDisplayConverter
     Implements IValueConverter
 
     Public Function Convert(value As Object, targetType As Type, parameter As Object, culture As CultureInfo) As Object Implements IValueConverter.Convert
-        Dim f As Matter.CompoundFormula = value
+        Dim f As Matter.CompoundFormula
+        If value.GetType.Equals(GetType(String)) Then
+            f = New Matter.CompoundFormula(value)
+        Else
+            f = value
+        End If
         Dim tb As New TextBlock()
         If Not IsNothing(parameter) Then
             Dim coef As Integer = parameter

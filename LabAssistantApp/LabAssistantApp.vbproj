@@ -85,6 +85,7 @@
     <Compile Include="CompoundInfoWindow.xaml.vb">
       <DependentUpon>CompoundInfoWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MassToStringConverter.vb" />
     <Compile Include="NotBooleanToVisibilityConverter.vb" />
     <Compile Include="DarkColorConverter.vb" />
     <Compile Include="ElementInfoWindow.xaml.vb">
@@ -101,6 +102,7 @@
     <Compile Include="ReactionRow.xaml.vb">
       <DependentUpon>ReactionRow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ReactionSearchConverter.vb" />
     <Compile Include="RowSearchConverter.vb" />
     <Compile Include="TableButton.xaml.vb">
       <DependentUpon>TableButton.xaml</DependentUpon>

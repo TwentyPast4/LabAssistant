@@ -878,7 +878,7 @@ Namespace Matter
             ReactionProducts = New List(Of String)
             ReactionReactantCoef = New List(Of Integer)
             ReactionProductCoef = New List(Of Integer)
-            Dim splitarray() As Char = (Space(1) & Constants.ReactionInteractionChar & Space(1)).ToCharArray
+            Dim splitarray() As Char = Constants.ReactionInteractionChar.ToString.ToCharArray
             If IsNothing(reactionComment) Then
                 Me.ReactionComment = String.Empty
             Else
@@ -894,6 +894,7 @@ Namespace Matter
             Dim right As String = str.Remove(0, str.IndexOf(Constants.ReactionDirection) + 1)
             If left.Contains(Constants.ReactionInteractionChar) Then
                 For Each item In left.Split(splitarray, StringSplitOptions.RemoveEmptyEntries)
+                    item = item.Trim()
                     If Char.IsNumber(item.ToCharArray().First) Then
                         Dim valuu As Integer = StrVal(item)
                         ReactionReactants.Add(item.Remove(0, valuu.ToString.Length))
@@ -917,6 +918,7 @@ Namespace Matter
 
             If right.Contains(Constants.ReactionInteractionChar) Then
                 For Each item In right.Split(splitarray, StringSplitOptions.RemoveEmptyEntries)
+                    item = item.Trim()
                     If Char.IsNumber(item.ToCharArray().First) Then
                         Dim valuu As Integer = StrVal(item)
                         ReactionProducts.Add(item.Remove(0, valuu.ToString.Length))
@@ -1017,16 +1019,23 @@ Namespace Matter
         Public Overrides Function Equals(obj As Object) As Boolean
             If obj.GetType.Equals(GetType(Reaction)) Then
                 Dim r1 As Reaction = obj
-                Dim r2 As Reaction = Me
-                If Not r1.Reactants.Count = r2.Reactants.Count Then Return False
-                If Not r1.Products.Count = r2.Products.Count Then Return False
+                If r1.IsReversible And Me.IsReversible Then
+                    Dim difReac As Integer = r1.Reactants.Count - Me.Reactants.Count
+                    Dim difReacPro As Integer = r1.Reactants.Count - Me.Products.Count
+                    If difReac <> 0 And difReacPro <> 0 Then
+
+                    End If
+                Else
+                    Return False
+                End If
+                If Not r1.Reactants.Count = Me.Reactants.Count Then Return False
+                If Not r1.Products.Count = Me.Products.Count Then Return False
                 For Each re1 In r1.Reactants
-                    If Not r2.Reactants.Contains(re1) Then Return False
+                    If Not Me.Reactants.Contains(re1) Then Return False
                 Next
                 For Each pr1 In r1.Products
-                    If Not r2.Products.Contains(pr1) Then Return False
+                    If Not Me.Products.Contains(pr1) Then Return False
                 Next
-                If Not r1.IsReversible = r2.IsReversible Then Return False
                 Return True
             Else
                 Return MyBase.Equals(obj)
@@ -1396,7 +1405,8 @@ Namespace Matter
         End Property
         Private ldLab As Laboratory
 
-        Public Event LabratoryLoaded As EventHandler(Of EventArgs)
+        Public Event LaboratoryLoaded As EventHandler(Of EventArgs)
+        Public Event LaboratoryUnloaded As EventHandler(Of EventArgs)
 
         Private nfi As New NumberFormatInfo
 
@@ -1410,7 +1420,13 @@ Namespace Matter
 
         Public Sub LoadLab(ByVal lab As Laboratory)
             ldLab = lab
-            RaiseEvent LabratoryLoaded(lab, EventArgs.Empty)
+            RaiseEvent LaboratoryLoaded(lab, EventArgs.Empty)
+            Reaction.UpdateRecreatable()
+        End Sub
+
+        Public Sub UnloadLab()
+            ldLab = Nothing
+            RaiseEvent LaboratoryUnloaded(Nothing, EventArgs.Empty)
             Reaction.UpdateRecreatable()
         End Sub
 

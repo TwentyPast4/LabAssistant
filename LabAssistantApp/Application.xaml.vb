@@ -36,7 +36,8 @@ Class Application
         Icon = getIconSource()
         mw.Icon = Me.Icon
         Me.MainWindow = mw
-        AddHandler Matter.Info.LabratoryLoaded, AddressOf mw.handleLaboratoryLoaded
+        AddHandler Matter.Info.LaboratoryLoaded, AddressOf mw.handleLaboratoryLoaded
+
         mw.Initialize()
         mw.Show()
 
@@ -102,7 +103,14 @@ Class Application
                     End If
                 End If
             Case "removeFromLab"
-                Console.Write("Remove from laboratory: ")
+                If Not My.Settings.AskForConfirmationOnDelete Then
+                    Dim msgRes As MessageBoxResult = MsgBox("Are you sure you want to remove " + lastChemical.Name + " from your laboratory?", MsgBoxStyle.YesNo, "Confirmation")
+                    If msgRes = MessageBoxResult.Yes Then
+                        RemoveFromLaboratory(lastChemical)
+                    End If
+                Else
+                    RemoveFromLaboratory(lastChemical)
+                End If
             Case "info"
                 If lastChemical.Formula.IsElement Then
                     CreateElementInfoForm(Element.GetElementFromName(lastChemical.Name))
@@ -115,12 +123,14 @@ Class Application
     Public Shared Sub CreateElementInfoForm(ByVal e As Element)
         Dim infoDialog As New ElementInfoWindow(e)
         infoDialog.Icon = My.Application.Icon
+        infoDialog.Owner = My.Application.MainWindow
         infoDialog.Show()
     End Sub
 
     Public Shared Sub CreateCompoundInfoForm(ByVal c As Compound)
         Dim infoDialog As New CompoundInfoWindow(c)
         infoDialog.Icon = My.Application.Icon
+        infoDialog.Owner = My.Application.MainWindow
         infoDialog.Show()
     End Sub
 
@@ -129,6 +139,14 @@ Class Application
             displayLabWarning()
         Else
             Matter.Info.LoadedLab.AddChemical(c, amount, amount < 0, comment)
+        End If
+    End Sub
+
+    Public Shared Sub RemoveFromLaboratory(ByVal c As Chemical)
+        If IsNothing(Matter.Info.LoadedLab) Then
+            displayLabWarning()
+        Else
+            Matter.Info.LoadedLab.RemoveChemical(c)
         End If
     End Sub
 

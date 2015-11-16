@@ -29,6 +29,8 @@ Public Class ElementInfoWindow
         tb.Text = el.Appearance
         tb.TextWrapping = TextWrapping.Wrap
         appearanceLabel.Content = tb
+        Dim fdi As New FormulaDisplayConverter()
+        formulaLabel.Content = fdi.Convert(el.Formula, Nothing, Nothing, Nothing)
         If el.Density < Math.Pow(10, -2) Then
             densityLabel.Content = String.Format("{0} mg/mL", ToStringDecimal(el.Density * Math.Pow(10, 3)))
         Else

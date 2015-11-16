@@ -8,6 +8,7 @@ Public Class LabWindow
         handleMenuClick(tableMenuBtn, Nothing)
         timer1.Interval = TimeSpan.FromSeconds(0.7)
         timer2.Interval = TimeSpan.FromSeconds(0.7)
+        timer3.Interval = TimeSpan.FromSeconds(0.7)
         versionBlock.Text = My.Application.Info.Version.ToString(3)
         Dim b As New Binding("AutoStartup")
         b.Source = My.Settings
@@ -17,6 +18,10 @@ Public Class LabWindow
         b2.Source = My.Settings
         b2.Mode = BindingMode.TwoWay
         selectStartupLabel.SetBinding(Label.ContentProperty, b2)
+        Dim b3 As New Binding("AskForConfirmationOnDelete")
+        b3.Source = My.Settings
+        b3.Mode = BindingMode.TwoWay
+
     End Sub
 
     Private Sub SetElements(inElement As DependencyObject)
@@ -47,8 +52,15 @@ Public Class LabWindow
         handleLabChanged(sender, e)
     End Sub
 
+    Public Sub handleLaboratoryUnloaded(sender As Object, e As EventArgs)
+        saveBtn.IsEnabled = False
+        inventoryBtn.IsEnabled = False
+    End Sub
+
+
     Private Sub handleLabLoaded(sender As Laboratory, e As EventArgs)
         saveBtn.IsEnabled = False
+        inventoryBtn.IsEnabled = True
         AddHandler sender.LabChanged, labChangedDelegate
     End Sub
 
@@ -56,6 +68,8 @@ Public Class LabWindow
     Private Sub handleLabChanged(sender As Laboratory, e As EventArgs)
         Matter.Reaction.UpdateRecreatable()
         saveBtn.IsEnabled = True
+        inventoryGrid.GetBindingExpression(DataGrid.ItemsSourceProperty).UpdateTarget()
+        inventoryGrid.Items.Refresh()
     End Sub
 
 #Region "Menu Selection"
@@ -151,6 +165,9 @@ Public Class LabWindow
             Case Is = "reaction"
                 DeselectMenuItems(menuStackPanel, sender)
                 tabDisplay.SelectedItem = reactionsPage
+            Case Is = "inventory"
+                DeselectMenuItems(menuStackPanel, sender)
+                tabDisplay.SelectedItem = inventoryPage
         End Select
     End Sub
 
@@ -219,6 +236,7 @@ Public Class LabWindow
 
     Private lastSearch As String = String.Empty
     Private lastSearch2 As String = String.Empty
+    Private lastSearch3 As String = String.Empty
     Private Sub handleSearchChanged(sender As Object, e As TextChangedEventArgs)
         Dim tbCore As TextBox = sender
         Select Case tbCore.TemplatedParent.GetValue(TextBox.NameProperty)
@@ -234,13 +252,23 @@ Public Class LabWindow
                     timer2.Start()
                     lastSearch2 = sender.Text
                 End If
+            Case "inventorySearchBox"
+                If Not lastSearch3.Equals(sender.Text) Then
+                    timer3.Stop()
+                    timer3.Start()
+                    lastSearch3 = sender.Text
+                End If
         End Select
-
     End Sub
 
     Private WithEvents timer2 As New Threading.DispatcherTimer
     Private Sub handleTick2(sender As Object, e As EventArgs) Handles timer2.Tick
         organicSearchBox.Text = organicSearchBox.Template.FindName("tbCore", organicSearchBox).Text
+    End Sub
+
+    Private WithEvents timer3 As New Threading.DispatcherTimer
+    Private Sub handleTick3(sender As Object, e As EventArgs) Handles timer3.Tick
+        inventorySearchBox.Text = inventorySearchBox.Template.FindName("tbCore", inventorySearchBox).Text
     End Sub
 
 #End Region

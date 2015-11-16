@@ -76,6 +76,18 @@ Partial Friend NotInheritable Class MySettings
             Me("AutoStartup") = value
         End Set
     End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+    Public Property AskForConfirmationOnDelete() As Boolean
+        Get
+            Return CType(Me("AskForConfirmationOnDelete"),Boolean)
+        End Get
+        Set
+            Me("AskForConfirmationOnDelete") = value
+        End Set
+    End Property
 End Class
 
 Namespace My

@@ -505,22 +505,118 @@
                                     <Rect Location="0.25,0.7" Size="0.15,0.15"/>
                                 </RectangleGeometry.Rect>
                             </RectangleGeometry>
+                            <LineGeometry StartPoint="0.475,0.275" EndPoint="0.75,0.275"/>
+                            <LineGeometry StartPoint="0.475,0.525" EndPoint="0.75,0.525"/>
+                            <LineGeometry StartPoint="0.475,0.775" EndPoint="0.75,0.775"/>
                         </GeometryGroup>
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
                 <GeometryDrawing Brush="White">
                     <GeometryDrawing.Geometry>
+                        <RectangleGeometry>
+                            <RectangleGeometry.Rect>
+                                <Rect Location="0.35,-0.1" Size="0.3,0.2"/>
+                            </RectangleGeometry.Rect>
+                        </RectangleGeometry>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <DrawingBrush x:Key="synthesisBrush" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing>
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="White" Thickness="0.04"/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
                         <GeometryGroup>
-                            <RectangleGeometry>
-                                <RectangleGeometry.Rect>
-                                    <Rect Location="0.35,-0.1" Size="0.3,0.2"/>
-                                </RectangleGeometry.Rect>
-                            </RectangleGeometry>
+                            <PathGeometry>
+                                <PathFigure StartPoint="0.1,0" IsClosed="True" IsFilled="False">
+                                    <PathFigure.Segments>
+                                        <LineSegment Point="0.9,0"/>
+                                        <LineSegment Point="0.9,1"/>
+                                        <LineSegment Point="0.2,1"/>
+                                        <LineSegment Point="0.2,0.2"/>
+                                    </PathFigure.Segments>
+                                </PathFigure>
+                            </PathGeometry>
+                            <LineGeometry StartPoint="0.2,0.2" EndPoint="0.4,0.2"/>
+                            <LineGeometry StartPoint="0.2,0.4" EndPoint="0.4,0.4"/>
+                        </GeometryGroup>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="White">
+                    <GeometryDrawing.Geometry>
+                        <RectangleGeometry>
+                            <RectangleGeometry.Rect>
+                                <Rect Location="0.2,0.5" Size="0.7,0.5"/>
+                            </RectangleGeometry.Rect>
+                        </RectangleGeometry>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <PathFigureCollection x:Key="wheelTooth">
+        <PathFigure StartPoint="-0.15,0.35" IsClosed="True" IsFilled="True">
+            <PathFigure.Segments>
+                <LineSegment Point="-0.075,0.5"/>
+                <LineSegment Point="0.075,0.5"/>
+                <LineSegment Point="0.15,0.35"/>
+            </PathFigure.Segments>
+        </PathFigure>
+    </PathFigureCollection>
+    
+    <DrawingBrush x:Key="generalSettingsBrush" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing>
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="White" Thickness="0.12"/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                        <EllipseGeometry RadiusX="0.35" RadiusY="0.35"/>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="White">
+                    <GeometryDrawing.Geometry>
+                        <GeometryGroup>
+                            <PathGeometry Figures="{DynamicResource wheelTooth}"/>
+                            <PathGeometry Figures="{DynamicResource wheelTooth}">
+                                <PathGeometry.Transform>
+                                    <RotateTransform Angle="60"/>
+                                </PathGeometry.Transform>
+                            </PathGeometry>
+                            <PathGeometry Figures="{DynamicResource wheelTooth}">
+                                <PathGeometry.Transform>
+                                    <RotateTransform Angle="120"/>
+                                </PathGeometry.Transform>
+                            </PathGeometry>
+                            <PathGeometry Figures="{DynamicResource wheelTooth}">
+                                <PathGeometry.Transform>
+                                    <RotateTransform Angle="180"/>
+                                </PathGeometry.Transform>
+                            </PathGeometry>
+                            <PathGeometry Figures="{DynamicResource wheelTooth}">
+                                <PathGeometry.Transform>
+                                    <RotateTransform Angle="240"/>
+                                </PathGeometry.Transform>
+                            </PathGeometry>
+                            <PathGeometry Figures="{DynamicResource wheelTooth}">
+                                <PathGeometry.Transform>
+                                    <RotateTransform Angle="300"/>
+                                </PathGeometry.Transform>
+                            </PathGeometry>
                         </GeometryGroup>
                     </GeometryDrawing.Geometry>
                 </GeometryDrawing>
             </DrawingGroup>
         </DrawingBrush.Drawing>
     </DrawingBrush>
+
 
 </ResourceDictionary>

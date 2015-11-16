@@ -88,7 +88,8 @@ Public Class ReactionList
         frontBinding.Source = Me
 
         For Each r In reactions
-            Dim rr As New ReactionRow(r)
+            Dim rr As New ReactionRow()
+            rr.Reaction = r
             If Me.GetValue(ReactionList.AlternateIndexProperty) > 0 AndAlso ((counter + 1) Mod (Me.GetValue(ReactionList.AlternateIndexProperty) + 1) = 0) Then
                 rr.SetBinding(ReactionRow.BackgroundProperty, altBackBinding)
             Else

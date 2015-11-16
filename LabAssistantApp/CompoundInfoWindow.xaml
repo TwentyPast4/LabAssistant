@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LabAssistantApp"
         mc:Ignorable="d"
-        Width="500" Height="500" MinWidth="500" Style="{DynamicResource LabAssistantWindowStyle}" SizeToContent="Width">
+        Width="500" Height="500" MinWidth="500" WindowStartupLocation="CenterOwner" Style="{DynamicResource LabAssistantWindowStyle}" SizeToContent="Width">
     <Window.Resources>
         <SolidColorBrush x:Key="borderBrush" Color="#FF6C6C6C"/>
         <Style x:Key="descriptionStyle" TargetType="Label">
@@ -52,7 +52,7 @@
             <Label Content="STATUS IN LABORATORY" Style="{DynamicResource subtitleStyle}"/>
             <Label x:Name="statusLabel" Style="{DynamicResource descriptionStyle}"/>
             <Label Content="SOLUBILITY" Style="{DynamicResource subtitleStyle}"/>
-            <ScrollViewer Style="{DynamicResource labScrollViewerStyle}" MaxHeight="100" HorizontalAlignment="Left">
+            <ScrollViewer Style="{DynamicResource labScrollViewerStyle}" MaxHeight="100" HorizontalAlignment="Left" VerticalScrollBarVisibility="Auto">
                 <Label x:Name="solubilityLabel" Style="{DynamicResource descriptionStyle}" Margin="0,0,10,0"/>
             </ScrollViewer>
         </StackPanel>

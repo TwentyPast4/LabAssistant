@@ -1,16 +1,30 @@
-﻿Imports LabAssistantApp.Matter
+﻿Imports System.ComponentModel
+Imports LabAssistantApp.Matter
 
 Public Class ReactionRow
     Inherits ClickableControl
+    Implements INotifyPropertyChanged
+
+    Public Shared ReadOnly ReactionProperty As DependencyProperty =
+        DependencyProperty.Register("Reaction", GetType(Reaction), GetType(ReactionRow), New UIPropertyMetadata(Nothing))
+
+    Public Property Reaction As Reaction
+        Get
+            Return reac
+        End Get
+        Set(value As Reaction)
+            If Not value.Equals(reac) Then
+                reac = value
+                SetReaction(reac)
+                OnPropertyChanged("Reaction")
+            End If
+        End Set
+    End Property
+    Private reac As Reaction
 
     Private displayConverter As New FormulaDisplayConverter()
-    Public Sub New(r As Reaction)
 
-        ' This call is required by the designer.
-        InitializeComponent()
-
-        ' Add any initialization after the InitializeComponent() call.
-        arrowPath.Stroke = Me.Foreground
+    Private Sub SetReaction(ByVal r As Reaction)
         If r.IsReversible Then
             arrowPath.Data = Me.FindResource("reversibleReactionArrowAbsolute")
         Else
@@ -100,6 +114,21 @@ Public Class ReactionRow
         Dim r As New RowDefinition()
         r.Height = New GridLength(1, GridUnitType.Star)
         Return r
+    End Function
+
+    Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
+
+    Protected Overloads Sub OnPropertyChanged(propertyName As String)
+        RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+    End Sub
+
+    Protected Function SetField(Of T)(ByRef field As T, value As T, propertyName As String) As Boolean
+        If EqualityComparer(Of T).[Default].Equals(field, value) Then
+            Return False
+        End If
+        field = value
+        OnPropertyChanged(propertyName)
+        Return True
     End Function
 
 End Class
