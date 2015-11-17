@@ -13,10 +13,24 @@ Public Class ReactionRow
             Return reac
         End Get
         Set(value As Reaction)
-            If Not value.Equals(reac) Then
-                reac = value
-                SetReaction(reac)
-                OnPropertyChanged("Reaction")
+            If IsNothing(reac) Then
+                If Not IsNothing(value) Then
+                    reac = value
+                    SetReaction(reac)
+                    OnPropertyChanged("Reaction")
+                End If
+            Else
+                If IsNothing(value) Then
+                    reac = value
+                    SetReaction(reac)
+                    OnPropertyChanged("Reaction")
+                Else
+                    If Not value.Equals(reac) Then
+                        reac = value
+                        SetReaction(reac)
+                        OnPropertyChanged("Reaction")
+                    End If
+                End If
             End If
         End Set
     End Property

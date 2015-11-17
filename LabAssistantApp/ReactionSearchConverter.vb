@@ -1,7 +1,14 @@
-﻿Imports System.Globalization
+﻿Imports LabAssistantApp.Matter
 
-Public Class ReactionSearchConverter
-    Implements IValueConverter
+Public Module ReactionSearchConverter
+
+    Public Enum SearchType
+        All
+        Decomposition
+        Synthesis
+        Electrolysis
+        Other
+    End Enum
 
     Private Enum ReactionString
         Complete
@@ -11,35 +18,71 @@ Public Class ReactionSearchConverter
         Invalid
     End Enum
 
-    Public Function Convert(value As Object, targetType As Type, parameter As Object, culture As CultureInfo) As Object Implements IValueConverter.Convert
+    Public Function FindReactions(value As Object, Optional reactionType As SearchType = SearchType.All) As List(Of Reaction)
         Dim s As String = value
-        Select Case isCorrectFormat(s)
-            Case ReactionString.Complete_Opposite
-                Dim right As String = s.Substring(0, s.IndexOf("<"))
-                Dim left As String = s.Substring(s.IndexOf("<")).Remove(0, 1)
-            Case ReactionString.Complete_Reversible
-                Dim left As String = s.Substring(0, s.IndexOf("<>"))
-                Dim right As String = s.Substring(s.IndexOf("<>")).Remove(0, 2)
-
-            Case ReactionString.Complete
-                Dim left As String = s.Substring(0, s.IndexOf(">"))
-                Dim right As String = s.Substring(s.IndexOf(">")).Remove(0, 1)
-
-
-            Case ReactionString.Incomplete
-
-            Case Else
-                Return Nothing
+        If s.Equals("-") Then
+            FindReactions = Reaction.ReactionList
+        Else
+            Select Case isCorrectFormat(s)
+                Case ReactionString.Complete_Opposite
+                    Dim right As String = s.Substring(0, s.IndexOf("<"))
+                    Dim left As String = s.Substring(s.IndexOf("<")).Remove(0, 1)
+                    FindReactions = SolveFor(left, ReactionString.Complete_Opposite, right)
+                Case ReactionString.Complete_Reversible
+                    Dim left As String = s.Substring(0, s.IndexOf("<>"))
+                    Dim right As String = s.Substring(s.IndexOf("<>")).Remove(0, 2)
+                    FindReactions = SolveFor(left, ReactionString.Complete_Reversible, right)
+                Case ReactionString.Complete
+                    Dim left As String = s.Substring(0, s.IndexOf(">"))
+                    Dim right As String = s.Substring(s.IndexOf(">")).Remove(0, 1)
+                    FindReactions = SolveFor(left, ReactionString.Complete, right)
+                Case ReactionString.Incomplete
+                    FindReactions = SolveFor(s, ReactionString.Incomplete)
+                Case Else
+                    Return New List(Of Reaction)
+            End Select
+        End If
+        Select Case reactionType
+            Case SearchType.Decomposition
+                FindReactions = FindReactions.Where(Function(r As Reaction) r.Type = Reaction.ReactionType.Decomposition).ToList
+            Case SearchType.Other
+                FindReactions = FindReactions.Where(Function(r As Reaction) r.Type = Reaction.ReactionType.Other).ToList
+            Case SearchType.Synthesis
+                FindReactions = FindReactions.Where(Function(r As Reaction) r.Type = Reaction.ReactionType.Synthesis).ToList
+            Case SearchType.Electrolysis
+                FindReactions = FindReactions.Where(Function(r As Reaction) r.IsElectrolytic).ToList
         End Select
+        If Not IsNothing(reactionType) Then FindReactions = FindReactions.Where(Function(r As Reaction) r.Type = reactionType).ToList
     End Function
 
-    Private Function SolveFor(ByVal leftSide As String, ByVal [Type] As ReactionString, ByVal Optional rightSide As String = "") As List(Of Matter.Reaction)
-        Dim partsL() As String = leftSide.Split("+".ToCharArray, StringSplitOptions.RemoveEmptyEntries)
-        Dim partsR() As String = rightSide.Split("+".ToCharArray, StringSplitOptions.RemoveEmptyEntries)
+    Private Function SolveFor(ByVal leftSide As String, ByVal [Type] As ReactionString, ByVal Optional rightSide As String = "") As List(Of Reaction)
+        Dim partsL As List(Of String) = leftSide.Split("+".ToCharArray, StringSplitOptions.RemoveEmptyEntries).ToList
+        Dim partsR As List(Of String) = rightSide.Split("+".ToCharArray, StringSplitOptions.RemoveEmptyEntries).ToList
+        For i As Integer = 0 To partsL.Count - 1
+            partsL(i) = partsL(i).Trim
+            If partsL(i).Length = 0 Then partsL.RemoveAt(i)
+        Next
+        For i As Integer = 0 To partsR.Count - 1
+            partsR(i) = partsR(i).Trim
+            If partsR(i).Length = 0 Then partsR.RemoveAt(i)
+        Next
+
+        SolveFor = New List(Of Reaction)
+        Dim cFormulasL(partsL.Count - 1) As CompoundFormula
+        For i As Integer = 0 To partsL.Count - 1
+            cFormulasL(i) = New CompoundFormula(partsL(i))
+        Next
+        Dim cFormulasR(partsR.Count - 1) As CompoundFormula
+        For i As Integer = 0 To partsR.Count - 1
+            cFormulasR(i) = New CompoundFormula(partsR(i))
+        Next
         If Type = ReactionString.Incomplete Then
-            For Each r In Matter.Reaction.ReactionList
-                Matter.Reaction.ge
-            Next
+            Return Reaction.ReactionList.Where(Function(r As Reaction) (r.Reactants.Intersect(partsL).Count = partsL.Count) Or (r.Products.Intersect(partsL).Count = partsL.Count)).ToList
+        ElseIf Type = ReactionString.Complete Or Type = ReactionString.Complete_Opposite Then
+            Return Reaction.ReactionList.Where(Function(r As Reaction) (r.Reactants.Intersect(partsL).Count = partsL.Count) And (r.Products.Intersect(partsR).Count = partsR.Count) And Not r.IsReversible).ToList
+        ElseIf Type = ReactionString.Complete_Reversible
+            Return Reaction.GetAllReversible().Where(Function(r As Reaction) ((r.Reactants.Intersect(partsL).Count = partsL.Count) And (r.Products.Intersect(partsR).Count = partsR.Count)) _
+                                                   Or ((r.Reactants.Intersect(partsR).Count = partsR.Count) And (r.Products.Intersect(partsL).Count = partsL.Count))).ToList
         End If
     End Function
 
@@ -76,8 +119,4 @@ Public Class ReactionSearchConverter
         Return n
     End Function
 
-    Public Function ConvertBack(value As Object, targetType As Type, parameter As Object, culture As CultureInfo) As Object Implements IValueConverter.ConvertBack
-        Throw New NotImplementedException()
-    End Function
-
-End Class
+End Module

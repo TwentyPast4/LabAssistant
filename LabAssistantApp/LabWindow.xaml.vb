@@ -9,6 +9,7 @@ Public Class LabWindow
         timer1.Interval = TimeSpan.FromSeconds(0.7)
         timer2.Interval = TimeSpan.FromSeconds(0.7)
         timer3.Interval = TimeSpan.FromSeconds(0.7)
+        timer4.Interval = TimeSpan.FromSeconds(0.7)
         versionBlock.Text = My.Application.Info.Version.ToString(3)
         Dim b As New Binding("AutoStartup")
         b.Source = My.Settings
@@ -232,11 +233,13 @@ Public Class LabWindow
     Private WithEvents timer1 As New Threading.DispatcherTimer
     Private Sub handleTick(sender As Object, e As EventArgs) Handles timer1.Tick
         searchBox.Text = searchBox.Template.FindName("tbCore", searchBox).Text
+        timer1.Stop()
     End Sub
 
     Private lastSearch As String = String.Empty
     Private lastSearch2 As String = String.Empty
     Private lastSearch3 As String = String.Empty
+    Private lastSearch4 As String = String.Empty
     Private Sub handleSearchChanged(sender As Object, e As TextChangedEventArgs)
         Dim tbCore As TextBox = sender
         Select Case tbCore.TemplatedParent.GetValue(TextBox.NameProperty)
@@ -258,17 +261,58 @@ Public Class LabWindow
                     timer3.Start()
                     lastSearch3 = sender.Text
                 End If
+            Case "reactionsSearchBox"
+                If Not lastSearch4.Equals(sender.Text) Then
+                    timer4.Stop()
+                    timer4.Start()
+                    lastSearch4 = sender.Text
+                End If
         End Select
     End Sub
 
     Private WithEvents timer2 As New Threading.DispatcherTimer
     Private Sub handleTick2(sender As Object, e As EventArgs) Handles timer2.Tick
         organicSearchBox.Text = organicSearchBox.Template.FindName("tbCore", organicSearchBox).Text
+        timer2.Stop()
     End Sub
 
     Private WithEvents timer3 As New Threading.DispatcherTimer
     Private Sub handleTick3(sender As Object, e As EventArgs) Handles timer3.Tick
         inventorySearchBox.Text = inventorySearchBox.Template.FindName("tbCore", inventorySearchBox).Text
+        timer3.Stop()
+    End Sub
+
+    Private WithEvents timer4 As New Threading.DispatcherTimer
+    Private Sub handleTick4(sender As Object, e As EventArgs) Handles timer4.Tick
+        reactionsSearchBox.Text = reactionsSearchBox.Template.FindName("tbCore", reactionsSearchBox).Text
+        If reactionsSearchBox.Text.Length > 0 Then
+            Dim rt As ReactionSearchConverter.SearchType = SearchType.All
+            Select Case reactionTypeComboBox.SelectedIndex
+                Case 1
+                    rt = SearchType.Decomposition
+                Case 2
+                    rt = SearchType.Electrolysis
+                Case 3
+                    rt = SearchType.Synthesis
+                Case 4
+                    rt = SearchType.Other
+            End Select
+            Dim l As List(Of Matter.Reaction) = FindReactions(reactionsSearchBox.Text, rt)
+            If l.Count > 0 Then
+                If l.Count Mod 100 = 1 Then
+                    reactionsStatusText.Content = String.Format("Found {0} reaction.", l.Count)
+                Else
+                    reactionsStatusText.Content = String.Format("Found {0} reactions.", l.Count)
+                End If
+            Else
+                reactionsStatusText.Content = "No reactions found."
+            End If
+            reactionList.LoadReactions(l)
+        Else
+            reactionsStatusText.Content = "Search for a reaction."
+            reactionList.LoadReactions(New List(Of Matter.Reaction))
+        End If
+        timer4.Stop()
     End Sub
 
 #End Region

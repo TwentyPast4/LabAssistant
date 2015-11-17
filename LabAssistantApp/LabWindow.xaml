@@ -131,7 +131,7 @@
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="TextBox">
-                                <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                                <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" AllowDrop="False">
                                     <DockPanel FocusManager.FocusedElement="{Binding ElementName=tbCore}">
                                         <Canvas Background="{StaticResource searchTB}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}}" AllowDrop="False" IsHitTestVisible="False"/>
                                         <TextBox x:Name="tbCore" TextChanged="handleSearchChanged" DockPanel.Dock="Right" FocusVisualStyle="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{TemplateBinding Foreground}" CaretBrush="{TemplateBinding CaretBrush}" SelectionBrush="{TemplateBinding SelectionBrush}" BorderThickness="0" VerticalContentAlignment="Center" />
@@ -503,12 +503,27 @@
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="2*"/>
                     </Grid.RowDefinitions>
-                    <TextBox x:Name="reactionsSearchBox" FontSize="20" Style="{DynamicResource searchBoxStyle}" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="reactionsStatusText" Text="Search for a reaction." FontSize="24" Grid.Row="1" HorizontalAlignment="Center" Foreground="#FFC5C5C5" VerticalAlignment="Center"/>
-                    <local:ReactionRow Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                    <StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox x:Name="reactionsSearchBox" FontSize="20" Style="{DynamicResource searchBoxStyle}" VerticalAlignment="Top"/>
+                            <ComboBox x:Name="reactionTypeComboBox" Grid.Column="1" Style="{DynamicResource labComboBoxStyle}" Foreground="#FFD8D8D8" Width="150" Background="#FF2A2A2A" Margin="0,5,5,5" SelectedIndex="0">
+                                <ComboBoxItem Content="All types"/>
+                                <ComboBoxItem Content="Decomposition"/>
+                                <ComboBoxItem Content="Electrolysis"/>
+                                <ComboBoxItem Content="Synthesis"/>
+                                <ComboBoxItem Content="Other"/>
+                            </ComboBox>
+                        </Grid>
+                        <Label x:Name="reactionsStatusText" Content="Search for a reaction." FontSize="22" Foreground="#FFC5C5C5" IsHitTestVisible="False" VerticalAlignment="Top" HorizontalContentAlignment="Center" Padding="5,0,5,5"/>
+                    </StackPanel>
+                    <local:ReactionList x:Name="reactionList" Grid.Row="1" Foreground="White" BorderBrush="#FF307630" BorderThickness="0,1" Background="#FF4B4B4B"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="inventoryPage">

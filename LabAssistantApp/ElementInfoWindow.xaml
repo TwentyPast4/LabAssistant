@@ -21,9 +21,11 @@
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="Padding" Value="0,5,5,0"/>
             <Setter Property="BorderThickness" Value="0,0,0,1"/>
-            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontSize" Value="14"/>
             <Setter Property="BorderBrush" Value="{StaticResource borderBrush}"/>
             <Setter Property="FontFamily" Value="{StaticResource NevisFont}"/>
+            <Setter Property="TextOptions.TextHintingMode" Value="Fixed"/>
+            <Setter Property="TextOptions.TextFormattingMode" Value="Display"/>
         </Style>
     </Window.Resources>
     <Grid x:Name="yoGrid">

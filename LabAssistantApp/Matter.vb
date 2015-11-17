@@ -857,6 +857,16 @@ Namespace Matter
         End Property
         Private rev As Boolean = False
 
+        Public ReadOnly Property IsElectrolytic As Boolean
+            Get
+                If IsNothing(Comment) Then
+                    Return False
+                Else
+                    Return Comment.ToLower.Contains(Constants.CommentElectrolysis)
+                End If
+            End Get
+        End Property
+
         Public ReadOnly Property Status As ReactionStatus
             Get
                 Return state
@@ -895,6 +905,7 @@ Namespace Matter
             If left.Contains(Constants.ReactionInteractionChar) Then
                 For Each item In left.Split(splitarray, StringSplitOptions.RemoveEmptyEntries)
                     item = item.Trim()
+                    If item.Length = 0 Then Continue For
                     If Char.IsNumber(item.ToCharArray().First) Then
                         Dim valuu As Integer = StrVal(item)
                         ReactionReactants.Add(item.Remove(0, valuu.ToString.Length))
@@ -919,6 +930,7 @@ Namespace Matter
             If right.Contains(Constants.ReactionInteractionChar) Then
                 For Each item In right.Split(splitarray, StringSplitOptions.RemoveEmptyEntries)
                     item = item.Trim()
+                    If item.Length = 0 Then Continue For
                     If Char.IsNumber(item.ToCharArray().First) Then
                         Dim valuu As Integer = StrVal(item)
                         ReactionProducts.Add(item.Remove(0, valuu.ToString.Length))
