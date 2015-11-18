@@ -1319,7 +1319,7 @@ CoCl2 + H2O > CoO + H2 + Cl2
 Co(OH)2 > CoO + H2O
 CrCl3 + 3HF > CrF3 + 3HCl
 Cr2O3 + 6HF > 2CrF3 + 3H2O
-Na2Cr2O7 + 2NaOH > 2 Na2CrO4 + H2O
+Na2Cr2O7 + 2NaOH > 2Na2CrO4 + H2O
 Na2CrO4 + H2SO4 > CrO3 + Na2SO4 + H2O
 2Cs + 2H2O > 2CsOH + H2
 	Above -116 [Deg]C, explosive

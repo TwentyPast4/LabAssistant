@@ -52,7 +52,6 @@ Public Module ReactionSearchConverter
             Case SearchType.Electrolysis
                 FindReactions = FindReactions.Where(Function(r As Reaction) r.IsElectrolytic).ToList
         End Select
-        If Not IsNothing(reactionType) Then FindReactions = FindReactions.Where(Function(r As Reaction) r.Type = reactionType).ToList
     End Function
 
     Private Function SolveFor(ByVal leftSide As String, ByVal [Type] As ReactionString, ByVal Optional rightSide As String = "") As List(Of Reaction)

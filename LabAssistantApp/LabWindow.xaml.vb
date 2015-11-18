@@ -285,33 +285,7 @@ Public Class LabWindow
     Private WithEvents timer4 As New Threading.DispatcherTimer
     Private Sub handleTick4(sender As Object, e As EventArgs) Handles timer4.Tick
         reactionsSearchBox.Text = reactionsSearchBox.Template.FindName("tbCore", reactionsSearchBox).Text
-        If reactionsSearchBox.Text.Length > 0 Then
-            Dim rt As ReactionSearchConverter.SearchType = SearchType.All
-            Select Case reactionTypeComboBox.SelectedIndex
-                Case 1
-                    rt = SearchType.Decomposition
-                Case 2
-                    rt = SearchType.Electrolysis
-                Case 3
-                    rt = SearchType.Synthesis
-                Case 4
-                    rt = SearchType.Other
-            End Select
-            Dim l As List(Of Matter.Reaction) = FindReactions(reactionsSearchBox.Text, rt)
-            If l.Count > 0 Then
-                If l.Count Mod 100 = 1 Then
-                    reactionsStatusText.Content = String.Format("Found {0} reaction.", l.Count)
-                Else
-                    reactionsStatusText.Content = String.Format("Found {0} reactions.", l.Count)
-                End If
-            Else
-                reactionsStatusText.Content = "No reactions found."
-            End If
-            reactionList.LoadReactions(l)
-        Else
-            reactionsStatusText.Content = "Search for a reaction."
-            reactionList.LoadReactions(New List(Of Matter.Reaction))
-        End If
+        updateReactions()
         timer4.Stop()
     End Sub
 
@@ -338,6 +312,40 @@ Public Class LabWindow
 
         If o.ShowDialog(Me) Then
             My.Settings.AutoStartupFile = o.FileName
+        End If
+    End Sub
+
+    Private Sub handleReactionTypeChange(sender As Object, e As SelectionChangedEventArgs) Handles reactionTypeComboBox.SelectionChanged
+        If Me.IsInitialized Then updateReactions()
+    End Sub
+
+    Private Sub updateReactions()
+        If reactionsSearchBox.Text.Length > 0 Then
+            Dim rt As ReactionSearchConverter.SearchType = SearchType.All
+            Select Case reactionTypeComboBox.SelectedIndex
+                Case 1
+                    rt = SearchType.Decomposition
+                Case 2
+                    rt = SearchType.Electrolysis
+                Case 3
+                    rt = SearchType.Synthesis
+                Case 4
+                    rt = SearchType.Other
+            End Select
+            Dim l As List(Of Matter.Reaction) = FindReactions(reactionsSearchBox.Text, rt)
+            If l.Count > 0 Then
+                If l.Count Mod 100 = 1 Then
+                    reactionsStatusText.Content = String.Format("Found {0} reaction.", l.Count)
+                Else
+                    reactionsStatusText.Content = String.Format("Found {0} reactions.", l.Count)
+                End If
+            Else
+                reactionsStatusText.Content = "No reactions found."
+            End If
+            reactionList.LoadReactions(l)
+        Else
+            reactionsStatusText.Content = "Search for a reaction. Use the negate symbol(-) for all reactions."
+            reactionList.LoadReactions(New List(Of Matter.Reaction))
         End If
     End Sub
 

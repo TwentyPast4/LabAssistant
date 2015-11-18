@@ -521,7 +521,7 @@
                                 <ComboBoxItem Content="Other"/>
                             </ComboBox>
                         </Grid>
-                        <Label x:Name="reactionsStatusText" Content="Search for a reaction." FontSize="22" Foreground="#FFC5C5C5" IsHitTestVisible="False" VerticalAlignment="Top" HorizontalContentAlignment="Center" Padding="5,0,5,5"/>
+                        <Label x:Name="reactionsStatusText" Content="Search for a reaction. Use the negate symbol(-) for all reactions." FontSize="22" Foreground="#FFC5C5C5" IsHitTestVisible="False" VerticalAlignment="Top" HorizontalContentAlignment="Center" Padding="5,0,5,5"/>
                     </StackPanel>
                     <local:ReactionList x:Name="reactionList" Grid.Row="1" Foreground="White" BorderBrush="#FF307630" BorderThickness="0,1" Background="#FF4B4B4B"/>
                 </Grid>
