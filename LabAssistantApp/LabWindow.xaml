@@ -523,7 +523,14 @@
                         </Grid>
                         <Label x:Name="reactionsStatusText" Content="Search for a reaction. Use the negate symbol(-) for all reactions." FontSize="22" Foreground="#FFC5C5C5" IsHitTestVisible="False" VerticalAlignment="Top" HorizontalContentAlignment="Center" Padding="5,0,5,5"/>
                     </StackPanel>
-                    <local:ReactionList x:Name="reactionList" Grid.Row="1" Foreground="White" BorderBrush="#FF307630" BorderThickness="0,1" Background="#FF4B4B4B"/>
+                    <local:ReactionList x:Name="reactionList" Grid.Row="1" Foreground="White" BorderBrush="#FF307630" BorderThickness="0,1" Background="#FF4B4B4B" CanSelect="True">
+                        <local:ReactionList.SelectedBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#0000A2FF" Offset="0"/>
+                                <GradientStop Color="{DynamicResource labBlueColor}" Offset="1"/>
+                            </LinearGradientBrush>
+                        </local:ReactionList.SelectedBrush>
+                    </local:ReactionList>
                 </Grid>
             </TabItem>
             <TabItem x:Name="inventoryPage">

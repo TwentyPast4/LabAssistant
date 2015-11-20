@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LabAssistantApp"
-             mc:Ignorable="d" Height="40" HorizontalAlignment="Left" Foreground="#FFD4D4D4" FontFamily="Arial" FontSize="22" VerticalAlignment="Top">
+             mc:Ignorable="d" Height="40" HorizontalAlignment="Stretch" Foreground="#FFD4D4D4" FontFamily="Arial" FontSize="22" VerticalAlignment="Top">
     <local:ClickableControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -16,26 +16,28 @@
             <SolidColorBrush x:Key="Recreatable" Color="Lime"/>
         </ResourceDictionary>
     </local:ClickableControl.Resources>
-    <Viewbox HorizontalAlignment="Left">
-        <Grid Height="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ClickableControl}}}">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="8"/>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="8"/>
-            </Grid.ColumnDefinitions>
-            <Path x:Name="recreatablePath" VerticalAlignment="Bottom" Data="M0,0L1,1L0,1" Stretch="Uniform" Fill="{DynamicResource Recreatable}" Visibility="Hidden"/>
-            <StackPanel x:Name="reactantsPanel" Grid.Column="1" Orientation="Horizontal"/>
-            <Grid Grid.Column="2">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Path x:Name="arrowPath" StrokeThickness="1.2" Grid.Row="1" Stretch="Uniform" Stroke="{Binding Foreground, ElementName=clickableControl}"/>
+    <Grid x:Name="layoutGrid" Background="Transparent" SnapsToDevicePixels="True">
+        <Viewbox HorizontalAlignment="Left" >
+            <Grid Height="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ClickableControl}}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="8"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="8"/>
+                </Grid.ColumnDefinitions>
+                <Path x:Name="recreatablePath" VerticalAlignment="Bottom" Data="M0,0L1,1L0,1" Stretch="Uniform" Fill="{DynamicResource Recreatable}" Visibility="Hidden"/>
+                <StackPanel x:Name="reactantsPanel" Grid.Column="1" Orientation="Horizontal"/>
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Path x:Name="arrowPath" StrokeThickness="1.2" Grid.Row="1" Stretch="Uniform" Stroke="{Binding Foreground, ElementName=clickableControl}"/>
+                </Grid>
+                <StackPanel x:Name="productsPanel" Grid.Column="3" Orientation="Horizontal" Margin="5,0,0,0"/>
             </Grid>
-            <StackPanel x:Name="productsPanel" Grid.Column="3" Orientation="Horizontal" Margin="5,0,0,0"/>
-        </Grid>
-    </Viewbox>
+        </Viewbox>
+    </Grid>
 </local:ClickableControl>
