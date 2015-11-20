@@ -3,6 +3,22 @@
 Public Class LabWindow
     Inherits LabAssistantWindow
 
+    Public Property SelectedReaction As Matter.Reaction
+        Get
+            Return selectedReaction_
+        End Get
+        Set(value As Matter.Reaction)
+            If IsNothing(value) Then
+                DeselectReaction()
+                selectedReaction_ = Nothing
+            Else
+                SelectReaction(value)
+                selectedReaction_ = value
+            End If
+        End Set
+    End Property
+    Private selectedReaction_ As Matter.Reaction
+
     Public Sub Initialize()
         SetElements(tableViewbox)
         handleMenuClick(tableMenuBtn, Nothing)
@@ -346,6 +362,55 @@ Public Class LabWindow
         Else
             reactionsStatusText.Content = "Search for a reaction. Use the negate symbol(-) for all reactions."
             reactionList.LoadReactions(New List(Of Matter.Reaction))
+        End If
+    End Sub
+
+    Private Sub handleRowClicked(sender As Object, e As RoutedEventArgs) Handles reactionList.RowClicked
+        Me.SelectedReaction = CType(sender, ReactionRow).Reaction
+    End Sub
+
+    Private WithEvents gridFadeAnimation As New DoubleAnimation(0, New Duration(TimeSpan.FromSeconds(1)))
+    Private gridFadeInAnimation As New DoubleAnimation(1, New Duration(TimeSpan.FromSeconds(1)))
+    Private isReactionSelected As Boolean = False
+    Private Sub DeselectReaction()
+        If isReactionSelected Then
+            isReactionSelected = False
+            searchReactionGrid.Visibility = Visibility.Visible
+            selectedReactionGrid.BeginAnimation(Grid.OpacityProperty, gridFadeAnimation)
+            searchReactionGrid.BeginAnimation(Grid.OpacityProperty, gridFadeInAnimation)
+        End If
+    End Sub
+
+    Private Sub SelectReaction(ByVal r As Matter.Reaction)
+        isReactionSelected = True
+
+        reactionTypeLabel.Content = r.Type.ToString()
+        If r.IsCommented Then
+            reactionCommentLabel.Content = r.Comment
+        Else
+            reactionCommentLabel.Content = "None"
+        End If
+        If r.HasTemperatureSpan Then
+            reactionMinLabel.Content = r.TemperatureSpan.First() & " K"
+            reactionMaxLabel.Content = r.TemperatureSpan.Last() & " K"
+        Else
+            reactionMinLabel.Content = "No limit"
+            reactionMaxLabel.Content = "No limit"
+        End If
+        reactionSelectedRow.Reaction = r
+
+        If IsNothing(selectedReaction_) Then
+            selectedReactionGrid.Visibility = Visibility.Visible
+            searchReactionGrid.BeginAnimation(Grid.OpacityProperty, gridFadeAnimation)
+            selectedReactionGrid.BeginAnimation(Grid.OpacityProperty, gridFadeInAnimation)
+        End If
+    End Sub
+
+    Private Sub handleFadeOutCompleted(sender As Object, e As EventArgs) Handles gridFadeAnimation.Completed
+        If isReactionSelected Then
+            searchReactionGrid.Visibility = Visibility.Hidden
+        Else
+            selectedReactionGrid.Visibility = Visibility.Hidden
         End If
     End Sub
 

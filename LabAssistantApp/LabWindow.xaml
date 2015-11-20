@@ -501,36 +501,84 @@
             </TabItem>
             <TabItem x:Name="reactionsPage">
                 <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="2*"/>
-                    </Grid.RowDefinitions>
-                    <StackPanel>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBox x:Name="reactionsSearchBox" FontSize="20" Style="{DynamicResource searchBoxStyle}" VerticalAlignment="Top"/>
-                            <ComboBox x:Name="reactionTypeComboBox" Grid.Column="1" Style="{DynamicResource labComboBoxStyle}" Foreground="#FFD8D8D8" Width="150" Background="#FF2A2A2A" Margin="0,5,5,5" SelectedIndex="0">
-                                <ComboBoxItem Content="All types"/>
-                                <ComboBoxItem Content="Decomposition"/>
-                                <ComboBoxItem Content="Electrolysis"/>
-                                <ComboBoxItem Content="Synthesis"/>
-                                <ComboBoxItem Content="Other"/>
-                            </ComboBox>
-                        </Grid>
-                        <Label x:Name="reactionsStatusText" Content="Search for a reaction. Use the negate symbol(-) for all reactions." FontSize="22" Foreground="#FFC5C5C5" IsHitTestVisible="False" VerticalAlignment="Top" HorizontalContentAlignment="Center" Padding="5,0,5,5"/>
-                    </StackPanel>
-                    <local:ReactionList x:Name="reactionList" Grid.Row="1" Foreground="White" BorderBrush="#FF307630" BorderThickness="0,1" Background="#FF4B4B4B" CanSelect="True">
-                        <local:ReactionList.SelectedBrush>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="#0000A2FF" Offset="0"/>
-                                <GradientStop Color="{DynamicResource labBlueColor}" Offset="1"/>
-                            </LinearGradientBrush>
-                        </local:ReactionList.SelectedBrush>
-                    </local:ReactionList>
+                    <Grid x:Name="searchReactionGrid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBox x:Name="reactionsSearchBox" FontSize="20" Style="{DynamicResource searchBoxStyle}" VerticalAlignment="Top"/>
+                                <ComboBox x:Name="reactionTypeComboBox" Grid.Column="1" Style="{DynamicResource labComboBoxStyle}" Foreground="#FFD8D8D8" Width="150" Background="#FF2A2A2A" Margin="0,5,5,5" SelectedIndex="0">
+                                    <ComboBoxItem Content="All types"/>
+                                    <ComboBoxItem Content="Decomposition"/>
+                                    <ComboBoxItem Content="Electrolysis"/>
+                                    <ComboBoxItem Content="Synthesis"/>
+                                    <ComboBoxItem Content="Other"/>
+                                </ComboBox>
+                            </Grid>
+                            <Label x:Name="reactionsStatusText" Content="Search for a reaction. Use the negate symbol(-) for all reactions." FontSize="22" Foreground="#FFC5C5C5" IsHitTestVisible="False" VerticalAlignment="Top" HorizontalContentAlignment="Center" Padding="5,0,5,5"/>
+                        </StackPanel>
+                        <local:ReactionList x:Name="reactionList" Foreground="White" BorderBrush="LimeGreen" BorderThickness="0,1,0,0" Background="#FF4B4B4B" Grid.Row="1"/>
+                    </Grid>
+                    <Grid x:Name="selectedReactionGrid" Background="#FF3E3E3E" Visibility="Hidden" Opacity="0">
+                        <Grid.Resources>
+                            <Style x:Key="subtitleStyle" TargetType="Label">
+                                <Setter Property="FontFamily" Value="{StaticResource NevisFont}"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="FontSize" Value="19"/>
+                                <Setter Property="BorderBrush" Value="LightGray"/>
+                                <Setter Property="BorderThickness" Value="0,0,0,1"/>
+                                <Setter Property="HorizontalAlignment" Value="Left"/>
+                                <Setter Property="Padding" Value="5,2"/>
+                            </Style>
+                            <Style x:Key="descriptionStyle" TargetType="Label">
+                                <Setter Property="Foreground" Value="#FFE2E2E2"/>
+                                <Setter Property="FontSize" Value="18"/>
+                                <Setter Property="BorderBrush" Value="LightGray"/>
+                                <Setter Property="BorderThickness" Value="1,0,0,0"/>
+                                <Setter Property="HorizontalAlignment" Value="Left"/>
+                                <Setter Property="Padding" Value="5,2"/>
+                                <Setter Property="Margin" Value="0,0,0,10"/>
+                            </Style>
+                            <Style x:Key="subtitleRightStyle" TargetType="Label" BasedOn="{StaticResource subtitleStyle}">
+                                <Setter Property="HorizontalAlignment" Value="Right"/>
+                            </Style>
+                            <Style x:Key="descriptionRightStyle" TargetType="Label" BasedOn="{StaticResource descriptionStyle}">
+                                <Setter Property="BorderThickness" Value="0,0,1,0"/>
+                                <Setter Property="HorizontalAlignment" Value="Right"/>
+                            </Style>
+                        </Grid.Resources>
+                        <StackPanel Margin="5">
+                            <local:ReactionRow x:Name="reactionSelectedRow" Foreground="White" HorizontalContentAlignment="Center" FontSize="26.667" Height="60"/>
+                            <Grid>
+                                <StackPanel>
+                                    <Label Content="TYPE" Style="{DynamicResource subtitleStyle}"/>
+                                    <Label x:Name="reactionTypeLabel"  Style="{DynamicResource descriptionStyle}"/>
+                                    <Label Content="COMMENT" Style="{DynamicResource subtitleStyle}"/>
+                                    <Label x:Name="reactionCommentLabel"  Style="{DynamicResource descriptionStyle}"/>
+                                </StackPanel>
+                                <StackPanel HorizontalAlignment="Right">
+                                    <Label Content="MINIMUM TEMP." Style="{DynamicResource subtitleRightStyle}"/>
+                                    <Label x:Name="reactionMinLabel"  Style="{DynamicResource descriptionRightStyle}"/>
+                                    <Label Content="MAXIMUM TEMP." Style="{DynamicResource subtitleRightStyle}"/>
+                                    <Label x:Name="reactionMaxLabel"  Style="{DynamicResource descriptionRightStyle}"/>
+                                </StackPanel>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
                 </Grid>
             </TabItem>
             <TabItem x:Name="inventoryPage">

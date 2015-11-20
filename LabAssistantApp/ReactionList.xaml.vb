@@ -137,8 +137,8 @@ Public Class ReactionList
         frontBinding.Source = Me
         Dim rrstyle As New Style(GetType(ReactionRow))
         rrstyle.Setters.Add(New Setter(ReactionRow.ForegroundProperty, frontBinding))
-        rrstyle.Setters.Add(New Setter(ReactionRow.BorderBrushProperty, sepBinding))
         rrstyle.Setters.Add(New Setter(ReactionRow.BackgroundProperty, backBinding))
+        rrstyle.Setters.Add(New Setter(ReactionRow.HorizontalAlignmentProperty, HorizontalAlignment.Left))
         rrstyle.Setters.Add(New EventSetter(ReactionRow.ClickEvent, New RoutedEventHandler(AddressOf rowClickHandler)))
         rrstyle.Setters.Add(New EventSetter(ReactionRow.MouseEnterEvent, New MouseEventHandler(AddressOf rowEnterHover)))
         rrstyle.Setters.Add(New EventSetter(ReactionRow.MouseLeaveEvent, New MouseEventHandler(AddressOf rowExitHover)))
@@ -152,7 +152,11 @@ Public Class ReactionList
                 rr.SetBinding(ReactionRow.BackgroundProperty, altBackBinding)
             End If
             If Not IsNothing(Me.GetValue(ReactionList.RowSeperatorProperty)) Then
-                rr.BorderThickness = New Thickness(0, 0, 0, 1)
+                Dim sep As New Rectangle()
+                sep.SetBinding(Rectangle.FillProperty, sepBinding)
+                sep.HorizontalAlignment = HorizontalAlignment.Stretch
+                sep.Height = 1
+                basePanel.Children.Add(sep)
             End If
             basePanel.Children.Add(rr)
             counter += 1
