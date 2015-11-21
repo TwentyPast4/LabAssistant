@@ -151,7 +151,7 @@ Public Class ReactionList
             If Me.GetValue(ReactionList.AlternateIndexProperty) > 0 AndAlso ((counter + 1) Mod (Me.GetValue(ReactionList.AlternateIndexProperty) + 1) = 0) Then
                 rr.SetBinding(ReactionRow.BackgroundProperty, altBackBinding)
             End If
-            If Not IsNothing(Me.GetValue(ReactionList.RowSeperatorProperty)) Then
+            If Not IsNothing(Me.GetValue(ReactionList.RowSeperatorProperty)) AndAlso basePanel.Children.Count > 0 Then
                 Dim sep As New Rectangle()
                 sep.SetBinding(Rectangle.FillProperty, sepBinding)
                 sep.HorizontalAlignment = HorizontalAlignment.Stretch

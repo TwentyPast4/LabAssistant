@@ -83,9 +83,11 @@ Public Class ReactionRow
             proList.Add(createLabel(coef, state, cf))
         Next
 
+        reactantsPanel.Children.Clear()
         For Each obj As UIElement In reacList
             reactantsPanel.Children.Add(obj)
         Next
+        productsPanel.Children.Clear()
         For Each obj As UIElement In proList
             productsPanel.Children.Add(obj)
         Next
@@ -105,7 +107,9 @@ Public Class ReactionRow
         Dim plusPath As New Path()
         Grid.SetRow(plusPath, 1)
         plusPath.Stretch = Stretch.Uniform
-        plusPath.Stroke = Me.Foreground
+        Dim dcc As New DarkColorConverter()
+        plusPath.StrokeThickness = 2
+        plusPath.Stroke = dcc.Convert(Me.Foreground, Nothing, 7, Nothing)
         plusPath.Data = Me.FindResource("reactionPlusAbsolute")
         g.Children.Add(plusPath)
         Return g
@@ -119,7 +123,7 @@ Public Class ReactionRow
             l.Foreground = Me.FindResource(state.ToString())
         End If
         l.VerticalContentAlignment = VerticalAlignment.Center
-        l.Content = displayConverter.Convert(formula, GetType(TextBlock), coef, Nothing)
+        l.Content = displayConverter.Convert(formula, Nothing, coef, Nothing)
         If coef < 0 Then l.Padding = New Thickness(0, 5, 5, 5)
         Return l
     End Function

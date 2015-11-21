@@ -375,6 +375,12 @@ Public Class LabWindow
     Private Sub DeselectReaction()
         If isReactionSelected Then
             isReactionSelected = False
+            For Each r As ReactantRow In reactantsPanel.Children
+                RemoveHandler r.AmountChanged, amountChanged
+            Next
+            For Each r As ReactantRow In productsPanel.Children
+                RemoveHandler r.AmountChanged, amountChanged
+            Next
             searchReactionGrid.Visibility = Visibility.Visible
             selectedReactionGrid.BeginAnimation(Grid.OpacityProperty, gridFadeAnimation)
             searchReactionGrid.BeginAnimation(Grid.OpacityProperty, gridFadeInAnimation)
@@ -398,8 +404,29 @@ Public Class LabWindow
             reactionMaxLabel.Content = "No limit"
         End If
         reactionSelectedRow.Reaction = r
+        Dim whiteBrush As New SolidColorBrush(Color.FromArgb(15, 255, 255, 255))
+        Dim blackBrush As New SolidColorBrush(Color.FromArgb(30, 0, 0, 0))
+        reactantsPanel.Children.Clear()
+        For i As Integer = 0 To r.Reactants.Count - 1
+            Dim reactRow As New ReactantRow(r.Reactants(i), r.ReactantCoeficients(i))
+            If i Mod 2 = 1 Then reactRow.Background = whiteBrush Else reactRow.Background = blackBrush
+            AddHandler reactRow.AmountChanged, amountChanged
+            reactantsPanel.Children.Add(reactRow)
+        Next
+        productsPanel.Children.Clear()
+        For i As Integer = 0 To r.Products.Count - 1
+            Dim proRow As New ReactantRow(r.Products(i), r.ProductCoeficients(i))
+            If i Mod 2 = 1 Then proRow.Background = whiteBrush Else proRow.Background = blackBrush
+            AddHandler proRow.AmountChanged, amountChanged
+            productsPanel.Children.Add(proRow)
+        Next
+        If r.IsReversible Then
+            arrowRect.Fill = Me.FindResource("reversibleReactionBrush")
+        Else
+            arrowRect.Fill = Me.FindResource("normalReactionBrush")
+        End If
 
-        If IsNothing(selectedReaction_) Then
+        If selectedReactionGrid.Opacity < 1 Then
             selectedReactionGrid.Visibility = Visibility.Visible
             searchReactionGrid.BeginAnimation(Grid.OpacityProperty, gridFadeAnimation)
             selectedReactionGrid.BeginAnimation(Grid.OpacityProperty, gridFadeInAnimation)
@@ -412,6 +439,42 @@ Public Class LabWindow
         Else
             selectedReactionGrid.Visibility = Visibility.Hidden
         End If
+    End Sub
+
+    Private amountChanged As New RoutedEventHandler(AddressOf amountChangedHandler)
+    Private Sub amountChangedHandler(sender As Object, e As RoutedEventArgs)
+        Dim sendingRow As ReactantRow = sender
+        Dim moles As Decimal = Convert(sendingRow.Amount, sendingRow.SelectedUnit, Matter.UnitOfMass.Mole, New Matter.CompoundFormula(sendingRow.Formula))
+        For Each r As ReactantRow In reactantsPanel.Children
+            If Not r.Formula.Equals(sendingRow.Formula) Then
+                r.Amount = Convert(getAmount(moles, selectedReaction_, sendingRow.Formula, r.Formula), Matter.UnitOfMass.Mole, r.SelectedUnit, New Matter.CompoundFormula(r.Formula))
+            End If
+        Next
+        For Each r As ReactantRow In productsPanel.Children
+            If Not r.Formula.Equals(sendingRow.Formula) Then
+                r.Amount = Convert(getAmount(moles, selectedReaction_, sendingRow.Formula, r.Formula), Matter.UnitOfMass.Mole, r.SelectedUnit, New Matter.CompoundFormula(r.Formula))
+            End If
+        Next
+    End Sub
+
+    Private Shared Function getAmount(ByVal a As Decimal, ByVal r As Matter.Reaction, ByVal f1 As String, ByVal f2 As String) As Decimal
+        Dim coef1 As Integer = 0
+        If r.Reactants.Contains(f1) Then
+            coef1 = r.ReactantCoeficients(r.Reactants.IndexOf(f1))
+        Else
+            coef1 = r.ProductCoeficients(r.Products.IndexOf(f1))
+        End If
+        Dim coef2 As Integer = 0
+        If r.Reactants.Contains(f2) Then
+            coef2 = r.ReactantCoeficients(r.Reactants.IndexOf(f2))
+        Else
+            coef2 = r.ProductCoeficients(r.Products.IndexOf(f2))
+        End If
+        Return a * coef2 / coef1
+    End Function
+
+    Private Sub backReactionClicked(sender As Object, e As RoutedEventArgs) Handles backToSearchBtn.Click
+        DeselectReaction()
     End Sub
 
 End Class

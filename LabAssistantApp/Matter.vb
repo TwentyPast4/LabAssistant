@@ -20,6 +20,7 @@ Namespace Matter
         Gram
         Pound
         Ounce
+        Mole
     End Enum
 
     Public Enum UnitOfTemperature
@@ -1448,9 +1449,27 @@ Namespace Matter
             Return Double.Parse(s, System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.NumberFormatInfo.InvariantInfo)
         End Function
 
+        Public Function ToDecimal(ByVal s As String) As Decimal
+            If s.StartsWith(Constants.Period) AndAlso s.Length > 1 Then s = String.Concat("0", s)
+            Return Decimal.Parse(s, NumberStyles.AllowDecimalPoint, nfi)
+            Return Decimal.Parse(s, System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.NumberFormatInfo.InvariantInfo)
+        End Function
+
         Public Function ToStringDecimal(ByVal d As Decimal, ByVal Optional decimals As Integer = -1) As String
-            If decimals >= 0 Then d = Decimal.Round(d, decimals)
-            Return d.ToString(nfi)
+            If decimals >= 0 Then d = Decimal.Round(d, decimals) Else
+            ToStringDecimal = d.ToString(nfi)
+            If ToStringDecimal.Contains(Period) Then
+                Dim removeLength As Integer = 0
+                For i As Integer = ToStringDecimal.Length - 1 To ToStringDecimal.IndexOf(Period) Step -1
+                    If ToStringDecimal.Chars(i).ToString.Equals("0") Then
+                        removeLength += 1
+                    Else
+                        Exit For
+                    End If
+                Next
+                If removeLength > 0 Then ToStringDecimal = ToStringDecimal.Remove(ToStringDecimal.Length - removeLength)
+            End If
+            If ToStringDecimal.EndsWith(Period) Then ToStringDecimal = ToStringDecimal.Remove(ToStringDecimal.Length - 1)
         End Function
 
     End Module

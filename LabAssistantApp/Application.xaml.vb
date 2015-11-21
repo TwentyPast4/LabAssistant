@@ -154,4 +154,6 @@ Class Application
         MsgBox("You do not have an open laboratory." & vbNewLine & "Create or load a laboratory to begin adding chemicals.", MsgBoxStyle.Information, "Lab Assistant")
     End Sub
 
+
+
 End Class

@@ -21,7 +21,11 @@ Public Class FormulaDisplayConverter
             Dim s As New Span()
             If rs.Type = Matter.CompoundFormula.RawStructure.Types.Number Then
                 s.BaselineAlignment = BaselineAlignment.Subscript
-                s.FontSize *= 0.8
+                If IsNothing(targetType) Then
+                    s.FontSize *= 1.1
+                Else
+                    s.FontSize *= 0.9
+                End If
             End If
             s.Inlines.Add(rs.Value)
             tb.Inlines.Add(s)

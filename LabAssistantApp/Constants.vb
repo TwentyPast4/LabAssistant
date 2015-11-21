@@ -125,34 +125,6 @@
         End If
     End Function
 
-    Public Class Conversion
-
-        Public Shared Function GramFromKilogram(ByVal mass As Double, Optional ByVal viceversa As Boolean = False) As Double
-            If viceversa Then
-                Return mass / GramKilograms
-            Else
-                Return mass * GramKilograms
-            End If
-        End Function
-
-        Public Shared Function PoundFromKilogram(ByVal mass As Double, Optional ByVal viceversa As Boolean = False) As Double
-            If viceversa Then
-                Return mass / PoundKilograms
-            Else
-                Return mass * PoundKilograms
-            End If
-        End Function
-
-        Public Shared Function OunceFromKilogram(ByVal mass As Double, Optional ByVal viceversa As Boolean = False) As Double
-            If viceversa Then
-                Return mass / (PoundKilograms * OuncePounds)
-            Else
-                Return mass * PoundKilograms * OuncePounds
-            End If
-        End Function
-
-    End Class
-
     Public Function StrVal(ByVal str As String, Optional ByVal ReturnValueIfNoNumbers As Integer = 0) As Integer
         Dim c() As Char = str.ToCharArray
         Dim nstr As String = String.Empty
@@ -179,5 +151,90 @@
         End If
         Return n
     End Function
+
+    Public Function isNumber(ByVal s As String) As Boolean
+        Dim b As Boolean = Not s.EndsWith(Constants.Period)
+        b = b And s.Length > 0
+        Dim i As Integer = 0
+        Dim n As Integer = 0
+        While b And i < s.Length
+            If Not Char.IsNumber(s(i)) Then
+                If s(i).ToString.Equals(Constants.Period) Then
+                    n += 1
+                Else
+                    Return False
+                End If
+            End If
+            i += 1
+        End While
+        Return b And n <= 1
+    End Function
+
+    Public Function Convert(ByVal value As Decimal, from As Matter.UnitOfMass, [to] As Matter.UnitOfMass, ByVal Optional formula As Matter.CompoundFormula = Nothing)
+        If from = [to] Then Return value
+        Dim molarMass As Decimal
+        If from = Matter.UnitOfMass.Mole Or [to] = Matter.UnitOfMass.Mole Then
+            molarMass = formula.GetMolarMass()
+        End If
+        Select Case from
+            Case Matter.UnitOfMass.Gram
+                Select Case [to]
+                    Case Matter.UnitOfMass.Kilogram
+                        Return value / 1000
+                    Case Matter.UnitOfMass.Mole
+                        Return value / molarMass
+                    Case Matter.UnitOfMass.Ounce
+                        Return value * OuncePounds / (1000 * PoundKilograms)
+                    Case Matter.UnitOfMass.Pound
+                        Return value / (1000 * PoundKilograms)
+                End Select
+            Case Matter.UnitOfMass.Kilogram
+                Select Case [to]
+                    Case Matter.UnitOfMass.Gram
+                        Return value * 1000
+                    Case Matter.UnitOfMass.Mole
+                        Return value * 1000 / molarMass
+                    Case Matter.UnitOfMass.Ounce
+                        Return value * OuncePounds / PoundKilograms
+                    Case Matter.UnitOfMass.Pound
+                        Return value / PoundKilograms
+                End Select
+            Case Matter.UnitOfMass.Ounce
+                Select Case [to]
+                    Case Matter.UnitOfMass.Gram
+                        Return value * PoundKilograms * 1000 / OuncePounds
+                    Case Matter.UnitOfMass.Mole
+                        Return value * PoundKilograms * 1000 / (OuncePounds * molarMass)
+                    Case Matter.UnitOfMass.Kilogram
+                        Return value * PoundKilograms / OuncePounds
+                    Case Matter.UnitOfMass.Pound
+                        Return value / OuncePounds
+                End Select
+            Case Matter.UnitOfMass.Pound
+                Select Case [to]
+                    Case Matter.UnitOfMass.Gram
+                        Return value * PoundKilograms * 1000
+                    Case Matter.UnitOfMass.Mole
+                        Return value * PoundKilograms * 1000 / molarMass
+                    Case Matter.UnitOfMass.Kilogram
+                        Return value * PoundKilograms
+                    Case Matter.UnitOfMass.Ounce
+                        Return value * OuncePounds
+                End Select
+            Case Matter.UnitOfMass.Mole
+                Select Case [to]
+                    Case Matter.UnitOfMass.Gram
+                        Return value * molarMass
+                    Case Matter.UnitOfMass.Ounce
+                        Return value * molarMass * OuncePounds / (1000 * PoundKilograms)
+                    Case Matter.UnitOfMass.Kilogram
+                        Return value * molarMass / 1000
+                    Case Matter.UnitOfMass.Pound
+                        Return value * molarMass / (1000 * PoundKilograms)
+                End Select
+        End Select
+        Return value
+    End Function
+
 
 End Module

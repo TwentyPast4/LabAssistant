@@ -96,6 +96,9 @@
     <Compile Include="LabToggleButton.xaml.vb">
       <DependentUpon>LabToggleButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ReactantRow.xaml.vb">
+      <DependentUpon>ReactantRow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ReactionList.xaml.vb">
       <DependentUpon>ReactionList.xaml</DependentUpon>
     </Compile>
@@ -160,6 +163,10 @@
       <DependentUpon>LabWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ReactantRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ReactionList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -169,6 +176,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TableButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

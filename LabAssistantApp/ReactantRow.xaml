@@ -1,0 +1,25 @@
+﻿<UserControl x:Name="userControl" x:Class="ReactantRow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LabAssistantApp"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="400" Foreground="#FFEAEAEA">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="formulaLabel" Foreground="{Binding Foreground, ElementName=userControl}" VerticalContentAlignment="Center" HorizontalAlignment="Left" FontSize="18"/>
+        <TextBox x:Name="amountBox" Grid.Column="1" Background="#FF272727" Height="30" VerticalContentAlignment="Center" Foreground="{Binding Foreground, ElementName=userControl}" BorderBrush="#FF8B8B8B" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Width="160"/>
+        <ComboBox x:Name="unitComboBox" Margin="5" Width="100" Height="30" Grid.Column="2" Style="{DynamicResource labComboBoxStyle}" Background="#FF2B2727" VerticalAlignment="Center" Foreground="{Binding Foreground, ElementName=userControl, Mode=OneWay}" BorderBrush="{DynamicResource labBlueBrush}" BorderThickness="1" SelectedIndex="4">
+            <ComboBoxItem Content="Kilogram"/>
+            <ComboBoxItem Content="Gram"/>
+            <ComboBoxItem Content="Pound"/>
+            <ComboBoxItem Content="Ounce"/>
+            <ComboBoxItem Content="Mole"/>
+        </ComboBox>
+    </Grid>
+</UserControl>

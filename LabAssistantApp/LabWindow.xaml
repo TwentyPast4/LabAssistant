@@ -521,11 +521,25 @@
                                     <ComboBoxItem Content="Other"/>
                                 </ComboBox>
                             </Grid>
-                            <Label x:Name="reactionsStatusText" Content="Search for a reaction. Use the negate symbol(-) for all reactions." FontSize="22" Foreground="#FFC5C5C5" IsHitTestVisible="False" VerticalAlignment="Top" HorizontalContentAlignment="Center" Padding="5,0,5,5"/>
+                            <Label x:Name="reactionsStatusText" Content="Search for a reaction. Use the negate symbol(-) for all reactions." FontSize="22" Foreground="#FFC5C5C5" IsHitTestVisible="False" VerticalAlignment="Top" HorizontalContentAlignment="Center" Padding="5,0,5,5">
+                                <Label.Effect>
+                                    <DropShadowEffect ShadowDepth="0" BlurRadius="7"/>
+                                </Label.Effect>
+                            </Label>
                         </StackPanel>
                         <local:ReactionList x:Name="reactionList" Foreground="White" BorderBrush="LimeGreen" BorderThickness="0,1,0,0" Background="#FF4B4B4B" Grid.Row="1"/>
                     </Grid>
-                    <Grid x:Name="selectedReactionGrid" Background="#FF3E3E3E" Visibility="Hidden" Opacity="0">
+                    <Grid x:Name="selectedReactionGrid" Visibility="Hidden" Opacity="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
                         <Grid.Resources>
                             <Style x:Key="subtitleStyle" TargetType="Label">
                                 <Setter Property="FontFamily" Value="{StaticResource NevisFont}"/>
@@ -552,9 +566,14 @@
                                 <Setter Property="BorderThickness" Value="0,0,1,0"/>
                                 <Setter Property="HorizontalAlignment" Value="Right"/>
                             </Style>
+                            <Style x:Key="listStyle" TargetType="ScrollViewer" BasedOn="{StaticResource labScrollViewerStyle}">
+                                <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+                                <Setter Property="Margin" Value="5"/>
+                                <Setter Property="Background" Value="#FF292929"/>
+                            </Style>
                         </Grid.Resources>
-                        <StackPanel Margin="5">
-                            <local:ReactionRow x:Name="reactionSelectedRow" Foreground="White" HorizontalContentAlignment="Center" FontSize="26.667" Height="60"/>
+                        <StackPanel Grid.ColumnSpan="3" Margin="5">
+                            <local:ReactionRow x:Name="reactionSelectedRow" Foreground="White" HorizontalContentAlignment="Center" FontSize="45" Height="70"/>
                             <Grid>
                                 <StackPanel>
                                     <Label Content="TYPE" Style="{DynamicResource subtitleStyle}"/>
@@ -569,15 +588,19 @@
                                     <Label x:Name="reactionMaxLabel"  Style="{DynamicResource descriptionRightStyle}"/>
                                 </StackPanel>
                             </Grid>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                
-                            </Grid>
                         </StackPanel>
+                        <ScrollViewer Grid.Row="1" Style="{DynamicResource listStyle}">
+                            <StackPanel x:Name="reactantsPanel">
+                                
+                            </StackPanel>
+                        </ScrollViewer>
+                        <Rectangle x:Name="arrowRect" Grid.Row="1" Grid.Column="1" Height="30" VerticalAlignment="Center" Width="50" Margin="10"/>
+                        <ScrollViewer Grid.Column="2" Grid.Row="1" Style="{DynamicResource listStyle}">
+                            <StackPanel x:Name="productsPanel">
+                                
+                            </StackPanel>
+                        </ScrollViewer>
+                        <local:ImageButton x:Name="backToSearchBtn" Grid.Row="2" Margin="5" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="#FF1D1D1D" Foreground="{DynamicResource labBlueBrush}" HorizontalTextAlignment="Center" Text="BACK" ReserveImageSpace="False" TextPadding="25,5" FontFamily="{DynamicResource NevisFont}"/>
                     </Grid>
                 </Grid>
             </TabItem>

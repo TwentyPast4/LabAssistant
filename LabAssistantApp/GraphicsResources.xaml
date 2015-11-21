@@ -476,6 +476,33 @@
         </DrawingBrush.Drawing>
     </DrawingBrush>
 
+    <DrawingBrush x:Key="normalReactionBrush" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <GeometryDrawing>
+                <GeometryDrawing.Pen>
+                    <Pen Brush="White" Thickness="0.05"/>
+                </GeometryDrawing.Pen>
+                <GeometryDrawing.Geometry>
+                    <PathGeometry>
+                        <PathFigureCollection>
+                            <PathFigure IsClosed="False" IsFilled="False" StartPoint="0,0.5">
+                                <PathFigure.Segments>
+                                    <LineSegment Point="1,0.5"/>
+                                </PathFigure.Segments>
+                            </PathFigure>
+                            <PathFigure IsClosed="False" IsFilled="False" StartPoint="0.7,0.3">
+                                <PathFigure.Segments>
+                                    <LineSegment Point="1,0.5"/>
+                                    <LineSegment Point="0.7,0.7"/>
+                                </PathFigure.Segments>
+                            </PathFigure>
+                        </PathFigureCollection>
+                    </PathGeometry>
+                </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
     <DrawingBrush x:Key="inventoryBrush" Stretch="Uniform">
         <DrawingBrush.Drawing>
             <DrawingGroup>

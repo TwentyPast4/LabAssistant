@@ -8,20 +8,7 @@
             Else
                 am = Matter.Info.ToDouble(amountBox.Text)
             End If
-            Select Case unitBox.SelectedIndex
-                Case 0
-                    Return am
-                Case 1
-                    Return am / 1000
-                Case 2
-                    Return Conversion.PoundFromKilogram(am, True)
-                Case 3
-                    Return Conversion.OunceFromKilogram(am, True)
-                Case 4
-                    Return am * loadedChem.Formula.GetMolarMass() / 1000
-                Case Else
-                    Return 0
-            End Select
+            Return Convert(am, unitBox.SelectedIndex, Matter.UnitOfMass.Kilogram, loadedChem.Formula)
         End Get
     End Property
 
@@ -73,22 +60,5 @@
     Private Sub cancelClicked(sender As Object, e As RoutedEventArgs) Handles cancelBtn.Click
         Me.DialogResult = False
     End Sub
-
-    Private Shared Function isNumber(ByVal s As String) As Boolean
-        Dim b As Boolean = Not s.EndsWith(Constants.Period)
-        Dim i As Integer = 0
-        Dim n As Integer = 0
-        While b And i < s.Length
-            If Not Char.IsNumber(s(i)) Then
-                If s(i).Equals(Constants.Period) Then
-                    n += 1
-                Else
-                    b = False
-                End If
-            End If
-            i += 1
-        End While
-        Return b
-    End Function
 
 End Class
