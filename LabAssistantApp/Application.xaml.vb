@@ -59,7 +59,16 @@ Class Application
         Dim clickedSubstance As Chemical = Nothing
         Dim senderType As Type = sender.PlacementTarget.GetType()
         If senderType.Equals(GetType(DataGridRow)) Then
-            clickedSubstance = CType(sender.PlacementTarget, DataGridRow).Item
+            Dim itm As Object = CType(sender.PlacementTarget, DataGridRow).Item
+            If itm.GetType().Equals(GetType(Laboratory.OwnershipInfo)) Then
+                If Not IsNothing(Element.ElementList.Find(Function(el As Element) el.Name.Equals(CType(itm, Laboratory.OwnershipInfo).Name))) Then
+                    clickedSubstance = Element.GetElementFromName(CType(itm, Laboratory.OwnershipInfo).Name)
+                Else
+                    clickedSubstance = Compound.FromName(CType(itm, Laboratory.OwnershipInfo).Name)
+                End If
+            Else
+                clickedSubstance = itm
+            End If
         ElseIf senderType.Equals(GetType(TableButton)) Then
             clickedSubstance = CType(sender.PlacementTarget, TableButton).Element
         End If

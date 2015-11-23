@@ -10,10 +10,10 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="GraphicsResources.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-            <SolidColorBrush x:Key="In_Stock" Color="#FFB2FFB6"/>
-            <SolidColorBrush x:Key="Available" Color="#FFABFFEC"/>
-            <SolidColorBrush x:Key="Synthesizable" Color="#FFFFFFBB"/>
-            <SolidColorBrush x:Key="Recreatable" Color="Lime"/>
+            <SolidColorBrush x:Key="In_Stock" Color="#FF54D35A"/>
+            <SolidColorBrush x:Key="Available" Color="#FF5ED3CD"/>
+            <SolidColorBrush x:Key="Synthesizable" Color="#FFD6D669"/>
+            <SolidColorBrush x:Key="Recreatable" Color="#FF29D829"/>
         </ResourceDictionary>
     </local:ClickableControl.Resources>
     <Grid x:Name="layoutGrid" Background="Transparent" SnapsToDevicePixels="True">

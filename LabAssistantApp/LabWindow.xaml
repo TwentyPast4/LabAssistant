@@ -110,6 +110,7 @@
                     <Label Content="LABORATORY" Style="{DynamicResource menuLabel}"/>
                     <local:ImageButton x:Name="inventoryBtn" Tag="inventory" Text="INVENTORY" ImageBrush="{DynamicResource inventoryBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" IsEnabled="False"/>
                     <local:ImageButton Tag="synthesis" Text="SYNTHESIS" ImageBrush="{DynamicResource synthesisBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" IsEnabled="{Binding IsEnabled, ElementName=inventoryBtn}"/>
+                    <local:ImageButton Tag="calculator" Text="CALCULATOR" ImageBrush="{DynamicResource calculatorBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick"/>
                     <Label Content="OPTIONS" Style="{DynamicResource menuLabel}"/>
                     <local:ImageButton Tag="start" Text="STARTUP" ImageBrush="{DynamicResource onOffBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick"/>
                     <local:ImageButton Tag="general" Text="GENERAL" ImageBrush="{DynamicResource generalSettingsBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick"/>
@@ -274,7 +275,7 @@
                                     <Label Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Margin="0,0,70,0" HorizontalAlignment="Center" Content="Unknown" Background="{DynamicResource Unknown}" Style="{DynamicResource elementTypesStyle}"/>
                                 </Grid>
                             </Grid>
-                            <local:TableButton x:Name="hydrogenButton" Tag="1"/>
+                            <local:TableButton x:Name="hydrogenButton" Tag="1" HorizontalAlignment="Left"/>
                             <local:TableButton HorizontalAlignment="Right" Tag="2"/>
                             <StackPanel Grid.Row="1" Orientation="Horizontal">
                                 <local:TableButton Tag="3"/>
@@ -523,7 +524,7 @@
                             </Grid>
                             <Label x:Name="reactionsStatusText" Content="Search for a reaction. Use the negate symbol(-) for all reactions." FontSize="22" Foreground="#FFC5C5C5" IsHitTestVisible="False" VerticalAlignment="Top" HorizontalContentAlignment="Center" Padding="5,0,5,5">
                                 <Label.Effect>
-                                    <DropShadowEffect ShadowDepth="0" BlurRadius="7"/>
+                                    <DropShadowEffect ShadowDepth="1" BlurRadius="3"/>
                                 </Label.Effect>
                             </Label>
                         </StackPanel>
@@ -591,13 +592,13 @@
                         </StackPanel>
                         <ScrollViewer Grid.Row="1" Style="{DynamicResource listStyle}">
                             <StackPanel x:Name="reactantsPanel">
-                                
+
                             </StackPanel>
                         </ScrollViewer>
                         <Rectangle x:Name="arrowRect" Grid.Row="1" Grid.Column="1" Height="30" VerticalAlignment="Center" Width="50" Margin="10"/>
                         <ScrollViewer Grid.Column="2" Grid.Row="1" Style="{DynamicResource listStyle}">
                             <StackPanel x:Name="productsPanel">
-                                
+
                             </StackPanel>
                         </ScrollViewer>
                         <local:ImageButton x:Name="backToSearchBtn" Grid.Row="2" Margin="5" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="#FF1D1D1D" Foreground="{DynamicResource labBlueBrush}" HorizontalTextAlignment="Center" Text="BACK" ReserveImageSpace="False" TextPadding="25,5" FontFamily="{DynamicResource NevisFont}"/>

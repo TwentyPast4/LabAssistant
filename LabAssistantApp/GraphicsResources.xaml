@@ -645,5 +645,76 @@
         </DrawingBrush.Drawing>
     </DrawingBrush>
 
+    <DrawingBrush x:Key="calculatorBrush" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <GeometryDrawing Brush="White">
+                <GeometryDrawing.Pen>
+                    <Pen Brush="White" Thickness="0.04"/>
+                </GeometryDrawing.Pen>
+                <GeometryDrawing.Geometry>
+                    <GeometryGroup>
+                        <RectangleGeometry>
+                            <RectangleGeometry.Rect>
+                                <Rect Location="0.3,0.1" Size="0.4,0.2"/>
+                            </RectangleGeometry.Rect>
+                        </RectangleGeometry>
+                        <RectangleGeometry>
+                            <RectangleGeometry.Rect>
+                                <Rect Location="0.3,0.475" Size="0.07,0.07"/>
+                            </RectangleGeometry.Rect>
+                        </RectangleGeometry>
+                        <RectangleGeometry>
+                            <RectangleGeometry.Rect>
+                                <Rect Location="0.465,0.475" Size="0.07,0.07"/>
+                            </RectangleGeometry.Rect>
+                        </RectangleGeometry>
+                        <RectangleGeometry>
+                            <RectangleGeometry.Rect>
+                                <Rect Location="0.63,0.475" Size="0.07,0.07"/>
+                            </RectangleGeometry.Rect>
+                        </RectangleGeometry>
+                        <RectangleGeometry>
+                            <RectangleGeometry.Rect>
+                                <Rect Location="0.3,0.65" Size="0.07,0.07"/>
+                            </RectangleGeometry.Rect>
+                        </RectangleGeometry>
+                        <RectangleGeometry>
+                            <RectangleGeometry.Rect>
+                                <Rect Location="0.465,0.65" Size="0.07,0.07"/>
+                            </RectangleGeometry.Rect>
+                        </RectangleGeometry>
+                        <RectangleGeometry>
+                            <RectangleGeometry.Rect>
+                                <Rect Location="0.63,0.65" Size="0.07,0.07"/>
+                            </RectangleGeometry.Rect>
+                        </RectangleGeometry>
+                        <RectangleGeometry>
+                            <RectangleGeometry.Rect>
+                                <Rect Location="0.3,0.825" Size="0.07,0.07"/>
+                            </RectangleGeometry.Rect>
+                        </RectangleGeometry>
+                        <RectangleGeometry>
+                            <RectangleGeometry.Rect>
+                                <Rect Location="0.465,0.825" Size="0.07,0.07"/>
+                            </RectangleGeometry.Rect>
+                        </RectangleGeometry>
+                        <RectangleGeometry>
+                            <RectangleGeometry.Rect>
+                                <Rect Location="0.63,0.825" Size="0.07,0.07"/>
+                            </RectangleGeometry.Rect>
+                        </RectangleGeometry>
+                        <PathGeometry>
+                            <PathFigure StartPoint="0.2,0" IsClosed="True" IsFilled="False">
+                                <LineSegment Point="0.8,0"/>
+                                <LineSegment Point="0.8,1"/>
+                                <LineSegment Point="0.2,1"/>
+                            </PathFigure>
+                        </PathGeometry>
+                    </GeometryGroup>
+                </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
 
 </ResourceDictionary>
