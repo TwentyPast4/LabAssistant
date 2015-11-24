@@ -19,6 +19,10 @@ Public Class LabToggleButton
         DependencyProperty.Register("DisabledBorderBrush", GetType(Color), GetType(LabToggleButton), New UIPropertyMetadata(defaultDisabledBorderBrush))
     Public Shared ReadOnly EnabledProperty As DependencyProperty =
         DependencyProperty.Register("Enabled", GetType(Boolean), GetType(LabToggleButton), New UIPropertyMetadata(False))
+    Public Shared ReadOnly EnabledTextProperty As DependencyProperty =
+        DependencyProperty.Register("EnabledText", GetType(String), GetType(LabToggleButton), New UIPropertyMetadata("ENABLED"))
+    Public Shared ReadOnly DisabledTextProperty As DependencyProperty =
+        DependencyProperty.Register("DisabledText", GetType(String), GetType(LabToggleButton), New UIPropertyMetadata("DISABLED"))
 
     Public Property EnabledBackgroundBrush As Color
         Get
@@ -26,6 +30,8 @@ Public Class LabToggleButton
         End Get
         Set(value As Color)
             enBackCl = value
+            updateBrushes()
+            OnPropertyChanged("EnabledBackgroundBrush")
         End Set
     End Property
     Private enBackCl As Color = defaultEnabledBackBrush
@@ -36,6 +42,8 @@ Public Class LabToggleButton
         End Get
         Set(value As Color)
             diBackCl = value
+            updateBrushes()
+            OnPropertyChanged("DisabledBackgroundBrush")
         End Set
     End Property
     Private diBackCl As Color = defaultDisabledBackBrush
@@ -46,6 +54,8 @@ Public Class LabToggleButton
         End Get
         Set(value As Color)
             enBorderCl = value
+            updateBrushes()
+            OnPropertyChanged("EnabledBorderBrush")
         End Set
     End Property
     Private enBorderCl As Color = defaultEnabledBorderBrush
@@ -56,9 +66,33 @@ Public Class LabToggleButton
         End Get
         Set(value As Color)
             diBorderCl = value
+            updateBrushes()
+            OnPropertyChanged("DisabledBorderBrush")
         End Set
     End Property
     Private diBorderCl As Color = defaultDisabledBorderBrush
+
+    Public Property EnabledText As String
+        Get
+            Return enTxt
+        End Get
+        Set(value As String)
+            enTxt = value
+            OnPropertyChanged("EnabledText")
+        End Set
+    End Property
+    Private enTxt As String = "ENABLED"
+
+    Public Property DisabledText As String
+        Get
+            Return disTxt
+        End Get
+        Set(value As String)
+            disTxt = value
+            OnPropertyChanged("DisabledText")
+        End Set
+    End Property
+    Private disTxt As String = "DISABLED"
 
     Public Property Enabled As Boolean
         Get
@@ -68,35 +102,53 @@ Public Class LabToggleButton
             If value Xor Me.GetValue(LabToggleButton.EnabledProperty) Then
                 Me.SetValue(LabToggleButton.EnabledProperty, value)
                 RaiseEnabledChangedEvent()
-                Dim ca As ColorAnimation
-                Dim brdCa As ColorAnimation
-                Dim ta As ThicknessAnimation
-                Dim dur As New Duration(TimeSpan.FromSeconds(0.4))
-                If value Then
-                    ca = New ColorAnimation(enBackCl, dur)
-                    brdCa = New ColorAnimation(enBorderCl, dur)
-                    If started Then
-                        ta = New ThicknessAnimation(New Thickness(0), dur)
-                    Else
-                        ta = New ThicknessAnimation(New Thickness(0, 0, holdingGrid.ActualWidth - selectionBorder.ActualWidth, 0), dur)
-                    End If
-
-                Else
-                    ca = New ColorAnimation(diBackCl, dur)
-                    brdCa = New ColorAnimation(diBorderCl, dur)
-                    If started Then
-                        ta = New ThicknessAnimation(New Thickness(holdingGrid.ActualWidth - selectionBorder.ActualWidth, 0, 0, 0), dur)
-                    Else
-                        ta = New ThicknessAnimation(New Thickness(0), dur)
-                    End If
-                End If
-
-                backBrush.BeginAnimation(SolidColorBrush.ColorProperty, ca)
-                selBorderBrush.BeginAnimation(SolidColorBrush.ColorProperty, brdCa)
-                selectionBorder.BeginAnimation(Border.MarginProperty, ta)
+                updateBrushes()
             End If
         End Set
     End Property
+
+    Private Sub updateBrushes()
+        Dim ca As ColorAnimation
+        Dim brdCa As ColorAnimation
+        Dim ta As ThicknessAnimation
+        Dim dur As New Duration(TimeSpan.FromSeconds(0.4))
+        If Me.GetValue(LabToggleButton.EnabledProperty) Then
+            ca = New ColorAnimation(enBackCl, dur)
+            brdCa = New ColorAnimation(enBorderCl, dur)
+            If started Then
+                ta = New ThicknessAnimation(New Thickness(0), dur)
+            Else
+                ta = New ThicknessAnimation(New Thickness(0, 0, holdingGrid.ActualWidth - selectionBorder.ActualWidth, 0), dur)
+            End If
+
+        Else
+            ca = New ColorAnimation(diBackCl, dur)
+            brdCa = New ColorAnimation(diBorderCl, dur)
+            If started Then
+                ta = New ThicknessAnimation(New Thickness(holdingGrid.ActualWidth - selectionBorder.ActualWidth, 0, 0, 0), dur)
+            Else
+                ta = New ThicknessAnimation(New Thickness(0), dur)
+            End If
+        End If
+
+        backBrush.BeginAnimation(SolidColorBrush.ColorProperty, ca)
+        selBorderBrush.BeginAnimation(SolidColorBrush.ColorProperty, brdCa)
+        selectionBorder.BeginAnimation(Border.MarginProperty, ta)
+    End Sub
+
+    Public Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        Dim eBind As New Binding("EnabledText")
+        Dim dBind As New Binding("DisabledText")
+        eBind.Source = Me
+        dBind.Source = Me
+        enableBtn.SetBinding(Button.ContentProperty, eBind)
+        disableBtn.SetBinding(Button.ContentProperty, dBind)
+    End Sub
 
     Private started As Boolean
     Public Sub handleLoad(sender As Object, e As RoutedEventArgs) Handles Me.Loaded

@@ -185,6 +185,9 @@ Public Class LabWindow
             Case Is = "inventory"
                 DeselectMenuItems(menuStackPanel, sender)
                 tabDisplay.SelectedItem = inventoryPage
+            Case Is = "calculator"
+                DeselectMenuItems(menuStackPanel, sender)
+                tabDisplay.SelectedItem = calculatorTabPage
         End Select
     End Sub
 
@@ -475,6 +478,40 @@ Public Class LabWindow
 
     Private Sub backReactionClicked(sender As Object, e As RoutedEventArgs) Handles backToSearchBtn.Click
         DeselectReaction()
+    End Sub
+
+    Private Sub handleMolarityChange(sender As Object, e As RoutedEventArgs) Handles molarityNumberBox.NumberChanged
+        If Me.IsInitialized AndAlso densityNumberBox.Number > 0 Then
+            massConcNumberBox.Number = molarityNumberBox.Number * molarMassNumberBox.Number / (10 * densityNumberBox.Number)
+        End If
+    End Sub
+
+    Private Sub handleMassChange(sender As Object, e As RoutedEventArgs) Handles massConcNumberBox.NumberChanged
+
+    End Sub
+
+    Private Sub handleMolarMassChange(sender As Object, e As RoutedEventArgs) Handles molarMassNumberBox.NumberChanged
+
+    End Sub
+
+    Private Sub handleDensityChange(sender As Object, e As RoutedEventArgs) Handles densityNumberBox.NumberChanged
+
+    End Sub
+
+    Private Enum EquationParts
+        Molarity
+        MolarMass
+        MassConcentration
+        Density
+    End Enum
+
+    Private Sub updateNumbers(except As EquationParts)
+        If densityNumberBox.Number > 0 AndAlso except <> EquationParts.MassConcentration Then
+            massConcNumberBox.Number = molarityNumberBox.Number * molarMassNumberBox.Number / (10 * densityNumberBox.Number)
+        End If
+        If molarityNumberBox.Number > 0 AndAlso except <> EquationParts.MolarMass Then
+            massConcNumberBox.Number = molarityNumberBox.Number * molarMassNumberBox.Number / (10 * densityNumberBox.Number)
+        End If
     End Sub
 
 End Class

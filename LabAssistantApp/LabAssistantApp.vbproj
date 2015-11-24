@@ -96,6 +96,9 @@
     <Compile Include="LabToggleButton.xaml.vb">
       <DependentUpon>LabToggleButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NumberTextBox.xaml.vb">
+      <DependentUpon>NumberTextBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ReactantRow.xaml.vb">
       <DependentUpon>ReactantRow.xaml</DependentUpon>
     </Compile>
@@ -163,6 +166,10 @@
       <DependentUpon>LabWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NumberTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ReactantRow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -176,10 +183,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TableButton.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -252,6 +255,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="My Project\DataSources\" />
+    <Folder Include="Themes\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\LabAssistantIcon.ico" />
