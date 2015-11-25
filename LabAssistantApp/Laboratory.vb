@@ -122,6 +122,8 @@ Public Class Laboratory
 
     Public Sub RemoveChemical(ByVal c As Chemical)
         If inv.RemoveAll(Function(x As OwnershipInfo) x.Name = c.Name) > 0 Then
+            c.SetLabState(StateInLab.Unavailable)
+            c.TryUpdateLabState()
             raiseChanged()
         End If
     End Sub
