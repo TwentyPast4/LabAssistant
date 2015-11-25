@@ -255,7 +255,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="My Project\DataSources\" />
-    <Folder Include="Themes\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\LabAssistantIcon.ico" />

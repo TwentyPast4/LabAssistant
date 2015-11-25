@@ -110,7 +110,8 @@
                     <local:ImageButton Tag="reaction" Text="REACTIONS" ImageBrush="{DynamicResource reversibleReactionBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick"/>
                     <Label Content="LABORATORY" Style="{DynamicResource menuLabel}"/>
                     <local:ImageButton x:Name="inventoryBtn" Tag="inventory" Text="INVENTORY" ImageBrush="{DynamicResource inventoryBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" IsEnabled="False"/>
-                    <local:ImageButton Tag="synthesis" Text="SYNTHESIS" ImageBrush="{DynamicResource synthesisBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" IsEnabled="{Binding IsEnabled, ElementName=inventoryBtn}"/>
+                    <!--local:ImageButton Tag="synthesis" Text="SYNTHESIS" ImageBrush="{DynamicResource synthesisBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" IsEnabled="{Binding IsEnabled, ElementName=inventoryBtn}"/-->
+                    <local:ImageButton Tag="synthesis" Text="SYNTHESIS" ImageBrush="{DynamicResource synthesisBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" IsEnabled="False"/>
                     <local:ImageButton Tag="calculator" Text="CALCULATOR" ImageBrush="{DynamicResource calculatorBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick"/>
                     <Label Content="OPTIONS" Style="{DynamicResource menuLabel}"/>
                     <local:ImageButton Tag="settings" Text="SETTINGS" ImageBrush="{DynamicResource generalSettingsBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick"/>
