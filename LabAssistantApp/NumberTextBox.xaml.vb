@@ -19,7 +19,7 @@
             Dim d As Decimal = Matter.Info.ToDecimal(Me.Text)
             If d <> num Then
                 num = d
-                If Me.IsInitialized Then RaiseEvent NumberChanged(Me, New RoutedEventArgs())
+                RaiseEvent NumberChanged(Me, New RoutedEventArgs())
             End If
         End If
     End Sub

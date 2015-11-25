@@ -10,6 +10,7 @@
                 <ResourceDictionary Source="GraphicsResources.xaml"/>
                 <ResourceDictionary Source="ElementStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            <local:NotBooleanToVisibilityConverter x:Key="NotBooleanToVisibilityConverter"/>
             <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
             <local:DarkColorConverter x:Key="DarkColorConverter"/>
             <local:RowSearchConverter x:Key="searchEngine"/>
@@ -112,8 +113,7 @@
                     <local:ImageButton Tag="synthesis" Text="SYNTHESIS" ImageBrush="{DynamicResource synthesisBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick" IsEnabled="{Binding IsEnabled, ElementName=inventoryBtn}"/>
                     <local:ImageButton Tag="calculator" Text="CALCULATOR" ImageBrush="{DynamicResource calculatorBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick"/>
                     <Label Content="OPTIONS" Style="{DynamicResource menuLabel}"/>
-                    <local:ImageButton Tag="start" Text="STARTUP" ImageBrush="{DynamicResource onOffBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick"/>
-                    <local:ImageButton Tag="general" Text="GENERAL" ImageBrush="{DynamicResource generalSettingsBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick"/>
+                    <local:ImageButton Tag="settings" Text="SETTINGS" ImageBrush="{DynamicResource generalSettingsBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick"/>
                     <local:ImageButton Tag="about" Text="ABOUT" ImageBrush="{DynamicResource infoBrush}" Style="{DynamicResource menuBtnStyle}" Click="handleMenuClick"/>
                 </StackPanel>
             </ScrollViewer>
@@ -658,16 +658,16 @@
                 </TabItem.Resources>
                 <StackPanel Margin="10">
                    
-                    <Label Content="SOLUTIONS" Background="{x:Null}" Foreground="#FFF0F0F0" FontFamily="{DynamicResource NevisFont}" FontSize="20" TextOptions.TextFormattingMode="Display" BorderThickness="0,0,0,1" BorderBrush="{DynamicResource borderBrush}" HorizontalAlignment="Left" Padding="0"/>
+                    <Label Content="SOLUTIONS" Background="{x:Null}" Foreground="#FFF0F0F0" FontFamily="{DynamicResource NevisFont}" FontSize="20" BorderThickness="0,0,0,1" BorderBrush="{DynamicResource borderBrush}" HorizontalAlignment="Left" Padding="0"/>
                     <Border BorderBrush="{DynamicResource borderBrush}" BorderThickness="1,0,0,0">
                         <StackPanel HorizontalAlignment="Left">
-                            <TextBlock Text="Molar and mass concentration convertion:" Foreground="#FFB0B0B0" Margin="5" FontSize="18.667"/>
+                            <TextBlock Text="Molarity - mass concentration convertion:" Foreground="#FFB0B0B0" Margin="5" FontSize="18.667"/>
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
                                 <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
                                     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left">
                                         <TextBlock Text="Molarity: " Foreground="{DynamicResource textBrush}"/>
                                         <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                                            <local:NumberTextBox x:Name="molarityNumberBox" Number="1"/>
+                                            <local:NumberTextBox x:Name="molarityNumberBox" Number="1" IsEnabled="{Binding Enabled, Converter={StaticResource NotBooleanToVisibilityConverter}, ElementName=convertion1Toggle,ConverterParameter=bool}"/>
                                             <TextBlock Text="mol/L" Foreground="{DynamicResource unitBrush}" VerticalAlignment="Center" Margin="3,0"/>
                                         </StackPanel>
                                         <TextBlock Text="Molar mass: " Foreground="{DynamicResource textBrush}"/>
@@ -676,11 +676,11 @@
                                             <TextBlock Text="g/mol" Foreground="{DynamicResource unitBrush}" VerticalAlignment="Center" Margin="3,0"/>
                                         </StackPanel>
                                     </StackPanel>
-                                    <Rectangle Width="35" Fill="{DynamicResource reversibleReactionBrush}" Margin="10,0"/>
+                                    <Rectangle x:Name="arrowRectConv" Width="35" Fill="{DynamicResource normalReactionBrush}" Margin="10,0" RenderTransformOrigin="0.5,0.5"/>
                                     <StackPanel HorizontalAlignment="Left">
                                         <TextBlock Text="Mass concentration: " Foreground="{DynamicResource textBrush}"/>
                                         <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                                            <local:NumberTextBox x:Name="massConcNumberBox" Number="1"/>
+                                            <local:NumberTextBox x:Name="massConcNumberBox" Number="1" IsEnabled="{Binding Enabled, ElementName=convertion1Toggle}"/>
                                             <TextBlock Text="%" Foreground="{DynamicResource unitBrush}" Margin="3,0"/>
                                         </StackPanel>
                                         <TextBlock Text="Density of solution: " Foreground="{DynamicResource textBrush}"/>
@@ -690,7 +690,7 @@
                                         </StackPanel>
                                     </StackPanel>
                                 </StackPanel>
-                                <local:LabToggleButton EnabledText="MOLARITY" DisabledText="CONCENTRATION" DisabledBorderBrush="#FF00FFC5" DisabledBackgroundBrush="#3300FFC5"/>
+                                <local:LabToggleButton x:Name="convertion1Toggle" Margin="10,0,5,0" EnabledText="MOLARITY" DisabledText="CONCENTRATION" DisabledBorderBrush="#FF00D1FF" DisabledBackgroundBrush="#3300D1FF" EnabledBorderBrush="#FF00D1FF" EnabledBackgroundBrush="#3300D1FF" BorderThickness="1,0" Background="#FF343434"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>

@@ -9,14 +9,6 @@ Public Class LabToggleButton
     Private Shared defaultEnabledBorderBrush As Color = Colors.Green
     Private Shared defaultDisabledBorderBrush As Color = Colors.Red
 
-    Public Shared ReadOnly EnabledBackgroundBrushProperty As DependencyProperty =
-        DependencyProperty.Register("EnabledBackgroundBrush", GetType(Color), GetType(LabToggleButton), New UIPropertyMetadata(defaultEnabledBackBrush))
-    Public Shared ReadOnly DisabledBackgroundBrushProperty As DependencyProperty =
-        DependencyProperty.Register("DisabledBackgroundBrush", GetType(Color), GetType(LabToggleButton), New UIPropertyMetadata(defaultDisabledBackBrush))
-    Public Shared ReadOnly EnabledBorderBrushProperty As DependencyProperty =
-        DependencyProperty.Register("EnabledBorderBrush", GetType(Color), GetType(LabToggleButton), New UIPropertyMetadata(defaultEnabledBorderBrush))
-    Public Shared ReadOnly DisabledBorderBrushProperty As DependencyProperty =
-        DependencyProperty.Register("DisabledBorderBrush", GetType(Color), GetType(LabToggleButton), New UIPropertyMetadata(defaultDisabledBorderBrush))
     Public Shared ReadOnly EnabledProperty As DependencyProperty =
         DependencyProperty.Register("Enabled", GetType(Boolean), GetType(LabToggleButton), New UIPropertyMetadata(False))
     Public Shared ReadOnly EnabledTextProperty As DependencyProperty =
@@ -148,6 +140,7 @@ Public Class LabToggleButton
         dBind.Source = Me
         enableBtn.SetBinding(Button.ContentProperty, eBind)
         disableBtn.SetBinding(Button.ContentProperty, dBind)
+
     End Sub
 
     Private started As Boolean
@@ -207,7 +200,12 @@ Public Class LabToggleButton
 
     Private Sub RaiseEnabledChangedEvent()
         Dim e As New RoutedEventArgs(LabToggleButton.EnabledChangedEvent)
+
         MyBase.RaiseEvent(e)
+    End Sub
+
+    Private Sub test(sender As Object, e As EventArgs) Handles Me.Initialized
+        updateBrushes()
     End Sub
 
 End Class

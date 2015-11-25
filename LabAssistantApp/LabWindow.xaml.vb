@@ -97,7 +97,7 @@ Public Class LabWindow
     Private WithEvents da As New DoubleAnimation(0, GetDuration(0.5))
     Private Sub handleMenuClick(sender As Object, e As RoutedEventArgs)
         Select Case sender.Tag
-            Case Is = "start"
+            Case Is = "settings"
                 DeselectMenuItems(menuStackPanel, sender)
                 tabDisplay.SelectedItem = startupSettingsPage
             Case Is = "table"
@@ -180,6 +180,7 @@ Public Class LabWindow
                     createNewLab()
                 End If
             Case Is = "reaction"
+                If Not IsNothing(e) Then prevItem = -1
                 DeselectMenuItems(menuStackPanel, sender)
                 tabDisplay.SelectedItem = reactionsPage
             Case Is = "inventory"
@@ -189,6 +190,15 @@ Public Class LabWindow
                 DeselectMenuItems(menuStackPanel, sender)
                 tabDisplay.SelectedItem = calculatorTabPage
         End Select
+    End Sub
+
+    Private Sub selectTab(ByVal tag As String)
+        For Each e As FrameworkElement In menuStackPanel.Children
+            If Not IsNothing(e.Tag) AndAlso e.Tag.Equals(tag) Then
+                handleMenuClick(e, Nothing)
+                Exit For
+            End If
+        Next
     End Sub
 
     Private Sub createNewLab()
@@ -390,7 +400,13 @@ Public Class LabWindow
         End If
     End Sub
 
+    Private prevItem As Integer = -1
     Private Sub SelectReaction(ByVal r As Matter.Reaction)
+        If Not CType(tabDisplay.SelectedItem, TabItem).Name.Equals(reactionsPage.Name) Then
+            prevItem = tabDisplay.SelectedIndex
+            selectTab("reaction")
+        End If
+
         isReactionSelected = True
 
         reactionTypeLabel.Content = r.Type.ToString()
@@ -477,40 +493,51 @@ Public Class LabWindow
     End Function
 
     Private Sub backReactionClicked(sender As Object, e As RoutedEventArgs) Handles backToSearchBtn.Click
-        DeselectReaction()
+        If prevItem < 0 Then
+            DeselectReaction()
+        Else
+            tabDisplay.SelectedIndex = prevItem
+        End If
     End Sub
 
     Private Sub handleMolarityChange(sender As Object, e As RoutedEventArgs) Handles molarityNumberBox.NumberChanged
-        If Me.IsInitialized AndAlso densityNumberBox.Number > 0 Then
-            massConcNumberBox.Number = molarityNumberBox.Number * molarMassNumberBox.Number / (10 * densityNumberBox.Number)
-        End If
+        If Me.IsInitialized AndAlso Not convertion1Toggle.Enabled Then updateNumbers()
     End Sub
 
     Private Sub handleMassChange(sender As Object, e As RoutedEventArgs) Handles massConcNumberBox.NumberChanged
-
+        If Me.IsInitialized AndAlso convertion1Toggle.Enabled Then updateNumbers()
     End Sub
 
     Private Sub handleMolarMassChange(sender As Object, e As RoutedEventArgs) Handles molarMassNumberBox.NumberChanged
-
+        updateNumbers()
     End Sub
 
     Private Sub handleDensityChange(sender As Object, e As RoutedEventArgs) Handles densityNumberBox.NumberChanged
-
+        updateNumbers()
     End Sub
 
-    Private Enum EquationParts
-        Molarity
-        MolarMass
-        MassConcentration
-        Density
-    End Enum
-
-    Private Sub updateNumbers(except As EquationParts)
-        If densityNumberBox.Number > 0 AndAlso except <> EquationParts.MassConcentration Then
-            massConcNumberBox.Number = molarityNumberBox.Number * molarMassNumberBox.Number / (10 * densityNumberBox.Number)
+    Private Sub updateNumbers()
+        If Not Me.IsInitialized Then Exit Sub
+        If Not convertion1Toggle.Enabled Then
+            If densityNumberBox.Number = 0 Then
+                massConcNumberBox.Text = "Infinity"
+            Else
+                massConcNumberBox.Number = molarityNumberBox.Number * molarMassNumberBox.Number / (10 * densityNumberBox.Number)
+            End If
+        Else
+            If molarMassNumberBox.Number = 0 Then
+                molarityNumberBox.Text = "Infinity"
+            Else
+                molarityNumberBox.Number = massConcNumberBox.Number * (10 * densityNumberBox.Number) / molarMassNumberBox.Number
+            End If
         End If
-        If molarityNumberBox.Number > 0 AndAlso except <> EquationParts.MolarMass Then
-            massConcNumberBox.Number = molarityNumberBox.Number * molarMassNumberBox.Number / (10 * densityNumberBox.Number)
+    End Sub
+
+    Private Sub handleConv1Change(sender As Object, e As RoutedEventArgs) Handles convertion1Toggle.EnabledChanged
+        If convertion1Toggle.Enabled Then
+            arrowRectConv.RenderTransform = New RotateTransform(180)
+        Else
+            arrowRectConv.RenderTransform = Nothing
         End If
     End Sub
 

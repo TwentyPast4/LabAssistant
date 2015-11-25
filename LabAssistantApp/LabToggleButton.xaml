@@ -40,7 +40,7 @@
         <Button x:Name="disableBtn" Grid.Column="2" Content="DISABLED"/>
         <Border x:Name="selectionBorder" BorderThickness="0,1" IsHitTestVisible="False" Grid.ColumnSpan="3" Width="{Binding ActualWidth, Converter={StaticResource toggleConverter}, ElementName=holdingGrid, Mode=OneWay}">
             <Border.Background>
-                <SolidColorBrush x:Name="backBrush" Color="Transparent"/>
+                <SolidColorBrush x:Name="backBrush" Color="{Binding DisabledBackgroundBrush, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:LabToggleButton}}}"/>
             </Border.Background>
             <Border.BorderBrush>
                 <SolidColorBrush x:Name="selBorderBrush" Color="Transparent"/>

@@ -67,4 +67,8 @@ Public Class CompoundInfoWindow
         End Select
     End Function
 
+    Private Sub handleRowClick(sender As Object, e As RoutedEventArgs) Handles reactionList.RowClicked
+        CType(My.Application.MainWindow, LabWindow).SelectedReaction = CType(sender, ReactionRow).Reaction
+    End Sub
+
 End Class
