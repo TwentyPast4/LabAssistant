@@ -35,7 +35,11 @@ Public Class CompoundInfoWindow
         Else
             densityLabel.Content = String.Format("{0} g/mL", ToStringDecimal(co.Density))
         End If
-        meltingLabel.Content = String.Concat(ToStringDecimal(co.MeltingPoint), " K")
+        If IsNothing(co.MeltingPoint) Then
+            meltingLabel.Content = "Unknown"
+        Else
+            meltingLabel.Content = String.Concat(ToStringDecimal(co.MeltingPoint), " K")
+        End If
         If IsNothing(co.BoilingPoint) Then
             boilingLabel.Content = "Unknown"
         Else
