@@ -77,7 +77,7 @@ Aluminium sulfate
 	1043
 	[]
 	31.2 g/100 mL (0 [Deg]C)[n]36.4 g/100 mL (20 [Deg]C)[n]89.0 g/100 mL (100 [Deg]C)
-Azane
+Ammonia
 	NH3
 	Colourless gas
 	0.00086
@@ -1161,13 +1161,6 @@ Chlorine perchlorate
 	1.81
 	156
 	293
-	Reacts
-Dichlorine hexoxide
-	Cl2O6
-	Red liquid
-	1.65
-	276.65
-	473.15
 	Reacts
 Dichlorine heptoxide
 	Cl2O7
@@ -2688,13 +2681,6 @@ Hexafluorosilicic acid
 	292
 	[]
 	Miscible
-Silicon carbide
-	SiC
-	Colourless crystals
-	3.21
-	[]
-	[]
-	Insoluble
 Silicon dioxide
 	SiO2
 	Transparent crystals
@@ -3864,3 +3850,108 @@ Zirconium tungstate
 	[]
 	[]
 	Negligible
+Aluminium arsenate
+	AlAsO4
+	White crystals
+	3.25
+	1273.15
+	[]
+	Insoluble
+Aluminium diboride
+	AlB2
+	Copper-red solid
+	3.19
+	1928
+	[]
+	Insoluble
+Aluminium dodecaboride
+	AlB12
+	Yellow to black solid
+	2.56
+	2470
+	[]
+	Insoluble
+Aluminium carbide
+	Al4C3
+	Colourless, hexagonal crystals (when pure)
+	2.36
+	2470
+	[]
+	Decomposes
+Aluminium sulfide
+	Al2S3
+	Gray solid
+	2.02
+	1370
+	1770
+	Decomposes in water[n]Insoluble in acetone
+Ammonium sulfamate
+	(NH3)2SO3
+	White hygroscopic solid
+	1.8
+	404
+	433
+	Very soluble
+Antimony pentafluoride
+	SbF5
+	Colourless hygroscopic oily fluid
+	2.99
+	281.4
+	422.6
+	Reacts
+Antimony trioxide
+	Sb2O3
+	White solid
+	5.2
+	929
+	1698
+	Negligible (soluble in acid)
+Arsine
+	AsH3
+	Colourless gas
+	0.00493
+	162
+	210.7
+	0.07 g/100 mL (25 [Deg]C)
+Barium oxalate
+	BaC2O4
+	White powder
+	2.658
+	673.15
+	[]
+	0.9290 mg/ L
+Barium sulfide
+	BaS
+	Black powder
+	4.25
+	1470
+	[]
+	2.88 g/100 mL (0 [Deg]C)[n]7.68 g/100 mL (20 [Deg]C)[n]60.3 g/100 mL (100 [Deg]C)
+Bismuth oxychloride
+	BiOCl
+	White powder
+	7.36
+	[]
+	[]
+	Insoluble
+Cadmium oxide
+	CdO
+	Colourless powder (alpha form)[n]Red-brown crystal (beta form)
+	8.15
+	1220
+	1832
+	4.8 mg/L (18 [Deg]C)
+Calcium oxalate
+	CaC2O4
+	White solid
+	2.12
+	473
+	[]
+	6.7 mg/L (20 [Deg]C)
+Calcium perchlorate
+	Ca(ClO4)2
+	White to yellow crystalline solid
+	2.651
+	543
+	[]
+	188 g/100mL (20 [Deg]C)

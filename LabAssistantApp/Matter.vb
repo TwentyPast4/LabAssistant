@@ -674,6 +674,11 @@ Namespace Matter
 
         Private Sub New(ByVal name As String, ByVal formula As CompoundFormula, ByVal appearance As String, ByVal density As Single,
                         ByVal melt As Single, ByVal boil As Single, ByVal solubility As String, ByVal state As StateOfMatter)
+            If CompoundList.FindIndex(Function(c1 As Compound) c1.FormulaString.Equals(formula.ToString)) >= 0 Then
+                Console.WriteLine("DUPLICATION OF:")
+                Console.WriteLine(formula.ToString)
+                Console.WriteLine("-------------------")
+            End If
             name_ = name
             formula_ = formula
             appearance_ = appearance.Replace(Constants.NewLine, vbNewLine)
@@ -740,6 +745,7 @@ Namespace Matter
                                 End If
 
                             End If
+
                             Dim c As New Compound(name, New CompoundFormula(raw(0)), raw(1), dens, melt, boil, raw(5), state)
                             CompoundList.Add(c)
                         End While
@@ -885,6 +891,11 @@ Namespace Matter
         Private react As String
 
         Private Sub New(ByVal reactionString As String, Optional ByVal reactionComment As String = Nothing)
+            If ReactionList.FindIndex(Function(r As Reaction) r.ToString.Equals(reactionString)) >= 0 Then
+                Console.WriteLine("DUPLICATION OF:")
+                Console.WriteLine(reactionString)
+                Console.WriteLine("-------------------")
+            End If
             ReactionReactants = New List(Of String)
             ReactionProducts = New List(Of String)
             ReactionReactantCoef = New List(Of Integer)
@@ -1340,8 +1351,13 @@ Namespace Matter
                 If Char.IsUpper(ca(0)) Then
                     If ca.Count > 1 Then
                         If Char.IsLower(ca(1)) Then
-                            str1 = str1.Remove(0, 2)
-                            rs.Add(New RawStructure(ca(0) & ca(1)))
+                            If ca.Count >= 3 AndAlso Char.IsLower(ca(2)) Then
+                                str1 = str1.Remove(0, 3)
+                                rs.Add(New RawStructure(ca(0) & ca(1) & ca(2)))
+                            Else
+                                str1 = str1.Remove(0, 2)
+                                rs.Add(New RawStructure(ca(0) & ca(1)))
+                            End If
                         Else
                             str1 = str1.Remove(0, 1)
                             rs.Add(New RawStructure(ca(0)))

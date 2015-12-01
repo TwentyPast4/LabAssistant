@@ -12,10 +12,8 @@ S + 3F2 > SF6
 2Ca3(PO4)2 + 6SiO2 + 10C > 6CaSiO3 + 10CO + P4
 3Ca(PO3)2 + 10C > Ca3(PO4)2 + 10CO + P4
 P4 + 6F2 > 4PF3
-P4 + 6I2 > 4PI3
 Si + O2 > SiO2
 Si + 2F2 > SiF4
-Si + 2Cl2 > SiCl4
 Si + 2Br2 > SiBr4
 Si + 2I2 > SiI4
 4Al + 3O2 > 2Al2O3
@@ -126,7 +124,6 @@ Ni(CO)4 <> Ni + 4CO
 Cu + F2 > CuF2
 Cu + Br2 > CuBr2
 Cu + H2SO4 > CuSO4 + H2
-Cu + 4HNO3 > Cu(NO3)2 + 2NO2 + 2H2O
 2Zn + O2 > 2ZnO
 Zn + Br2 > ZnBr2
 Zn + 2HCl > ZnCl2 + H2
@@ -280,7 +277,6 @@ Br2 + 3F2 > 2BrF3
 KF + BrF3 > KBrF4
 2Cd3As2 > 6Cd + As4
 	Between 220 - 280 [Deg]C
-Cd + 2HCl > CdCl2 + H2
 CdCl2 + H2S > CdS + 2HCl
 Cd(OH)2 + 2HI > CdI2 + 2H2O
 Cd + 2HI > CdI2 + H2
@@ -307,8 +303,6 @@ Cs2CO3 + 2HF > 2CsF + H2O + CO2
 CaO + 3C > CaC2 + CO
 	Above 2000 [Deg]C
 CaC2 + 2H2O > C2H2 + Ca(OH)2
-CaC2 + N2 > CaCN2 + C
-	At elevated temperatures
 3CaCl2 + 2K3PO4 > Ca3(PO4)2 + 6KCl
 CaCl2 > Ca + Cl2
 	Electrolysis
@@ -333,8 +327,6 @@ CaO + H2O > Ca(OH)2
 Ca(ClO)2 + CO2 > CaCO3 + Cl2O
 Ca(ClO)2 + 4HCl > CaCl2 + 2H2O + 2Cl2
 Ca(OH)2 + H2SO4 > CaSO4 + 2H2O
-CaCO3 > CaO + CO2
-	Above 850 [Deg]C
 Fe2O3 + 3CO > 2Fe + 3CO2
 CO + 2AgF2 > COF2 + 2AgF
 KSCN + 2H2SO4 + H2O > KHSO4 + NH4HSO4 + COS
@@ -458,7 +450,6 @@ CsClO4 + ClOSO2F > Cs(SO3)F + ClOClO3
 2ClO2 + 2O3 > Cl2O6 + 2O2
 	Excess ozone
 NO2F + Cl2O6 > NO2ClO4 + ClO2F
-NO + Cl2O6 > NOClO4 + ClO2
 2V2O5 + 12Cl2O6 > 4VO(ClO4)3 + 12ClO2 + 3O2
 N2O5 + H2O > 2HNO3
 P4O10 + 12HNO3 > 4H3PO4 + 6N2O5
@@ -525,7 +516,6 @@ H2SO4 + KBr > KHSO4 + HBr
 H2S + I2 > 2HI + S
 H2 + I2 > 2HI
 2PI3 + 6H2O > 6HI + 2H3PO3
-NaCl + H2SO4 > NaHSO4 + HCl
 NaCl + NaHSO4 > HCl + Na2SO4
 PCl5 + H2O > POCl3 + 2HCl
 2H2O2 > 2H2O + O2
@@ -904,7 +894,6 @@ Si + 2H2 + 3SiCl4 > 4SiHCl3
 	Under high pressures
 4HCl + Mg2Si > SiH4 + 2MgCl2
 SiH4 + 2O2 > SiO2 + 2H2O
-Si + 3HCl > HSiCl3 + H2
 (H3O)2SiF6 + 2NaOH > Na2SiF6 + 4H2O
 H2SiF6 + Al2O3 > 2AlF3 + SiO2 + H2O
 SiCl4 + 2H2 + O2 > SiO2 + 4HCl
@@ -915,7 +904,6 @@ Si(OC2H5)4 + 12O2 > SiO2 + 10H2O + 8CO2
 Si(OC2H5)4 + 2H2O > SiO2 + 4C2H5OH
 SiO2 + 2NaOH > Na2SiO3 + H2O
 2Na2O + SiO2 > Na4SiO4
-Na2O + SiO2 > Na2SiO3
 SiO2 + Si > 2SiO
 	At elevated temperatures
 3Si + 2N2 > Si3N4
@@ -1085,7 +1073,6 @@ OCNH2NHSO3H + H2SO4 > CO2 + 2H3NSO3
 H3NSO3 + NaOH > NaH2NSO3 + H2O
 HNO2 + H3NSO3 > H2SO4 + N2 + H2O
 HNO3 + H3NSO3 > H2SO4 + N2O + H2O
-S + O2 > SO2
 2H2S + 3O2 > 2H2O + 2SO2
 4FeS2 + 11O2 > 2Fe2O3 + 8SO2
 2ZnS + 3O2 > 2ZnO + 2SO2
@@ -1190,7 +1177,6 @@ H2WO4 > H2O + WO3
 V2O5 + 3SOCl2 > 2VOCl3 + 3SO2
 2VOCl3 + 3H2O > V2O5 + 6HCl
 V2O5 + 3VCl3 + VOCl3 > 6VOCl2
-VOCl3 + Cl2O > VO2Cl + 2Cl2
 2VCl4 + 8HBr > 2VBr3 + 8HCl + Br2
 	At -50 [Deg]C
 2VCl3 > VCl2 + VCl4
@@ -1205,7 +1191,6 @@ VCl4 + 4HF > VF4 + 4HCl
 V2O5 + V2O3 > 4VO2
 V2O5 + SO2 + H2SO4 > 2VOSO4 + H2O
 V2O5 + 2HNO3 > 2VO2NO3 + H2O
-V2O5 + 3SOCl2 > 2VOCl3 + 3SO2
 V2O5 + 6HCl > (VO)2Cl4 + Cl2 + 3H2O
 V2O5 + 6HBr > (VO)2Br4 + Br2 + 3H2O
 2NH4VO3 > V2O5 + 2NH3 + H2O
@@ -1229,7 +1214,6 @@ Y(OH)3 + 3HF > YF3 + 3H2O
 2Y2O3 + 8BaO + 12CuO + O2 > 4YBa2Cu3O7
 	At 800 [Deg]C
 ZnO + 2HBr > ZnBr2 + H2O
-Zn + 2HCl > ZnCl2 + H2
 ZnS + 2HCl > ZnCl2 + H2S
 ZnCl2 + Na2CO3 > ZnCO3 + 2NaCl
 ZnBr2 + Na2CO3 > ZnCO3 + 2NaBr
@@ -1264,7 +1248,6 @@ H2NC(O)C(O)NH2 <> (CN)2 + 2H2O
 HgO + 2HCN > Hg(CN)2 + H2O
 K4Fe(CN)6 + 3HgSO4 > 3Hg(CN)2 + 2K2SO4 + FeSO4
 Hg2(NO3)2 + 2KCN > Hg + Hg(CN)2 + 2KNO3
-FeS + 2HCl > FeCl2 + H2S
 Fe + S > FeS
 	Heating
 2FeCl3 + 3Na2S > Fe2S3 + 6NaCl
@@ -1281,7 +1264,6 @@ CaCO3 + 2HCl > CaCl2 + CO2 + H2O
 CaCO3 > CaO + CO2
 	Above 840 [Deg]C
 CaCO3 + CO2 + H2O > Ca(HCO3)2
-Ca(OH)2 + CO2 > CaCO3 + H2O
 CaCO3 + 2HNO3 > Ca(NO3)2 + CO2 + H2O
 Ca3(PO4)2 + 6HNO3 + 12H2O > 2H3PO4 + 3Ca(NO3)2 + 12H2O
 2NH4NO3 + Ca(OH)2 > Ca(NO3)2 + 2NH4OH
@@ -1304,14 +1286,11 @@ As2O3 + 6HF > 2AsF3 + 3H2O
 As2O3 + 6Zn + 12HNO3 > 2AsH3 + 6Zn(NO3)2 + 3H2O
 B2O3 + 3C + 3Br2 > 2BBr3 + 3CO
 	At elevated temperatures
-2B + 3Br2 > 2BBr3
 3B2Cl4 + 6H2 > 2B2H6 + 4BCl3
 CaCl2 + H3PO4 + 2NaOH > CaHPO4 + 2NaCl + 2H2O
 Ca(OH)2 + 2H3PO4 > Ca(H2PO4)2 + 2H2O
 Ca5(PO4)3F + 7H3PO4 > 5Ca(H2PO4)2 + HF
 CsClO4 + ClOSO2F > CsSO3F + ClOClO
-CrO2Cl2 + 2ClOClO3 > 2Cl2 + CrO2(ClO4)2
-TiCl4 + 4ClOClO3 > 4Cl2 + Ti(ClO4)4
 2Co3O4 > 6CoO + O2
 	Above 950 [Deg]C
 CoCl2 + H2O > CoO + H2 + Cl2
@@ -1328,3 +1307,27 @@ HF + NaOH > NaF + H2O
 2FeBr3 > 2FeBr2 + Br2
 	Above 200 [Deg]C
 FeCl3 + 3NaOH > Fe(OH)3 + 3NaCl
+Al4C3 + 12H2O > 4Al(OH)3 + 3CH4
+Al4C3 + 12HCl > 4AlCl3 + 3CH4
+4Al + 3C > Al4C3
+	In an electric arc furnace
+2Al2O3 + 9C > Al4C3 + 6CO
+	In an electric arc furnace
+4Al + 3SiC > Al4C3 + 3Si
+2Al + 3S > Al2S3
+4SbF5 + 2K2MnF6 > 4KSbF6 + 2MnF3 + F2
+2Sb2S3 + 9O2 > 2Sb2O3 + 6SO2
+	Between 850 - 1000 [Deg]C
+4Sb + 3O2 > 2Sb2O3
+4AsCl3 + 3NaBH4 > 4AsH3 + 3NaCl + 3BCl3
+Na3As + 3HBr > AsH3 + 3NaBr
+2AsH3 > 3H2 + 2As
+2AsH3 + 3O2 > As2O3 + 3H2O
+AsH3 + NaNH2 > NaAsH2 + NH3
+Ga(CH3)3 + AsH3 > GaAs + 3CH4
+	Between 700 – 900 [Deg]C
+BaCl2 + H2C2O4 > BaC2O4 + 2HCl
+BaSO4 + 2C > BaS + 2CO2
+BiCl3 + H2O > BiOCl + 2HCl
+Cd + 2HCl > CdCl2 + H2
+CdCl2 + H2S > CdS + 2HCl
