@@ -9,6 +9,13 @@ Class Application
     ' Application-level events, such as Startup, Exit, and DispatcherUnhandledException
     ' can be handled in this file.
     Public Sub startSub(sender As Object, e As StartupEventArgs) Handles Me.Startup
+        If Environment.Version.Major < 4 OrElse Environment.Version.Build < 30319 OrElse Environment.Version.Revision < 17379 Then
+            MsgBox("Lab Assistant requires .NET framework version 4.5 or newer!")
+            Environment.Exit(10)
+            Exit Sub
+        End If
+
+
         Dim t As New Thread(New ParameterizedThreadStart(AddressOf loadingStart))
         t.SetApartmentState(ApartmentState.STA)
         t.IsBackground = True
@@ -39,7 +46,9 @@ Class Application
         AddHandler Matter.Info.LaboratoryLoaded, AddressOf mw.handleLaboratoryLoaded
 
         mw.Initialize()
+
         mw.Show()
+        mw.Activate()
 
         Dim cm As ContextMenu = Me.FindResource("labMenu")
         For Each i As MenuItem In cm.Items
