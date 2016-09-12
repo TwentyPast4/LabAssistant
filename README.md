@@ -1,29 +1,22 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
-
 ### What is this repository for? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* This repository was created for development of LabAssistant
 
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* Clone the repository
+* Do whatever you want
 
 ### Contribution guidelines ###
 
-* Writing tests
-* Code review
-* Other guidelines
+* Just create a pull request with anything you have modified.
+* I will personally review the code and most likely accept the pull request if it meets the following criteria:
+  - It works
+  - The previous functionallity is retained
+  - The added functionallity seems appropriate to me (probably always)
 
 ### Who do I talk to? ###
 
-* Repo owner or admin
-* Other community or team contact
+* Dan Toškan - dan.toskan5@gmail.com
