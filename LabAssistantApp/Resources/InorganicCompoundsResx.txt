@@ -3955,3 +3955,17 @@ Calcium perchlorate
 	543
 	[]
 	188 g/100mL (20 [Deg]C)
+Cellulose
+	C6H10O5
+	White powder
+	1.5
+	538
+	[]
+	Insoluble
+Nitrocellulose
+	C6H7(NO2)3O5
+	Yellowish white cotton-like filaments
+	1.66
+	[]
+	[]
+	Insoluble

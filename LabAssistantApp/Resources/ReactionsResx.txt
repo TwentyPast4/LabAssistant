@@ -1331,3 +1331,5 @@ BaSO4 + 2C > BaS + 2CO2
 BiCl3 + H2O > BiOCl + 2HCl
 Cd + 2HCl > CdCl2 + H2
 CdCl2 + H2S > CdS + 2HCl
+C6H10O5 + 3HNO3 > C6H7(NO2)3O5 + 3H2O
+	Needs H2SO4 as a catalyst to produce the nitronium(NO2+) ion.
